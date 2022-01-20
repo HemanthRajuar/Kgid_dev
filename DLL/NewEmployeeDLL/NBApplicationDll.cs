@@ -3684,7 +3684,7 @@ namespace DLL.NewEmployeeDLL
                     new SqlParameter("@dl_factor",objVerification.DeductionLoadFactor),
                     new SqlParameter("@total_sum_assured",objVerification.SumAssured)
                 };
-
+                    
                 returnString = _Conn.ExecuteCmd(sqlparam, "sp_kgid_insertDepartmentWorkflowVerification");
                 if (objVerification.ApplicationStatus == 15)
                 {
