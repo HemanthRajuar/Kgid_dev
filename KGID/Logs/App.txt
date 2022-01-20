@@ -2218,3 +2218,49 @@ update
 20 Jan 2022 14:15:34 - INFO  - result
 20 Jan 2022 14:56:07 - INFO  - GetMobileNumberOfInsured()
 20 Jan 2022 14:57:56 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 16:35:33 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 16:38:15 - INFO  - result2
+20 Jan 2022 16:38:29 - INFO  - result2
+20 Jan 2022 16:42:13 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 16:44:13 - INFO  - result2
+20 Jan 2022 16:44:34 - INFO  - result2
+20 Jan 2022 16:47:49 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function 'sp_kgid_SaveMIRenewalVehicleDetails' expects parameter '@SettingCapacity', which was not supplied.
+20 Jan 2022 16:47:49 - INFO  - result
+20 Jan 2022 16:48:04 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function 'sp_kgid_SaveMIRenewalVehicleDetails' expects parameter '@SettingCapacity', which was not supplied.
+20 Jan 2022 16:48:04 - INFO  - result
+20 Jan 2022 16:48:22 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function 'sp_kgid_SaveMIRenewalVehicleDetails' expects parameter '@SettingCapacity', which was not supplied.
+20 Jan 2022 16:48:22 - INFO  - result
+20 Jan 2022 16:48:54 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function 'sp_kgid_SaveMIRenewalVehicleDetails' expects parameter '@SettingCapacity', which was not supplied.
+20 Jan 2022 16:48:54 - INFO  - result
+20 Jan 2022 16:49:20 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function 'sp_kgid_SaveMIRenewalVehicleDetails' expects parameter '@SettingCapacity', which was not supplied.
+20 Jan 2022 16:49:20 - INFO  - result
+20 Jan 2022 16:50:30 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 16:52:58 - INFO  - result2
+20 Jan 2022 16:53:04 - INFO  - result2
+20 Jan 2022 16:53:27 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 16:56:17 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 16:57:57 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 16:57:57 - INFO  - result
+20 Jan 2022 16:58:55 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 16:58:55 - INFO  - result
+20 Jan 2022 16:59:20 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 16:59:20 - INFO  - result
+20 Jan 2022 17:00:07 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 17:00:18 - INFO  - result
+20 Jan 2022 17:00:53 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 17:01:01 - INFO  - result
+20 Jan 2022 17:03:00 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 17:03:26 - INFO  - result
+20 Jan 2022 17:04:28 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 17:04:33 - INFO  - result
+20 Jan 2022 17:05:26 - INFO  - result2
+20 Jan 2022 17:06:37 - INFO  - result2
+20 Jan 2022 17:07:37 - INFO  - result2
+20 Jan 2022 17:47:07 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 17:48:01 - INFO  - Pending Issues DDO 0
+20 Jan 2022 17:48:01 - INFO  - Total Issues DDO 0
+20 Jan 2022 17:48:20 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 17:49:11 - INFO  - Pending Issues DDO 3
+20 Jan 2022 17:49:11 - INFO  - Total Issues DDO 14
+20 Jan 2022 17:56:51 - INFO  - Pending Issues DDO 3
+20 Jan 2022 17:56:51 - INFO  - Total Issues DDO 14

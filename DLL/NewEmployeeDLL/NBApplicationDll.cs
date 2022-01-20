@@ -3685,7 +3685,7 @@ namespace DLL.NewEmployeeDLL
                     new SqlParameter("@total_sum_assured",objVerification.SumAssured)
                 };
 
-                returnString = "1"; //_Conn.ExecuteCmd(sqlparam, "sp_kgid_insertDepartmentWorkflowVerification");
+                returnString = _Conn.ExecuteCmd(sqlparam, "sp_kgid_insertDepartmentWorkflowVerification");
                 if (objVerification.ApplicationStatus == 15)
                 {
                     DataSet details = new DataSet();
