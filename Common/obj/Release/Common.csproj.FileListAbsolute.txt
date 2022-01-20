@@ -1,0 +1,8 @@
+D:\backup_25112021\kgid-development\Common\bin\Release\Common.dll
+D:\backup_25112021\kgid-development\Common\bin\Release\Common.pdb
+D:\backup_25112021\kgid-development\Common\bin\Release\log4net.dll
+D:\backup_25112021\kgid-development\Common\bin\Release\log4net.xml
+D:\backup_25112021\kgid-development\Common\obj\Release\Common.csproj.CoreCompileInputs.cache
+D:\backup_25112021\kgid-development\Common\obj\Release\Common.csproj.CopyComplete
+D:\backup_25112021\kgid-development\Common\obj\Release\Common.dll
+D:\backup_25112021\kgid-development\Common\obj\Release\Common.pdb

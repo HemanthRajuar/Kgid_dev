@@ -1,0 +1,18 @@
+<data>
+<RctReceiveValidateChlnRq>
+      <chlnDate>08/03/2021</chlnDate>
+      <deptCode>12C</deptCode>
+      <ddoCode>11984O</ddoCode>
+      <deptRefNum>KD0321801108163625</deptRefNum>
+      <rctReceiveValidateChlnDtls>
+        <amount>19</amount>
+        <deptPrpsId>1</deptPrpsId>
+        <prpsName>8011~00~105~1~01~000</prpsName>
+        <subPrpsName>001</subPrpsName>
+        <subDeptRefNum>KD0321801108163625A</subDeptRefNum>
+      </rctReceiveValidateChlnDtls>
+      <rmtrName>sdfasd</rmtrName>
+      <totalAmount>19</totalAmount>
+      <trsryCode>572A</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>

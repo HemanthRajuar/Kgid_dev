@@ -1,0 +1,198 @@
+﻿@model KGID_Models.KGID_GroupInsurance.VM_GISDDOVerificationDetails
+@*{
+       // @ViewBag.Title = "View Application Details";
+    }*@
+
+
+@* VERIFYDETAILS--VIEWAPPLICATION DETAILS    (have deleted action)*@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">
+
+                    <label class="knlan">ವಿಮಾ ಪ್ರಸ್ತಾವನೆ ವಿವರಗಳು</label>
+                    <label class="Enlan"><b>Application Details</b></label>
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="row col-12">
+                    <div class="form-group col-6">
+
+                    </div>
+                </div>
+                <div class="row col-12">
+                    <table class="table table-striped table-bordered" id="tblEmployeeData" cellspacing="0">
+                        <thead class="t_head">
+                            <tr>
+                                <th><label class="knlan">ಹೆಸರು</label><label class="Enlan">Name</label></th>
+                                <th><label class="knlan">ರೆಫರೆನ್ಸ್ ಸಂಖ್ಯೆ</label><label class="Enlan">Reference Number</label></th>
+                                <th><label class="knlan">ವಿಮಾ ಪ್ರಸ್ತಾವನೆ ಸಂಖ್ಯೆ</label><label class="Enlan">Subcription Number</label></th>
+                                <th><label class="knlan">ಅಭಿಪ್ರಾಯ</label><label class="Enlan">Comments</label></th>
+                                <th><label class="knlan">ಸ್ಥಿತಿ</label><label class="Enlan">Status</label></th>
+                                <th><label class="knlan">ಸ್ಥಿತಿ</label><label class="Enlan">Download</label></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.EmployeeVerificationDetails != null && Model.EmployeeVerificationDetails.Count > 0)
+                            {
+                                foreach (var item in Model.EmployeeVerificationDetails)
+                                {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.ApplicationNumber</td>
+                                <td>@item.PolicyNumber</td>
+                                <td>@item.Remarks</td>
+                                <td> @item.Status </td>
+                                @if (@item.Status == "Approved")
+                                {
+                                    <td><a onclick="printform1forEmployee();" style="color:blue;"> Form1</a> </td>
+                                }
+                                else
+                                {
+                                    <td></td>
+}
+                            </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="divPrintForm1" style="display:none;">
+
+    <style type="text/css">
+
+        .form1_gis {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            color:black;
+           
+        }
+    </style>
+    @if (Model.IEmployeeVerificationDetails != null && Model.IEmployeeVerificationDetails.Count > 0)
+    {
+        foreach (var item in Model.IEmployeeVerificationDetails)
+        {
+            <div class="form1_gis">
+                <wrapper>
+                    <h6 style="text-align: center;">Form No. 1</h6>
+                    <h6 style="text-align: center;">GOVERNMENT OF KARNATAKA </h6>
+                    <h6 style="text-align: center;">DEPARTMENT / OFFICE   @item.deptName </h6>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10" style="text-align: right;">
+                            @*Dated  @item.currentdate*@
+                            Dated : @Convert.ToDateTime(@item.currentdate).ToString("dd/MM/yyyy")
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10" style="text-align: right;">
+                            Subcription No.  @item.subcriptionNumber
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+
+                    <div class="title">
+                        <h6 style="text-align: center; text-decoration: underline; font-weight: bold;"><b>MEMORANDUM</b></h6>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10" style="text-align:justify;">
+                            Shri <b> @item.employeename </b> a Group <b> @item.groupDesc </b>  employee has been enrolled as a member of the Karnataka State Government Employees Group Insurance Scheme, 1981 with effect from <b>@Convert.ToDateTime(@item.SubscriptionDate).ToString("dd/MM/yyyy")</b> His monthly subscription of <b>Rs.@item.SavingInsuranceAmt (Rupees  @item.amtinwords ) </b>shall be deducted from his salary / wages commencing from the month of …………………………. and he will be eligible to the benefits of the scheme appropriate to Group w.e.f. ……………………………….
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8" style="text-align: right;">Head of Office</div>
+                        <div class="col-md-3"></div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8">
+                            To,<br>
+                            Shri. @item.employeename<br>
+                            @item.employeename  , @item.designation<br>
+                            Name and designation of the employee<br>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </wrapper>
+            </div>
+        }
+    }
+</div>
+
+<script src="~/Scripts/html2canvas/html2canvas.js"></script>
+<script src="~/Scripts/html2pdf/html2pdf.bundle.min.js"></script>
+<script>
+    $(".alphaonly").on("input", function () {
+        var regexp = /[^a-z A-Z]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    function printform1forEmployee() {
+
+        var Applicationcontents1 = "";
+        Applicationcontents1 = $('#divPrintForm1').html();
+
+        //Applicationcontents = Applicationcontents + '<div class="row"><div class="form-group col-5"></div><div class="form-group col-3"><h2>KGID Details</h2></div><div class="form-group col-4"></div></div>' + $("#divKGID").html() ;
+        //Applicationcontents = Applicationcontents + '<div class="row"><div class="form-group col-5"></div><div class="form-group col-3"><h2>Family Details</h2></div><div class="form-group col-4"></div></div>' + $("#divFamily").html();
+        //Applicationcontents = Applicationcontents + '<div class="row"><div class="form-group col-5"></div><div class="form-group col-3"><h2>Nominee Details</h2></div><div class="form-group col-4"></div></div>' + $("#divNominee").html() + '<div class="html2pdf__page-break"></div>';
+        //Applicationcontents = Applicationcontents + '<div class="row"><div class="form-group col-5"></div><div class="form-group col-3"><h2>Personal Details</h2></div><div class="form-group col-4"></div></div>' + $("#divPrintPD").html();
+        //Applicationcontents = Applicationcontents + '<div class="row"><div class="form-group col-5"></div><div class="form-group col-3"><h2>Declaration</h2></div><div class="form-group col-4"></div></div>' + $("#divDeclaration").html() + '<input type="checkbox" value="true" checked /><label>I agree to the terms and condition mentioned above.</label>' + "<hr />";
+
+        var date = new Date().getDate() + '_' + (parseInt(new Date().getMonth()) + parseInt(1)) + '_' + new Date().getFullYear();
+
+        html2pdf(Applicationcontents1, {
+            margin: 0.3,
+            /*filename: $("#hdnApplnGISNumber").val() + "Form1" + "_" + date,*/
+            filename: "Form1" + "_" + date,
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 0, letterRendering: true },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'Portrait' },
+            pagebreak: { mode: 'legacy' }
+        });
+        let mywindow = window.open('', 'SAVE', 'height=650,width=900,top=100,left=150');
+
+        mywindow.document.write('<html><head><title>Form7' + date + '</title>');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(Applicationcontents1);
+        mywindow.document.write('</body></html>');
+
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10*/
+
+        // alert("NN")
+
+        //mywindow.print();
+        mywindow.close();
+
+        // return true;
+        //$("#divHeightChart").show();
+        //$("#divShowQRCode").hide();
+        //$(".action").show();
+    }
+</script>

@@ -1,0 +1,26 @@
+D:\GITLAB Projects\kgid-development\Common\bin\Debug\Common.dll
+D:\GITLAB Projects\kgid-development\Common\bin\Debug\Common.pdb
+D:\GITLAB Projects\kgid-development\Common\bin\Debug\log4net.dll
+D:\GITLAB Projects\kgid-development\Common\bin\Debug\log4net.xml
+D:\GITLAB Projects\kgid-development\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\GITLAB Projects\kgid-development\Common\obj\Debug\Common.csproj.CopyComplete
+D:\GITLAB Projects\kgid-development\Common\obj\Debug\Common.dll
+D:\GITLAB Projects\kgid-development\Common\obj\Debug\Common.pdb
+D:\GITLAB Projects\kgid-development\Common\obj\Debug\Common.csprojAssemblyReference.cache
+E:\kgid-development\Common\bin\Debug\Common.dll
+E:\kgid-development\Common\bin\Debug\Common.pdb
+E:\kgid-development\Common\bin\Debug\log4net.dll
+E:\kgid-development\Common\bin\Debug\log4net.xml
+E:\kgid-development\Common\obj\Debug\Common.csprojAssemblyReference.cache
+E:\kgid-development\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+E:\kgid-development\Common\obj\Debug\Common.csproj.CopyComplete
+E:\kgid-development\Common\obj\Debug\Common.dll
+E:\kgid-development\Common\obj\Debug\Common.pdb
+D:\backup_25112021\kgid-development\Common\bin\Debug\Common.dll
+D:\backup_25112021\kgid-development\Common\bin\Debug\Common.pdb
+D:\backup_25112021\kgid-development\Common\bin\Debug\log4net.dll
+D:\backup_25112021\kgid-development\Common\bin\Debug\log4net.xml
+D:\backup_25112021\kgid-development\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\backup_25112021\kgid-development\Common\obj\Debug\Common.csproj.CopyComplete
+D:\backup_25112021\kgid-development\Common\obj\Debug\Common.dll
+D:\backup_25112021\kgid-development\Common\obj\Debug\Common.pdb

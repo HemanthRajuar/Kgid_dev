@@ -1,0 +1,18 @@
+<data>
+<RctReceiveValidateChlnRq>
+      <chlnDate>22/02/2021</chlnDate>
+      <deptCode>12C</deptCode>
+      <ddoCode>12027O</ddoCode>
+      <deptRefNum>KD0221801122181140</deptRefNum>
+      <rctReceiveValidateChlnDtls>
+        <amount>7</amount>
+        <deptPrpsId>1</deptPrpsId>
+        <prpsName>8011~00~105~1~01~000</prpsName>
+        <subPrpsName>Initial Deposit</subPrpsName>
+        <subDeptRefNum>KD0221801122181140A</subDeptRefNum>
+      </rctReceiveValidateChlnDtls>
+      <rmtrName>Naveen</rmtrName>
+      <totalAmount>7</totalAmount>
+      <trsryCode>572A</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>

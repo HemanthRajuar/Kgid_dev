@@ -1,0 +1,18 @@
+<data>
+<RctReceiveValidateChlnRq>
+      <chlnDate>03/03/2021</chlnDate>
+      <deptCode>12C</deptCode>
+      <ddoCode>12027O</ddoCode>
+      <deptRefNum>KD0321801103153157</deptRefNum>
+      <rctReceiveValidateChlnDtls>
+        <amount>1</amount>
+        <deptPrpsId>1</deptPrpsId>
+        <prpsName>8011~00~105~1~01~000</prpsName>
+        <subPrpsName>001</subPrpsName>
+        <subDeptRefNum>KD0321801103153157A</subDeptRefNum>
+      </rctReceiveValidateChlnDtls>
+      <rmtrName>FDSAF</rmtrName>
+      <totalAmount>1</totalAmount>
+      <trsryCode>572A</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>

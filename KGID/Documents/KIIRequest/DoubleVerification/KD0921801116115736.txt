@@ -1,0 +1,5 @@
+<data>
+            <RctReceivePaymentStatusRq>
+               <deptRefNum>KD0921801116115736</deptRefNum>
+            </RctReceivePaymentStatusRq>
+         </data>

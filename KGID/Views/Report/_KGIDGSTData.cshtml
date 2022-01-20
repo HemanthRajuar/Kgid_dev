@@ -1,0 +1,55 @@
+﻿@model KGID_Models.KGID_Report.VM_KGIDGSTReports
+
+<div class="form-group col-12">
+    <hr />
+</div>
+<div class="form-group">
+    <table id="tblApplications" class="table table-striped table-bordered">
+        <thead class="text-center" style="background: #308385;color: #fff;line-height:1.5;">
+            <tr>
+                <th><label class="knlan"></label><label class="Enlan">Sl. No.</label></th>
+                <th><label class="knlan"></label><label class="Enlan">Policy Type</label></th>
+                <th><label class="knlan"></label><label class="Enlan">Application Ref.No</label></th>
+                <th><label class="knlan"></label><label class="Enlan">Policy No</label></th>
+                <th><label class="knlan"></label><label class="Enlan">Premium</label></th>
+                <th><label class="knlan"></label><label class="Enlan">CGST</label></th>
+                <th><label class="knlan"></label><label class="Enlan">SGST</label></th>
+                <th><label class="knlan"></label><label class="Enlan">Total GST</label></th>
+                <th><label class="knlan"></label><label class="Enlan">Total</label></th>
+            </tr>
+        </thead>
+        <tbody class="text-center" style="line-height:1.5;">
+            @if (Model != null && Model.GstCollection.Count > 0)
+            {
+                foreach (var reportData in Model.GstCollection)
+                {
+            <tr>
+                <td></td>
+                <td>@reportData.Type</td>
+                <td>@reportData.mia_application_ref_no</td>
+                <td>@reportData.p_mi_policy_number</td>
+                <td>@reportData.p_mi_premium_wo_gst</td>
+                <td>@reportData.CGST</td>
+                <td>@reportData.SGST</td>
+                <td>@reportData.tot_GST</td>
+                <td>@reportData.p_mi_premium</td>
+             
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var t =$("#tblApplications").DataTable({
+        });
+        t.on('order.dt search.dt', function () {
+            t.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    });
+</script>
+

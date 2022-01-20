@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<generalBillBSRq:envelopedData xmlns:generalBillBSRq='http://request.generalbillbsurl.postal.bl.integration.ifms.gov.in/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://request.generalbillbsurl.postal.bl.integration.ifms.gov.in/ DCVehicleInsurance.xsd '>
+<data>
+<generalBillDtlsReq>
+<integrationCode>BPS025</integrationCode>
+<blReqId>KG1612210001</blReqId>
+<sanctionOrderNo>SO000153</sanctionOrderNo>
+<sanctionOrderDate>2021-12-16T03:44:29.083</sanctionOrderDate>
+<ddoCode>23962O</ddoCode>
+<billType>DC Bill</billType>
+<claimType>Vehicle Insurance Bill</claimType>
+<blSector>1</blSector>
+<pmntModeCode>2</pmntModeCode>
+<expenditureHoa>8011~00~105~2~00~000</expenditureHoa>
+<hoaChargedVoted>2</hoaChargedVoted>
+<nillBill>Y</nillBill>
+<grossAmt>6503</grossAmt>
+<deductionAmt>6503</deductionAmt>
+<netAmt>0</netAmt>
+<subVoucherList>
+<subVoucherDtls>
+<subVoucherNo>VN000153</subVoucherNo>
+<descriptionOfExpenditure>Vehicle Insurance Bill</descriptionOfExpenditure>
+<billDate>2021-12-16T03:44:29.083</billDate>
+<grossAmt>6503</grossAmt>
+</subVoucherDtls>
+</subVoucherList>
+<deductionCodeList>
+<deductionDtls>
+<deductionCode>D90</deductionCode>
+<deductionHoa>801100105200000</deductionHoa>
+<deductionAmt>6503</deductionAmt>
+</deductionDtls>
+</deductionCodeList>
+</generalBillDtlsReq>
+</data>
+</generalBillBSRq:envelopedData>

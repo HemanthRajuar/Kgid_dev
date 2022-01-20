@@ -1,0 +1,144 @@
+﻿
+@model KGID_Models.NBApplication.VM_BasicDetails
+@using KGID_Models.KGIDNBApplication
+@{
+    ViewBag.Title = "ClaimEmployeeDetailsToView";
+}
+
+
+
+<div id="divVPrintBasicDetails">
+    <form id="frmAppBasicDetails">
+        <div class="row">
+            <div class="form-group col-6">
+                <label class="knlan" for="txtProposerName">ಪ್ರಸ್ತಾಪಕರ ಹೆಸರು ಇಂಗ್ಲಿಷ್ (ಎಸ್‌ಎಸ್‌ಸಿ ಮೆಮೊ / ಸೇವಾ ದಾಖಲೆಯ ಪ್ರಕಾರ)</label>
+                <label class="Enlan" for="txtProposerName">Proposer Name English (As per SSC Memo/Service Record)</label>
+                @Html.TextBoxFor(model => model.employee_name, new { @class = "form-control form-control-sm", @id = "txtEmployeeFullName", @readonly = "readonly" })
+            </div>
+            <div class="form-group col-6">
+                <label class="Enlan" for="errProposerNameKn">Proposer Name Kannada(As per SSC Memo/Service Record)</label>
+                <label class="knlan" for="errProposerNameKn">ಪ್ರಸ್ತಾಪಕರ ಹೆಸರು ಕನ್ನಡ (ಎಸ್‌ಎಸ್‌ಸಿ ಮೆಮೊ / ಸೇವಾ ದಾಖಲೆಯ ಪ್ರಕಾರ)</label>
+                @Html.TextBoxFor(model => model.employee_name_kannada, new { @class = "form-control form-control-sm", @id = "txtEmployeeFullNameKN" })  @*  ,@readonly = "readonly"*@
+                @*@Html.ValidationMessageFor(Model => Model.employee_name_kannada, "", new { @class = "text-danger" })*@
+                <label id="errProposerNameKannada" class="col-form-label-sm text-danger err" hidden>Please mention employee name (Kannada)</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-12">
+                <label class="knlan control-label">ಪ್ರಸ್ತುತ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತಿರುವ ಕಛೇರಿ</label>
+                <label class="Enlan control-label">Present Working Office</label>
+                @Html.TextAreaFor(Model => Model.ewd_place_of_posting, new { @class = "form-control form-control-sm col-12", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <label class="knlan" for="txtFatherName">ತಂದೆಯ ಹೆಸರು (ಇಂಗ್ಲಿಷ್)</label>
+                <label class="Enlan" for="txtFatherName">Father Name (English)</label>
+                @Html.TextBoxFor(Model => Model.father_name, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+            <div class="form-group col-6">
+                <label class="knlan" for="errFatherNameKn">ತಂದೆಯ ಹೆಸರು (ಕನ್ನಡ)</label>
+                <label class="Enlan" for="errFatherNameKn">Father Name (Kannada)</label>
+                @Html.TextBoxFor(model => model.father_name_kannada, new { @class = "form-control form-control-sm", @id = "txtFatherNameKN" })  @*, @readonly = "readonly"*@
+                @*@Html.ValidationMessageFor(Model => Model.father_name_kannada, "", new { @class = "text-danger" })*@
+                <label id="errFatherNameKannada" class="col-form-label-sm text-danger err" hidden>Please mention father name (Kannada)</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <label class="knlan" for="txtGender">ಲಿಂಗ</label>
+                <label class="Enlan" for="txtGender">Gender</label>
+                @Html.TextBoxFor(Model => Model.gender_desc, new { @class = "form-control", @id = "txtGender", @readonly = "readonly" })
+            </div>
+            <div class="form-group col-6">
+                <label for="txtDOB" class="knlan control-label">ಜನ್ಮ ದಿನಾಂಕ</label>
+                <label for="txtDOB" class="Enlan control-label">Date of Birth</label>
+                <div class="input-group">
+                    @Html.TextBoxFor(Model => Model.date_of_birth, new { @id = "txtBasicDateOfBirth", @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <label class="knlan" for="txtPlaceOfBirth">ಜನ್ಮ ಸ್ಥಳ</label>
+                <label class="Enlan" for="txtPlaceOfBirth">Place of Birth</label>
+                @Html.TextBoxFor(Model => Model.place_of_birth, new { @class = "form-control", @id = "txtPlaceofbirth", @readonly = "readonly" })
+            </div>
+            <div class="form-group col-6">
+                <label class="knlan" for="txtPhone">ದೂರವಾಣಿ</label>
+                <label class="Enlan" for="txtPhone">Phone</label>
+                @Html.TextBoxFor(Model => Model.mobile_number, new { @class = "form-control", @id = "txtMobileNumber", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-6">
+                <label class="knlan" for="txtEmail">ಇಮೇಲ್</label>
+                <label class="Enlan" for="txtEmail">Email</label>
+                @Html.TextBoxFor(Model => Model.email_id, new { @class = "form-control", @id = "txtEmailId", @readonly = "readonly" })
+            </div>
+            <div class="form-group col-6">
+                <label class="knlan" for="txtPan">ಪಾನ್ ಸಂಖ್ಯೆ</label>
+                <label class="Enlan" for="txtPan">PAN Number</label>
+                @Html.TextBoxFor(Model => Model.pan_number, new { @class = "form-control", @id = "txtPanNumber", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-12">
+                <label class="knlan" for="txtAddress">ಮನೆಯ ವಿಳಾಸ</label>
+                <label class="Enlan" for="txtAddress">Residential Address</label>
+                @Html.TextAreaFor(Model => Model.ead_address, new { @class = "form-control col-12 ClAlphaNumC", @id = "txtEAddress", @maxlength = "500" })
+                <label id="errEAddress" class="col-form-label-sm text-danger err" hidden>Please enter  Residential Address</label>
+                @*@Html.ValidationMessageFor(Model => Model.ead_address, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="txtPin" class="knlan control-label">ಪಿನ್‍ ಕೋಡ್‍</label>
+                <label for="txtPin" class="Enlan control-label">Pincode</label>
+                @Html.TextBoxFor(Model => Model.ead_pincode, new { @class = "form-control ClAlphaNum", @id = "txtEPin", @minlength = "6" })
+                <label id="errEPin" class="col-form-label-sm text-danger err" hidden>Please enter valid 6 digit pin code</label>
+                <label id="errEPinValidate" class="col-form-label-sm text-danger err" hidden>Please enter valid 6 digit pin code</label>
+                @*@Html.ValidationMessageFor(x => x.ead_pincode, "", new { @class = "text-danger" })*@
+            </div>
+            <div class="form-group col-6">
+                <label class="knlan" for="txtGroup">ಗ್ರೂಪ್‍</label>
+                <label class="Enlan" for="txtGroup">Group</label>
+                @Html.TextBoxFor(Model => Model.eg_group_desc, new { @class = "form-control", @readonly = "readonly", @id = "txtGroup" })
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col-6">
+                <label class="knlan" for="txtServiceDtl">ಸರ್ಕಾರಿ ಸೇವೆಗೆ ಸೇರಿದ ದಿನಾಂಕ</label>
+                <label class="Enlan" for="txtServiceDtl">Joining Date of Government Service</label>
+                <div class="input-group">
+                    @Html.TextBoxFor(Model => Model.ewd_date_of_joining, "{0:dd-MM-yyyy}", new { @class = "form-control", @id = "txtDateOfJoining", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group col-6">
+                <label for="txtServiceType" class="knlan control-label">ಖಾಯಂ/ತಾತ್ಕಾಲಿಕ </label>
+                <label for="txtServiceType" class="Enlan control-label">Permanent / Temporary </label>
+                @Html.TextBoxFor(Model => Model.et_employee_type_desc, new { @class = "form-control", id = "txtServiceType", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="html2pdf__page-break"></div>
+        <div class="row">
+            <div class="form-group col-6">
+                <label class="knlan" for="txtDesignation">ಈಗಿನ ಹುದ್ದೆಯ ಹೆಸರು</label>
+                <label class="Enlan" for="txtDesignation">Present Designation</label>
+                @Html.TextBoxFor(Model => Model.d_designation_desc, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+            <div class="form-group col-6">
+                <label for="txtPay" class="knlan control-label">ಈಗಿನ ವೇತನ ಶ್ರೇಣಿ </label>
+                <label for="txtPay" class="Enlan control-label">Present Pay Scale </label>
+                @Html.TextBoxFor(Model => Model.payscle_code, new { @class = "form-control", @id = "txtPayscleCode", @readonly = "readonly" })
+            </div>
+        </div>
+    </form>
+</div>
+

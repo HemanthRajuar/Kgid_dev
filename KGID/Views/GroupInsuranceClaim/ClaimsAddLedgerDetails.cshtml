@@ -1,0 +1,560 @@
+﻿@model KGID_Models.KGID_GroupInsurance.VM_ClaimLedger
+@{
+    ViewBag.Title = "Ledger";
+}
+
+
+@*<div id="NewRequestdiv23">
+    <div id="NewRequestdiv234533">
+        <div id="NewRequestdiv" class="box-body table-responsive">*@
+<form id="NewReqform" class="form-horizontal" name="NewReqform" method="post">
+    @Html.HiddenFor(m => m.employee_id, new { id = "hdnemployeeId" })
+    <div id="NewRequestdiv" class="box-body table-responsive">
+        @*<div class="form-group">
+                <div class="col-sm-3" style="float: right;">
+                    <button type="button" id="saveReq" class="btn btn-primary">@Resource.QuickSilver_Save_Button</button>
+                    <button type="button" id="CancelReq" class="btn btn-primary">@Resource.QuickSilver_Cancel_Button</button>
+
+                </div>
+            </div>*@
+        <div class="alert alert-danger alert-dismissable" id="AlreadyExistsAlertDiv" style="display:none;">
+            <i class="fa fa-ban"></i>
+            <b>Failure!</b><label id="lblErrorMessage"></label>
+        </div>
+
+        @*<div class="card-body">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="lblKGIDNo" class=" control-label">KGID No :</label>
+                        <div class="row">
+                            <div class="form-group col-4">
+                                <input type="text" class="form-control" name="empsearch" id="empsearch" />
+                            </div>
+                            <div class="form-group col-2">
+                                <input type="submit" name="submit" value="Get Employee Details" class="btn btn-sm btn-primary" onclick="GetEmployeeDetailsForClaim1();" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        <div class="form-group form-bottom-padding">
+            <div id="ProductTableMain" class="col-sm-12">
+                @if (Model.newledger != null)
+                {
+                    //if (Model.newledger.LedgerId == 0)
+                    //{
+                    <table id="LedgerList" class="table table-bordered table-hover">
+
+                        <thead class="box-header skin-blue logo">
+                            <tr>
+                                @*<th style="width:200px">Sl.No </th>*@
+                                <th style="width:200px">Month <label class="mandatory-star">*</label></th>
+                                <th>Year <label class="mandatory-star">*</label></th>
+                                @*<th>UOM</th>*@
+                                <th>Group<label class="mandatory-star">*</label></th>
+                                <th>Saving Fund</th>
+                                <th>Insurance Fund</th>
+                                <th>Total</th>
+                                <th>Remark</th>
+                                <th><a id="addProduct" class="addProduct" style="color:crimson;cursor:pointer">@*<i class="fa fa-plus-circle fa-x margin"></i>*@Add</a></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr class="trClass" data-id="@Model.newledger.LedgerId">
+                                <td>
+                                    <div class="col-sm-12">
+                                        
+                                            @*<input type="hidden" data-id="@Model.newledger.LedgerId" id="DrugId_@Model.newledger.LedgerId" name="DrugId_@Model.newledger.LedgerId" class="Ledger" value="">*@
+
+                                            <div class="col-sm-12">
+                                                
+                                                    <!--<select data-id="@Model.newledger.LedgerId" id="Month_@Model.newledger.LedgerId" name="Month_@Model.newledger.LedgerId" class="form-control Month">-->
+                                                    @*<option value="">Select value</option>*@
+                                                    <!--<option value='1'>January</option>
+                                                        <option value='2'>February</option>
+                                                        <option value='3'>March</option>
+                                                        <option value='4'>April</option>
+                                                        <option value='5'>May</option>
+                                                        <option value='6'>June</option>
+                                                        <option value='7'>July</option>
+                                                        <option value='8'>August</option>
+                                                        <option value='9'>September</option>
+                                                        <option value='10'>October</option>
+                                                        <option value='11'>November</option>
+                                                        <option value='12'>December</option>
+
+                                                    </select>-->
+
+
+                                                    <select data-id="@Model.newledger.LedgerId" id="Month_@Model.newledger.LedgerId" name="Month_@Model.newledger.LedgerId" class="Month">
+                                                        <option value=''>Select value</option>
+                                                        @if (Model.monthlist != null && Model.monthlist.Count > 0)
+                                                        {
+                                                            foreach (var item in Model.monthlist)
+                                                            {
+                                                                <option value="@item.mm_month_id">@item.mm_month_desc</option>
+                                                            }
+                                                        }
+                                                    </select>
+
+                                               
+                                            </div>
+
+
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-sm-12">
+                                      
+
+
+
+                                            <select data-id="@Model.newledger.LedgerId" id="Year_@Model.newledger.LedgerId" name="Year_@Model.newledger.LedgerId" class="Year">
+                                                <option value=''>Select value</option>
+                                                @if (Model.yearlist != null && Model.yearlist.Count > 0)
+                                                {
+                                                    foreach (var item in Model.yearlist)
+                                                    {
+                                                        <option value="@item.ym_year_id">@item.ym_year_desc</option>
+                                                    }
+                                                }
+                                            </select>
+                                     
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-sm-12">
+                                       
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    @*<select data-id="@Model.newledger.LedgerId" id="Route_@Model.newledger.LedgerId" name="Route_@Model.newledger.LedgerId" class="form-control group">
+                                                            <option value="">Select value</option>
+                                                            <option value='A'>A</option>
+                                                            <option value='B'>B</option>
+                                                            <option value='C'>C</option>
+                                                            <option value='D'>D</option>
+
+
+                                                        </select>*@
+
+
+                                                    <select data-id="@Model.newledger.LedgerId" id="Group_@Model.newledger.LedgerId" name="Group_@Model.newledger.LedgerId" class="Group">
+                                                        <option value=''>Select value</option>
+                                                        @if (Model.grouplist != null && Model.grouplist.Count > 0)
+                                                        {
+                                                            foreach (var item in Model.grouplist)
+                                                            {
+                                                                <option value="@item.eg_group_id">@item.eg_group_desc</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                    @*@Html.Partial("_UOM", new DigiHealth.QuickSilver.ViewModels.UOMViewModel { UOMModel = Model.UomModel, TypeName = "Uom_" + Model.newPrescriptionModel.PrescriptionLineId + "", AdditionalCssClass = "Uom", DataId = string.Format("data-id={0}", Model.newPrescriptionModel.PrescriptionLineId) })*@
+                                                </div>
+                                            </div>
+                                       
+
+                                    </div>
+
+
+
+
+                                </td>
+
+
+
+
+                                <td>
+                                    <div class="col-sm-12">
+                                       
+                                            <input type="text" data-id="@Model.newledger.LedgerId" id="SavingFund_@Model.newledger.LedgerId" name="SavingFund_@Model.newledger.LedgerId" class="SavingFund" />
+                                      
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-sm-12">
+                                      
+                                            <input type="text" data-id="@Model.newledger.LedgerId" id="Instruction_@Model.newledger.LedgerId" name="InsuranceFund_@Model.newledger.LedgerId" class="InsuranceFund" />
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-sm-12">
+                                      
+                                            <input type="text" data-id="@Model.newledger.LedgerId" id="Total_@Model.newledger.LedgerId" name="Total_@Model.newledger.LedgerId" class="Total" />
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-sm-12">
+                                       
+                                            <input type="text" data-id="@Model.newledger.LedgerId" id="Remark_@Model.newledger.LedgerId" name="Remark_@Model.newledger.LedgerId" class="Remark" />
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <a style="cursor:pointer" id="removeProduct_@Model.newledger.LedgerId" class="removeProduct" data-id="@Model.newledger.LedgerId"><i class="fa fa-trash-o fa-retro fa-x margin"></i></a>
+                                </td>
+                            </tr>
+
+
+
+                        </tbody>
+
+
+                    </table>
+                    // }
+                }
+
+                @*@Html.Hidden("DateFormat", Model.DateFormat)
+                    @Html.Hidden("DrugName")
+                    @Html.Hidden("PriscptionHedderId", Model.newPrescriptionModel.PriscptionHedderId)*@
+            </div>
+        </div>
+        <input type="button" id="saveReq" value="savee" />
+    </div>
+
+
+
+</form>
+@*</div>
+        </div>
+    </div>*@
+
+
+
+<style type="text/css">
+    .modal.modalWidth .modal-dialog {
+        width: 75%;
+        height: 50%;
+    }
+
+    .modalWidth .modal-body {
+        overflow-y: auto;
+    }
+</style>
+
+<script>
+    var Countern = 0;
+    var tdDiv = "<td><div class='col-sm-12'><div class='form-group'>";
+    var tdDivClose = "</div></div></td>";
+       var monthl = @Html.Raw(Json.Encode(Model.monthlist));
+    var yearl = @Html.Raw(Json.Encode(Model.yearlist));
+    var groupl = @Html.Raw(Json.Encode(Model.grouplist));
+    //$(document).on("click", ".addProduct", function () {
+    //    alert("here")
+    //    debugger;
+    //    $(".Month").trigger("focus");
+    //    $(".Year").trigger("focus");
+    //    $(".Group").trigger("focus");
+    //    $(".SavingFund").trigger("focus");
+    //    $(".InsuranceFund").trigger("focus");
+    //    $(".Total").trigger("focus");
+    //    $(".Remark").trigger("focus");
+
+
+    //    //$("#NewReqform").validate();
+    //    //if ($("#NewReqform").valid()) {
+
+    //        Countern++;
+    //        $("<tr data-id='" + Countern + "' class='trClass'>" +
+    //            tdDiv + "<input type='text' data-id='" + Countern + "' id='Month_" + Countern + "' name='Month_" + Countern + "' class='form-control Month' />" + tdDivClose +
+    //            tdDiv + "<input type='text' data-id='" + Countern + "' id='Year_" + Countern + "' name='Year_" + Countern + "' class='form-control Year' />" + tdDivClose +
+    //            tdDiv + "<input type='text' data-id='" + Countern + "' id='Group_" + Countern + "' name='Group_" + Countern + "' class='form-control Group' />" + tdDivClose +
+    //            tdDiv + "<input type='text' data-id='" + Countern + "' id='SavingFund_" + Countern + "' name='SavingFund_" + Countern + "' class='form-control SavingFund' />" + tdDivClose +
+    //            tdDiv + "<input type='text' data-id='" + Countern + "' id='InsuranceFund_" + Countern + "' name='InsuranceFund_" + Countern + "' class='form-control InsuranceFund' />" + tdDivClose +
+    //            tdDiv + "<input type='text' data-id='" + Countern + "' id='Total_" + Countern + "' name='Total_" + Countern + "' class='form-control Total' />" + tdDivClose +
+    //            tdDiv + "<input type='text' data-id='" + Countern + "' id='Remark_" + Countern + "' name='Remark_" + Countern + "' class='form-control Remark' />" + tdDivClose +
+
+    //            "<td><a id='removeProduct_" + Countern + "' name='removeProduct_" + Countern + "' class='removeProduct' data-id='" + Countern + "'><i class='fa fa-trash-o fa-retro fa-x margin'></i></a></td></tr>").prependTo('#LedgerList > tbody:last-child');
+
+    //     //   autocomplete11(Countern);
+    //        $(".Month").trigger("focus");
+    //        alert("end")
+    //   // }
+    //});
+
+  //  tdDiv + getSelectTagFreMain("FrequencyType", FreMain) + tdDivClose +
+
+        $(document).on("click", ".addProduct", function () {
+          
+            debugger;
+            $(".Month").trigger("focus");
+            $(".Year").trigger("focus");
+            $(".Group").trigger("focus");
+            $(".SavingFund").trigger("focus");
+            $(".InsuranceFund").trigger("focus");
+            $(".Total").trigger("focus");
+            $(".Remark").trigger("focus");
+
+
+            //$("#NewReqform").validate();
+            //if ($("#NewReqform").valid()) {
+
+            Countern++;
+            $("<tr data-id='" + Countern + "' class='trClass'>" +
+                tdDiv + getSelectTagMonthMain("Month", monthl) + tdDivClose+
+                tdDiv + getSelectTagYearMain("Year", yearl) + tdDivClose +
+                tdDiv + getSelectTagGroupMain("Group", groupl) + tdDivClose +
+                tdDiv + "<input type='text' data-id='" + Countern + "' id='SavingFund_" + Countern + "' name='SavingFund_" + Countern + "' class='SavingFund' />" + tdDivClose +
+                tdDiv + "<input type='text' data-id='" + Countern + "' id='InsuranceFund_" + Countern + "' name='InsuranceFund_" + Countern + "' class='InsuranceFund' />" + tdDivClose +
+                tdDiv + "<input type='text' data-id='" + Countern + "' id='Total_" + Countern + "' name='Total_" + Countern + "' class='Total' />" + tdDivClose +
+                tdDiv + "<input type='text' data-id='" + Countern + "' id='Remark_" + Countern + "' name='Remark_" + Countern + "' class='Remark' />" + tdDivClose +
+
+                "<td><a id='removeProduct_" + Countern + "' name='removeProduct_" + Countern + "' class='removeProduct' data-id='" + Countern + "'><i class='fa fa-trash-o fa-retro fa-x margin'></i></a></td></tr>").prependTo('#LedgerList > tbody:last-child');
+
+            //   autocomplete11(Countern);
+            $(".Month").trigger("focus");
+           
+            // }
+        });
+
+
+
+   
+    function getSelectTagMonthMain(elementName,values) {
+
+        var selectTag = "";
+        selectTag = "<select id='" + elementName + "_" + Countern + "' name='" + elementName + "_" + Countern + "' class='" + elementName + "' data-id='" + Countern + "'>";
+        if (values.length > 0 && values != null) {
+
+            selectTag += "<option value=''>Select value</option>";
+            for (var i = 0; i < values.length; i++) {
+                selectTag += "<option value='" + values[i].mm_month_id + "' >" + values[i].mm_month_desc +  "</option>";
+            }
+        }
+        else {
+            selectTag += "<option value=''>Select value</option>";
+        }
+        selectTag += "</select>";
+        return selectTag;
+    }
+
+    function getSelectTagYearMain(elementName, values) {
+
+            var selectTag = "";
+            selectTag = "<select id='" + elementName + "_" + Countern + "' name='" + elementName + "_" + Countern + "' class='" + elementName + "' data-id='" + Countern + "'>";
+            if (values.length > 0 && values != null) {
+
+                selectTag += "<option value=''>Select value</option>";
+                for (var i = 0; i < values.length; i++) {
+                    selectTag += "<option value='" + values[i].ym_year_id + "' >" + values[i].ym_year_desc +  "</option>";
+                }
+            }
+            else {
+                selectTag += "<option value=''>Select value</option>";
+            }
+            selectTag += "</select>";
+            return selectTag;
+        }
+        function getSelectTagGroupMain(elementName,values) {
+
+            var selectTag = "";
+            selectTag = "<select id='" + elementName + "_" + Countern + "' name='" + elementName + "_" + Countern + "' class='" + elementName + "' data-id='" + Countern + "'>";
+            if (values.length > 0 && values != null) {
+
+                selectTag += "<option value=''>Select value</option>";
+                for (var i = 0; i < values.length; i++) {
+                    selectTag += "<option value='" + values[i].eg_group_id + "' >" + values[i].eg_group_desc +  "</option>";
+                }
+            }
+            else {
+                selectTag += "<option value=''>Select value</option>";
+            }
+            selectTag += "</select>";
+            return selectTag;
+    }
+
+
+
+
+
+    //  Save
+    $("#saveReq").on("click", function ()
+    {
+     
+
+        $(".Month").trigger("focus");
+        $(".Year").trigger("focus");
+        $(".Group").trigger("focus");
+        $(".SavingFund").trigger("focus");
+        $(".InsuranceFund").trigger("focus");
+        $(".Total").trigger("focus");
+        $(".Remark").trigger("focus");
+
+
+        //$("#NewReqform").validate();
+        //if ($("#NewReqform").valid()) {
+
+            var object = new Object();
+
+
+        var listValues = [];     // var Drugss = [];
+        var Month = [];   // var Drug = [];
+        var Year = [];  // var Dose = [];
+        var Group = []; // var Uom = [];
+        var SavingFund = [];    // var Route = [];
+        var InsuranceFund = [];   // var Frequency = [];
+        var Total = [];   // var Interval = [];
+        var Remark = [];  // var Instruction = [];
+
+            $(".DrugId").each(function () { Drug.push($(this).val()); });
+        $(".Month").each(function () { Month.push($(this).val()); });
+        $(".Year").each(function () { Year.push($(this).val()); });
+        $(".Group").each(function () { Group.push($(this).val()); });
+        $(".SavingFund").each(function () { SavingFund.push($(this).val()); });
+        $(".InsuranceFund").each(function () { InsuranceFund.push($(this).val()); });
+        $(".Total").each(function () { Total.push($(this).val()); });
+        $(".Remark").each(function () { Remark.push($(this).val()); });
+
+            var equal = 0;
+            //for (var i = 0; i < Drug.length; i++) {
+            //    for (var j = i + 1; j < Drug.length; j++) {
+            //        if (Drug[i] == Drug[j]) {
+            //            equal++;
+            //            break;
+            //        }
+            //    }
+            //}
+
+
+            if (equal > 0) {
+                $("#AlreadyExistsAlertDiv").show(0).delay(5000).hide(0);
+                $("html, body").animate({ scrollTop: 0 }, 0);
+                $("#lblErrorMessage").text("Please choose different Drug.");
+            }
+            else {
+
+                if (Month.length == 0) {
+                    $("#AlreadyExistsAlertDiv").show(0).delay(5000).hide(0);
+                    $("html, body").animate({ scrollTop: 0 }, 0);
+                    $("#lblErrorMessage").text("Please add atleast one Drug.");
+                }
+                else {
+
+                    for (var i = 0; i < Month.length; i++) {
+                        var object1 = new Object();
+                        object1.MON = Month[i];
+                        object1.YR = Year[i];
+                        object1.grp = Group[i];
+                        object1.SAVING_FUND = SavingFund[i];
+                        object1.INSURANCE_FUND = InsuranceFund[i];
+                        object1.Total = Total[i];
+                        object1.remark = Remark[i];
+                        /* object1.employee_id = 600;*/
+                       
+                        object1.employee_id = $("#hdnemployeeId").val();                        
+                       // object1.Patientid = $("#PatientId").val();
+                       
+                        listValues.push(object1);
+                    }
+                   
+                    var input = JSON.stringify({ LedgerDeatils: listValues });
+                     var _urlNewNewRequest = "@Url.Action("AddLedgerDetails", "GroupInsuranceClaim")";
+                    $.ajax({
+                        type: 'POST',
+                        url: _urlNewNewRequest,
+                        data: input,
+                        contentType: "application/json; charset=utf-8",
+                        cache: false,
+
+                        success: function (data) {
+                            
+
+                         
+
+                            //$.ajax({
+                            //    type: 'GET',
+                            //    url: _urlGetRecentPrescription,
+                            //    data: { EncounterId: EncounterID, PatientID: Patientid },
+                            //    contentType: 'application/html; charset=utf-8',
+                            //    success: function (data) {
+                            //        $.ajax({
+                            //            type: 'GET',
+                            //            url: _urlGetPrescriptionByPrescriptionHedderId,
+                            //            data: { EncounterId: EncounterID, PatientID: Patientid, PriscptionHedderId: data.PriscptionHedderId, currentEncounterId: $("#Encounterid").val() },
+                            //            contentType: "application/json; charset=utf-8",
+                            //            //dataType: "json",
+                            //            //cache: false,
+                            //            success: function (data) {
+                            //                //    $("#EditReqform").html(data
+                            //                $('#ProductTableMain tbody').empty();
+                            //                $("#EditingDiv122").html(data);
+                            //                $('#Mainli').hide();
+                            //                $('#Editli').show();
+                            //                $("#Edit").tab('show');
+
+                            //            },
+                            //            error: function (data) {
+
+
+
+                            //            }
+                            //        });
+                            //    },
+                            //    error: function (data) {
+
+                            //    }
+                            //});
+                        },
+                        error: function (data) {
+                            $("#lblErrorMessage").text("  Creation failed.");
+                        }
+                    });
+                }
+            }
+
+
+
+      //  }
+
+    });
+
+
+    function GetEmployeeDetailsForClaim1()
+    {
+     
+        var SearchValue = $("#empsearch").val();
+      
+        $.ajax({
+            // url: '/Employee/InsertBasicDetails',
+            url: '/GroupInsuranceClaim/ClaimsSearchEmployee',
+            data: JSON.stringify({ empId: $("#empsearch").val() }),
+            async: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+                success: function (result) {
+                    //GetBasicDetails();
+                    // $("#hdnBReferanceNo").val(result);                  
+                    window.location.href = "/gis-Claimview-app/";
+                    if (result == 1) {
+                        BserverResponse = true;
+                        GetBasicDetails();
+                        alertify.success("Basic details saved successfully");
+                         return result=true;
+                    }
+                    else { alertify.error("Basic details saving failed"); }
+                }, error: function (result) {
+                    alertify.error("Could not save basic details");
+                }
+            });
+    }
+
+
+    $(document).ready(function () {
+
+
+
+        $('#LedgerList').dataTable({
+            "bPaginate": true,
+            "bLengthChange": false,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": true,
+            "bAutoWidth": false
+        });
+
+    });
+</script>

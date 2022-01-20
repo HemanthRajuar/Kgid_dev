@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "ApplicationMapping";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <div class="row text-center">
+                    <h5 class="col-12 text-black-100 font-weight-bold">
+                        <b><label class="Enlan">Update Application Mapping</label>
+                        <label class="knlan"> ನವೀಕರಿಸಿ</label></b>
+                    </h5>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="lblkgidno" class="control-label Enlan">Application Ref No:</label>
+                        <label for="lblkgidno" class="control-label knlan">ಅರ್ಜಿ ಉಲ್ಲೇಖ ಸಂಖ್ಯೆ:</label>
+                        <input class="form-control form-control-sm ClNum" id="txtRefNo" name="txtRefNo" type="text" maxlength="14" placeholder="Enter Appl Ref Number">
+
+                        <label id="errKGIDNo" class="col-form-label-sm text-danger err" hidden>Please Enter Application reference Number</label>
+                    </div>
+                    <div class="form-group col-3">
+                        <br />
+                        @*<a id="btnShowDetails" class="btn btn-primary">View</a>*@
+                        <input type="submit" value="View" class="btn btn-primary" id="btnShowDetails" />
+                        <input type="hidden" id="hdnApplnStatus"  />
+                    </div>
+                </div>
+                <div id="DetailsDiv">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<div class="modal fade" id="showEmployee" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="updateNomineeLabel1" aria-hidden="true" style="padding:40px 40px 40px 40px;margin-top:150px;margin-left:100px;">
+    <div class="modal-dialog" role="document" style="max-width: 80% !important;">*@
+<div class="modal fade" id="showEmployee" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="updateNomineeLabel1" aria-hidden="true" style="margin-top:40px;">
+    <div class="modal-dialog" role="document" style="max-width: 50% !important;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateNomineeLabel">
+                    <label class="knlan">ಉದ್ಯೋಗಿಗಳ ವಿವರಗಳು</label>
+                    <label class="Enlan">Employee Details </label>
+                </h5>
+                <button class="close" type="button" aria-label="Close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label for="lblkgidno1" class="control-label Enlan">KDIG Number:</label>
+                            <label for="lblkgidno1" class="control-label knlan">KGID ಸಂಖ್ಯೆ:</label>
+                            <input class="form-control form-control-sm ClNum" id="txtKGIDNo" name="txtKGIDNo" type="text" maxlength="7" placeholder="Enter KGID Number">
+
+                            <label id="errKGIDNo1" class="col-form-label-sm text-danger err" hidden>Please Enter KGID Number</label>
+                        </div>
+                        <div class="form-group col-3">
+                            <br />
+                            @*<a id="btnShowDetails" class="btn btn-primary">View</a>*@
+                            <input type="submit" value="View" class="btn btn-primary" id="btnShowEmployeeDetails" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="EmpDiv">
+
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                @* <input type="button" id="btnUpdate" value="Update" class="btn btn-primary" onclick="UpdateNomineeDetails();" />*@
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#btnShowDetails").click(function ()
+    {
+        var kgidnoLength = $("#txtRefNo").val().length;
+        if ($("#txtRefNo").val() == "" || $("#txtRefNo").val() == null) {
+            $("#errKGIDNo").removeAttr('hidden');
+        }
+        if (kgidnoLength < 14) {
+            $('#errKGIDNo').removeAttr('hidden');
+            $('#errKGIDNo').text("Please enter correct Application Ref number.")
+
+        }
+        else {
+            $("#errKGIDNo").attr('hidden', true);
+        }
+        if ($(".err:visible").length == 0) {
+
+            $.ajax({
+                type: 'get',
+                url: '/kgid-DispalyDetails-updateApplicationMapping/',
+                data: { ApplicationRefnum: $("#txtRefNo").val() },
+                success: function (result) {
+                    $("#DetailsDiv").html(result);
+                }
+            });
+        }
+    });
+
+    function employeeSearchPopUp(workflowid) {        
+        $("#hdnworkflowiD").val(workflowid)
+        $("#EmpDiv").html("");
+        $("#txtKGIDNo").val("");
+       // $('#errKGIDNo1').hide();
+        $("#showEmployee").modal("show");
+    }
+
+    $("#btnShowEmployeeDetails").click(function () {
+        
+        var tempkgidnoLength1 = $("#txtKGIDNo").val().length;
+        if ($("#txtKGIDNo").val() == "" || $("#txtKGIDNo").val() == null || $("#txtKGIDNo").val() == "0" ) {            
+            $("#errKGIDNo1").removeAttr('hidden');
+        }
+       // if (tempkgidnoLength1 < 7) {
+        if (tempkgidnoLength1 <= 5 || tempkgidnoLength1 >= 7 ) {
+            $('#errKGIDNo1').removeAttr('hidden');
+            $('#errKGIDNo1').text("Please enter correct KGID number.")
+
+        }
+        else {
+            $("#errKGIDNo1").attr('hidden', true);
+        }
+        if ($(".err:visible").length == 0) {
+
+            $.ajax({
+                type: 'get',
+                url: '/kgid-DispalyDetails-EmployeeDetails/',
+                data: { kgidNo: $("#txtKGIDNo").val() },
+                success: function (result) {
+                    $("#EmpDiv").html(result);
+                }
+            });
+        }
+    });
+
+    function SelectEmployee(empId,selectedrole)
+    {
+        
+        if ( selectedrole == 1) { $("#hdnApplnStatus").val("0") }
+        else if (selectedrole == 2) { $("#hdnApplnStatus").val("3") }
+        else if (selectedrole == 3) { $("#hdnApplnStatus").val("5") }
+        else if (selectedrole == 4) { $("#hdnApplnStatus").val("7") }
+        else if (selectedrole == 5) { $("#hdnApplnStatus").val("9") }
+        else if (selectedrole == 6) { $("#hdnApplnStatus").val("11") }
+        else if (selectedrole == 7) { $("#hdnApplnStatus").val("13") }
+        else if (selectedrole == 10){ $("#hdnApplnStatus").val("16") }
+       // $("#hdnApplnStatus").val(applicationStatus);
+        $("#hdnassignedEmplId").val(empId);
+        $("#showEmployee").modal("hide");
+        $("#btnUpdateAssignedTo").show();
+        kawt_application_status = $("#hdnApplnStatus").val();
+        $.ajax({
+            type: 'post',
+            url: '/Update-AssignedTo/',
+            data: { EmployeeId: $("#hdnassignedEmplId").val(), kawt_workflow_id: $("#hdnworkflowiD").val(), kawt_application_status: kawt_application_status },
+            success: function (result) {
+                if (result == 1) {
+                    alertify.success("Updated successfully");
+                    $("#btnUpdateAssignedTo").hide();
+                }
+                else {
+                    alertify.error("Error in Updating");
+                }
+                setTimeout(function () {
+                    location.reload(true)
+                }, 3000);
+            }
+        });
+    }
+</script>

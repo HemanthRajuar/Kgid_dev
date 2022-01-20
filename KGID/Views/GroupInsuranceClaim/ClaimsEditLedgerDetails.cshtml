@@ -1,0 +1,727 @@
+﻿@model KGID_Models.KGID_GroupInsurance.VM_ClaimLedger
+@{
+    ViewBag.Title = "Ledger";
+}
+
+
+<div class="box-body table-responsive" id="EditingDiv122">
+    <form id="EditReqform" name="EditReqform" class="form-horizontal" method="post">
+        @Html.HiddenFor(m => m.employee_id, new { id = "hdnEditemployeeId" })
+
+        <div class="alert alert-danger alert-dismissable" id="AlreadyExistsAlertDiv" style="display:none;">
+            <i class="fa fa-ban"></i>
+            <b>Failure!</b><label id="lblErrorMessage"></label>
+        </div>
+
+        <div class="form-group">
+            @*<div class="col-sm-4" style="float: right;">
+                    <button type="button" id="PrintReq" class="btn btn-primary" onclick="print(@ViewBag.PrescriptionHeader);">Print</button>
+                    <button type="button" id="UpdateReq" class="btn btn-primary" onclick="UpdateRequest();">@Resource.QuickSilver_Update_Button</button>
+                    <button type="button" id="cancelEditReq" class="btn btn-primary">@Resource.QuickSilver_Cancel_Button</button>
+
+                </div>*@
+        </div>
+
+        <div class="form-group form-bottom-padding">
+            <div id="ProductTableEdit" class="col-sm-12">
+                @if (Model.ledgerList != null && Model.ledgerList.Count > 0)
+                {
+                    <table id="ProductListEdit" class="table table-bordered table-hover">
+                        <thead class="box-header skin-blue logo">
+                            <tr>
+                                <th style="width:200px">Month <label class="mandatory-star">*</label></th>
+                                <th>Year <label class="mandatory-star">*</label></th>
+                                <th>Group <label class="mandatory-star">*</label></th>
+                                <th>Saving Fund</th>
+                                <th>Insurance Fund</th>
+                                <th>Total</th>
+                                <th>Remarks</th>
+                                <th><a id="addProduct1" class="addProduct1" style="color:darkred;cursor:pointer"><i class="fa fa-plus-circle fa-x margin"></i>Add</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ledgerList)
+                            {
+                                <tr class="trClass" data-val="@item.LedgerId">
+                                    <td>
+                                        @*<div class="col-sm-12">*@
+                                        <div class="form-group">
+                                            @*<input type="text" data-id="@item.LedgerId" id="EditDrug_@item.LedgerId" name="EditDrug_@item.PrescriptionLineId" class="form-control EditDrug" value="@item.DrugName" />
+                                                <input type="hidden" data-id="@item.LedgerId" id="EditDrugId_@item.LedgerId" name="EditDrugId_@item.PrescriptionLineId" class="EditDrugId" value="@item.DrugId">*@
+                                            <input type="hidden" data-id="@item.LedgerId" id="EditLedgerId@item.LedgerId" name="EditLedgerId_@item.LedgerId" class="EditLedgerId" value="@item.LedgerId">
+                                            <input type="hidden" data-id="@item.LedgerId" id="Editemployee_id@item.LedgerId" name="Editemployee_id_@item.LedgerId" class="Editemployee_id" value="@item.employee_id">
+
+
+                                            <select id="EditMonth_@item.LedgerId" name="EditMonth_@item.LedgerId" class="EditMonth" data-id="@item.LedgerId" disabled>
+                                                <option value="">Select Value</option>
+                                                @foreach (var item1 in Model.monthlist)
+                                                {
+                                                    if (item1.mm_month_id == item.MON)
+                                                    {
+                                                        <option value="@item1.mm_month_id" selected="selected">@item1.mm_month_desc</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item1.mm_month_id">@item1.mm_month_desc</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                        @*</div>*@
+                                    </td>
+                                    <td>
+                                        @*<div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">*@
+                                        <select id="EditYear_@item.LedgerId" name="EditYear_@item.LedgerId" class="EditYear" data-id="@item.LedgerId" disabled>
+                                            <option value="">Select Value</option>
+                                            @foreach (var item1 in Model.yearlist)
+                                            {
+                                                if (item1.ym_year_id == item.YR)
+                                                {
+                                                    <option value="@item1.ym_year_id" selected="selected">@item1.ym_year_desc</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item1.ym_year_id">@item1.ym_year_desc</option>
+                                                }
+                                            }
+                                        </select>
+                                        @*</div>
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                    </td>
+                                    <td>
+                                        @*<div class="col-sm-12">
+                                            <div class="form-group">*@
+                                        <select id="EditGroup_@item.LedgerId" name="EditGroup_@item.LedgerId" class="EditGroup" data-id="@item.LedgerId" disabled>
+                                            @foreach (var item1 in Model.grouplist)
+                                            {
+                                                if (item1.eg_group_id.ToString() == item.grp.ToString())
+                                                {
+                                                    <option value="@item1.eg_group_id" selected="selected">@item1.eg_group_desc</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item1.eg_group_id">@item1.eg_group_desc</option>
+                                                }
+                                            }
+                                        </select>
+                                        @*</div>
+                                            </div>*@
+                                    </td>
+                                    <td>
+                                        @*<div class="col-sm-12">
+                                            <div class="form-group">*@
+                                        <input type="text" data-id="@item.LedgerId" id="EditSavingFund_@item.LedgerId" name="EditSavingFund_@item.LedgerId" class="EditSavingFund" value="@item.SAVING_FUND" />
+                                        @*</div>
+                                            </div>*@
+                                    </td>
+                                    <td>
+                                        @*<div class="col-sm-12">
+                                            <div class="form-group">*@
+                                        <input type="text" data-id="@item.LedgerId" id="EditInsuranceFund_@item.LedgerId" name="EditInsuranceFund_@item.LedgerId" class="EditInsuranceFund" value="@item.INSURANCE_FUND" />
+                                        @*</div>
+                                            </div>*@
+                                    </td>
+                                    <td>
+                                        @*<div class="col-sm-12">
+                                            <div class="form-group">*@
+                                        <input type="text" data-id="@item.LedgerId" id="EditTotal_@item.LedgerId" name="EditTotal_@item.LedgerId" class="EditTotal" value="@item.Total" />
+                                        @*</div>
+                                            </div>*@
+                                    </td>
+                                    <td>
+                                        @*<div class="col-sm-12">
+                                            <div class="form-group">*@
+                                        <input type="text" data-id="@item.LedgerId" id="EditRemark_@item.LedgerId" name="EditRemark_@item.LedgerId" class="EditRemark" value="@item.remark" />
+                                        @*</div>
+                                            </div>*@
+                                    </td>
+                                    <td>
+                                        <a style="cursor:pointer" onclick="showDeleteModalEdit(@item.LedgerId)" id="removeeditProduct_@item.LedgerId" class="removeeditProduct" data-id="@item.LedgerId" data-backdrop='static' data-keyboard='true' data-toggle='modal' data-target="#DeleteProductEdit"><i class="fa fa-trash-o fa-retro fa-x margin"></i></a>
+                                    </td>
+                                </tr>
+
+
+                            }
+                        </tbody>
+                    </table>
+                }
+                @*@Html.Hidden("DateFormat", Model.DateFormat)
+
+                    @Html.Hidden("ProductName")*@
+                @*@Html.Hidden("IndentId", Model.newIndentModel.IndentId)*@
+            </div>
+
+        </div>
+        @*<div class="row" style="border-bottom: 1px solid lightgrey; margin-bottom: 10px; margin-left: -10px; margin-right: -10px;"></div>*@
+        <div class="form-group">
+            <div class="col-sm-3" style="float: right;">
+                @*<input type="button" value="update" id="btnupdate" onclick="UpdateRequest();" />*@
+
+                <input type="button" id="update" value="UPDATE" />
+                @*<a href="~/ReportViews/PrescriptionReport.aspx?PID=@ViewBag.PrescriptionHeader" target="_blank" style="width:1000px;height:1000px;"><i class="fa fa-print fa-retro pull-center margin"></i></a>*@
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal modalWidth fade" id="batchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+</div>
+
+<div class="modal fade" id="DeleteProductEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div id="modalContent3" class="modal-content">
+            <div class="modal-header" style="background-color: #3c8dbc; color: white;">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel2">Delete Product</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group form-bottom-padding">
+                    <div class="col-sm-12">
+                        <div class="form-group form-bottom-padding">
+                            <label class="col-xs-12">Are you sure to delete this Product?</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="removeProductEdit" class="btn btn-primary">Yes</button>
+                <button type="button" id="closeRemoveProductEdit" class="btn btn-primary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .modal.modalWidth .modal-dialog {
+        width: 75%;
+        height: 50%;
+    }
+
+    .modalWidth .modal-body {
+        overflow-y: auto;
+    }
+</style>
+
+
+<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.9/js/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+    var DateFormat = $("#DateFormat").val();
+    var save=0;
+
+    @*var _UrlGetProducts = "@Url.Action("GetProducts", "Store")";
+    var _UrlGetProductDetails = "@Url.Action("GetProductDetails", "PurchaseOrder")";
+    var _UrlIndentHome = "@Url.Action("Index", "Indent")";
+    var _UrlGetStoreDetails = "@Url.Action("GetStoreDetails", "Indent")";
+    var _UrlUpdateIndent = "@Url.Action("UpdateIndent", "Indent")";
+    var IssueingStore = $("#IssueingStore").val();*@
+
+     var monthl = @Html.Raw(Json.Encode(Model.monthlist));
+    var yearl = @Html.Raw(Json.Encode(Model.yearlist));
+    var groupl = @Html.Raw(Json.Encode(Model.grouplist));
+
+    @*var PreDetails = @Html.Raw(Json.Encode(Model.PrescriptionModel));
+    var Counter = (PreDetails[PreDetails.length-1].PrescriptionLineId) +1;
+
+    var EditDrugss= PreDetails;*@
+
+
+    var PreDetails = @Html.Raw(Json.Encode(Model.ledgerList));
+    var Counter = (PreDetails[PreDetails.length - 1].LedgerId) +1;
+
+    var LedgerDetailsss= PreDetails;
+
+
+
+
+
+    var _urlGetDrugs11 = "@Url.Action("GetAllDrugs", "ClinicalSetup")";
+    var _UrlGetProductDetailsUOM11 = "@Url.Action("GetProductDetails", "ClinicalSetup")";
+
+    $(document).ready(function () {
+
+
+
+        $('#ProductListEdit').dataTable({
+            "bPaginate": true,
+            "bLengthChange": false,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": true,
+            "bAutoWidth": false
+        });
+        
+    });
+
+
+    function autocompleteEdit(id) {
+        //alert("function");
+        $(".EditDrug").autocomplete({
+            appendTo: "#EditReqform",
+            source: function (data, response) {
+                $.ajaxSetup({ cache: false });
+                //  if ($("#Drug_0").val() != "") {
+
+                $.ajaxSetup({ cache: false });
+                $.ajax({
+                    url: _urlGetDrugs11,
+                    type: "GET",
+                    data: { Type: $("#EditDrug_"+id+"").val() },
+                    dataType: "json",
+                    success: function (data) {
+                        //alert("success");
+                        //alert(data.ProductId);
+                        //alert(JSON.stringify(data))
+                        response($.map(data.Drugs, function (item) {
+
+                            //  return { label: item.LookupDescription, value: item.LookupDescription, id: parseInt(item.LookupID) };
+                            return { label: item.ProductName, value: item.ProductName, id: item.ProductId };
+                        }));
+                        //$("#Allergen").removeClass("autocomplete-loading");
+                    },
+
+                    error: function () {
+                        //  $("#Drug_0").val("");
+                        $("#EditDrug_"+id+"").val("");
+                    }
+                });
+                // }
+            },
+            select: function (event, ui) {
+                $("#EditDrugId_"+id+"").val(ui.item.id);
+                if(ui.item.id!=null && ui.item.id!=""){
+                    $.ajax({
+                        type: 'GET',
+                        url: _UrlGetProductDetailsUOM11,
+                        data: {ProductId:ui.item.id},
+                        //success: function (data) {
+
+                        //    $("#Uom_"+id+"").append('<option value="'+data.UOMPrimaryUOM+'" selected="selected">'+ data.UOMPrimaryUOMname+'</option>');
+                        //},
+                        success: function (data) {
+
+                            $("#EditUom_"+id+"").empty().append("<option>Select value</option>");
+                            if (data.AlternateUoms!=null && data.AlternateUoms.length>0) {
+                                $("#EditUom_"+id+"").append('<option value="'+data.UOMPrimaryUOM+'" selected="selected">'+ data.UOMPrimaryUOMname+'</option>');
+                                //if(data.AlternateUoms.length ==1 && data.AlternateUoms[0].AlternateUom == data.UOMPrimaryUOM){
+                                //    $("#Uom_0").append('<option value="'+data.UOMPrimaryUOM+'" selected="selected">'+ data.UOMPrimaryUOMname+'</option>');
+                                //}
+                                //else{
+                                //    $("#Uom_0").append('<option value="'+data.UOMPrimaryUOM+'">'+ data.UOMPrimaryUOMname+'</option>');
+                                //}
+                                for (var i = 0; i < data.AlternateUoms.length; i++) {
+                                    if(data.UOMPrimaryUOM != data.AlternateUoms[i].AlternateUom){
+                                        $("#EditUom_"+id+"").append('<option value="'+data.AlternateUoms[i].AlternateUom+'">'+ data.AlternateUoms[i].AlternateUomName+'</option>');
+                                    }
+                                }
+
+                            }
+                            else{
+                                $("#EditUom_"+id+"").append('<option value="'+data.UOMPrimaryUOM+'" selected="selected">'+ data.UOMPrimaryUOMname+'</option>');
+                            }
+
+
+
+                        },
+                        error: function (data) {
+
+                        }
+                    });
+                }
+            },
+            close: function (event, ui) {
+                if ($("#EditDrugId_"+id+"").val() == "") {
+                    $("#EditDrug_"+id+"").val("");
+                }
+            }
+        });
+
+    }
+
+    //var tdDiv = "<td><div class='col-sm-12'><div class='form-group'>";
+    //var tdDivClose = "</div></div></td>";
+
+    var tdDiv = "<td>";
+    var tdDivClose = "</td>";
+    //$("#FrequencyType option:selected").text()
+    $(document).on("click", ".addProduct1", function () {
+
+
+        $(".EditMonth").trigger("focus");
+        $(".EditYear").trigger("focus");
+        $(".EditGroup").trigger("focus");
+        $(".EditSavingFund").trigger("focus");
+        $(".EditInsuranceFund").trigger("focus");
+        $(".EditTotal").trigger("focus");
+        $(".EditRemark").trigger("focus");
+
+        //$("#EditReqform").validate();
+        //if ($('#EditReqform').valid()) {
+
+            Counter++;
+            $("<tr data-id='" + Counter + "' class='trClass'>"+
+                //tdDiv+"<input type='text' data-id='"+Counter+"' id='EditDrug_"+Counter+"' name='EditDrug_"+Counter+"' class='form-control EditDrug'/><input type='hidden' data-id='"+Counter+"' id='EditDrugId_"+Counter+"' name='EditDrugId_"+Counter+"' class='EditDrugId' value=''>"+tdDivClose+
+                // tdDiv+"<div class='row'><div class='col-sm-6'><input type='text' data-id='"+Counter+"' id='EditDose_"+Counter+"' name='EditDose_"+Counter+"' class='form-control EditDose'/></div><div class='col-sm-6'>"+getSelectTagUMOEdit("EditUom", Uom1)+"</div></div>"+tdDivClose+
+
+                tdDiv + getSelectTagMonthEdit("EditMonth",monthl )+tdDivClose+
+                tdDiv + getSelectTagYearEdit("EditYear" ,yearl) + tdDivClose +
+                tdDiv + getSelectTagGroupEdit("EditGroup",groupl ) + tdDivClose +
+                tdDiv + "<input type='text' data-id='" + Counter + "' id='EditSavingFund_" + Counter + "' name='EditSavingFund_" + Counter +"' class='EditSavingFund' />"+tdDivClose+
+                tdDiv + "<input type='text' data-id='" + Counter + "' id='EditInsuranceFund_" + Counter + "' name='EditInsuranceFund_" + Counter +"' class='EditInsuranceFund' />"+tdDivClose+
+                tdDiv + "<input type='text' data-id='" + Counter + "' id='EditTotal_" + Counter + "' name='EditTotal_" + Counter + "' class='EditTotal' />" + tdDivClose +
+                tdDiv + "<input type='text' data-id='" + Counter + "' id='EditRemark_" + Counter + "' name='EditRemark_" + Counter + "' class='EditRemark' />" + tdDivClose +
+                "<td><a id='removeProductEdit_" + Counter + "' name='removeProductEdit_" + Counter + "' class='removeProductEdit' data-id='" + Counter + "'><i class='fa fa-trash-o fa-retro fa-x margin'></i></a></td></tr>").prependTo('#ProductListEdit > tbody:last-child');
+
+        //    autocompleteEdit(Counter);
+        //}
+
+    });
+
+    function getSelectTagMonthEdit(elementName, values) {
+
+        var selectTag = "";
+        selectTag = "<select id='" + elementName + "_" + Counter+ "' name='" + elementName + "_" + Counter+ "' class='" + elementName + "' data-id='" + Counter+ "'>";
+        if (values.length > 0 && values != null) {
+
+            selectTag += "<option value=''>Select value</option>";
+            for (var i = 0; i < values.length; i++) {
+                selectTag += "<option value='" + values[i].mm_month_id + "' >" + values[i].mm_month_desc + "</option>";
+            }
+        }
+        else {
+            selectTag += "<option value=''>Select value</option>";
+        }
+        selectTag += "</select>";
+        return selectTag;
+    }
+    function getSelectTagYearEdit(elementName, values) {
+
+        var selectTag = "";
+        selectTag = "<select id='" + elementName + "_" + Counter+ "' name='" + elementName + "_" + Counter+ "' class='" + elementName + "' data-id='" + Counter+ "'>";
+        if (values.length > 0 && values != null) {
+
+            selectTag += "<option value=''>Select value</option>";
+            for (var i = 0; i < values.length; i++) {
+                selectTag += "<option value='" + values[i].ym_year_id + "' >" + values[i].ym_year_desc + "</option>";
+            }
+        }
+        else {
+            selectTag += "<option value=''>Select value</option>";
+        }
+        selectTag += "</select>";
+        return selectTag;
+    }
+    function getSelectTagGroupEdit(elementName, values) {
+
+        var selectTag = "";
+        selectTag = "<select id='" + elementName + "_" + Counter+ "' name='" + elementName + "_" + Counter+ "' class='" + elementName + "' data-id='" + Counter+ "'>";
+        if (values.length > 0 && values != null) {
+
+            selectTag += "<option value=''>Select value</option>";
+            for (var i = 0; i < values.length; i++) {
+                selectTag += "<option value='" + values[i].eg_group_id + "' >" + values[i].eg_group_desc + "</option>";
+            }
+        }
+        else {
+            selectTag += "<option value=''>Select value</option>";
+        }
+        selectTag += "</select>";
+        return selectTag;
+    }
+
+
+    $(document).on("keydown", ".EditDrug", function () {
+        var id = $(this).attr("id");
+        id = id.split("_");
+        id = id[1];
+        var key = event.keyCode || event.charCode;
+
+        if( key == 8 || key == 46 ){
+
+            $("#EditDrugId_"+id+"").val("");
+            $("#EditUom_"+id+"").empty().append("<option>Select value</option>");
+            //$("#RequestingStoreStock_"+id+"").val("");
+            //$("#IssuingStoreStock_"+id+"").val("");
+
+        }
+        autocompleteEdit(id);
+    });
+
+    $(document).on("blur", ".EditDrug", function () {
+        //  alert("blur");
+        var dataId = $(this).attr("data-id");
+        var DrugId=$("#EditDrugId_"+dataId+"").val();
+
+        $.ajax({
+            type: 'POST',
+            url: _UrlGetProductDetailsUOM,
+            data: {ProductId:DrugId},
+            success: function (data) {
+                $("#EditDrug").val(data.ProductName);
+            },
+            error: function (data) {
+
+            }
+        });
+
+    });
+
+
+    $(document).on("focus", ".EditDrug", function () {
+        $(this).rules("add", { required: true, messages: { required: "Drug  is required." } });
+    });
+    $(document).on("focus", ".EditDose", function () {
+        $(this).rules("add", { required: true,number: true,maxlength: 9, messages: { required: "Dose  is required.",maxlength: $.format("Maximum {0} characters allowed") } });
+    });
+
+    $(document).on("focus", ".EditRoute", function () {
+        $(this).rules("add", { required: true,number: true, messages: { required: "Route  is required.",maxlength: $.format("Maximum {0} characters allowed") } });
+    });
+
+    $(document).on("focus", ".EditUom", function () {
+        $(this).rules("add", { required: true,number: true, messages: { required: "Uom  is required.",maxlength: $.format("Maximum {0} characters allowed") } });
+    });
+
+    $('body').on('keypress', ".EditDose", function(e) {
+
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+
+            return false;
+        }
+    });
+
+    $('body').on('keypress', ".EditInterval", function(e) {
+
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+
+            return false;
+        }
+    });
+
+    //$('#EditReqform').validate({
+
+    //    highlight: function (element) {
+    //        $(element).closest('.form-group').addClass('has-error');
+    //        $(element).tooltip().attr("data-original-title", element);
+    //    },
+    //    unhighlight: function (element) {
+    //        $(element).closest('.form-group').removeClass('has-error');
+    //        $(element).tooltip().attr("data-original-title", null);
+    //    },
+    //    errorPlacement: function (error, element) {
+    //        $(element).closest('.form-control').tooltip({ trigger: "focus", placement: "right" }).attr("data-original-title", error.text());
+    //    }
+    //});
+
+
+
+    function print(pid)
+    {
+        //~/ReportViews/PrescriptionReport.aspx?PID
+
+        var url = "../ReportViews/PrescriptionReport.aspx?PID=" + pid ;
+        window.open(url, '_blank');
+        //    //  window.location.href = url;
+    }
+
+    //   $(document).on("click", "#UpdateReq", function () {
+  //  function UpdateRequest()
+    $("#update").on("click", function () {
+    {
+        alert("in update request");
+        save=1;
+        $(".EditMonth").trigger("focus");
+        $(".EditYear").trigger("focus");
+        $(".EditGroup").trigger("focus");
+        $(".EditSavingFund").trigger("focus");
+        $(".EditInsuranceFund").trigger("focus");
+        $(".EditTotal").trigger("focus");
+        $(".EditRemark").trigger("focus");
+
+
+        //$("#EditReqform").validate();
+        //if ($("#EditReqform").valid())
+        //{
+
+            var object = new Object();
+
+
+           // COMMENTED 14 DECEMBER
+            //var EditDrug = [];
+            //var EditDose = [];
+            //var EditUom = [];
+            //var EditRoute = [];
+            //var EditFrequency = [];
+            //var EditInterval = [];
+            //var EditInstruction = [];
+            //var EditPrescriptionLineId = [];
+            //var EditPriscptionHedderId = [];
+         // COMMENTED 14 DECEMBER
+
+            var EditMonth = [];
+            var EditYear = [];
+            var EditSavingFund = [];
+            var EditGroup = [];
+            var EditInsuranceFund = [];
+            var EditTotal = [];
+            var EditRemark = [];
+            var EditLedgerId = [];
+            var Editemployee_id=[]
+          //  var EditPriscptionHedderId = [];
+
+
+        $(".EditLedgerId").each(function () { EditLedgerId.push($(this).val()); });
+        //    $(".EditPriscptionHedderId").each(function () { EditPriscptionHedderId.push($(this).val()); });
+            // $(".EditDrugId").each(function () { EditDrug.push($(this).val()); });
+            $(".EditMonth").each(function () { EditMonth.push($(this).val()); });
+            $(".EditYear").each(function () { EditYear.push($(this).val()); });
+            $(".EditGroup").each(function () { EditGroup.push($(this).val()); });
+            $(".EditSavingFund").each(function () { EditSavingFund.push($(this).val()); });
+            $(".EditInsuranceFund").each(function () { EditInsuranceFund.push($(this).val()); });
+            $(".EditTotal").each(function () { EditTotal.push($(this).val()); });
+            $(".EditRemark").each(function () { EditRemark.push($(this).val()); });
+            $(".Editemployee_id").each(function () { Editemployee_id.push($(this).val()); });
+
+            var equal=0;
+            //for (var i = 0; i < EditDrug.length; i++) {
+            //    for (var j = i+1; j < EditDrug.length; j++) {
+            //        if(EditDrug[i]==EditDrug[j]){
+            //            equal++;
+            //            break;
+            //        }
+            //    }
+            //}
+
+            //if(equal > 0){
+            //    $("#AlreadyExistsAlertDiv").show(0).delay(5000).hide(0);
+            //    $("html, body").animate({ scrollTop: 0 }, 0);
+            //    $("#lblErrorMessage").text("Please choose different products.");
+            //}
+            //else{
+            //    if(EditDrug.length == 0){
+            //        $("#AlreadyExistsAlertDiv").show(0).delay(5000).hide(0);
+            //        $("html, body").animate({ scrollTop: 0 }, 0);
+            //        $("#lblErrorMessage").text("Please add atleast one product.");
+            //    }
+               // else{
+
+                    for (var i = 0; i < EditMonth.length; i++) {
+                        var object1 = new Object();
+                        object1.MON = EditMonth[i];
+                        object1.YR = EditYear[i];
+
+                        object1.grp =EditGroup[i];
+                        object1.SAVING_FUND = EditSavingFund[i];
+                        object1.INSURANCE_FUND = EditInsuranceFund[i];
+                        object1.Total = EditTotal[i];
+                        object1.remark = EditRemark[i];
+                        object1.LedgerId = EditLedgerId[i];
+                        //object1.employee_id = Editemployee_id[i];
+                        object1.employee_id = $("#hdnEditemployeeId").val();
+                        alert($("#hdnEditemployeeId").val())
+
+                        LedgerDetailsss.push(object1);
+
+                    }
+
+
+
+        var input = JSON.stringify({ LedgerDeatils:LedgerDetailsss,});
+                    var  _UrlUpdateLedgerEntries  = "@Url.Action("UpdateLedgerDetails", "GroupInsuranceClaim")";
+
+                    $.ajax({
+                        type: 'POST',
+                        url: _UrlUpdateLedgerEntries,
+                        data: input,
+                        contentType: "application/json; charset=utf-8",
+                        cache: false,
+                        success: function (data) {
+                            //if (data >0) {
+
+                            alert("here")
+                            $('#ProductListEdit tbody').empty();
+
+                            //if (data == "Success") {
+
+                            //    $('#Mainli').show();
+                            //    $('#Editli').hide();
+                            //    $("#Existing").tab('show');
+                            //}
+                            //else {
+                            //    $("#AlertDiv").show(0).delay(5000).hide(0);
+                            //    $("html, body").animate({ scrollTop: 0 }, 0);
+                            //    $("#lblErrorMessage").text("  Creation failed.");
+                            //}
+                        },
+                        error: function (data) {
+                            $("#lblErrorMessage").text("  Creation failed.");
+                        }
+                    });
+                }
+            //}
+
+
+       // }
+
+         });
+  //  }
+
+
+
+
+
+
+
+    $(document).on("click", "#cancelEditReq", function () {
+        $('#Mainli').show();
+        $('#Editli').hide();
+        $("#Existing").tab('show');
+        $('#ProductListEdit tbody').empty();
+    });
+
+
+    function showDeleteModalEdit(id) {
+        removeOrderIdEdit=id;
+    }
+
+
+
+    $(document).on("click", "#removeProductEdit", function () {
+        var current = $("#ProductListEdit > tbody tr[data-val='"+removeOrderIdEdit+"']");
+        if (removeOrderIdEdit != null || removeOrderIdEdit != undefined) {
+            $.each(LedgerDetailsss, function (i) {
+                if (LedgerDetailsss[i].PrescriptionLineId == removeOrderIdEdit) {
+
+                    LedgerDetailsss[i].PrescriptionStatus = false;
+
+                    return false;
+                }
+            });
+        }
+        current.remove();
+
+        $("#closeRemoveProductEdit").trigger("click");
+    });
+
+    $(document).on("click", ".removeProductEdit", function () {
+
+        $(this).closest(".trClass").remove();
+    });
+
+    ///////////////
+
+
+
+
+
+
+</script>
+

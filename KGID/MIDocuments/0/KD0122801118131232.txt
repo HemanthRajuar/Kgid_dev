@@ -1,0 +1,18 @@
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>18/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801118131232</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>7824</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280111813123201</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>7824</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>

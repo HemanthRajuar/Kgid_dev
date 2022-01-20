@@ -1,0 +1,149 @@
+﻿
+@model KGID_Models.KGID_Report.VM_KGIDGSTReportSummary
+@{
+    ViewBag.Title = "PrintReport";
+    
+    
+}
+
+<div class="row" id="divSOPDetails">
+    <form id="FormPrintChallan" enctype="multipart/form-data" class="col-12">
+        <section>
+            <div class="form-group col-12">
+                <div class="row" style="border:1px solid #111;">
+                    <div class="col-12 text-center">
+                        <img src="~/Content/NewUI/img/gok-logo.png" height="100px" />
+                    </div>
+                    <div class="col-12" style="margin-top:5px; margin-bottom:5px">
+                        <h6 style="text-align:center; color: #ff0000; font-family:'Times New Roman'">GOVERNMENT OF KARNATAKA</h6>
+                        <h5 style="text-align:center; color: #ff0000; font-family:'Times New Roman'">
+                            KARNATAKA GOVERNMENT INSURANCE DEPARTMENT<br />
+                            MOTOR INSURANCE
+                        </h5>
+                        <h4 style="text-align:center; color: #ff0000; font-family:'Times New Roman'"> GST Collected </h4>
+                    </div>
+                </div>
+
+                <div class="row" style="border:1px solid #111;">
+                    <div class="col-6" style="margin-top:10px; margin-bottom:10px;">
+                        Month : @Model.MONTH
+                    </div>
+                    <div class="col-6" style="margin-top:10px; margin-bottom:10px;">
+                        Year : @Model.YEAR
+                    </div>
+                </div>
+
+                <div class="row" style="border:1px solid #111;">
+                    <div class="col-6" style="margin-top:10px; margin-bottom:10px;">
+                        From Date : @Model.fdate
+                    </div>
+                    <div class="col-6" style="margin-top:10px; margin-bottom:10px;">
+                        To Date : @Model.tdate
+                    </div>
+                </div>
+
+                <div class="row" style="border:1px solid #111;">
+                    <div class="col-6" style="margin-top:10px; margin-bottom:10px;">
+                        <table style="border-collapse:collapse;border:none;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>TOTAL NO OF FRESH POLICY ISSUED : </p>
+                                    </td>
+                                    <td>
+                                        <B>@Model.nPolicy</B>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>TOTAL NO OF RENEWAL POLICY ISSUED : </p>
+                                    </td>
+                                    <td>
+                                        <B>@Model.rPolicy</B>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>TOTAL PREMIUM AMOUNT COLLECTED : </p>
+                                    </td>
+                                    <td>
+                                        <B>@Model.totPremium</B>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>TOTAL GST AMOUNT COLLECTED : </p>
+                                    </td>
+                                    <td>
+                                        <B>@Model.totgst</B>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>TOTAL AMOUNT COLLECTED (PREMIUM+GST) : </p>
+                                    </td>
+                                    <td>
+                                        <B>@Model.totAmount</B>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>                    
+                </div>
+
+                
+                <div class="row" style="border:1px solid #111;">
+
+                    <div class="col-8" style="padding-top:55px">
+                        Report generated date:  @Model.curdate
+                    </div>
+                    <div class="col-4" style="padding-top:55px">
+                        <p style="text-align:center"><label style="font-weight: bold;font-size:larger;">For Director<br />Motor Insurance, <br />Karnataka Government Insurance Department</label></p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </section>
+    </form>
+</div>
+<div class="row form-group">
+
+    <div class="form-group col-12">
+        <div class="text-center">
+            <input type="submit" id="btnMIBPrint" value="Print" onclick="printChallan();return false;" class="btn btn-primary pull-right">
+        </div>
+    </div>
+    <div class="form-group col-4"></div>
+</div>
+<script>
+    $(document).ready(function () {
+        printChallan();
+    });
+    function printChallan() {
+        var contents = '<div class="row"><div class="form-group col-5"></div><div class="form-group col-3"><h2></h2></div><div class="form-group col-4"></div></div>' + $("#divSOPDetails").html();
+        var frame1 = $('<iframe />');
+        frame1[0].name = "frame1";
+        frame1.css({ "position": "absolute", "top": "-1000000px" });
+        $("body").append(frame1);
+        var frameDoc = frame1[0].contentWindow ? frame1[0].contentWindow : frame1[0].contentDocument.document ? frame1[0].contentDocument.document : frame1[0].contentDocument;
+        frameDoc.document.open();
+        //Create a new HTML document.
+        frameDoc.document.write('<html><head><title></title>');
+        frameDoc.document.write('</head><body>');
+        //Append the external CSS file.
+        //frameDoc.document.write('<link href="/Content/Custom/sb-admin-2.min.css" rel="stylesheet" />');
+        frameDoc.document.write('<link href="/Scripts/DataTables/Bootstrap-4-4.1.1/css/bootstrap.min.css" rel="stylesheet" />');
+        //Append the DIV contents.
+        frameDoc.document.write(contents);
+        frameDoc.document.write('</body></html>');
+        frameDoc.document.close();
+        setTimeout(function () {
+            window.frames["frame1"].focus();
+            window.frames["frame1"].print();
+            frame1.remove();
+        }, 500);
+        return null;
+    }
+</script>

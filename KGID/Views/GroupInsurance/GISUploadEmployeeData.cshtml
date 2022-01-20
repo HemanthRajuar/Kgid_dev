@@ -1,0 +1,106 @@
+﻿@model KGID_Models.KGID_GroupInsurance.VM_GIS_Upload_EmployeeForm
+
+@{
+    ViewBag.Title = "UploadEmployeeData";
+}
+<form id="frmUploadDocs" enctype="multipart/form-data">
+
+
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.App_Employee_Code, new { id = "hdnUFEmpId" })
+    @Html.HiddenFor(m => m.App_ApplicationID, new { id = "hdnUFAppId" })
+    <div id="divUploadDetails">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary"><label class="knlan">ಪ್ರಸ್ತಾಪಕರ ನಮೂನೆ ಮತ್ತು ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label><label class="Enlan">Upload Application Form , Form 6 and Form 7</label></h6>
+                    </div>
+                    <div class="card-body">
+                        @*<div class="row col-12" id="divLoadUploadedDocuments">
+                            @if (Model.ApplicationFormDocName != null)
+                            {
+                                <div class="form-group col-4">
+
+                                    <label class="control-label text-justify col-6">Application Form </label>
+
+                                    @Html.ActionLink("Click Here", "ViewFilePath", "Home", new { FilePath = Model.ApplicationFormDocName }, htmlAttributes: new { @target = "_blank", @style = "text-decoration: underline; color: #0056b3;", @id = "UplodedAF" })
+
+                                </div>
+                            }
+
+
+                            @if (Model.Form6DocName != null)
+                            {
+                                <div class="form-group col-4">
+
+                                    <label class="control-label text-justify col-6">Form 6</label>
+
+                                    @Html.ActionLink("Click Here", "ViewFilePath", "Home", new { FilePath = Model.Form6DocName }, htmlAttributes: new { @target = "_blank", @style = "text-decoration: underline; color: #0056b3;", @id = "UplodedF6" })
+
+                                </div>
+                            }
+
+
+                            @if (Model.Form6DocName != null)
+                            {
+                                <div class="form-group col-4">
+
+                                    <label class="control-label text-justify col-6">Form 7</label>
+
+                                    @Html.ActionLink("Click Here", "ViewFilePath", "Home", new { FilePath = Model.Form7DocName }, htmlAttributes: new { @target = "_blank", @style = "text-decoration: underline; color: #0056b3;", @id = "UplodedF7" })
+
+                                </div>
+                            }
+
+
+                            </div>*@
+                        @*<div class="form-group col-md-4">
+                                <label class="knlan">ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label>
+                                <label class="Enlan">Application Form</label>
+                                @Html.TextBoxFor(m => m.ApplicationFormDoc, new { @id = "txtApplicationFormDoc", type = "file", accept = "application/pdf", @class = "form-control ", onchange = "DocFileChange(this.id,'errMedicalUploadDoc')" })
+                                <label id="errAppUploadDoc"  class="col-form-label-sm text-danger err" hidden>Please upload supporting document.</label>
+
+                            </div>*@
+
+                        <div class="form-group col-md-4" style="color:black;">
+                            <label class="knlan">ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label>
+                            <label class="Enlan">Application form </label>
+                            @Html.TextBoxFor(m => m.ApplicationFormDoc, new { @id = "txtAFDoc", type = "file", accept = "application/pdf", @class = "form-control ", onchange = "DocFileChange(this.id,'errMedicalUploadDoc')" })
+                            <label id="errAFUploadDoc" class="col-form-label-sm text-danger err" hidden>Please upload supporting document.</label>
+
+                        </div>
+                        <div class="form-group col-md-4" style="color:black;">
+                            <label class="knlan">ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label>
+                            <label class="Enlan">Upload Form 6</label>
+                            @Html.TextBoxFor(m => m.Form6Doc, new { @id = "txtForm6Doc", type = "file", accept = "application/pdf", @class = "form-control ", onchange = "DocFileChange(this.id,'errMedicalUploadDoc')" })
+                            <label id="errForm6UploadDoc" class="col-form-label-sm text-danger err" hidden>Please upload supporting document.</label>
+
+                        </div>
+                        <div class="form-group col-md-4" style="color:black;">
+                            <label class="knlan">ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label>
+                            <label class="Enlan">Upload Form 7</label>
+                            @Html.TextBoxFor(m => m.Form7Doc, new { @id = "txtForm7Doc", type = "file", accept = "application/pdf", @class = "form-control ", onchange = "DocFileChange(this.id,'errMedicalUploadDoc')" })
+                            <label id="errForm7UploadDoc" class="col-form-label-sm text-danger err" hidden>Please upload supporting document.</label>
+
+                        </div>
+
+                        <input type="hidden" id="hdnMedicalReq" value=@ViewBag.IsMedicalRequired />
+                        <input type="hidden" id="hdnApplicationReq" value=@ViewBag.IsApplicationRequired />
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <div class="col-10"></div>
+                    <div class="col-2">
+                        <input type="button" value="Save & Submit" class="btn btn-primary" style="margin-top: 20%;" id="btnSubmit" />@*onclick="ApplicationFormUpload();"*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*</div>*@
+</form>
+@*<script src="~/Scripts/VerifyData/UploadEmployeeData.js"></script>*@
+<script src="~/Scripts/GroupInsurance/GISUploadEmployeeData.js"></script>

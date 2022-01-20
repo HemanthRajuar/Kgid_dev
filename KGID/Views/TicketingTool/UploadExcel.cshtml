@@ -1,0 +1,127 @@
+﻿@model KGID_Models.Ticketing_Tool.ExcelSheetUploadModel
+@{
+    ViewBag.Title = "UploadExcel";
+}
+
+<style>
+    /*table.dataTable thead tr {
+        background-color: #008080;
+    }*/
+    table.dataTable thead tr {
+        background: #308385;
+        color: #fff;
+    }
+
+    .row_BasicDetails {
+        text-align: right;
+    }
+	div#divPrintBasicDetails {
+		background: #f3f3f38f;
+	}
+</style>
+
+
+<script src="~/Scripts/Ticketing_Tool/TicketingTool.js"></script>
+
+
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        $('#tblNomineeDetails').DataTable({
+
+            deferRender: true,
+
+            scrollCollapse: true,
+            scroller: true
+        });
+    });
+</script>
+
+@using (Html.BeginForm("UploadExcel1", "TicketingTool", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary" style="text-align:center;"><b><label class="knlan">ಸಮಸ್ಯೆಗಳನ್ನು ವರದಿ ಮಾಡಿ</label><label class="Enlan">Upload Motor Branch Legacy Data</label></b></h6>
+                </div>
+                <div class="card-body">
+                    <div id="divPrintBasicDetails" style="margin-left:auto;margin-right:auto;">
+                        <form id="frmAppBasicDetails">
+                            <div class="row form-group row_BasicDetails">
+                                <div class="col-md-5 form-group mt-5" style="color:black;">
+                                    <label for="Module"><b><label class="knlan">ಘಟಕ</label><label class="Enlan">Upload Excel File : </label></b></label>
+                                </div>
+
+                                <div class="col-md-6 div_Moduletype mt-5">
+                                    @Html.TextBoxFor(Model => Model._ExcelSheetBind._excelFile, new { @id = "txtfilename", @class = "form-control", type = "file" })
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row form-group row_BasicDetails">
+                                <div class="form-group col-md-1">
+                                </div>
+                                <div class="form-group " style=" margin:auto; padding-right:261px">
+                                    <input type="submit" value="Submit" class="btn btn-primary" id="btnupload" onclick=" return savereportedproblem();" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">
+        var selectedValue = "";
+        $(document).ready(function () {
+            if (@TempData["message"]!= null) {
+                alert(@TempData["message"]);
+            }
+
+            //change button type submit to click
+            $('#btn_submit').removeAttr("type").attr("type", "button");
+
+            //form validation
+            $('#btn_submit').click(function () {
+                var validation = "";
+                if (($('#txtfilename').val() == '' || $('#txtfilename').val() == undefined)) {
+                    validation = "All fields are mandatory!";
+                }
+                if (validation != "") {
+                    var dialog = bootbox.dialog({
+                        title: 'Error List',
+                        message: "" + validation + "",
+                        size: 'large',
+                        buttons: {
+                            ok: {
+                                label: "OK",
+                                className: 'btn-info',
+                                callback: function () {
+
+                                }
+                            }
+                        }
+                    });
+                }
+                else {
+                    $('#btn_submit').removeAttr("type").attr("type", "submit");
+                }
+            });
+
+
+
+
+            //cancel button
+            $("#btn_cancel").click(function () {
+                location.reload(true);
+            });
+
+        });
+</script>
+

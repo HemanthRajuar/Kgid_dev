@@ -1,0 +1,1642 @@
+10 Dec 2021 01:14:33 - INFO  - Method: PayMIOTCChallanDetails().Before Sign  D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD1221801110062709.txt
+10 Dec 2021 01:14:47 - INFO  - Entering into PayMIOTCChallanDetails() with beforesignedData= PGRhdGE+CjxSY3RSZWNlaXZlVmFsaWRhdGVDaGxuUnE+CjxjaGxuRGF0ZT4xMC8xMi8yMDIxPC9jaGxuRGF0ZT4KPGRlcHRDb2RlPjEyQzwvZGVwdENvZGU+CjxkZG9Db2RlPjEyMDM2TzwvZGRvQ29kZT4KPGRlcHRSZWZOdW0+S0QxMjIxODAxMTEwMDYyNzA5PC9kZXB0UmVmTnVtPgo8cmN0UmVjZWl2ZVZhbGlkYXRlQ2hsbkR0bHM+CjxhbW91bnQ+OTEzMzwvYW1vdW50Pgo8ZGVwdFBycHNJZD4yPC9kZXB0UHJwc0lkPgo8cHJwc05hbWU+ODAxMX4wMH4xMDV+Mn4wMH4wMDA8L3BycHNOYW1lPgo8c3ViUHJwc05hbWU+MDEzPC9zdWJQcnBzTmFtZT4KPHN1YkRlcHRSZWZOdW0+S0QxMjIxODAxMTEwMDYyNzA5MDE8L3N1YkRlcHRSZWZOdW0+CjwvcmN0UmVjZWl2ZVZhbGlkYXRlQ2hsbkR0bHM+CjxybXRyTmFtZT5IRU1BIEtVTUFSIFMgQzwvcm10ck5hbWU+Cjx0b3RhbEFtb3VudD45MTMzPC90b3RhbEFtb3VudD4KPHRyc3J5Q29kZT41NzJIPC90cnNyeUNvZGU+CjwvUmN0UmVjZWl2ZVZhbGlkYXRlQ2hsblJxPgo8L2RhdGE+ and em= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data> and beforecanonXmlData= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+ and beforecanonXmlData= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+
+10 Dec 2021 01:14:50 - INFO  - Base Address: http://10.96.158.108:5050/SignBinaryData/
+10 Dec 2021 01:16:15 - INFO  - One or more errors occurred.
+10 Dec 2021 01:18:44 - INFO  - Method: PayMIOTCChallanDetails().Before Sign  D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD1221801110062709.txt
+10 Dec 2021 01:18:45 - INFO  - Entering into PayMIOTCChallanDetails() with beforesignedData= PGRhdGE+CjxSY3RSZWNlaXZlVmFsaWRhdGVDaGxuUnE+CjxjaGxuRGF0ZT4xMC8xMi8yMDIxPC9jaGxuRGF0ZT4KPGRlcHRDb2RlPjEyQzwvZGVwdENvZGU+CjxkZG9Db2RlPjEyMDM2TzwvZGRvQ29kZT4KPGRlcHRSZWZOdW0+S0QxMjIxODAxMTEwMDYyNzA5PC9kZXB0UmVmTnVtPgo8cmN0UmVjZWl2ZVZhbGlkYXRlQ2hsbkR0bHM+CjxhbW91bnQ+OTEzMzwvYW1vdW50Pgo8ZGVwdFBycHNJZD4yPC9kZXB0UHJwc0lkPgo8cHJwc05hbWU+ODAxMX4wMH4xMDV+Mn4wMH4wMDA8L3BycHNOYW1lPgo8c3ViUHJwc05hbWU+MDEzPC9zdWJQcnBzTmFtZT4KPHN1YkRlcHRSZWZOdW0+S0QxMjIxODAxMTEwMDYyNzA5MDE8L3N1YkRlcHRSZWZOdW0+CjwvcmN0UmVjZWl2ZVZhbGlkYXRlQ2hsbkR0bHM+CjxybXRyTmFtZT5IRU1BIEtVTUFSIFMgQzwvcm10ck5hbWU+Cjx0b3RhbEFtb3VudD45MTMzPC90b3RhbEFtb3VudD4KPHRyc3J5Q29kZT41NzJIPC90cnNyeUNvZGU+CjwvUmN0UmVjZWl2ZVZhbGlkYXRlQ2hsblJxPgo8L2RhdGE+ and em= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data> and beforecanonXmlData= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+ and beforecanonXmlData= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+
+10 Dec 2021 01:18:49 - INFO  - Base Address: http://10.96.158.108:5050/SignBinaryData/
+10 Dec 2021 01:19:02 - INFO  - One or more errors occurred.
+10 Dec 2021 01:21:28 - INFO  - Method: PayMIOTCChallanDetails().Before Sign  D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD1221801110062709.txt
+10 Dec 2021 01:21:34 - INFO  - Entering into PayMIOTCChallanDetails() with beforesignedData= PGRhdGE+CjxSY3RSZWNlaXZlVmFsaWRhdGVDaGxuUnE+CjxjaGxuRGF0ZT4xMC8xMi8yMDIxPC9jaGxuRGF0ZT4KPGRlcHRDb2RlPjEyQzwvZGVwdENvZGU+CjxkZG9Db2RlPjEyMDM2TzwvZGRvQ29kZT4KPGRlcHRSZWZOdW0+S0QxMjIxODAxMTEwMDYyNzA5PC9kZXB0UmVmTnVtPgo8cmN0UmVjZWl2ZVZhbGlkYXRlQ2hsbkR0bHM+CjxhbW91bnQ+OTEzMzwvYW1vdW50Pgo8ZGVwdFBycHNJZD4yPC9kZXB0UHJwc0lkPgo8cHJwc05hbWU+ODAxMX4wMH4xMDV+Mn4wMH4wMDA8L3BycHNOYW1lPgo8c3ViUHJwc05hbWU+MDEzPC9zdWJQcnBzTmFtZT4KPHN1YkRlcHRSZWZOdW0+S0QxMjIxODAxMTEwMDYyNzA5MDE8L3N1YkRlcHRSZWZOdW0+CjwvcmN0UmVjZWl2ZVZhbGlkYXRlQ2hsbkR0bHM+CjxybXRyTmFtZT5IRU1BIEtVTUFSIFMgQzwvcm10ck5hbWU+Cjx0b3RhbEFtb3VudD45MTMzPC90b3RhbEFtb3VudD4KPHRyc3J5Q29kZT41NzJIPC90cnNyeUNvZGU+CjwvUmN0UmVjZWl2ZVZhbGlkYXRlQ2hsblJxPgo8L2RhdGE+ and em= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data> and beforecanonXmlData= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+ and beforecanonXmlData= <data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/12/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12036O</ddoCode>
+<deptRefNum>KD1221801110062709</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>9133</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180111006270901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>9133</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+
+10 Dec 2021 01:21:36 - INFO  - Base Address: http://10.96.158.108:5050/SignBinaryData/
+10 Dec 2021 01:21:51 - INFO  - One or more errors occurred.
+10 Dec 2021 01:30:38 - INFO  - Pending Issues DIO 6
+10 Dec 2021 01:30:38 - INFO  - Total Issues DIO 2080
+10 Dec 2021 01:44:05 - INFO  - //NB Bond Policy Number After Approve:- 
+10 Dec 2021 01:46:40 - INFO  - Pending Issues DDO 0
+10 Dec 2021 01:46:40 - INFO  - Total Issues DDO 4
+10 Dec 2021 01:47:56 - INFO  - Pending Issues DIO 6
+10 Dec 2021 01:47:56 - INFO  - Total Issues DIO 2080
+10 Dec 2021 01:56:19 - INFO  - //NB Bond Policy Number After Approve:- 4004585
+11 Dec 2021 21:09:50 - INFO  - Coming 1
+11 Dec 2021 21:10:02 - INFO  - Coming
+11 Dec 2021 21:10:09 - INFO  - The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local machine.
+11 Dec 2021 21:11:00 - INFO  - Coming 1
+11 Dec 2021 21:11:45 - INFO  - Coming
+11 Dec 2021 21:12:44 - INFO  - The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local machine.
+11 Dec 2021 21:17:11 - INFO  - Coming 1
+11 Dec 2021 21:17:13 - INFO  - Coming
+11 Dec 2021 21:17:44 - INFO  - The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local machine.
+11 Dec 2021 21:55:33 - INFO  - Coming 1
+11 Dec 2021 21:55:35 - INFO  - Coming
+11 Dec 2021 22:04:22 - INFO  - The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local machine.
+11 Dec 2021 22:05:36 - INFO  - Coming 1
+11 Dec 2021 22:05:37 - INFO  - Coming
+11 Dec 2021 22:06:35 - INFO  - The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local machine.
+11 Dec 2021 22:09:01 - INFO  - Coming 1
+11 Dec 2021 22:09:03 - INFO  - Coming
+11 Dec 2021 22:10:45 - INFO  - File upload method Table copied
+11 Dec 2021 22:10:45 - INFO  - AddEmployeeBasicDetails 1107161587991448971????? ???????? ??????? ??????? ???? ????? (KGID) ????? ??????????????, ????? ?????? ??????/?-???? ???????? https://kgidonline.karnataka.gov.in ????? ??????? ???? ??? ???? ??????????????? ???????? ????????. ??????? ?????????? ???????? ?????? 080-22866754 ???? ????????? - ???? ?????(KGID).
+
+11 Dec 2021 22:10:45 - INFO  - AddEmployeeBasicDetails mobile no 6548902346
+11 Dec 2021 22:10:45 - INFO  - SMS Sent 
+11 Dec 2021 22:10:46 - INFO  - InsertEmployeeData
+11 Dec 2021 22:11:55 - INFO  - Coming 1
+11 Dec 2021 22:11:56 - INFO  - Coming
+11 Dec 2021 22:13:37 - INFO  - File upload method Table copied
+11 Dec 2021 22:13:37 - INFO  - AddEmployeeBasicDetails 1107161587991448971????? ???????? ??????? ??????? ???? ????? (KGID) ????? ??????????????, ????? ?????? ??????/?-???? ???????? https://kgidonline.karnataka.gov.in ????? ??????? ???? ??? ???? ??????????????? ???????? ????????. ??????? ?????????? ???????? ?????? 080-22866754 ???? ????????? - ???? ?????(KGID).
+
+11 Dec 2021 22:13:37 - INFO  - AddEmployeeBasicDetails mobile no 6548902346
+11 Dec 2021 22:13:37 - INFO  - SMS Sent 
+11 Dec 2021 22:13:37 - INFO  - InsertEmployeeData
+11 Dec 2021 22:15:45 - INFO  - Coming 1
+11 Dec 2021 22:15:46 - INFO  - Coming
+11 Dec 2021 22:56:48 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+11 Dec 2021 23:08:09 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+11 Dec 2021 23:10:50 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+11 Dec 2021 23:15:04 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+11 Dec 2021 23:59:19 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+12 Dec 2021 00:02:27 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+12 Dec 2021 00:15:45 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+12 Dec 2021 01:19:12 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+12 Dec 2021 02:59:40 - INFO  - ExecuteCmd-SP->sp_kgid_getWorkflowDetailsMI_Renewal-Errors->Could not find stored procedure 'sp_kgid_getWorkflowDetailsMI_Renewal'.
+12 Dec 2021 03:02:10 - INFO  - ExecuteCmd-SP->sp_kgid_getWorkflowDetailsMI_Renewal-Errors->Could not find stored procedure 'sp_kgid_getWorkflowDetailsMI_Renewal'.
+12 Dec 2021 03:03:50 - INFO  - ExecuteCmd-SP->sp_kgid_getWorkflowDetailsMI_Renewal-Errors->Could not find stored procedure 'sp_kgid_getWorkflowDetailsMI_Renewal'.
+12 Dec 2021 03:41:32 - INFO  - ExecuteCmd-SP->sp_kgid_insertDepartmentWorkflowVerificationMI_renewal_test-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+renewed
+12 Dec 2021 03:44:18 - INFO  - ExecuteCmd-SP->sp_kgid_insertDepartmentWorkflowVerificationMI_renewal_test-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+12 Dec 2021 03:46:28 - INFO  - ExecuteCmd-SP->sp_kgid_insertDepartmentWorkflowVerificationMI_renewal_test-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+13 Dec 2021 23:30:44 - INFO  - getConn():A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+13 Dec 2021 23:30:44 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIProposerDetails-Errors->ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+14 Dec 2021 00:46:11 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+14 Dec 2021 01:58:40 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+14 Dec 2021 01:58:50 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+14 Dec 2021 02:01:18 - INFO  - SignData File Creating in MIDocuments/0
+14 Dec 2021 02:01:18 - INFO  - MI BPSO25 SignData File Path: D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KG1412210005.txt
+14 Dec 2021 02:16:56 - INFO  - Pending Issues CWD 0
+14 Dec 2021 02:16:56 - INFO  - Total Issues CWD 2
+14 Dec 2021 02:18:28 - INFO  - Pending Issues CWD 1
+14 Dec 2021 02:18:28 - INFO  - Total Issues CWD 1
+14 Dec 2021 02:19:34 - INFO  - Pending Issues CWD 1
+14 Dec 2021 02:19:34 - INFO  - Total Issues CWD 1
+14 Dec 2021 04:58:01 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+14 Dec 2021 05:00:54 - INFO  - VerifyKGIDAndMobileNo the underlying connection was closed: the connection was closed unexpectedly.
+14 Dec 2021 05:02:01 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails'.
+14 Dec 2021 23:54:26 - INFO  - ExecuteCmd-SP->sp_kgid_getdepreciationvalue-Errors->Could not find stored procedure 'sp_kgid_getdepreciationvalue'.
+14 Dec 2021 23:57:39 - INFO  - ExecuteCmd-SP->sp_kgid_getdepreciationvalue-Errors->Could not find stored procedure 'sp_kgid_getdepreciationvalue'.
+15 Dec 2021 02:21:49 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Invalid column name 'va_vehicle_subtype_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+15 Dec 2021 02:23:53 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Invalid column name 'va_vehicle_subtype_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+15 Dec 2021 02:25:13 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Invalid column name 'va_vehicle_subtype_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+15 Dec 2021 02:27:14 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Invalid column name 'va_vehicle_subtype_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'od_zone_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+Invalid column name 'mivd_mancfacturer_id'.
+15 Dec 2021 03:01:01 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:01:15 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:06:49 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:06:50 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:08:43 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Cannot insert the value NULL into column 'rp_mi_renewal_application_id', table 'kgid_prod_24-11_db.dbo.tbl_mi_renewal_policy_details'; column does not allow nulls. INSERT fails.
+ 
+ 
+ 
+ 
+The statement has been terminated.
+15 Dec 2021 03:08:59 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Cannot insert the value NULL into column 'rp_mi_renewal_application_id', table 'kgid_prod_24-11_db.dbo.tbl_mi_renewal_policy_details'; column does not allow nulls. INSERT fails.
+ 
+ 
+ 
+ 
+The statement has been terminated.
+15 Dec 2021 03:16:40 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:16:40 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:17:02 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Cannot insert the value NULL into column 'rp_mi_renewal_application_id', table 'kgid_prod_24-11_db.dbo.tbl_mi_renewal_policy_details'; column does not allow nulls. INSERT fails.
+ 
+ 
+ 
+ 
+The statement has been terminated.
+15 Dec 2021 03:18:40 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Cannot insert the value NULL into column 'rp_mi_renewal_application_id', table 'kgid_prod_24-11_db.dbo.tbl_mi_renewal_policy_details'; column does not allow nulls. INSERT fails.
+ 
+ 
+ 
+ 
+The statement has been terminated.
+15 Dec 2021 03:35:35 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:37:06 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:45:46 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:46:24 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:49:52 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 03:49:58 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:06:17 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:06:17 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:14:34 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:14:38 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:18:19 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:18:19 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:20 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:22 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:34 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:35 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:37 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:38 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:38 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:39 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:58 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:20:59 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:21:01 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:21:01 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:21:41 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:21:41 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:23:26 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:23:28 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:23:43 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:23:43 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:25:15 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:25:17 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:28:08 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:28:09 - INFO  - ExecuteCmd-SP->sp_kgid_selectMIIDVRenewalDetails-Errors->Could not find stored procedure 'sp_kgid_selectMIIDVRenewalDetails'.
+15 Dec 2021 04:40:39 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Cannot insert the value NULL into column 'rp_mi_renewal_application_id', table 'kgid_prod_24112021.dbo.tbl_mi_renewal_policy_details'; column does not allow nulls. INSERT fails.
+ 
+ 
+ 
+ 
+The statement has been terminated.
+15 Dec 2021 04:40:41 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Cannot insert the value NULL into column 'rp_mi_renewal_application_id', table 'kgid_prod_24112021.dbo.tbl_mi_renewal_policy_details'; column does not allow nulls. INSERT fails.
+ 
+ 
+ 
+ 
+The statement has been terminated.
+15 Dec 2021 04:41:12 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Cannot insert the value NULL into column 'rp_mi_renewal_application_id', table 'kgid_prod_24112021.dbo.tbl_mi_renewal_policy_details'; column does not allow nulls. INSERT fails.
+ 
+ 
+ 
+ 
+The statement has been terminated.
+15 Dec 2021 20:46:56 - INFO  - SignData File Creating in MIDocuments/0
+15 Dec 2021 20:46:56 - INFO  - MI BPSO25 SignData File Path: D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KG1612210001.txt
+15 Dec 2021 20:46:58 - INFO  - False
+15 Dec 2021 21:41:42 - INFO  - getConn():A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+15 Dec 2021 21:41:42 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+15 Dec 2021 21:41:42 - INFO  - Error=Cannot find table 0.
+15 Dec 2021 21:43:54 - INFO  - getConn():A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+15 Dec 2021 21:43:54 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+15 Dec 2021 21:43:54 - INFO  - Error=Cannot find table 0.
+15 Dec 2021 21:45:55 - INFO  - getConn():A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+15 Dec 2021 21:45:55 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+15 Dec 2021 21:45:55 - INFO  - Error=Cannot find table 0.
+17 Dec 2021 03:40:31 - INFO  - VerifyKGIDAndMobileNo the underlying connection was closed: the connection was closed unexpectedly.
+20 Dec 2021 01:23:24 - INFO  - GetMobileNumberOfInsured()
+20 Dec 2021 01:27:43 - INFO  - GetMobileNumberOfInsured()
+20 Dec 2021 02:55:20 - INFO  - GetMobileNumberOfInsured()
+20 Dec 2021 22:49:48 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 02:33:51 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:11:59 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:28:59 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:31:54 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:36:40 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:37:46 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:46:40 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:48:14 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:49:17 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:53:02 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 21:54:59 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 23:26:45 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 23:30:50 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 23:32:39 - INFO  - GetMobileNumberOfInsured()
+21 Dec 2021 23:35:47 - INFO  - Pending Issues DDO 1
+21 Dec 2021 23:35:47 - INFO  - Total Issues DDO 7
+21 Dec 2021 23:37:21 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 02:23:50 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 02:24:34 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 02:26:01 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 02:28:26 - INFO  - InsertPersonalDetails Enter
+22 Dec 2021 02:28:27 - INFO  - InsertPersonalDetails Enter
+22 Dec 2021 02:30:53 - INFO  - InsertPersonalDetails Enter
+22 Dec 2021 16:14:54 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 16:17:23 - INFO  - InsertPersonalDetails Enter
+22 Dec 2021 16:22:04 - INFO  - UploadEmployeeData 1107161587481508452???? ?????????? ?????? {#var1#} ?? ?????? {#var2#} ???? ?????????? ????? ???? ?????? ????? ????????? ?????????????, - ???? ?????(KGID).
+
+22 Dec 2021 16:22:05 - INFO  - UploadEmployeeData 1107161587481508452 replace of values???? ?????????? ?????? {20211222094306} ?? ?????? {} ???? ?????????? ????? ???? ?????? ????? ????????? ?????????????, - ???? ?????(KGID).
+
+22 Dec 2021 16:22:05 - INFO  - UploadEmployeeData obile.mobile_number.ToString()  9902104545
+22 Dec 2021 16:22:05 - INFO  - UploadEmployeeData SMS Sent 
+22 Dec 2021 16:22:05 - INFO  - UploadEmployeeData 1107161587541292075 ???? ?????????? ?????? {20211222094306} ?? ?????? {} ???? ?????????? ????? ???? ?????? ????? ????????? ?????????????, - ???? ?????(KGID).
+
+22 Dec 2021 16:22:05 - INFO  - UploadEmployeeData  ddo replace of values ???? ?????????? ?????? {20211222094306} ?? ?????? {} ???? ?????????? ????? ???? ?????? ????? ????????? ?????????????, - ???? ?????(KGID).
+
+22 Dec 2021 16:22:05 - INFO  - UploadEmployeeData ddomobileno.ToString()  9740307278
+22 Dec 2021 16:22:05 - INFO  - SMS Sent 
+22 Dec 2021 16:23:39 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 16:24:24 - INFO  - Pending Issues DDO 1
+22 Dec 2021 16:24:24 - INFO  - Total Issues DDO 14
+22 Dec 2021 16:37:16 - INFO  - Pending Issues DDO 1
+22 Dec 2021 16:37:16 - INFO  - Total Issues DDO 15
+22 Dec 2021 16:38:42 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 16:39:17 - INFO  - Pending Issues CWD 0
+22 Dec 2021 16:39:17 - INFO  - Total Issues CWD 32
+22 Dec 2021 16:44:46 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 16:45:22 - INFO  - Pending Issues CWD 3
+22 Dec 2021 16:45:22 - INFO  - Total Issues CWD 34
+22 Dec 2021 16:53:06 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 16:53:11 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 17:11:32 - INFO  - GetMobileNumberOfInsured()
+22 Dec 2021 17:12:07 - INFO  - Pending Issues DDO 0
+22 Dec 2021 17:12:07 - INFO  - Total Issues DDO 1
+22 Dec 2021 17:12:40 - INFO  - Pending Issues DDO 1
+22 Dec 2021 17:12:40 - INFO  - Total Issues DDO 2
+22 Dec 2021 17:20:07 - INFO  - Pending Issues DDO 1
+22 Dec 2021 17:20:07 - INFO  - Total Issues DDO 2
+31 Dec 2021 10:46:07 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 10:47:37 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 10:53:28 - INFO  - getConn():A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+31 Dec 2021 10:53:28 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetails-Errors->ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+31 Dec 2021 11:19:19 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 11:21:25 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetails-Errors->Procedure or function sp_kgid_GetChallandetails has too many arguments specified.
+31 Dec 2021 11:37:08 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetails-Errors->Procedure or function sp_kgid_GetChallandetails has too many arguments specified.
+31 Dec 2021 11:37:10 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetails-Errors->Procedure or function sp_kgid_GetChallandetails has too many arguments specified.
+31 Dec 2021 11:38:22 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetails-Errors->Procedure or function sp_kgid_GetChallandetails has too many arguments specified.
+31 Dec 2021 11:59:28 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 12:01:22 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetailsOTC-Errors->Procedure or function sp_kgid_GetChallandetailsOTC has too many arguments specified.
+31 Dec 2021 12:01:48 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetailsOTC-Errors->Procedure or function sp_kgid_GetChallandetailsOTC has too many arguments specified.
+31 Dec 2021 12:01:51 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetailsOTC-Errors->Procedure or function sp_kgid_GetChallandetailsOTC has too many arguments specified.
+31 Dec 2021 12:03:59 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2020-1-01
+02-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Kodagu
+ 
+Place= Rest of India
+9
+10
+ 
+1==>@Passengerid
+ 
+2==>@Vehicle_Subtype
+1==>@VehicleAge
+5==>@Cubic_Capacity
+5==>@@TPCubic_Capacity
+12==>@VehicleCategoryid
+7==>MinValueCubic_Capacity
+23==>@Depreciation_year
+3==>@Depreciation_Id
+20==>@Depreciation_Value
+6==>@@GVWLid
+7==>@@Passengers
+11
+2==>@Zoneid
+Zone B==>@Zone
+12
+3.191  @OwnDamageValue
+146==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+15000==>@VehicleMinValue
+31==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+100==>@PLPassengerAmount
+ 
+PD
+3221
+POLICY DETAILS
+update
+17
+3.191,3221,15000,20,Zone B,0,20,20,25,100
+31 Dec 2021 12:06:33 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2018-1-01
+27-04-2018 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Kodagu
+ 
+Place= Rest of India
+9
+10
+3==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+47==>@Depreciation_year
+5==>@Depreciation_Id
+40==>@Depreciation_Value
+6==>@@GVWLid
+2==>@@Passengers
+11
+5==>@Zoneid
+Zone C==>@Zone
+12
+1.726  @OwnDamageValue
+73==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+20000==>@VehicleMinValue
+14==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+15746
+POLICY DETAILS
+update
+17
+1.726,15746,20000,40,Zone C,0,20,20,25,75
+31 Dec 2021 12:11:29 - INFO  - ExecuteCmd-SP->sp_kgid_GetChallandetailsOTC-Errors->Procedure or function sp_kgid_GetChallandetailsOTC has too many arguments specified.
+31 Dec 2021 12:57:31 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 14:26:50 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 14:28:47 - INFO  - getConn():A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+31 Dec 2021 14:28:47 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+31 Dec 2021 14:28:47 - INFO  - Error=Cannot find table 0.
+31 Dec 2021 14:28:47 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 14:28:47 - INFO  - getConn():A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+31 Dec 2021 14:28:47 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+31 Dec 2021 14:28:48 - INFO  - Error=Cannot find table 0.
+31 Dec 2021 15:11:24 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 15:12:27 - INFO  - Inside PayMIOTCChallanDetails
+31 Dec 2021 15:12:27 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+31 Dec 2021 15:12:27 - INFO  - Data File generated *********
+31 Dec 2021 15:12:27 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD1221801131063231.txt
+31 Dec 2021 15:12:27 - INFO  - Before API Call
+31 Dec 2021 15:12:27 - INFO  - 
+31 Dec 2021 15:13:53 - INFO  - Before API Call
+31 Dec 2021 15:13:53 - INFO  - http://49.206.243.84:5050/kgid/v1/getSignature
+31 Dec 2021 15:14:32 - INFO  - Inside PayMIOTCChallanDetails
+31 Dec 2021 15:14:32 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+31 Dec 2021 15:14:32 - INFO  - Data File generated *********
+31 Dec 2021 15:14:32 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD1221801131063231.txt
+31 Dec 2021 15:14:32 - INFO  - Before API Call
+31 Dec 2021 15:14:32 - INFO  - http://49.206.243.84:5050/kgid/v1/getSignature
+31 Dec 2021 15:15:07 - INFO  - GetMobileNumberOfInsured()
+31 Dec 2021 15:16:01 - INFO  - Inside PayMIOTCChallanDetails
+31 Dec 2021 15:16:08 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+31 Dec 2021 15:16:10 - INFO  - Data File generated *********
+31 Dec 2021 15:16:10 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD1221801130073357.txt
+31 Dec 2021 15:16:22 - INFO  - Before API Call
+31 Dec 2021 15:16:24 - INFO  - http://49.206.243.84:5050/kgid/v1/getSignature
+01 Jan 2022 17:58:18 - INFO  - GetMobileNumberOfInsured()
+01 Jan 2022 17:59:21 - INFO  - Inside PayMIOTCChallanDetails
+01 Jan 2022 17:59:25 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+01 Jan 2022 17:59:32 - INFO  - Data File generated *********
+01 Jan 2022 17:59:32 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD1221801131235949.txt
+01 Jan 2022 17:59:35 - INFO  - Before API Call
+01 Jan 2022 17:59:35 - INFO  - http://49.206.243.84:5050/kgid/v1/getSignature
+01 Jan 2022 18:03:38 - INFO  - GetMobileNumberOfInsured()
+01 Jan 2022 18:07:30 - INFO  - GetMobileNumberOfInsured()
+01 Jan 2022 18:08:46 - INFO  - GetTranDataFromString:KD1221801131052033
+01 Jan 2022 18:08:46 - INFO  - KII_Home_Return_UID_Session :8796
+01 Jan 2022 18:10:33 - INFO  - GetMobileNumberOfInsured()
+01 Jan 2022 18:11:13 - INFO  - GetTranDataFromString:KD1221801131052033
+01 Jan 2022 18:11:13 - INFO  - KII_Home_Return_UID_Session :8796
+01 Jan 2022 18:11:16 - INFO  - GetTranDataFromString:KD1221801131052033
+01 Jan 2022 18:11:16 - INFO  - KII_Home_Return_UID_Session :8796
+01 Jan 2022 18:12:36 - INFO  - GetMobileNumberOfInsured()
+01 Jan 2022 18:13:51 - INFO  - GetTranDataFromString:KD1221801131052033
+01 Jan 2022 18:13:51 - INFO  - KII_Home_Return_UID_Session :8796
+01 Jan 2022 18:14:39 - INFO  - GetMobileNumberOfInsured()
+01 Jan 2022 18:15:57 - INFO  - GetTranDataFromString:KD1221801131052033
+01 Jan 2022 18:15:57 - INFO  - KII_Home_Return_UID_Session :8796
+03 Jan 2022 15:09:09 - INFO  - InsertPersonalDetails Enter
+03 Jan 2022 15:09:34 - INFO  - IndexPost-Enter to method
+03 Jan 2022 15:09:38 - INFO  - TextFileCreate()
+03 Jan 2022 15:12:34 - INFO  - InsertPersonalDetails Enter
+03 Jan 2022 15:13:23 - INFO  - IndexPost-Enter to method
+03 Jan 2022 15:13:40 - INFO  - TextFileCreate()
+03 Jan 2022 15:16:53 - INFO  - TextFileCreate()
+03 Jan 2022 15:16:53 - INFO  - Line catchD:\backup_25112021\kgid-development\KGID\Documents\KIIRequest\DoubleVerification\KD0122801103041354.txt
+03 Jan 2022 15:16:54 - INFO  - 10.10.31.231:8080/SignXmlData-Before convertion
+03 Jan 2022 15:16:54 - INFO  - RCT34-SignedResultData-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggZaMIIF
+QqADAgECAgwdAKSp9X6fc3S7oEQwDQYJKoZIhvcNAQELBQAwUzELMAkGA1UEBhMCQkUxGTAXBgNV
+BAoTEEdsb2JhbFNpZ24gbnYtc2ExKTAnBgNVBAMTIEdsb2JhbFNpZ24gR0NDIFIzIERWIFRMUyBD
+QSAyMDIwMB4XDTIxMDMwNTEyNDczM1oXDTIyMDQwNjEyNDczM1owJjEkMCIGA1UEAxMba2dpZG9u
+bGluZS5rYXJuYXRha2EuZ292LmluMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA37YL
+mN0kXpRrqCSKW5kMJ0BxnUGyBTE0ojAUYMjlo223vOqyP+FOpvfdYjCfxvkFiZzIfq5kBZw4d90T
+1fv2H+dIxNDtUsC3kwxtG3RoaXvrmOFmnnLEw6Zy1HE+Qv1IEcDgEC38/7mlJSLpqWGP2gbfwbxj
+O8Z+R2QtQvkdj09zVeJhvnZCb+yESgQPgzea/XIpZyp7Q5t6CanT2cKj6dRP3B23YZdVLANnzu9a
+elsTHcFI4I7EsjpOHPm9zHnNCH9OC3gdSspVQuDESA4x9N8Ah/5AOGvt7pMPIVjYk+qDA5VOiEKP
+YZtkmRF+AXpN0fo5q/uw5EXC7rRDuiSjkQIDAQABo4IDWTCCA1UwDgYDVR0PAQH/BAQDAgWgMIGT
+BggrBgEFBQcBAQSBhjCBgzBGBggrBgEFBQcwAoY6aHR0cDovL3NlY3VyZS5nbG9iYWxzaWduLmNv
+bS9jYWNlcnQvZ3NnY2NyM2R2dGxzY2EyMDIwLmNydDA5BggrBgEFBQcwAYYtaHR0cDovL29jc3Au
+Z2xvYmFsc2lnbi5jb20vZ3NnY2NyM2R2dGxzY2EyMDIwMFYGA1UdIARPME0wQQYJKwYBBAGgMgEK
+MDQwMgYIKwYBBQUHAgEWJmh0dHBzOi8vd3d3Lmdsb2JhbHNpZ24uY29tL3JlcG9zaXRvcnkvMAgG
+BmeBDAECATAJBgNVHRMEAjAAMEEGA1UdHwQ6MDgwNqA0oDKGMGh0dHA6Ly9jcmwuZ2xvYmFsc2ln
+bi5jb20vZ3NnY2NyM2R2dGxzY2EyMDIwLmNybDAmBgNVHREEHzAdghtrZ2lkb25saW5lLmthcm5h
+dGFrYS5nb3YuaW4wHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMB8GA1UdIwQYMBaAFA2Y
+wHN/q7292UdLSa0KSgysPsd8MB0GA1UdDgQWBBR/WLoWQFWsxIkivoywJakYFhW+4DCCAX4GCisG
+AQQB1nkCBAIEggFuBIIBagFoAHcAb1N2rDHwMRnYmQCkURX/dxUcEdkCwQApBo2yCJo32RMAAAF4
+Am3TLQAABAMASDBGAiEAi/BLbE9yDNliOVRq2HHKaHq4YTC8cMtSXQAXJ59QzEUCIQCTa4eVyAY7
+QYIpaJOiPPSitG2P7vQL6eoZyhyST1QbkAB2ACl5vvCeOTkh8FZzn2Old+W+V32cYAr4+U1dJlwl
+XceEAAABeAJt0ygAAAQDAEcwRQIgcfDDxOhtIDOzjTDrTgr2U8VdOoY3R0lby3fJIwcaK5UCIQDS
+nfUAhPn5PwxvCicmmBr5AuHHTg0+AbRiB7CR40FSQgB1AFGjsPX9AXmcVm24N3iPDKR6zBsny/ee
+iEKaDf7UiwXlAAABeAJt01wAAAQDAEYwRAIgaAQvu5kUc92kBqGDNc1D6otSi8LcZ2dH1zK4ZRF0
+qtoCIDzBeqEDEEqRC7A7VnOn3mjdNCqSjt1lkV86wONeb+S8MA0GCSqGSIb3DQEBCwUAA4IBAQAA
+AJJFzKfM8R/W+swjHKvIYm5E2M8XkOv0AWVpGIAG6+1DTDwXvu/qN2wCHL7JpKI5ANnu1P1rC/ZM
+Wx4G8bPNGD/THtQKY8NidUSMQ3YCOS/RIe/l8DPk3iFcnRfPPMQyfe8sxVfXuzz5zsz3/YHdIW6o
+fTs7voLdfth8Sr+mTx4LYpCqiwUbi3UNRRszTMEd8ovv7Igyo9W3YHbFGnBFe2jypZg6YyLK4Lhe
+2YbUUynH05B2m6AlfwJrsdq9d67cPwmXJGGcgDKAgwsE0XvVs3/r5UiJjw5blweTQBsBd1tgcdcu
+iPrSlNyvLGm/UupX1fP8cwnJ7F6kkO1vyHC3AAAxggHpMIIB5QIBATBjMFMxCzAJBgNVBAYTAkJF
+MRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMSkwJwYDVQQDEyBHbG9iYWxTaWduIEdDQyBSMyBE
+ViBUTFMgQ0EgMjAyMAIMHQCkqfV+n3N0u6BEMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJ
+KoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMwOTQ2NDVaMCMGCSqGSIb3DQEJBDEWBBR8
+3j3Dx4nPMvmsoYfUFMDIt2cjGjANBgkqhkiG9w0BAQEFAASCAQAA9BmAjOQqlN+LWrbH+LiK6vzr
+bIRrcYaWzPCvMIig1mtZErX5wa2cqZw+BSsYmjmP/uGzbEECv3kh5X1q/F3vulgR1/3M/k5VDwMF
+o4rzRk1T81t1fB/UJHkBJg954XlyoEkcElMDPPRf5BTvzGoHyeY5sE7A7hluSsNXJo4c6o2gPeg7
+TiVdXMyQJUxu0ePaod4Hvj9yvx2/uGGlp0KELoVwSUY0JWeaasIOl/DQvGxGQ9scCKCc0yu3oYhk
+3BHYZWGeo58ollkwAWNq57VNaRx2WOoC6BEhhqK1glAUFl/q/GMweY6Vv1x9M6pmGUfARfrjvCri
+mkzsjVBYbv/xAAAAAAAA
+-----END PKCS7-----
+03 Jan 2022 15:16:54 - INFO  - 10.10.31.231:8080/SignXmlData-After convertion
+03 Jan 2022 15:16:54 - INFO  - RCT34-FileStream Rquesting for Pending Payment
+03 Jan 2022 15:16:55 - INFO  - RCT34-FileStream Rquest for Pending Payment Proceed
+03 Jan 2022 15:16:55 - INFO  - RCT34-HttpWebResponse:OK
+03 Jan 2022 15:16:55 - INFO  - RCT34 - XmlResultWithoutNs<Envelope>
+  <Header>
+    <Header>
+      <agencyCode>EA_KID</agencyCode>
+      <integrationCode>RCT034</integrationCode>
+      <uirNo>EA_KID-RCT034-03012022-KD0122801103041354</uirNo>
+    </Header>
+  </Header>
+  <Body>
+    <envelopedDataRes>
+      <data>
+        <RctReceivePaymentStatusRs>
+          <deptRefNum>KD0122801103041354</deptRefNum>
+          <statusCode>KII-RCTER-34</statusCode>
+          <statusDesc>Department reference number not found</statusDesc>
+        </RctReceivePaymentStatusRs>
+      </data>
+      <Signature></Signature>
+    </envelopedDataRes>
+  </Body>
+</Envelope>
+03 Jan 2022 15:16:55 - INFO  - RCT34 - doc.InnerTextEA_KIDRCT034EA_KID-RCT034-03012022-KD0122801103041354KD0122801103041354KII-RCTER-34Department reference number not found
+03 Jan 2022 15:16:55 - INFO  - RCT34-Results<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><ns4:Header xmlns:ns2="http://header.ei.integration.ifms.gov.in/" xmlns:ns3="http://schema.fault.ei.integration.ifms.gov.in/" xmlns:ns4="http://service.receivepymntstatus.dept.rct.integration.ifms.gov.in/">
+    <ns2:agencyCode>EA_KID</ns2:agencyCode>
+    <ns2:integrationCode>RCT034</ns2:integrationCode>
+    <ns2:uirNo>EA_KID-RCT034-03012022-KD0122801103041354</ns2:uirNo>
+</ns4:Header></SOAP-ENV:Header><soap:Body><env:envelopedDataRes xmlns:env="http://service.receivepymntstatus.dept.rct.integration.ifms.gov.in/"><data><RctReceivePaymentStatusRs><deptRefNum>KD0122801103041354</deptRefNum><statusCode>KII-RCTER-34</statusCode><statusDesc>Department reference number not found</statusDesc></RctReceivePaymentStatusRs></data><Signature/></env:envelopedDataRes></soap:Body></soap:Envelope>
+03 Jan 2022 15:16:55 - INFO  - RCT34-ResultJsonConversion{"deptRefNum":"KD0122801103041354","statusCode":"KII-RCTER-34","statusDesc":"Department reference number not found"}
+03 Jan 2022 15:16:55 - INFO  - RCT34-EmpID 551455
+03 Jan 2022 15:16:55 - INFO  - Payment status
+03 Jan 2022 15:16:55 - INFO  - RCT34-DBResult1
+03 Jan 2022 15:18:14 - INFO  - InsertPersonalDetails Enter
+03 Jan 2022 15:18:31 - INFO  - IndexPost-Enter to method
+03 Jan 2022 15:18:38 - INFO  - TextFileCreate()
+03 Jan 2022 15:19:05 - INFO  - 10.10.31.231:8080/SignXmlData-Before convertion
+03 Jan 2022 15:25:30 - INFO  - InsertPersonalDetails Enter
+03 Jan 2022 15:25:50 - INFO  - IndexPost-Enter to method
+03 Jan 2022 15:25:58 - INFO  - TextFileCreate()
+03 Jan 2022 15:26:27 - INFO  - 10.10.31.231:8080/SignXmlData-Before convertion
+03 Jan 2022 15:26:38 - INFO  - 10.10.31.231:8080/SignXmlData-After convertion
+03 Jan 2022 15:26:48 - INFO  - GetKIISignDetails: SIGNED DATA-{"timestamp":"2022-01-03T09:51:37.344+00:00","status":404,"error":"Not Found","path":"/kgid/SignXmlData/getSignforDataByte"},xmldata-<data>
+<RctReceiveValidateChlnRq>
+      <chlnDate>03/01/2022</chlnDate>
+      <deptCode>12C</deptCode>
+      <ddoCode>12036O</ddoCode>
+      <deptRefNum>KD0122801103042652</deptRefNum>
+      <rctReceiveValidateChlnDtls>
+        <amount>1</amount>
+        <deptPrpsId>1</deptPrpsId>
+        <prpsName>8011~00~105~1~01~000</prpsName>
+        <subPrpsName>001</subPrpsName>
+        <subDeptRefNum>KD0122801103042652</subDeptRefNum>
+      </rctReceiveValidateChlnDtls>
+      <rmtrName>Raju</rmtrName>
+      <totalAmount>1</totalAmount>
+      <trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+
+03 Jan 2022 15:26:48 - INFO  - Request for Signature Validation
+03 Jan 2022 15:26:48 - INFO  - FileStream Rquesting
+03 Jan 2022 15:26:49 - INFO  - FileStream Rquest Done
+03 Jan 2022 15:26:55 - INFO  - Response from KII Signing: Status CodeOK
+03 Jan 2022 15:26:55 - INFO  - Response from KII Signing Response Data: <Envelope>
+  <Body>
+    <Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>Please inquire</faultstring>
+      <detail>
+        <ErrorDetail>
+          <Error>
+            <errorCode>SC-WS-08</errorCode>
+            <errorMessage>Exception while signature verification</errorMessage>
+            <errorDesc>Exception while signature verification</errorDesc>
+          </Error>
+        </ErrorDetail>
+      </detail>
+    </Fault>
+  </Body>
+</Envelope>
+03 Jan 2022 15:27:09 - INFO  - Signing Data Error LevelObject reference not set to an instance of an object.
+03 Jan 2022 15:27:09 - INFO  - GetKIISignDetails Response: 
+03 Jan 2022 15:27:09 - INFO  - Line catchValue cannot be null.
+Parameter name: value
+03 Jan 2022 15:29:18 - INFO  - InsertPersonalDetails Enter
+03 Jan 2022 15:29:35 - INFO  - IndexPost-Enter to method
+03 Jan 2022 15:29:36 - INFO  - TextFileCreate()
+03 Jan 2022 15:29:37 - INFO  - 10.10.31.231:8080/SignXmlData-Before convertion
+03 Jan 2022 15:32:27 - INFO  - InsertPersonalDetails Enter
+03 Jan 2022 15:33:12 - INFO  - InsertPersonalDetails Enter
+03 Jan 2022 18:33:49 - INFO  - GetMobileNumberOfInsured()
+03 Jan 2022 18:37:13 - INFO  - Inside PayMIOTCChallanDetails
+03 Jan 2022 18:37:13 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+03 Jan 2022 18:37:13 - INFO  - Data File generated *********
+03 Jan 2022 18:37:13 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD0122801103073612.txt
+03 Jan 2022 18:37:13 - INFO  - Before API Call
+03 Jan 2022 18:37:13 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+03 Jan 2022 18:37:14 - INFO  - <Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzAyMTVaMCMGCSqGSIb3DQEJBDEWBBSeX5bFb6zft0aHlwA5NTjCoKvcTDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEACKP8zbzX73SIBOeYaKJVuPkMelmnHQ6kTIHHt6ZfVLXfHFV3xAR0OTlSpaRpWMC/SUt7qIXNL1UQSYx1zk61lV4HiHiNzR06UQznUSgJGOaK3SIBWUxgv5SZbwSL2I38vRKJZenGhWZCaSglhORtRJVrzkj5+D03Rs+nx5i72Kl9sm4CCyVX36yId7vPS9qHvRM+E0UQiiYcLVGX8SzqZkJXVHckUCLUsJGQB9d1V1V7Of/m2PHidKBmhFvvlIhQuKSCeHPwhJiD/kjamKHrW3peVTBwAp7xOQmRdx69p2UI3xMpSbbrlk9ZLzYeLWUQ/jUmXkyNRfuLqbcs0W8VlQAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+03 Jan 2022 18:37:14 - INFO  - MB OTC API Call ended
+03 Jan 2022 18:37:14 - INFO  - MB OTC after Sign detail
+03 Jan 2022 18:37:14 - INFO  - <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ser='http://service.receivevalidatechallan.dept.rct.integration.ifms.gov.in/' xmlns:head='http://header.ei.integration.ifms.gov.in/'>
+   <soapenv:Header>
+      <ser:Header>
+         <head:agencyCode>EA_KID</head:agencyCode>
+         <head:integrationCode>RCT033</head:integrationCode>
+         <head:uirNo>EA_KID-RCT033-03012022-KD0122801103073612</head:uirNo>
+      </ser:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:envelopedDataReq>
+<Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzAyMTVaMCMGCSqGSIb3DQEJBDEWBBSeX5bFb6zft0aHlwA5NTjCoKvcTDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEACKP8zbzX73SIBOeYaKJVuPkMelmnHQ6kTIHHt6ZfVLXfHFV3xAR0OTlSpaRpWMC/SUt7qIXNL1UQSYx1zk61lV4HiHiNzR06UQznUSgJGOaK3SIBWUxgv5SZbwSL2I38vRKJZenGhWZCaSglhORtRJVrzkj5+D03Rs+nx5i72Kl9sm4CCyVX36yId7vPS9qHvRM+E0UQiiYcLVGX8SzqZkJXVHckUCLUsJGQB9d1V1V7Of/m2PHidKBmhFvvlIhQuKSCeHPwhJiD/kjamKHrW3peVTBwAp7xOQmRdx69p2UI3xMpSbbrlk9ZLzYeLWUQ/jUmXkyNRfuLqbcs0W8VlQAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>03/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801103073612</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>1</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280110307361201</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>1</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+      </ser:envelopedDataReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+03 Jan 2022 18:37:54 - INFO  - Data :
+03 Jan 2022 18:37:54 - INFO  - MB OTC after GetKIISignDetails
+03 Jan 2022 18:37:54 - INFO  - Value cannot be null.
+Parameter name: value
+03 Jan 2022 18:38:10 - INFO  - Inside PayMIOTCChallanDetails
+03 Jan 2022 18:38:26 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+03 Jan 2022 18:38:26 - INFO  - Data File generated *********
+03 Jan 2022 18:38:26 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD0122801103073612.txt
+03 Jan 2022 18:38:26 - INFO  - Before API Call
+03 Jan 2022 18:38:26 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+03 Jan 2022 18:38:26 - INFO  - <Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzAzMjdaMCMGCSqGSIb3DQEJBDEWBBSeX5bFb6zft0aHlwA5NTjCoKvcTDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAf3gunPhNKKK4xeARbvneGF1AzF0q3XRoyTPxJEntc/TCJBesdVC6akagz4w29zV6v2qsTWriRBuavUEPX7fg2jWYDVTa1QTRoHWX/PzOxXbiLBSHxXZzeZ4AgHgyULh5+p3lJjw+mR/GDizdU2pvxICtQwh6H6Ietbrd1SQTHBVgY4Qn0/ZPJJ4CpqjQrEMolTQRd6USclrP5F7R8Vze1wuhMM1bNQUpHGuTOiVdQMffd9bcgxz2mhaf1Zc136LVwKBxWYU0rVleV5rP33m26vjnOlU9zrDRxm33MeOUcCb4X/58J7lCBT1ZfrkYwyT8u0dlyz8NmcMkpoDIEsoc3wAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+03 Jan 2022 18:38:26 - INFO  - MB OTC API Call ended
+03 Jan 2022 18:38:26 - INFO  - MB OTC after Sign detail
+03 Jan 2022 18:38:26 - INFO  - <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ser='http://service.receivevalidatechallan.dept.rct.integration.ifms.gov.in/' xmlns:head='http://header.ei.integration.ifms.gov.in/'>
+   <soapenv:Header>
+      <ser:Header>
+         <head:agencyCode>EA_KID</head:agencyCode>
+         <head:integrationCode>RCT033</head:integrationCode>
+         <head:uirNo>EA_KID-RCT033-03012022-KD0122801103073612</head:uirNo>
+      </ser:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:envelopedDataReq>
+<Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzAzMjdaMCMGCSqGSIb3DQEJBDEWBBSeX5bFb6zft0aHlwA5NTjCoKvcTDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAf3gunPhNKKK4xeARbvneGF1AzF0q3XRoyTPxJEntc/TCJBesdVC6akagz4w29zV6v2qsTWriRBuavUEPX7fg2jWYDVTa1QTRoHWX/PzOxXbiLBSHxXZzeZ4AgHgyULh5+p3lJjw+mR/GDizdU2pvxICtQwh6H6Ietbrd1SQTHBVgY4Qn0/ZPJJ4CpqjQrEMolTQRd6USclrP5F7R8Vze1wuhMM1bNQUpHGuTOiVdQMffd9bcgxz2mhaf1Zc136LVwKBxWYU0rVleV5rP33m26vjnOlU9zrDRxm33MeOUcCb4X/58J7lCBT1ZfrkYwyT8u0dlyz8NmcMkpoDIEsoc3wAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>03/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801103073612</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>1</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280110307361201</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>1</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+      </ser:envelopedDataReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+03 Jan 2022 18:38:39 - INFO  - Data :{"deptRefNum":"KD0122801103073612","totalAmount":"1","statusCode":"KII-RCTER-32","statusDescription":"Failure : Entry with this Sub Department Ref Num is already Present."}
+03 Jan 2022 18:38:39 - INFO  - MB OTC after GetKIISignDetails
+03 Jan 2022 18:38:46 - INFO  - Inside PayMIOTCChallanDetails
+03 Jan 2022 18:38:54 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+03 Jan 2022 18:38:55 - INFO  - Data File generated *********
+03 Jan 2022 18:38:57 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD0122801103073612.txt
+03 Jan 2022 18:39:07 - INFO  - Before API Call
+03 Jan 2022 18:39:08 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+03 Jan 2022 18:39:12 - INFO  - <Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzA0MTJaMCMGCSqGSIb3DQEJBDEWBBSeX5bFb6zft0aHlwA5NTjCoKvcTDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAb6fkzjpa8scRd00Xjcnw0WFDVQeX5hFUiIiRO4UazVcwEe1+PXdj5aaxp+i5+tFHNspThppPkyUEXHhrFoYt8eYZpSdyERAhJJpTuXaa8DtNM1TQhaMuucE1lC7yXPIuESETZSxBxWbp5hPAv4PlQYePintNwvCAqdqJy02xgtUnf/q5j3IhR0Z7JJ+7Hbsy/93UnXBzyjeAZ00IG0BVD8xcPDqyvYux7LmjQ9e0AcrcVmLvvsLO6sB6FZmtW7UcXouK7nwoJqhFiywMWdXE02Fir/qc8LDXhW0biJe4VmJVcFdcGyb9+dwq1a4R+dMlTsC46EjOC831H0VUmJTzcQAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+03 Jan 2022 18:39:14 - INFO  - MB OTC API Call ended
+03 Jan 2022 18:39:18 - INFO  - MB OTC after Sign detail
+03 Jan 2022 18:39:19 - INFO  - <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ser='http://service.receivevalidatechallan.dept.rct.integration.ifms.gov.in/' xmlns:head='http://header.ei.integration.ifms.gov.in/'>
+   <soapenv:Header>
+      <ser:Header>
+         <head:agencyCode>EA_KID</head:agencyCode>
+         <head:integrationCode>RCT033</head:integrationCode>
+         <head:uirNo>EA_KID-RCT033-03012022-KD0122801103073612</head:uirNo>
+      </ser:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:envelopedDataReq>
+<Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzA0MTJaMCMGCSqGSIb3DQEJBDEWBBSeX5bFb6zft0aHlwA5NTjCoKvcTDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAb6fkzjpa8scRd00Xjcnw0WFDVQeX5hFUiIiRO4UazVcwEe1+PXdj5aaxp+i5+tFHNspThppPkyUEXHhrFoYt8eYZpSdyERAhJJpTuXaa8DtNM1TQhaMuucE1lC7yXPIuESETZSxBxWbp5hPAv4PlQYePintNwvCAqdqJy02xgtUnf/q5j3IhR0Z7JJ+7Hbsy/93UnXBzyjeAZ00IG0BVD8xcPDqyvYux7LmjQ9e0AcrcVmLvvsLO6sB6FZmtW7UcXouK7nwoJqhFiywMWdXE02Fir/qc8LDXhW0biJe4VmJVcFdcGyb9+dwq1a4R+dMlTsC46EjOC831H0VUmJTzcQAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>03/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801103073612</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>1</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280110307361201</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>1</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+      </ser:envelopedDataReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+03 Jan 2022 18:39:58 - INFO  - Data :{"deptRefNum":"KD0122801103073612","totalAmount":"1","statusCode":"KII-RCTER-32","statusDescription":"Failure : Entry with this Sub Department Ref Num is already Present."}
+03 Jan 2022 18:39:58 - INFO  - MB OTC after GetKIISignDetails
+03 Jan 2022 18:40:09 - INFO  - Inside PayMIOTCChallanDetails
+03 Jan 2022 18:40:09 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+03 Jan 2022 18:40:09 - INFO  - Data File generated *********
+03 Jan 2022 18:40:09 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD0122801103073612.txt
+03 Jan 2022 18:40:09 - INFO  - Before API Call
+03 Jan 2022 18:40:09 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+03 Jan 2022 18:40:09 - INFO  - <Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzA1MTBaMCMGCSqGSIb3DQEJBDEWBBSeX5bFb6zft0aHlwA5NTjCoKvcTDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAbpvieRCJCadgV9zp3W0m9ijCw1tUA1kGCG2945Ey/VkfbpLSq5tPGNvTnrovZRof6n1BRyjpBEfLSHD93dkgRYiweV4VjJuc7VxqSAescMbmi5JXSc9C20Cl2lusbHkVRp9kTCrARgoKvjf3eTYP+/ChG3Pnuet+E5yEq/OIYfEyskyNdrVTAViG5Zv0mmGUDHLic5u2dALt+yMkbxiR1Duv7KReoqR8RmZ39pzQT+PwiOb4YUbrEjT0ksUuAKDNRVLXwKxgggiJVrLl9dsQdEvZlrGGZWolhuwZvcllbCUPuU5SJ0FpuTTdlS+dcIxSY2ktQ8yuUbGBxeosAHrx3QAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+03 Jan 2022 18:40:09 - INFO  - MB OTC API Call ended
+03 Jan 2022 18:40:09 - INFO  - MB OTC after Sign detail
+03 Jan 2022 18:40:09 - INFO  - <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ser='http://service.receivevalidatechallan.dept.rct.integration.ifms.gov.in/' xmlns:head='http://header.ei.integration.ifms.gov.in/'>
+   <soapenv:Header>
+      <ser:Header>
+         <head:agencyCode>EA_KID</head:agencyCode>
+         <head:integrationCode>RCT033</head:integrationCode>
+         <head:uirNo>EA_KID-RCT033-03012022-KD0122801103073612</head:uirNo>
+      </ser:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:envelopedDataReq>
+<Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzA1MTBaMCMGCSqGSIb3DQEJBDEWBBSeX5bFb6zft0aHlwA5NTjCoKvcTDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAbpvieRCJCadgV9zp3W0m9ijCw1tUA1kGCG2945Ey/VkfbpLSq5tPGNvTnrovZRof6n1BRyjpBEfLSHD93dkgRYiweV4VjJuc7VxqSAescMbmi5JXSc9C20Cl2lusbHkVRp9kTCrARgoKvjf3eTYP+/ChG3Pnuet+E5yEq/OIYfEyskyNdrVTAViG5Zv0mmGUDHLic5u2dALt+yMkbxiR1Duv7KReoqR8RmZ39pzQT+PwiOb4YUbrEjT0ksUuAKDNRVLXwKxgggiJVrLl9dsQdEvZlrGGZWolhuwZvcllbCUPuU5SJ0FpuTTdlS+dcIxSY2ktQ8yuUbGBxeosAHrx3QAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>03/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801103073612</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>1</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280110307361201</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>1</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+      </ser:envelopedDataReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+03 Jan 2022 18:40:44 - INFO  - Data :
+03 Jan 2022 18:40:44 - INFO  - MB OTC after GetKIISignDetails
+03 Jan 2022 18:40:44 - INFO  - Value cannot be null.
+Parameter name: value
+03 Jan 2022 18:41:07 - INFO  - GetMobileNumberOfInsured()
+03 Jan 2022 18:42:25 - INFO  - Inside PayMIOTCChallanDetails
+03 Jan 2022 18:42:32 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+03 Jan 2022 18:42:32 - INFO  - Data File generated *********
+03 Jan 2022 18:42:33 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD1221801131235949.txt
+03 Jan 2022 18:42:34 - INFO  - Before API Call
+03 Jan 2022 18:42:34 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+03 Jan 2022 18:42:36 - INFO  - <Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzA3MzdaMCMGCSqGSIb3DQEJBDEWBBRmcYF8c8s8MViMgxGjxHftPwQ98DApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEABw7YXZTdWMjJfDkiPiuthq7qAjuP9UAJh6nPPcyN3S/stTUhcPgUaywAnoDBdPFUsi/RUOaCuVP/Fwz6YVk7gU3n416ZITqhio68OTULAxJ5o/7iev7kYp+J81rwFzjF72OY2xjxgX9bFcEPxaekY0NYOAIBQkveB1Un1ITL8GlX2i1JBgCiZ4Z3hy8RzMMLVd5wvXSvHrQGw+jQUcGYoRIg45gID0FFUBybrW5j/B1XzfM036ru8yrF2A6MsOKiRG8opStZyMbL6ih4zwthagJ1zhxxmbNDsqztsj9Sh+UOZdh4qxxHNDQGJmEBTeUQ9FPTe45q7Y1FqQ9WQPOQhAAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+03 Jan 2022 18:42:37 - INFO  - MB OTC API Call ended
+03 Jan 2022 18:42:37 - INFO  - MB OTC after Sign detail
+03 Jan 2022 18:42:37 - INFO  - <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ser='http://service.receivevalidatechallan.dept.rct.integration.ifms.gov.in/' xmlns:head='http://header.ei.integration.ifms.gov.in/'>
+   <soapenv:Header>
+      <ser:Header>
+         <head:agencyCode>EA_KID</head:agencyCode>
+         <head:integrationCode>RCT033</head:integrationCode>
+         <head:uirNo>EA_KID-RCT033-03012022-KD1221801131235949</head:uirNo>
+      </ser:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:envelopedDataReq>
+<Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzA3MzdaMCMGCSqGSIb3DQEJBDEWBBRmcYF8c8s8MViMgxGjxHftPwQ98DApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEABw7YXZTdWMjJfDkiPiuthq7qAjuP9UAJh6nPPcyN3S/stTUhcPgUaywAnoDBdPFUsi/RUOaCuVP/Fwz6YVk7gU3n416ZITqhio68OTULAxJ5o/7iev7kYp+J81rwFzjF72OY2xjxgX9bFcEPxaekY0NYOAIBQkveB1Un1ITL8GlX2i1JBgCiZ4Z3hy8RzMMLVd5wvXSvHrQGw+jQUcGYoRIg45gID0FFUBybrW5j/B1XzfM036ru8yrF2A6MsOKiRG8opStZyMbL6ih4zwthagJ1zhxxmbNDsqztsj9Sh+UOZdh4qxxHNDQGJmEBTeUQ9FPTe45q7Y1FqQ9WQPOQhAAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>03/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD1221801131235949</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>1</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD122180113123594901</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>1</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+      </ser:envelopedDataReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+03 Jan 2022 18:42:57 - INFO  - Data :{"deptRefNum":"KD1221801131235949","totalAmount":"1","statusCode":"KII-RCTER-32","statusDescription":"Failure : Entry with this Sub Department Ref Num is already Present."}
+03 Jan 2022 18:42:58 - INFO  - MB OTC after GetKIISignDetails
+03 Jan 2022 18:43:58 - INFO  - GetMobileNumberOfInsured()
+03 Jan 2022 18:45:04 - INFO  - Inside PayMIOTCChallanDetails
+03 Jan 2022 18:45:06 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+03 Jan 2022 18:45:06 - INFO  - Data File generated *********
+03 Jan 2022 18:45:06 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD0122801103074602.txt
+03 Jan 2022 18:45:07 - INFO  - Before API Call
+03 Jan 2022 18:45:07 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+03 Jan 2022 18:45:08 - INFO  - <Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzEwMDlaMCMGCSqGSIb3DQEJBDEWBBTW5XebJ2rX8VyC2f8it7LU/yW0fzApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAtG0k/+68VYeu9U+/pBRYRmZySrurBCYr6yd6H82dIf8tzwAQaSitWqMl9OStLJ6g/9VCoj7r5QPgbGMBj+zwtWP8Ww4Smdhwg6oRT7iZWrSPO18UIst5hm+tAJhngNhJdpGi9NZMMtYlGy8bYx1PwiSRttvyqz0XpzHKwhXpdDyGbLVosNdHPv4zWOkKk2yV6cNB+Zp6+nRHCevUpeZ06VjJpK+GtBcRM0M2uzfyxaiknx2J4qzwIpG4ecnnBMXF8sX5csityAcgx5FsnyYkKk6MqKIjkYsWIPxR2ZtBxBJG1xaNQdJdDHjeSJExsseihElmFFgxv6u7GoM1Ti6B8wAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+03 Jan 2022 18:45:08 - INFO  - MB OTC API Call ended
+03 Jan 2022 18:45:09 - INFO  - MB OTC after Sign detail
+03 Jan 2022 18:45:09 - INFO  - <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ser='http://service.receivevalidatechallan.dept.rct.integration.ifms.gov.in/' xmlns:head='http://header.ei.integration.ifms.gov.in/'>
+   <soapenv:Header>
+      <ser:Header>
+         <head:agencyCode>EA_KID</head:agencyCode>
+         <head:integrationCode>RCT033</head:integrationCode>
+         <head:uirNo>EA_KID-RCT033-03012022-KD0122801103074602</head:uirNo>
+      </ser:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:envelopedDataReq>
+<Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzEwMDlaMCMGCSqGSIb3DQEJBDEWBBTW5XebJ2rX8VyC2f8it7LU/yW0fzApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAtG0k/+68VYeu9U+/pBRYRmZySrurBCYr6yd6H82dIf8tzwAQaSitWqMl9OStLJ6g/9VCoj7r5QPgbGMBj+zwtWP8Ww4Smdhwg6oRT7iZWrSPO18UIst5hm+tAJhngNhJdpGi9NZMMtYlGy8bYx1PwiSRttvyqz0XpzHKwhXpdDyGbLVosNdHPv4zWOkKk2yV6cNB+Zp6+nRHCevUpeZ06VjJpK+GtBcRM0M2uzfyxaiknx2J4qzwIpG4ecnnBMXF8sX5csityAcgx5FsnyYkKk6MqKIjkYsWIPxR2ZtBxBJG1xaNQdJdDHjeSJExsseihElmFFgxv6u7GoM1Ti6B8wAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>03/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801103074602</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>6872</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280110307460201</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>6872</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+      </ser:envelopedDataReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+03 Jan 2022 18:46:00 - INFO  - Data :
+03 Jan 2022 18:46:00 - INFO  - MB OTC after GetKIISignDetails
+03 Jan 2022 18:46:00 - INFO  - Value cannot be null.
+Parameter name: value
+03 Jan 2022 18:52:38 - INFO  - GetMobileNumberOfInsured()
+03 Jan 2022 18:54:27 - INFO  - Inside PayMIOTCChallanDetails
+03 Jan 2022 18:54:33 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+03 Jan 2022 18:54:34 - INFO  - Data File generated *********
+03 Jan 2022 18:54:34 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD0122801103075522.txt
+03 Jan 2022 18:54:36 - INFO  - Before API Call
+03 Jan 2022 18:54:36 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+03 Jan 2022 18:54:42 - INFO  - <Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzE5MzlaMCMGCSqGSIb3DQEJBDEWBBSBiKIpkaWVH1nwRwMqksDQQBSxpDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEArrTFR5RWRRLp7+/UlqotmtdauINQXnBLiQ3bIl/GUHV5et9yaiAnkTvZShTobCpqAvOGjnzsBvoLIxN/hQByEgWSN6EbPaf9PqKB0+D9dW32I7igENDCBHqjqyRjElBmdaywHTwzKR2qhAE7mVVz+1Ug92IS0hPTcTLlfAklcooHZOUM8L3TJuOraTV3WAtEN0+C7WMSoc7p8qvgTXYV/1A7pQyE2PJ9s5eqUwkwJk7wcitrCTEX54qiHKyS+S5JezEjeJH24PP3MPCK4L6OqQS7BMiZyPSZlHucQeKgsfvDSK9pFKKWlb4GfIbXrXJWh1tmXpBjihhrfinDe5OKNAAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+03 Jan 2022 18:54:44 - INFO  - MB OTC API Call ended
+03 Jan 2022 18:54:46 - INFO  - MB OTC after Sign detail
+03 Jan 2022 18:54:46 - INFO  - <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ser='http://service.receivevalidatechallan.dept.rct.integration.ifms.gov.in/' xmlns:head='http://header.ei.integration.ifms.gov.in/'>
+   <soapenv:Header>
+      <ser:Header>
+         <head:agencyCode>EA_KID</head:agencyCode>
+         <head:integrationCode>RCT033</head:integrationCode>
+         <head:uirNo>EA_KID-RCT033-03012022-KD0122801103075522</head:uirNo>
+      </ser:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:envelopedDataReq>
+<Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDMxMzE5MzlaMCMGCSqGSIb3DQEJBDEWBBSBiKIpkaWVH1nwRwMqksDQQBSxpDApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEArrTFR5RWRRLp7+/UlqotmtdauINQXnBLiQ3bIl/GUHV5et9yaiAnkTvZShTobCpqAvOGjnzsBvoLIxN/hQByEgWSN6EbPaf9PqKB0+D9dW32I7igENDCBHqjqyRjElBmdaywHTwzKR2qhAE7mVVz+1Ug92IS0hPTcTLlfAklcooHZOUM8L3TJuOraTV3WAtEN0+C7WMSoc7p8qvgTXYV/1A7pQyE2PJ9s5eqUwkwJk7wcitrCTEX54qiHKyS+S5JezEjeJH24PP3MPCK4L6OqQS7BMiZyPSZlHucQeKgsfvDSK9pFKKWlb4GfIbXrXJWh1tmXpBjihhrfinDe5OKNAAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>03/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801103075522</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>6872</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280110307552201</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>HEMA KUMAR S C</rmtrName>
+<totalAmount>6872</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+      </ser:envelopedDataReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+03 Jan 2022 18:55:24 - INFO  - Data :
+03 Jan 2022 18:55:25 - INFO  - MB OTC after GetKIISignDetails
+03 Jan 2022 18:55:25 - INFO  - Value cannot be null.
+Parameter name: value
+05 Jan 2022 14:27:45 - INFO  - GetMobileNumberOfInsured()
+05 Jan 2022 14:30:30 - INFO  - GetMobileNumberOfInsured()
+05 Jan 2022 14:36:56 - INFO  - GetMobileNumberOfInsured()
+05 Jan 2022 14:39:08 - INFO  - GetMobileNumberOfInsured()
+05 Jan 2022 14:39:47 - INFO  - GetTranDataFromString for Motorbranch Details:252998471
+05 Jan 2022 14:39:51 - INFO  - GetTranDataFromString for Motorbranch Details:1
+05 Jan 2022 14:39:56 - INFO  - GetTranDataFromString for Motorbranch Details:KD0122801105030004
+05 Jan 2022 14:40:01 - INFO  - GetTranDataFromString for Motorbranch Details:10700066
+05 Jan 2022 14:40:34 - INFO  - GetTranDataFromString for Motorbranch Details:Bank of Baroda
+05 Jan 2022 14:40:37 - INFO  - GetTranDataFromString for Motorbranch Details:Netbanking
+05 Jan 2022 14:40:42 - INFO  - GetTranDataFromString for Motorbranch Details:2022-01-05 14:05:17.908
+05 Jan 2022 14:40:43 - INFO  - GetTranDataFromString for Motorbranch Details:5c14b038f2e4a3f67234ffec8baeb59b
+05 Jan 2022 14:40:45 - INFO  - GetTranDataFromString:KD0122801105030004
+05 Jan 2022 14:40:45 - INFO  - KII_Home_Return_UID_Session :8796
+05 Jan 2022 14:42:31 - INFO  - GetMobileNumberOfInsured()
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString for Motorbranch Details:252998471
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString for Motorbranch Details:1
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString for Motorbranch Details:KD0122801105030004
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString for Motorbranch Details:10700066
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString for Motorbranch Details:Bank of Baroda
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString for Motorbranch Details:Netbanking
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString for Motorbranch Details:2022-01-05 14:05:17.908
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString for Motorbranch Details:5c14b038f2e4a3f67234ffec8baeb59b
+05 Jan 2022 14:43:05 - INFO  - GetTranDataFromString:KD0122801105030004
+05 Jan 2022 14:43:05 - INFO  - KII_Home_Return_UID_Session :8796
+05 Jan 2022 14:47:27 - INFO  - GetMobileNumberOfInsured()
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString for Motorbranch Details:252998471
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString for Motorbranch Details:1
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString for Motorbranch Details:KD0122801105030004
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString for Motorbranch Details:10700066
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString for Motorbranch Details:Bank of Baroda
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString for Motorbranch Details:Netbanking
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString for Motorbranch Details:2022-01-05 14:05:17.908
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString for Motorbranch Details:5c14b038f2e4a3f67234ffec8baeb59b
+05 Jan 2022 14:47:49 - INFO  - GetTranDataFromString:KD0122801105030004
+05 Jan 2022 14:47:49 - INFO  - KII_Home_Return_UID_Session :8796
+06 Jan 2022 12:24:49 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 12:28:39 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 12:29:23 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 12:30:10 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 12:35:45 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 12:44:56 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 12:47:09 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 12:48:06 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 12:49:26 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2018-7-01
+29-08-2018 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Kodagu
+ 
+Place= Rest of India
+9
+10
+4==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+42==>@Depreciation_year
+5==>@Depreciation_Id
+40==>@Depreciation_Value
+7==>@@GVWLid
+3==>@@Passengers
+11
+5==>@Zoneid
+Zone C==>@Zone
+12
+1.726  @OwnDamageValue
+73==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+30000==>@VehicleMinValue
+15==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+26935
+POLICY DETAILS
+update
+17
+1.726,26935,30000,40,Zone C,0,20,20,25,75
+06 Jan 2022 13:26:32 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 15:42:03 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 15:45:07 - INFO  - InsertPersonalDetails Enter
+06 Jan 2022 15:45:32 - INFO  - IndexPost-Enter to method
+06 Jan 2022 15:45:33 - INFO  - TextFileCreate()
+06 Jan 2022 15:45:34 - INFO  - 10.10.31.231:8080/SignXmlData-Before convertion
+06 Jan 2022 15:50:41 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 15:53:26 - INFO  - InsertPersonalDetails Enter
+06 Jan 2022 15:53:27 - INFO  - InsertPersonalDetails Enter
+06 Jan 2022 15:53:48 - INFO  - IndexPost-Enter to method
+06 Jan 2022 15:53:49 - INFO  - TextFileCreate()
+06 Jan 2022 15:53:50 - INFO  - 10.10.31.231:8080/SignXmlData-Before convertion
+06 Jan 2022 16:29:47 - INFO  - GetMobileNumberOfInsured()
+06 Jan 2022 16:30:24 - INFO  - Pending Issues DDO 1
+06 Jan 2022 16:30:24 - INFO  - Total Issues DDO 8
+06 Jan 2022 16:31:46 - INFO  - InsertPersonalDetails Enter
+06 Jan 2022 16:32:01 - INFO  - IndexPost-Enter to method
+06 Jan 2022 16:32:01 - INFO  - TextFileCreate()
+06 Jan 2022 16:32:02 - INFO  - 10.10.31.231:8080/SignXmlData-Before convertion
+07 Jan 2022 10:46:54 - INFO  - TextFileCreate()
+07 Jan 2022 10:46:54 - INFO  - Line catchD:\backup_25112021\kgid-development\KGID\Documents\KIIRequest\DoubleVerification\KD0122801106233442.txt
+07 Jan 2022 10:46:55 - INFO  - 10.10.31.231:8080/SignXmlData-Before convertion
+07 Jan 2022 10:46:55 - INFO  - RCT34-SignedResultData-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggZaMIIF
+QqADAgECAgwdAKSp9X6fc3S7oEQwDQYJKoZIhvcNAQELBQAwUzELMAkGA1UEBhMCQkUxGTAXBgNV
+BAoTEEdsb2JhbFNpZ24gbnYtc2ExKTAnBgNVBAMTIEdsb2JhbFNpZ24gR0NDIFIzIERWIFRMUyBD
+QSAyMDIwMB4XDTIxMDMwNTEyNDczM1oXDTIyMDQwNjEyNDczM1owJjEkMCIGA1UEAxMba2dpZG9u
+bGluZS5rYXJuYXRha2EuZ292LmluMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA37YL
+mN0kXpRrqCSKW5kMJ0BxnUGyBTE0ojAUYMjlo223vOqyP+FOpvfdYjCfxvkFiZzIfq5kBZw4d90T
+1fv2H+dIxNDtUsC3kwxtG3RoaXvrmOFmnnLEw6Zy1HE+Qv1IEcDgEC38/7mlJSLpqWGP2gbfwbxj
+O8Z+R2QtQvkdj09zVeJhvnZCb+yESgQPgzea/XIpZyp7Q5t6CanT2cKj6dRP3B23YZdVLANnzu9a
+elsTHcFI4I7EsjpOHPm9zHnNCH9OC3gdSspVQuDESA4x9N8Ah/5AOGvt7pMPIVjYk+qDA5VOiEKP
+YZtkmRF+AXpN0fo5q/uw5EXC7rRDuiSjkQIDAQABo4IDWTCCA1UwDgYDVR0PAQH/BAQDAgWgMIGT
+BggrBgEFBQcBAQSBhjCBgzBGBggrBgEFBQcwAoY6aHR0cDovL3NlY3VyZS5nbG9iYWxzaWduLmNv
+bS9jYWNlcnQvZ3NnY2NyM2R2dGxzY2EyMDIwLmNydDA5BggrBgEFBQcwAYYtaHR0cDovL29jc3Au
+Z2xvYmFsc2lnbi5jb20vZ3NnY2NyM2R2dGxzY2EyMDIwMFYGA1UdIARPME0wQQYJKwYBBAGgMgEK
+MDQwMgYIKwYBBQUHAgEWJmh0dHBzOi8vd3d3Lmdsb2JhbHNpZ24uY29tL3JlcG9zaXRvcnkvMAgG
+BmeBDAECATAJBgNVHRMEAjAAMEEGA1UdHwQ6MDgwNqA0oDKGMGh0dHA6Ly9jcmwuZ2xvYmFsc2ln
+bi5jb20vZ3NnY2NyM2R2dGxzY2EyMDIwLmNybDAmBgNVHREEHzAdghtrZ2lkb25saW5lLmthcm5h
+dGFrYS5nb3YuaW4wHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMB8GA1UdIwQYMBaAFA2Y
+wHN/q7292UdLSa0KSgysPsd8MB0GA1UdDgQWBBR/WLoWQFWsxIkivoywJakYFhW+4DCCAX4GCisG
+AQQB1nkCBAIEggFuBIIBagFoAHcAb1N2rDHwMRnYmQCkURX/dxUcEdkCwQApBo2yCJo32RMAAAF4
+Am3TLQAABAMASDBGAiEAi/BLbE9yDNliOVRq2HHKaHq4YTC8cMtSXQAXJ59QzEUCIQCTa4eVyAY7
+QYIpaJOiPPSitG2P7vQL6eoZyhyST1QbkAB2ACl5vvCeOTkh8FZzn2Old+W+V32cYAr4+U1dJlwl
+XceEAAABeAJt0ygAAAQDAEcwRQIgcfDDxOhtIDOzjTDrTgr2U8VdOoY3R0lby3fJIwcaK5UCIQDS
+nfUAhPn5PwxvCicmmBr5AuHHTg0+AbRiB7CR40FSQgB1AFGjsPX9AXmcVm24N3iPDKR6zBsny/ee
+iEKaDf7UiwXlAAABeAJt01wAAAQDAEYwRAIgaAQvu5kUc92kBqGDNc1D6otSi8LcZ2dH1zK4ZRF0
+qtoCIDzBeqEDEEqRC7A7VnOn3mjdNCqSjt1lkV86wONeb+S8MA0GCSqGSIb3DQEBCwUAA4IBAQAA
+AJJFzKfM8R/W+swjHKvIYm5E2M8XkOv0AWVpGIAG6+1DTDwXvu/qN2wCHL7JpKI5ANnu1P1rC/ZM
+Wx4G8bPNGD/THtQKY8NidUSMQ3YCOS/RIe/l8DPk3iFcnRfPPMQyfe8sxVfXuzz5zsz3/YHdIW6o
+fTs7voLdfth8Sr+mTx4LYpCqiwUbi3UNRRszTMEd8ovv7Igyo9W3YHbFGnBFe2jypZg6YyLK4Lhe
+2YbUUynH05B2m6AlfwJrsdq9d67cPwmXJGGcgDKAgwsE0XvVs3/r5UiJjw5blweTQBsBd1tgcdcu
+iPrSlNyvLGm/UupX1fP8cwnJ7F6kkO1vyHC3AAAxggHpMIIB5QIBATBjMFMxCzAJBgNVBAYTAkJF
+MRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMSkwJwYDVQQDEyBHbG9iYWxTaWduIEdDQyBSMyBE
+ViBUTFMgQ0EgMjAyMAIMHQCkqfV+n3N0u6BEMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJ
+KoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMDcwNTE2MzlaMCMGCSqGSIb3DQEJBDEWBBSY
+T9LUvClymPOocg0VThgQi3uwlDANBgkqhkiG9w0BAQEFAASCAQAlJckgq4uLCsL1ZQjPWsiuV+aJ
+kjXJymooqAS03MueYR5u7LFPdOZOtnuRVIEguK6z3/4b6VtqfUNyLTTbD+ngmbnsts++mwqPkx48
+Ye2NGl4aGUClFQiDY8ux61fe+1FtUxFj0Hym+/fE9+JJPGrRPvU8rTLU3HZbEDHVHXfrAbRZ2Wvs
+nnCEh/Cbz8BHn3WpJxWCOz5JbLPh344q5AEhtH89L2NGNJOhepJg/e/2Q6fJnPaGkMiWpirEhYbO
+JJaBdLPSFVNvPsYOtRdbAqICcz+v1gzp0HocmSwWIBCc153WVNb3h8h0NjDBGx8/kFaMA4/5P6Lo
+ci0UQRl7gAFJAAAAAAAA
+-----END PKCS7-----
+07 Jan 2022 10:46:55 - INFO  - 10.10.31.231:8080/SignXmlData-After convertion
+07 Jan 2022 10:46:55 - INFO  - RCT34-FileStream Rquesting for Pending Payment
+07 Jan 2022 10:46:56 - INFO  - RCT34-FileStream Rquest for Pending Payment Proceed
+07 Jan 2022 10:46:56 - INFO  - RCT34-HttpWebResponse:OK
+07 Jan 2022 10:46:56 - INFO  - RCT34 - XmlResultWithoutNs<Envelope>
+  <Header>
+    <Header>
+      <agencyCode>EA_KID</agencyCode>
+      <integrationCode>RCT034</integrationCode>
+      <uirNo>EA_KID-RCT034-07012022-KD0122801106233442</uirNo>
+    </Header>
+  </Header>
+  <Body>
+    <envelopedDataRes>
+      <data>
+        <RctReceivePaymentStatusRs>
+          <deptRefNum>KD0122801106233442</deptRefNum>
+          <statusCode>KII-RCTER-34</statusCode>
+          <statusDesc>Department reference number not found</statusDesc>
+        </RctReceivePaymentStatusRs>
+      </data>
+      <Signature></Signature>
+    </envelopedDataRes>
+  </Body>
+</Envelope>
+07 Jan 2022 10:46:56 - INFO  - RCT34 - doc.InnerTextEA_KIDRCT034EA_KID-RCT034-07012022-KD0122801106233442KD0122801106233442KII-RCTER-34Department reference number not found
+07 Jan 2022 10:46:56 - INFO  - RCT34-Results<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><ns4:Header xmlns:ns2="http://header.ei.integration.ifms.gov.in/" xmlns:ns3="http://schema.fault.ei.integration.ifms.gov.in/" xmlns:ns4="http://service.receivepymntstatus.dept.rct.integration.ifms.gov.in/">
+    <ns2:agencyCode>EA_KID</ns2:agencyCode>
+    <ns2:integrationCode>RCT034</ns2:integrationCode>
+    <ns2:uirNo>EA_KID-RCT034-07012022-KD0122801106233442</ns2:uirNo>
+</ns4:Header></SOAP-ENV:Header><soap:Body><env:envelopedDataRes xmlns:env="http://service.receivepymntstatus.dept.rct.integration.ifms.gov.in/"><data><RctReceivePaymentStatusRs><deptRefNum>KD0122801106233442</deptRefNum><statusCode>KII-RCTER-34</statusCode><statusDesc>Department reference number not found</statusDesc></RctReceivePaymentStatusRs></data><Signature/></env:envelopedDataRes></soap:Body></soap:Envelope>
+07 Jan 2022 10:46:56 - INFO  - RCT34-ResultJsonConversion{"deptRefNum":"KD0122801106233442","statusCode":"KII-RCTER-34","statusDesc":"Department reference number not found"}
+07 Jan 2022 10:46:56 - INFO  - RCT34-EmpID 551467
+07 Jan 2022 10:46:56 - INFO  - Payment status
+07 Jan 2022 10:46:56 - INFO  - RCT34-DBResult1
+07 Jan 2022 10:47:08 - INFO  - TextFileCreate()
+07 Jan 2022 10:51:27 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 10:53:57 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 11:01:09 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIRenewalReferenceNo-Errors->Procedure or function 'sp_kgid_saveMIRenewalReferenceNo' expects parameter '@PolicyNo', which was not supplied.
+07 Jan 2022 11:52:59 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 11:55:05 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 12:25:20 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 12:28:21 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIRenewalReferenceNo-Errors->Procedure or function 'sp_kgid_saveMIRenewalReferenceNo' expects parameter '@PolicyNo', which was not supplied.
+07 Jan 2022 12:30:35 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIRenewalReferenceNo-Errors->Error converting data type nvarchar to bigint.
+07 Jan 2022 12:30:51 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 15:30:51 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 15:31:37 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIRenewalReferenceNo-Errors->Procedure or function 'sp_kgid_saveMIRenewalReferenceNo' expects parameter '@PolicyNo', which was not supplied.
+07 Jan 2022 15:31:45 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIRenewalReferenceNo-Errors->Procedure or function 'sp_kgid_saveMIRenewalReferenceNo' expects parameter '@PolicyNo', which was not supplied.
+07 Jan 2022 15:32:44 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 16:00:46 - INFO  - GetMobileNumberOfInsured()
+07 Jan 2022 16:38:01 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 11:13:35 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 11:18:52 - INFO  - Pending Issues DDO 1
+10 Jan 2022 11:18:52 - INFO  - Total Issues DDO 9
+10 Jan 2022 12:27:40 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 12:33:09 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 12:45:11 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 12:48:24 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 12:54:04 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 13:00:16 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 13:06:58 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 14:27:20 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 14:44:17 - INFO  - GetMobileNumberOfInsured()
+10 Jan 2022 14:45:09 - INFO  - Inside PayMIOTCChallanDetails
+10 Jan 2022 14:45:09 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+10 Jan 2022 14:45:09 - INFO  - Data File generated *********
+10 Jan 2022 14:45:09 - INFO  - D:\backup_25112021\kgid-development\KGID\MIDocuments\0\KD0122801110034601.txt
+10 Jan 2022 14:45:09 - INFO  - Before API Call
+10 Jan 2022 14:45:09 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+10 Jan 2022 14:45:09 - INFO  - <Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMTAwOTEwMDFaMCMGCSqGSIb3DQEJBDEWBBQPJZUtcn5bB5ExzV2CILks3AJMizApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAOxHqu2J54r2eWYSEV6AuN6jWamUZ4tMwjGI4LeXvTHrTh8IK1zO7DOyenMLmle8jOmbwIYWlESMUD56s+3Zk1OxAx0ZEr6wdTgoFOW8kOXEcPtmzT7u2XJmi8suwjN69l8TOdOhwBq5ymzswUVOZuINrRfjaqSG/ocXqlz5tvsCw8Gr8zV6RrSfmpYKZLPF3DOd051lJ7tFkdIBCamugB6B4AhOkPGWBQ1nx0MGZVuKY+EJ5nWGctC0YYzV2DWdxAiqRrwjEZIaZDg9pxTV52IlBSEgpk63+QdbD47WZ/+5AQsbjsJ+VRcqHMbbsAhAttV7D85oQrnqswIWdh6akCQAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+10 Jan 2022 14:45:09 - INFO  - MB OTC API Call ended
+10 Jan 2022 14:45:09 - INFO  - MB OTC after Sign detail
+10 Jan 2022 14:45:09 - INFO  - <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ser='http://service.receivevalidatechallan.dept.rct.integration.ifms.gov.in/' xmlns:head='http://header.ei.integration.ifms.gov.in/'>
+   <soapenv:Header>
+      <ser:Header>
+         <head:agencyCode>EA_KID</head:agencyCode>
+         <head:integrationCode>RCT033</head:integrationCode>
+         <head:uirNo>EA_KID-RCT033-10012022-KD0122801110034601</head:uirNo>
+      </ser:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:envelopedDataReq>
+<Signature>-----BEGIN PKCS7-----
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIAwggLsMIIB1KADAgECAhAlvQ9dEqMkr0nMCdy1TBJdMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xOTExMDcwNzUyNDJaFw0yNDExMDcwMDAwMDBaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMUEICV3DvxsdnTtuQesrNUjSIJrgsGSSTui5l2NuGPmB4aE9MW7o9nG7xzZdwu5au3bNIcMhL3zjbSdESkWjSXWU4wtUzaNwyfdeh/54Nqatm6jPL+C8VcxDFgvLdAD5hDILAyIV6lf3fEoGwN7dy/+AFo2XrPDsucMr+pdXceAXI6wI2lgXhf48xWDxlKptI6ahZQi8HMEr4XpBdLpv2SkuKhgccU9fL8L3zS82bWjyxPM+ST2/03OGzI0sTTaPtfqzkCMAM6qlMYpxK048X4drlMF5fSnQTaGvLlaodMr502nKiM0NGorHWLvp8rrqrIcGgCDoigfUql+5u4GsZkCAwEAAaM6MDgwCwYDVR0PBAQDAgSwMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBQGA1UdEQQNMAuCCWxvY2FsaG9zdDANBgkqhkiG9w0BAQsFAAOCAQEAa1EXpyZSbXIswvQw0sRrXF0qbl3IkdGuIk1utqGjXMkFaBMQCbVb+giHe6c3dZJw5Po7lWqU9NLBqS0cUKj/oit4ElBCC7X35EfjqYXu5DKzsd2SALOOyb5pO5GNuQiEEcHfP/IIr65PX+07kX9aKbgOSae6D+SZC4jlJSM0fEwQDdkxHDBGqqycRz2UVwOvNaFpynZYLtDzviMHPupPAy/oU+RCzEHdb6cQ3oxFe6xuHwjhpg5z4SMz2JiGeEhT0ZTBaDzsexvkitujM7XiBuwwJCuZYANPiuukzVi6UDhAqKtOuo2uDBr62sLJ6gvgwhqtEwIehXNaU80W9OyiCAAAMYIB2jCCAdYCAQEwKDAUMRIwEAYDVQQDEwlsb2NhbGhvc3QCECW9D10SoySvScwJ3LVMEl0wCQYFKw4DAhoFAKCBiDAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjAxMTAwOTEwMDFaMCMGCSqGSIb3DQEJBDEWBBQPJZUtcn5bB5ExzV2CILks3AJMizApBgkqhkiG9w0BCTQxHDAaMAkGBSsOAwIaBQChDQYJKoZIhvcNAQEBBQAwDQYJKoZIhvcNAQEBBQAEggEAOxHqu2J54r2eWYSEV6AuN6jWamUZ4tMwjGI4LeXvTHrTh8IK1zO7DOyenMLmle8jOmbwIYWlESMUD56s+3Zk1OxAx0ZEr6wdTgoFOW8kOXEcPtmzT7u2XJmi8suwjN69l8TOdOhwBq5ymzswUVOZuINrRfjaqSG/ocXqlz5tvsCw8Gr8zV6RrSfmpYKZLPF3DOd051lJ7tFkdIBCamugB6B4AhOkPGWBQ1nx0MGZVuKY+EJ5nWGctC0YYzV2DWdxAiqRrwjEZIaZDg9pxTV52IlBSEgpk63+QdbD47WZ/+5AQsbjsJ+VRcqHMbbsAhAttV7D85oQrnqswIWdh6akCQAAAAAAAA==
+-----END PKCS7-----</Signature>
+
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>10/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801110034601</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>6872</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280111003460101</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>SHARANAPPA SHIVAPPA YARANAL</rmtrName>
+<totalAmount>6872</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
+      </ser:envelopedDataReq>
+   </soapenv:Body>
+</soapenv:Envelope>
+10 Jan 2022 14:45:46 - INFO  - Data :"soap:Server"
+10 Jan 2022 14:45:46 - INFO  - MB OTC after GetKIISignDetails
+10 Jan 2022 14:45:46 - INFO  - Error converting value "soap:Server" to type 'KGID.Controllers.MotorInsuranceController+SignedDataResponseKII'. Path '', line 1, position 13.
+11 Jan 2022 13:53:03 - INFO  - GetMobileNumberOfInsured()
+11 Jan 2022 13:54:23 - INFO  - Pending Issues CWD 17
+11 Jan 2022 13:54:23 - INFO  - Total Issues CWD 1056
+13 Jan 2022 14:38:36 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIReferenceNoExcel-Errors->Error converting data type nvarchar to bigint.
+13 Jan 2022 14:38:55 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIReferenceNoExcel-Errors->Error converting data type nvarchar to bigint.
+13 Jan 2022 14:40:33 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIReferenceNoExcel-Errors->Error converting data type nvarchar to bigint.
+13 Jan 2022 14:41:25 - INFO  - ExecuteCmd-SP->sp_kgid_saveMIReferenceNoExcel-Errors->Error converting data type nvarchar to bigint.
+13 Jan 2022 15:01:47 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 15:02:59 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 15:03:06 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 15:03:48 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+12921==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>1233839
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+0==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+0==>@VehicleCategory
+0==>MinValueCubic_Capacity
+3==>@NCB_year
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+7==>@@Passengers
+47==>@Depreciation_year
+5==>@Depreciation_Id
+40==>@Depreciation_Value
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue
+0==>@OwnDamageId
+0==>@ODAdditional
+0==>@@ODGovDiscoount
+0==>@VehicleMinValue
+0==>@VehicleMinValueId
+0
+@PLgovDiscount==>0
+@@PLValueID==>0
+@@PLDriverAmt==>0
+@@PLPassengerAmt==>0
+0
+0==>@PLTotal
+0
+0
+0
+1
+13 Jan 2022 15:04:12 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 15:06:36 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+12921==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>1233839
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+0==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+0==>@VehicleCategory
+0==>MinValueCubic_Capacity
+3==>@NCB_year
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+7==>@@Passengers
+47==>@Depreciation_year
+5==>@Depreciation_Id
+40==>@Depreciation_Value
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue
+0==>@OwnDamageId
+0==>@ODAdditional
+0==>@@ODGovDiscoount
+0==>@VehicleMinValue
+0==>@VehicleMinValueId
+0
+@PLgovDiscount==>0
+@@PLValueID==>0
+@@PLDriverAmt==>0
+@@PLPassengerAmt==>0
+0
+0==>@PLTotal
+0
+0
+0
+1
+13 Jan 2022 15:07:37 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 15:07:38 - INFO  - VerifyKGIDAndMobileNo the remote name could not be resolved: 'msdgweb.mgov.gov.in'
+13 Jan 2022 15:08:22 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+12921==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>1233839
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+0==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+0==>@VehicleCategory
+0==>MinValueCubic_Capacity
+3==>@NCB_year
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+7==>@@Passengers
+47==>@Depreciation_year
+5==>@Depreciation_Id
+40==>@Depreciation_Value
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue
+0==>@OwnDamageId
+0==>@ODAdditional
+0==>@@ODGovDiscoount
+0==>@VehicleMinValue
+0==>@VehicleMinValueId
+0
+@PLgovDiscount==>0
+@@PLValueID==>0
+@@PLDriverAmt==>0
+@@PLPassengerAmt==>0
+0
+0==>@PLTotal
+0
+0
+0
+1
+13 Jan 2022 15:18:08 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 15:18:09 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 15:50:55 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 16:46:46 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 17:38:43 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetailsExcel-Errors->Cannot insert the value NULL into column 'p_mi_application_id', table 'kgid_uat.dbo.tbl_mi_policy_details'; column does not allow nulls. INSERT fails.
+1
+2018-02-01
+Mar  9 2018 12:00AM==>@dateofregistration
+2
+0==>@@IsElectrical
+4
+ 
+ 
+Place= Rest of India
+9
+10
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+11
+2==>@Zoneid
+Zone B==>@Zone
+13
+ 
+ 
+ 
+ 
+0==>@VehicleMinValue
+0==>@VehicleMinValueId
+ 
+14
+ 
+ 
+ 
+ 
+PD
+ 
+POLICY DETAILS
+The statement has been terminated.
+insert16
+16
+18
+Zone B
+13 Jan 2022 17:48:11 - INFO  - GetMobileNumberOfInsured()
+13 Jan 2022 18:08:42 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 09:47:12 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 10:06:46 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 13:19:06 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 14:03:07 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 14:09:03 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 15:09:50 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 15:09:50 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->Could not find stored procedure 'sp_kgid_verifyKGIDEmployeeLoginDetail'.
+17 Jan 2022 15:09:50 - INFO  - Error=Cannot find table 0.
+17 Jan 2022 15:11:41 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 15:17:47 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 15:28:01 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails_new-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails_new'.
+17 Jan 2022 15:28:03 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails_new-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails_new'.
+18 Jan 2022 11:07:04 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 11:13:53 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 11:13:54 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->Could not find stored procedure 'sp_kgid_verifyKGIDEmployeeLoginDetail'.
+18 Jan 2022 11:13:54 - INFO  - Error=Cannot find table 0.
+18 Jan 2022 11:13:55 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 11:13:55 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->Could not find stored procedure 'sp_kgid_verifyKGIDEmployeeLoginDetail'.
+18 Jan 2022 11:13:56 - INFO  - Error=Cannot find table 0.
+18 Jan 2022 11:22:31 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 11:33:01 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 11:38:43 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 12:16:08 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 12:45:39 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 12:58:14 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 13:03:10 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 13:14:06 - INFO  - Inside PayMIOTCChallanDetails
+18 Jan 2022 13:14:06 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+18 Jan 2022 13:14:06 - INFO  - Data File generated *********
+18 Jan 2022 13:14:06 - INFO  - D:\latest15-1-2022\kgid-development\KGID\MIDocuments\0\KD0122801118131232.txt
+18 Jan 2022 13:14:06 - INFO  - Before API Call
+18 Jan 2022 13:14:06 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+18 Jan 2022 13:14:47 - INFO  - Inside PayMIOTCChallanDetails
+18 Jan 2022 13:14:47 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+18 Jan 2022 13:14:47 - INFO  - Data File generated *********
+18 Jan 2022 13:14:47 - INFO  - D:\latest15-1-2022\kgid-development\KGID\MIDocuments\0\KD0122801118131232.txt
+18 Jan 2022 13:14:47 - INFO  - Before API Call
+18 Jan 2022 13:14:47 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+18 Jan 2022 13:16:05 - INFO  - SignData File Creating in MIDocuments/0
+18 Jan 2022 13:16:05 - INFO  - MI BPSO25 SignData File Path: D:\latest15-1-2022\kgid-development\KGID\MIDocuments\0\KG1801220001.txt
+18 Jan 2022 13:18:36 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 13:20:43 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 13:24:35 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 13:28:22 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 13:46:38 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 14:05:29 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 14:07:58 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 14:52:25 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 14:56:42 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 15:15:19 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 17:03:50 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 17:09:19 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 17:42:05 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 18:04:13 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 18:25:44 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 18:41:14 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 10:05:28 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 10:05:30 - INFO  - GetMobileNumberOfInsured()

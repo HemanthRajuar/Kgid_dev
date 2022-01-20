@@ -1,0 +1,420 @@
+﻿@model KGID_Models.KGIDEmployee.tbl_nb_declaration_master
+
+
+<style>
+
+    div#divDeclaration {
+        color: black;
+        background: #f3f3f38f;
+        padding: 10px;
+    }
+
+    div#ncr_tc {
+        color: black;
+        margin-top: 10px;
+    }
+</style>
+<div class="container" id="divDeclaration">
+    <div class="form-group col-12">
+        <div class="row">
+            <div class="knlan pl-2">
+                1. <span id="lblEmployeeNameKN" class="font-weight-normal"></span>,ಆದ ನಾನು ಈ ಪ್ರಸ್ತಾವನೆಯಲ್ಲಿರುವ ಎಲ್ಲಾ ಪ್ರಶ್ನೆಗಳನ್ನು ಪೂರ್ಣವಾಗಿ ತಿಳಿದುಕೊಂಡು ಅವುಗಳಿಗೆ ಸತ್ಯವಾದ ಮಾಹಿತಿಗಳನ್ನೇ ಒದಗಿಸಿರುತ್ತೇನೆಂದು ಈ ಮೂಲಕ ಘೋಷಿಸುತ್ತೇನೆ.<br />
+                2. ಪ್ರಸ್ತಾವನೆ ಸಲ್ಲಿಸಿದ ದಿನದಿಂದ ಅಂಗೀಕಾರದವರೆಗಿನ ಮಧ್ಯಂತರ ಅವಧಿಯಲ್ಲಿ ನನ್ನ ಆರೋಗ್ಯದಲ್ಲಿ ವ್ಯತ್ಯಾಸ ಉಂಟಾದಲ್ಲಿ ಅವುಗಳನ್ನು ವಿಮಾ ಇಲಾಖೆಗೆ ಲಿಖಿತ ಮೂಲಕ ತಿಳಿಸುತ್ತೇನೆ.<br />
+                3. ನಾನು ನೀಡಿರುವ ಮಾಹಿತಿಗಳು ವಿಮಾ ಕರಾರಿಗೆ ಆಧಾರವಾಗಿರುವುದಾಗಿಯೂ ಸುಳ್ಳು ಮಾಹಿತಿ ನೀಡಿ ಪಾಲಿಸಿ ಪಡೆದಲ್ಲಿ ವಿಮಾ ಕರಾರು ನಿಷ್ಟರಿಣಾಮವಾಗಿ ನಾನು ಪಾವತಿಸಿದ ವಿಮಾ ಕಂತುಗಳು ಸರ್ಕಾರಕ್ಕೆ ಮುಟ್ಟುಗೋಲಾಗುತ್ತೆಂದೂ ನಾನು ತಿಳಿದಿರುತ್ತೇನೆ. <br />
+                4. ಕಡ್ಡಾಯ ಜೀವ ವಿಮಾ ನಿಯಮಾವಳಿಗಳ ಎಲ್ಲಾ ನಿಬಂಧನೆಗಳನ್ನು ನಾನು ಒಪ್ಪಿಕೊಂಡಿರುತ್ತೇನೆ.
+            </div>
+            <div class="Enlan pl-2">
+                1. <span id="lblEmployeeNameEN" class="font-weight-normal"></span>, who has put forward the mandatory life insurance policy, I declare that I have come to know all the questions in this proposal and have provided them with factual information.<br />
+                2. In the interim period from the date of submission to the date of acceptance, I will notify the insurance department in writing if there is a difference in my health.<br />
+                3. I am aware that the information I have provided is the basis for the insurance contract and that the insurance contract is infective  in paying for the false insurance policy. <br />
+                4. I agree to all the provisions of the Mandatory Insurance Regulations.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group" id="ncr_tc">
+        @Html.CheckBoxFor(Model => Model.ndm_declaration_status, new { @id = "chkDeclaration", @name = "ndm_declaration_status" })
+        <label class="knlan" for="ndm_declaration_status">ಮೇಲೆ ತಿಳಿಸಿದ ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳನ್ನು ನಾನು ಒಪ್ಪುತ್ತೇನೆ.</label>
+        <label class="Enlan" for="ndm_declaration_status">I agree to the terms and condition mentioned above.</label>
+        @*<label> I agree to the terms and condition mentioned above. </label>*@
+    </div>
+</div>
+<div>
+    <div class="row">
+        <div class="form-group col-12  text-right">
+            @*<a id="btnempSaveDeclaration" class="btn btn-primary btn-sm text-white" onclick="GisSaveDeclaration();">Save</a>
+                <a id="btnempNextDeclaration" class="btn btn-primary btn-sm text-white">Cancel</a>*@
+        </div>
+    </div>
+</div>
+
+@*//banashree*@
+
+<div id="divPrintForm" style="display:none;">
+    <style>
+        #wrapper {
+            padding: 8px;
+            /*position: absolute;*/
+            overflow: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border: 1px solid black;
+        }
+
+
+            #wrapper p {
+                font-size: 14px;
+                line-height: 8px;
+                color: black;
+            }
+
+        #wrapper1 {
+            padding: 8px;
+            /*position: absolute;*/
+            overflow: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border: 1px solid black;
+        }
+
+
+            #wrapper1 p {
+                font-size: 14px;
+                line-height: 8px;
+                color: black;
+            }
+
+        #tblPers p {
+            font-size: 12px;
+            line-height: 18px;
+            color: black;
+        }
+        /*#wrapper table,
+        th,
+        td {
+          padding: 10px;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }*/
+    </style>
+    <div id="wrapper">
+        @*<p style="text-align: center;"><strong>KARNATAKA GOVERNMENT INSURANCE DEPARTMENT</strong></p>
+            <p style="text-align: center;"><strong>GOVERNMENT OF KARNATAKA</strong></p>
+            <p>&nbsp;</p>
+            <p style="text-align: center;"><strong>LIFE INSURANCE PROPOSAL FORM</strong></p>*@
+        <p style="text-align: center;">
+            <img src="~/Content/Images/img.png" style="width:50px" />
+        </p>
+        <p style="text-align: center;" class="Enlan"><strong>KARNATAKA GOVERNMENT INSURANCE DEPARTMENT</strong></p>
+        <p style="text-align: center;" class="knlan"><strong>ಕರ್ನಾಟಕ ಸರ್ಕಾರಿ ವಿಮಾ ಇಲಾಖೆ</strong></p>
+
+        <p style="text-align: center;" class="Enlan">
+            <strong>
+                GROUP INSURANCE
+            </strong>
+        </p>
+        <p style="text-align: center;" class="knlan">
+            <strong>
+                ಜೀವ ವಿಮಾ ಪ್ರಸ್ತಾವನೆ (ಕಡ್ಡಾಯ ಜೀವ ವಿಮೆ)
+            </strong>
+        </p>
+        <hr />
+        @{
+            @Html.Action("PBasicDetailsToView", "GroupInsurance")
+        }
+        @*<hr />
+            <p style="text-align: center;"><strong><span class="knlan">ಕೆಜಿಐಡಿ ವಿವರಗಳು</span><span class="Enlan">KGID DETAILS</span></strong></p>
+            @{
+                @Html.Action("PKGIDDetailsToView", "ViewDataToVerify")
+            }
+            <hr />*@
+
+    </div>
+    @*<div class="html2pdf__page-break"></div>*@
+    <div style="break-after:page"></div>
+    <div>
+        @*wrappper used*@
+        <p style="text-align: center; color:black;"><strong><span class="knlan">ನಾಮನಿರ್ದೇಶಿತ ವಿವರಗಳು</span><span class="Enlan">NOMINEE &nbsp; DETAILS</span></strong></p>
+        @{
+            @Html.Action("PNomineeDetailsToView", "GroupInsurance")
+        }
+    </div>
+    <br />
+
+    @*<div style="break-after:page"></div>*@
+    <div id="wrapper" style="margin-top:20px;">
+
+        <p>
+            <span class="knlan" style="line-height:14px;">
+                ಮೂಲ ವಿವರಗಳಲ್ಲಿ ನಮೂದಿಸಿದ ಮಾಹಿತಿ ಪರಿಶೀಲಿಸಲಾಗಿ ಅದು ಸರಿಯಾಗಿರುತ್ತದೆಂದು
+                ಹಾಗೂ ಮನವಿದಾರರು ಮೇಲಿನ ಎಲ್ಲಾ ಪ್ರಶ್ನೆಗಳಿಗೆ ಸರಿಯಾದ ಮಾಹಿತಿ ನೀಡಿರುತ್ತಾರೆಂದು ಈ
+                ಮೂಲಕ ದೃಢೀಕರಿಸುತ್ತೇನೆ.
+            </span>
+            <span class="Enlan" style="line-height:14px;">
+                I attest that the information provided <b>Basic Details</b> has been scrutinized and is true
+                and also that the proposer  has provided factual information for all the questions above.
+            </span>
+        </p>
+        <br />@*<br /><br /><br /><br /><br />*@
+        <table width="100%;">
+            <tr>
+                <td width="50%" style="border-width:thin;">
+                    <span class="knlan">ದಿನಾಂಕ:</span><span class="Enlan">Date:</span>
+                    <br />
+                    <span class="knlan">ಸ್ಥಳ:</span><span class="Enlan">Place:</span>
+                </td>
+                <td width="50%" style="text-align:center; border-width:thin;">
+                    <span class="knlan">
+                        ಮನವಿದಾರರ ಮೇಲಧಿಕಾರಿಗಳ ಸಹಿ<br />
+                        (ವೇತನ ಬಟವಾಡೆ ಮಾಡುವ  ಅಧಿಕಾರಿ)<br />
+                        ಪದನಾಮ ಮತ್ತು ಪೂರ್ಣ ವಿಳಾಸ.(ಪಿನ್‍ ಕೋಡ್‍ ಒಳಗೊಂಡ ಮೊಹರು)
+                    </span>
+                    <span class="Enlan" style="color: black;">
+                        Seal & Signature of the officer<br />
+                        (Drawing & Disbursing Officer)<br />
+                        Designation and address including pincode
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <p style="text-align: left;" class="knlan"><strong>ಸೂಚನೆ:</strong></p><p style="text-align: left;" class="Enlan"><strong>Note:</strong></p>
+        <ol>
+            <li>
+                <p style="line-height:14px;" class="knlan">
+                    ಈ ಪ್ರಸ್ತಾವನೆಯನ್ನು 50 ವರ್ಷ ಮೀರದ ಸರ್ಕಾರಿ ನೌಕರರು ಮಾತ್ರ ಸಲ್ಲಿಸಲು ಅರ್ಹರು.
+                </p>
+                <p style="line-height:14px;" class="Enlan">
+                    Government servant who have not crossed the age of 50 years are only eligible for
+                    submitting this proposal.
+                </p>
+            </li>
+            <li>
+                <p style="line-height:14px;" class="knlan">
+                    ಮನವಿದಾರರು 40 ವರ್ಷ ವಯಸ್ಸು  ಮೀರಿದ ಸಂದರ್ಭದಲ್ಲಿ ಅಥವಾ ಪ್ರಸ್ತಾಪಿಸಿರುವ
+                    ಪಾಲಿಸಿಯ ಮಾಸಿಕ ವಿಮಾ ಕಂತಿನ ಪಾವತಿ ರೂ. 1000 ಮೀರಿದ ಸಂದರ್ಭದಲ್ಲಿ
+                    ಮನವಿದಾರರು ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆಗೆ ಒಳಪಟ್ಟು ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷಕರ ವರದಿಯನ್ನು ಈ
+                    ಪ್ರಸ್ತಾವನೆಯೊಂದಿಗೆ ಸಲ್ಲಿಸತಕ್ಕದ್ದು.
+                </p>
+                <p style="line-height:1.2;" class="Enlan">
+                    If the proposer is aged above 40 years or if the monthly premium of the proposed
+                    policy  is more than Rs. 1000/- in such case, the proposer has to under go a medical
+                    examination and the medical examiner’s report has to be submitted along with the
+                    proposal.
+                </p>
+            </li>
+            <li>
+                <p style="line-height:14px;" class="knlan">
+                    ಪ್ರಸ್ತಾವನೆಯನ್ನು ಇಲಾಖೆಯು ಅಂಗೀಕರಿಸಿದ ದಿನಾಂಕದಂದು ಆ ಮನವಿದಾರರ ಸರ್ಕಾರಿ
+                    ಸೇವೆಯು ಯಾವುದೇ ಕಾರಣಕ್ಕಾಗಿ ಸಮಾಪ್ತಿಯಾಗಿದ್ದಲ್ಲಿ ಅಂತಹ ಪ್ರಸ್ತಾವನೆಯು
+                    ತಾನಾಗಿಯೇ ರದ್ದಾಗುವುದು.
+                </p>
+                <p style="line-height:1.2;" class="Enlan">
+                    If the proposer ceases to be in government service on the date of acceptance of his
+                    proposal by the department the proposal  stands cancelled automatically.
+                </p>
+            </li>
+
+        </ol>
+    </div>
+</div>
+
+
+<div id="divPrintForm7" style="display:none;">
+
+    <style type="text/css">
+        .form7_gis {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+    </style>
+    <div class="form7_gis">
+        <wrapper>
+            <h5 style="text-align: center; color:black;">Form No. 7</h5>
+            <h6 style="text-align: center; color:black;">NOMINATION FOR BENEFITS UNDER THE KARNATAKA STATE EMPLOYEES’ GROUP INSURANCE SCHEME, 1981.</h6>
+
+            <p style="text-align: center; line-height: 1.2; color:black;">When the Government employee has a family and wishes to nominate one member or more than one member there of.</p>
+
+
+            <p style="text-align: justify; line-height: 1.2; color:black;">
+                I, hereby nominate the person / persons mentioned below who is /are member(s) of family,
+                and confer on him / them right to receive to the extent specified below any amount that may
+                be sanctioned by the Karnataka Government under the Karnataka State Employees’ Group Insurance
+                Scheme,1981 in the event of my death while in service or which having become payable on my attaining the age of
+                superannuation may remain unpaid at my death.
+            </p>
+
+            @{
+                @Html.Action("PNomineeDetailsToView", "GroupInsurance")
+            }
+            @*<table>
+                    <tr>
+                        <th>Names and address of nominee/s</th>
+                        <th>Relationship with Govt. employee</th>
+                        <th>Age</th>
+                        <th>*Share to be paid to each</th>
+                        <th>contingencies on the happening of which the nomination shall become invalid</th>
+                        <th>Name, address and relationship of the person, if any, to whom the right of the nominee shall pass in the event of his predeceasing the Govt. employee</th>
+                    </tr>
+
+                    <tr>
+                        <td>1.</td>
+                        <td>2.</td>
+                        <td>3.</td>
+                        <td>4.</td>
+                        <td>5.</td>
+                        <td>6.</td>
+                    </tr>
+                </table>*@
+
+
+
+
+            <br />
+            <table style="border:none; color:black;">
+                <tr>
+                    <td style="width:370px; text-align: center; border:none; color:black;">Dated this</td>
+                    <td style="width:370px; text-align: center; border:none; color:black;">day of</td>
+                    <td style="width:370px; text-align: center; border:none; color:black;">19</td>
+                    <td style="width:370px; text-align: center; border:none; color:black;">at</td>
+                </tr>
+            </table>
+
+            <br />
+            <p style="color:black;">Signature of Two witnesses: </p>
+
+            <ol>
+                <li></li>
+                <li></li>
+            </ol>
+
+
+
+            <p style="text-align: right; color:black;">Signature of Govt. employee.</p>
+
+
+            <p style="border-bottom:1px solid black;"></p>
+
+            <p style="line-height: 1.2; color:black;">
+                N.B.: The Government employee should draw line across the blank space below his last entry to prevent the insertion
+                of any names after he has signed.
+            </p>
+
+            <p style="line-height: 1.2; color:black;">*This column should be filled in so as to cover the whole amount that may be payable under the Insurance Scheme.</p>
+
+
+
+        </wrapper>
+    </div>
+</div>
+
+<div id="divPrintForm6" style="display:none;">
+
+    <style type="text/css">
+
+        .form6_gis {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+    </style>
+    <div class="form6_gis">
+        <wrapper>
+            <h5 style="text-align: center; color:black; margin:auto;">Form No. 6</h5><br />
+            <h6 style="text-align: center; color:black; margin:auto;">NOMINATION FOR BENEFITS UNDER THE KARNATAKA STATE EMPLOYEES’ GROUP INSURANCE SCHEME, 1981.</h6><br />
+
+            <p style="text-align: center; color:black; margin:auto;">When the Government employee has no family and wishes to nominate one one person or more than one person. </p><br />
+
+
+            <p style="text-align: justify; line-height: 1.2; color:black;">
+                I, having no family, hereby nominate the person / persons mentioned below and confer on him / them
+                the right to receive to the extent specified below any amount that may be sanctioned by the Karnataka
+                Government under the Karnataka State Employees’ Group Insurance Scheme, 1981 in the event of my
+                death while in service which having become payable on my attaining the age of superannuation may remain unpaid at my death.
+            </p>
+
+
+
+
+            @{
+                @Html.Action("PNomineeDetailsToView", "GroupInsurance")
+            }
+
+            @*<table class="table_f6">
+                <tr>
+                    <th class="f6_1">Names and address of nominee/s</th>
+                    <th class="f6_1">Relationship with Govt. employee</th>
+                    <th class="f6_1">Age</th>
+                    <th class="f6_1">**Share to be paid to each</th>
+                    <th class="f6_1">**contingencies on the happening of which the nomination shall become invalid</th>
+                    <th class="f6_1">Name, address and relationship of the person, if any, to whom the right of the nominee shall pass in the event of his predeceasing the Govt. employee</th>
+                </tr>
+
+                <tr>
+                    <td class="f6_1">1.</td>
+                    <td class="f6_1">2.</td>
+                    <td class="f6_1">3.</td>
+                    <td class="f6_1">4.</td>
+                    <td class="f6_1">5.</td>
+                    <td class="f6_1">6.</td>
+                </tr>
+                </table>*@
+
+            <br>
+
+            <table style="border:none; color:black;">
+                <tr>
+                    <td style="width:370px; text-align: center; border:none;">Dated this</td>
+                    <td style="width:370px; text-align: center; border:none;">day of</td>
+                    <td style="width:370px; text-align: center; border:none;">19</td>
+                    <td style="width:370px; text-align: center; border:none;">at</td>
+                </tr>
+            </table>
+
+            <br>
+
+
+            <p style="color:black;">Signature of Two witnesses: </p>
+
+            <ol>
+                <li></li>
+                <li></li>
+            </ol>
+
+
+
+            <p style="text-align: right; color:black;">Signature of Govt. employee.</p>
+
+
+            <p style="border-bottom:1px solid black;"></p>
+
+            <p style="color:black; line-height: 1.2;">N.B.: The Government employee should draw line across the blank space below his last entry to prevent the insertion of any names after he has signed. This column should be filled in so as to cover the whole amount that may be payable under the Insurance Scheme.</p>
+
+
+            <p style="color:black; line-height: 1.2;">** Where a Government employee who has no family makes a nomination, he shall specify in this column that the nomination shall become invalid in the event of his subsequently acquiring a family.</p>
+
+        </wrapper>
+    </div>
+</div>
+
+@*//banashree*@
+
+@*<script src="~/Scripts/GroupInsurance/GISDeclaration.js"></script>*@
+
+<script src="~/Scripts/GroupInsurance/GIS_NCR_Application.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#lblEmployeeNameKN").text($("#txtEmployeeFullNameKN").val());
+        $("#lblEmployeeNameEN").text($("#txtEmployeeFullName").val());
+    });
+
+
+</script>

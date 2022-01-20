@@ -1,0 +1,266 @@
+﻿@model KGID_Models.KGID_GroupInsurance.VM_GISPaymentDetails
+@using KGID.Models
+<style>
+
+    div#divPaymentDetails {
+        color: black;
+        background: #f3f3f38f;
+        padding: 10px;
+    }
+
+    input#btnKIIPay {
+        margin-right: 380px;
+    }
+
+    .form-group.col-12.text-right {
+        margin-top: 10px;
+    }
+
+    div#gis_print {
+        margin-left: -345px;
+    }
+</style>
+
+<div id="divPaymentDetails">
+    @*@using (Html.BeginForm("KIIRequest", "Employee", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmPaymentDetails" }))
+
+        @using (Html.BeginForm("IndexPost", "KII", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmPaymentDetails" }))*@
+    @using (Html.BeginForm("IndexPost", "GroupInsurance", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmPaymentDetails" }))
+    {
+        <div id="divPrintPayment">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.EmpID, new { id = "hdnEmployeeID" })
+            @Html.HiddenFor(m => m.EmpName, new { id = "hdnEmployeeName" })
+            @Html.HiddenFor(m => m.gcd_application_id, new { id = "hdnAppID" })
+
+
+            @Html.HiddenFor(m => m.gcd_insurance_amount, new { id = "hdninsurance_amount" })
+            @Html.HiddenFor(m => m.gcd_savings_amount, new { id = "hdngcd_savings_amount" })
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="knlan">ರಶೀದಿ ವಿಧ</label>
+                        <label class="Enlan">Receipt Type</label>
+                        @Html.DropDownListFor(model => model.receipttypeid,
+                        new SelectList(KGID.Models.VM_ReceiptTypes.GetReceiptTypeList(1), "Value", "Text"),
+                        new { @id = "ddlReceiptType", @class = "form-control", @readonly = "readonly", @disabled = "disabled" })
+                        <input type="hidden" id="hdnApplicationID" value="@Model.gcd_application_id" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="knlan">ಆರಂಭಿಕ ಮೊತ್ತ</label>
+                        <label class="Enlan">Initial Amount</label>
+                        @Html.TextBoxFor(m => m.gcd_amount, new { @class = "form-control", id = "txtPDAmount", @readonly = "readonly" })
+                        <label id="errPDAmt" class="col-form-label-sm text-danger err" hidden></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="knlan">ಪಾವತಿ ಉಲ್ಲೇಖ ಸಂಖ್ಯೆ</label>
+                        <label class="Enlan">Payment Reference No</label>
+                        @Html.TextBoxFor(m => m.gcd_challan_ref_no, new { @class = "form-control", id = "txtChallanRefNo", @readonly = "readonly" })
+                        <label id="errPDChallanRef" class="col-form-label-sm text-danger err" hidden></label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="knlan" for="txtChallen">ಡಿಡಿಒ ಕೋಡ್</label>
+                        <label class="Enlan" for="txtChallen">DDO Code</label>
+                        @Html.HiddenFor(model => model.ddo_code_id, new { @class = "form-control", id = "txtddocodeid", @readonly = "readonly" })
+                        @Html.HiddenFor(model => model.gcd_application_id, new { @class = "form-control", id = "txtAppID", @readonly = "readonly" })
+                        @Html.TextBoxFor(m => m.ddo_code, new { @class = "form-control", id = "txtDDOCode", @readonly = "readonly" })
+                        <label id="errDDOCode" class="col-form-label-sm text-danger err" hidden></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="knlan" for="txtChallen">ಉದ್ದೇಶ</label>
+                        <label class="Enlan" for="txtChallen">Purpose</label>
+                        @*@Html.DropDownListFor(model => model.cd_purpose_id,
+                            new SelectList(KGID.Models.VM_PurposeTypes.GetPurposeTypeList(1), "Value", "Text"),
+                            new { @id = "ddlPurposeType", @class = "form-control", @readonly = "readonly" })*@
+                        @Html.HiddenFor(model => model.gcd_purpose_id, new { @class = "form-control", id = "txtPurposeCodeId", @readonly = "readonly" })
+                        @Html.TextBoxFor(m => m.purpose_desc, new { @class = "form-control", id = "txtPurposeCode", @readonly = "readonly" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="knlan" for="txtChallen">ಉಪ ಉದ್ದೇಶ</label>
+                        <label class="Enlan" for="txtChallen">Sub Purpose</label>
+                        @*@Html.DropDownListFor(model => model.cd_sub_purpose_id,
+                            new SelectList(KGID.Models.VM_SubPurposeTypes.GetSubPurposeTypeList(1), "Value", "Text"),
+                            new { @id = "ddlSubPurposeType", @class = "form-control", @readonly = "readonly" })*@
+                        @Html.HiddenFor(model => model.gcd_sub_purpose_id, new { @class = "form-control", id = "txtSubpurposeId", @readonly = "readonly" })
+                        @Html.TextBoxFor(m => m.sub_purpose_desc, new { @class = "form-control", id = "txtSubpurposeDesc", @readonly = "readonly" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="knlan" for="txtChallen">ಖಾತೆಯ ಮುಖ್ಯಸ್ಥ</label>
+                        <label class="Enlan" for="txtChallen">HOA</label>
+                        @Html.TextBoxFor(m => m.hoa, new { @class = "form-control", id = "txtHOA", @readonly = "readonly" })
+                        <label id="errHOA" class="col-form-label-sm text-danger err" hidden></label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="knlan" for="txtChallen">ದಿನಾಂಕ</label>
+                        <label class="Enlan" for="txtChallen">Current Date</label>
+                        @Html.TextBoxFor(m => m.gcd_date_of_generation, "{0:dd/MM/yyyy}", new { @class = "form-control", id = "txtDate", @readonly = "readonly" })
+                        @*@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.CreationDateTime))*@
+                        <label id="errDOG" class="col-form-label-sm text-danger err" hidden></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="knlan text-danger err">ಗಮನ: "ನಗದು ಪಾವತಿ ಇಲ್ಲ, ಆನ್‌ಲೈನ್ ಪಾವತಿಯನ್ನು ಮಾತ್ರ ಅನುಮತಿಸಲಾಗಿದೆ"</label>
+            <label class="Enlan text-danger err"><b>Attention : "No Cash payment, Only online payment allowed"</b></label><br />
+            <label class="Enlan text-danger err"><b>Note : "If transaction is cancelled/failed please wait for 24hrs to click on Double Verification"</b></label><br />
+        </div>
+        <div class="row">
+            <b><label id="lblPaymentVerificationNote" hidden class="Enlan text-danger err"></label></b>
+        </div>
+        @*<div class="row">
+                <input type='button' value='download' id='btnPay' onclick="PrintChallanDetails()"/>
+            </div>*@
+        <div class="row">
+            <div class="col-7"></div>
+            @if (Model.PayStatus == "Pay")
+            {
+                <div class="col-2"></div>
+                <div class="col-2">
+                    <input type="submit" id="btnKIIPay" value="Pay Through KII" class="btn btn-primary btnPayment" />
+                </div>
+                <div class="col-1" id="gis_print" style="display:none">
+                    @Html.ActionLink("Print", "PrintChallanDetails", "Employee", new { EmpId = Model.EmpID, AppId = Model.gcd_application_id }, htmlAttributes: new { @target = "_blank", @class = "btn btn-primary btnPayment" });
+                </div>
+            }
+            else if (Model.PayStatus == "Initiate Payment")
+            {
+                <div class="col-2">
+                    <input type="submit" id="btnKIIPay" value="Initiate Payment" class="btn btn-primary btnPayment" />
+                </div>
+                <div class="col-1" id="gis_print" style="display:none">
+                    @Html.ActionLink("Print", "PrintChallanDetails", "Employee", new { EmpId = Model.EmpID, AppId = Model.gcd_application_id }, htmlAttributes: new { @target = "_blank", @class = "btn btn-primary btnPayment" })
+                </div>
+                @*<div class="row">
+                        <label id="lblInitiatePaymentNote" hidden class="Enlan text-danger err"><b>Note :Please Click on Intiate Payment to initiate the transaction</b></label>
+                    </div>*@
+            }
+            else if (Model.PayStatus == "Double Verification")
+            {
+                @*<div class="col-2">
+                        <input type="submit" id="btnKIIPay" value="Pay Through KII" class="btn btn-primary btnPayment" disabled />
+                    </div>*@
+                <div class="col-2" >
+                    @*<input type="submit" id="btnKIIPay" value="Double Verification" class="btn btn-primary btnPayment" />*@
+                    @Html.ActionLink("Payment Verification", "KIIDoubleVerification", "GroupInsuranceKResponse", new { ReqChallanRefNo = Model.gcd_challan_ref_no }, htmlAttributes: new { @id = "btnpaymentverification", @class = "btn btn-primary btnPayment" })
+                </div>
+                <div class="col-1" id="gis_print" style="display:none">
+                    @Html.ActionLink("Print", "PrintChallanDetails", "Employee", new { EmpId = Model.EmpID, AppId = Model.gcd_application_id }, htmlAttributes: new { @target = "_blank", @class = "btn btn-primary btnPayment" })
+                </div>
+            }
+            else
+            {
+                <div class="col-2"></div>
+                @*<div class="col-2">
+                        <input type="submit" id="btnKIIPay" value="Pay Through KII" class="btn btn-primary btnPayment" disabled />
+                    </div>*@
+                <div class="col-1" id="gis_print" style="display:none">
+                    @Html.ActionLink("Print", "PrintChallanDetails", "Employee", new { EmpId = Model.EmpID, AppId = 0 }, htmlAttributes: new { @target = "_blank", @class = "btn btn-primary btnPayment" })
+                </div>
+            }
+        </div>
+
+    }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/Scripts/GroupInsurance/GISInitialPayment.js"></script>
+<script>
+    $(document).ready(function () {
+        debugger;
+
+        if ($("#btnpaymentverification").is(":visible")) {
+            $("#lblPaymentVerificationNote").text("Note :Please Click on payment verification to know the status from the Khajane");
+            $("#lblPaymentVerificationNote").removeAttr("hidden");
+        }
+        $("#btnKIIPay").click(function () {
+            var fired_button = $(this).val();
+            if (fired_button == "Initiate Payment") {
+                $("#lblPaymentVerificationNote").text("");
+                $("#lblPaymentVerificationNote").attr("hidden", true);
+            }
+            else {
+                $("#lblPaymentVerificationNote").text("");
+                $("#lblPaymentVerificationNote").attr("hidden", true);
+            }
+        });
+        $("#btnpaymentverification").click(function () {
+            $("#lblPaymentVerificationNote").text("");
+            $("#lblPaymentVerificationNote").attr("hidden", true);
+
+        });
+    });
+
+
+
+    function printApplicationForm() {
+        if ($("#chkHDeclaration").prop("checked") == false) {
+            alertify.alert("Please agree to the terms and condition.").setHeader("Warning !!!");
+            return false;
+        }
+        $("#spnHReferanceNo").text($("#hdnBReferanceNo").val());
+        $("#imgHQRCode").attr("src", $("#hdnQRCode").val());
+        $("#divHShowQRCode").show();
+        var contents = '<div class="row"><div class="form-group col-5"></div><div class="form-group col-3"><h3>Basic Details</h3></div><div class="form-group col-4"></div></div>' + $("#divPrintForm").html() + "<hr />";
+        var frame1 = $('<iframe />');
+        frame1[0].name = "frame1";
+        frame1.css({ "position": "absolute", "top": "-1000000px" });
+        $("body").append(frame1);
+        var frameDoc = frame1[0].contentWindow ? frame1[0].contentWindow : frame1[0].contentDocument.document ? frame1[0].contentDocument.document : frame1[0].contentDocument;
+        frameDoc.document.open();
+        //Create a new HTML document.
+        frameDoc.document.write('<html><head><title>Medical Report</title>');
+        frameDoc.document.write('</head><body>');
+        //Append the external CSS file.
+        frameDoc.document.write('<link href="/Scripts/DataTables/Bootstrap-4-4.1.1/css/bootstrap.min.css" rel="stylesheet" />');
+        //Append the DIV contents.
+        frameDoc.document.write(contents);
+        frameDoc.document.write('</body></html>');
+        frameDoc.document.close();
+        setTimeout(function () {
+            window.frames["frame1"].focus();
+            window.frames["frame1"].print();
+            frame1.remove();
+        }, 500);
+
+    }
+
+
+</script>

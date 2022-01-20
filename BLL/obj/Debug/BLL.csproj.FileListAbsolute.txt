@@ -1,0 +1,96 @@
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\BLL.dll.config
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\BLL.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\BLL.pdb
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\Common.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\DLL.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\KGID_Models.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.Helpers.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.Mvc.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.Razor.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.WebPages.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.WebPages.Razor.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\log4net.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\EntityFramework.dll
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\Common.pdb
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\DLL.pdb
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\DLL.dll.config
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\KGID_Models.pdb
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.Helpers.xml
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.Mvc.xml
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.Razor.xml
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.WebPages.xml
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\System.Web.WebPages.Razor.xml
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\log4net.xml
+D:\GITLAB Projects\kgid-development\BLL\bin\Debug\EntityFramework.xml
+D:\GITLAB Projects\kgid-development\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\GITLAB Projects\kgid-development\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\GITLAB Projects\kgid-development\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\GITLAB Projects\kgid-development\BLL\obj\Debug\BLL.dll
+D:\GITLAB Projects\kgid-development\BLL\obj\Debug\BLL.pdb
+E:\kgid-development\BLL\bin\Debug\BLL.dll.config
+E:\kgid-development\BLL\bin\Debug\BLL.dll
+E:\kgid-development\BLL\bin\Debug\BLL.pdb
+E:\kgid-development\BLL\bin\Debug\Common.dll
+E:\kgid-development\BLL\bin\Debug\DLL.dll
+E:\kgid-development\BLL\bin\Debug\KGID_Models.dll
+E:\kgid-development\BLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\kgid-development\BLL\bin\Debug\System.Web.Helpers.dll
+E:\kgid-development\BLL\bin\Debug\System.Web.Mvc.dll
+E:\kgid-development\BLL\bin\Debug\System.Web.Razor.dll
+E:\kgid-development\BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\kgid-development\BLL\bin\Debug\System.Web.WebPages.dll
+E:\kgid-development\BLL\bin\Debug\System.Web.WebPages.Razor.dll
+E:\kgid-development\BLL\bin\Debug\log4net.dll
+E:\kgid-development\BLL\bin\Debug\EntityFramework.dll
+E:\kgid-development\BLL\bin\Debug\Common.pdb
+E:\kgid-development\BLL\bin\Debug\DLL.pdb
+E:\kgid-development\BLL\bin\Debug\DLL.dll.config
+E:\kgid-development\BLL\bin\Debug\KGID_Models.pdb
+E:\kgid-development\BLL\bin\Debug\System.Web.Helpers.xml
+E:\kgid-development\BLL\bin\Debug\System.Web.Mvc.xml
+E:\kgid-development\BLL\bin\Debug\System.Web.Razor.xml
+E:\kgid-development\BLL\bin\Debug\System.Web.WebPages.xml
+E:\kgid-development\BLL\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\kgid-development\BLL\bin\Debug\System.Web.WebPages.Razor.xml
+E:\kgid-development\BLL\bin\Debug\log4net.xml
+E:\kgid-development\BLL\bin\Debug\EntityFramework.xml
+E:\kgid-development\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+E:\kgid-development\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+E:\kgid-development\BLL\obj\Debug\BLL.csproj.CopyComplete
+E:\kgid-development\BLL\obj\Debug\BLL.dll
+E:\kgid-development\BLL\obj\Debug\BLL.pdb
+D:\backup_25112021\kgid-development\BLL\bin\Debug\BLL.dll.config
+D:\backup_25112021\kgid-development\BLL\bin\Debug\BLL.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\BLL.pdb
+D:\backup_25112021\kgid-development\BLL\bin\Debug\Common.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\DLL.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\KGID_Models.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.Helpers.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.Mvc.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.Razor.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.WebPages.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.WebPages.Razor.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\log4net.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\EntityFramework.dll
+D:\backup_25112021\kgid-development\BLL\bin\Debug\Common.pdb
+D:\backup_25112021\kgid-development\BLL\bin\Debug\DLL.pdb
+D:\backup_25112021\kgid-development\BLL\bin\Debug\DLL.dll.config
+D:\backup_25112021\kgid-development\BLL\bin\Debug\KGID_Models.pdb
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.Helpers.xml
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.Mvc.xml
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.Razor.xml
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.WebPages.xml
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\backup_25112021\kgid-development\BLL\bin\Debug\System.Web.WebPages.Razor.xml
+D:\backup_25112021\kgid-development\BLL\bin\Debug\log4net.xml
+D:\backup_25112021\kgid-development\BLL\bin\Debug\EntityFramework.xml
+D:\backup_25112021\kgid-development\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\backup_25112021\kgid-development\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\backup_25112021\kgid-development\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\backup_25112021\kgid-development\BLL\obj\Debug\BLL.dll
+D:\backup_25112021\kgid-development\BLL\obj\Debug\BLL.pdb

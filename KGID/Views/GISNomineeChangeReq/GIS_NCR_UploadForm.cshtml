@@ -1,0 +1,73 @@
+﻿@model KGID_Models.KGID_GroupInsurance.VM_GIS_Upload_EmployeeForm
+
+@{
+    ViewBag.Title = "UploadEmployeeData";
+}
+<style>
+
+    input#btnSubmit {
+        margin-left: 500px;
+    }
+</style>
+<form id="frmUploadDocs" enctype="multipart/form-data">
+
+
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.App_Employee_Code, new { id = "hdnUFEmpId1" })
+    @Html.HiddenFor(m => m.App_ApplicationID, new { id = "hdnUFAppId1" })
+    <div id="divUploadDetails">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary"><label class="knlan">ಪ್ರಸ್ತಾಪಕರ ನಮೂನೆ ಮತ್ತು ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label><label class="Enlan">Upload Form 6 and Form 7</label></h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row col-md-12">
+
+
+                            @*<div class="form-group col-md-6">
+                                <label class="knlan">ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label>
+                                <label class="Enlan">Upload Form6</label>*@
+                            @*@Html.TextBoxFor(m => m.ApplicationFormDoc, new { @id = "txtAFDoc", type = "file", accept = "application/pdf", @class = "form-control display-as-label-upload fuAdmittedToHospital", onchange = "DocFileChange(this.id,'errMedicalUploadDoc')" })*@
+                            @*<label id="errAFUploadDoc" class="col-form-label-sm text-danger err" hidden>Please upload supporting document.</label>*@
+                            @*@Html.ActionLink("View Medical Report", "UploadEmployeeDownload", "VerifyData", new { id = "2", @target = "_blank" }, htmlAttributes: new { @target = "_blank" })*@
+                            @*</div>*@
+                            <div class="form-group col-md-6" style="color:black;">
+                                <label class="knlan">ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label>
+                                <label class="Enlan">Upload Form 6</label>
+                                @Html.TextBoxFor(m => m.Form6Doc, new { @id = "txtForm6Doc", type = "file", accept = "application/pdf", @class = "form-control display-as-label-upload fuAdmittedToHospital", onchange = "DocFileChange(this.id,'errMedicalUploadDoc')" })
+                                <label id="errForm6UploadDoc" class="col-form-label-sm text-danger err" hidden>Please upload supporting document.</label>
+                                @*@Html.ActionLink("View Medical Report", "UploadEmployeeDownload", "VerifyData", new { id = "2", @target = "_blank" }, htmlAttributes: new { @target = "_blank" })*@
+                            </div>
+
+                            <div class="form-group col-md-6" style="color:black;">
+                                
+                                <label class="knlan">ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label>
+                                <label class="Enlan">Upload Form 7</label>
+                                @Html.TextBoxFor(m => m.Form7Doc, new { @id = "txtForm7Doc", type = "file", accept = "application/pdf", @class = "form-control display-as-label-upload fuAdmittedToHospital", onchange = "DocFileChange(this.id,'errMedicalUploadDoc')" })
+                                <label id="errForm7UploadDoc" class="col-form-label-sm text-danger err" hidden>Please upload supporting document.</label>
+                                @*@Html.ActionLink("View Medical Report", "UploadEmployeeDownload", "VerifyData", new { id = "2", @target = "_blank" }, htmlAttributes: new { @target = "_blank" })*@
+                            </div>
+
+
+                        </div>
+                        <div class="row col-md-12">
+
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-10"></div>
+                        <div class="col-2">
+                            <input type="button" value="Submit" class="btn btn-primary" style="margin-top: 20%;" id="btnSubmit" />@*onclick="ApplicationFormUpload();"*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+@*<script src="~/Scripts/VerifyData/UploadEmployeeData.js"></script>*@
+<script src="~/Scripts/GroupInsurance/GIS_NCR_UploadForm.js"></script>
+

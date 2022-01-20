@@ -1,0 +1,177 @@
+﻿@model KGID_Models.KGIDMotorInsurance.VM_MotorInsuranceVehicleTransfer
+@{
+    ViewBag.Title = "VehicleTransfer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>VehicleTransfer</h2>
+
+
+<div class="row">
+    <div class="col-2" id="divVehicletext">
+        <br /><h6>Vehicle No. /Chassis No. </h6>
+    </div>
+
+    <div class="col-2">
+        @*@Html.TextBoxFor(model => model.miVehicleNo, new { @class = "form-control alphanumericOnly ", @style = "text-transform:uppercase", @id = "txtVehicleNo", onblur = "CheckValidVehicleNo()", @maxlength = "10" })*@
+        <input  type="text" class="form-control alphanumericOnly" id="txtVehicleNo" onblur = "CheckValidMotorVehicleNo()" style="text-transform:uppercase"/>
+        <label id="errVehcileNo" class="col-form-label-sm text-danger err" hidden>Please enter Vehicle No.</label>
+    </div>
+    <div class="col-2">
+    </div>
+</div>
+<div>
+    <div class="row">
+        @*Vehicle Data*@
+        <div class="form-group col-6">
+            <div class="row">
+                <div class="form-group col-6">
+
+                </div>
+                <div class="form-group col-6">
+
+                </div>
+            </div>
+
+        </div>
+        @*Transfer To*@
+        <div class="form-group col-6">
+
+
+        </div>
+    </div>
+    <table id="tblVehicleDetails" class="table table-striped table-bordered" style="width:100%;display:none;">
+        <thead>
+            <tr>
+                <th hidden><label class="Enlan">Vehicle Details Id</label></th>
+                <th><label class="Enlan">Application Id</label></th>
+                <th><label class="Enlan">Chassis No.</label></th>
+                <th><label class="Enlan"> Registration No.</label></th>
+                <th><label class="Enlan"> Policy From Date</label></th>
+                <th><label class="Enlan"> Policy To Date</label></th>
+                @*<th><label class="Enlan"> Status</label></th>*@
+            </tr>
+        </thead>
+        <tbody>
+            @*@if (Model.VehiclePolicyDetails != null)
+                {
+                    foreach (var item in Model.VehiclePolicyDetails)
+                    {
+                        <tr>
+                            <td hidden>@item.vehicle_application_id</td>
+                            <td hidden>@item.vehicle_details_id</td>
+                            <td>@item.vehicle_chassis_no</td>
+                            <td>@item.vehicle_registration_no</td>
+                            <td>@item.policy_from_date</td>
+                            <td>@item.policy_to_date</td>
+                            <td>@item.status</td>
+                        </tr>
+                    }
+                }*@
+        </tbody>
+    </table>
+</div>
+<script>
+    function CheckValidMotorVehicleNo() {
+        
+        $('.err').attr('hidden', true);
+
+        var vehicleNo = $('#txtVehicleNo').val();
+        if (vehicleNo != "") {
+            $("#errVehcileNo").attr("hidden");
+            debugger
+            if ($('.err:visible').length === 0) {
+                debugger
+                $.ajax({
+                    url: '/MotorInsurance/MICheckValidMotorVehicleNo',
+                    data: JSON.stringify({ VehicleNo: vehicleNo}),
+                    type: 'POST',
+                    async: false,
+                    cache: false,
+                    contentType: 'application/json; charset=utf-8',
+                    processData: false,
+                    success: function (response) {
+                        debugger
+                        if (response.Empid != '' && response.Appid != '') {
+                            $('#hdnmicnclappid').val(response.Appid);
+                            $('#hdnmicnclempid').val(response.Empid);
+                            //alertify.success($('#hdnmicnclappid').val());
+                            //alertify.success($('#hdnmicnclempid').val());
+                            alertify.success("Vehicle no. exits");
+                            $.ajax({
+                                url: '/MotorInsurance/VehicleDetailsForTransfer',
+                                data: JSON.stringify({ VehicleNo: vehicleNo }),
+                                type: 'POST',
+                                async: false,
+                                contentType: 'application/json; charset=utf-8',
+                                success: function (data) {
+                                    debugger;
+                                    var rowData = '';
+                                    //var datalength = Object.keys(data).length;
+                                    //iterating through objects
+                                    if (data != null) {
+                                        if (data.length > 0) {
+
+                                            // $("tblVehicleDetails").find("tr:gt(0)").remove();
+                                            for (var i = 0; i < data.listVehicleDetails.length; i++) {
+                                                //var name = data.listVehicleDetails[i].vehicle_application_id;
+                                                //if (html.indexOf(name) == -1)
+                                                //    html.push(name);
+                                                var application_id = data.listVehicleDetails[i].vehicle_application_id;
+                                                var vehicle_details_id = data.listVehicleDetails[i].vehicle_details_id;
+                                                rowData += "<tr>";
+                                                rowData += "<td >" + data.listVehicleDetails[i].vehicle_application_id + "</td>";
+                                                rowData += "<td hidden>" + data.listVehicleDetails[i].vehicle_details_id + "</td>";
+                                                rowData += "<td>" + data.listVehicleDetails[i].vehicle_chassis_no + "</td>";
+                                                rowData += "<td>" + data.listVehicleDetails[i].vehicle_registration_no + "</td>";
+                                                rowData += "<td>" + data.listVehicleDetails[i].policy_from_date + "</td>";
+                                                rowData += "<td>" + data.listVehicleDetails[i].policy_to_date + "</td>";
+                                                //rowData += "<td>" + data.listVehicleDetails[i].status + "</td>";
+                                                rowData += "<td><a href='javascript: void (0);' class='btn-sm btn-danger' onclick='cancelVehiclePolicy(" + application_id + ", " + vehicle_details_id + ");'>Transfer Vehicle</a></td>"
+                                                rowData += "</tr>";
+                                            }
+                                            $("#tblVehicleDetails tbody").empty();
+                                            $("#tblVehicleDetails tbody").append(rowData);
+                                            $("#tblVehicleDetails").show();
+                                        }
+                                        else {
+                                            alertify.alert("Transfer request cannot be processed,as policy is not created.").setHeader('Warning..!!');
+                                            $("#txtVehicleNo").val('');
+                                        }
+
+                                    }
+                                }
+                            });
+                        }
+                        else if (response.Sucess == "1") {
+                            alertify.alert("Vehicle no. is already processed for cancellation").setHeader('Warning..!!');
+                            $('#txtVehicleNo').val('');
+                            $('#ddlCancelReasonList').val('');
+                            $('#txtAuctionDetailsDoc').val('');
+                        }
+                        else {
+                            alertify.alert("Please enter valid Vehicle no /Policy No.").setHeader('Error..!!');
+                            $('#txtVehicleNo').val('');
+                            $('#ddlCancelReasonList').val('');
+                            $('#txtAuctionDetailsDoc').val('');
+                        }
+
+                    }, error: function (response) {
+                        alertify.error("Could not fetch the details.").setHeader('Error..!!');
+                        $('#txtVehicleNo').val('');
+                        $('#ddlCancelReasonList').val('');
+                        $('#txtAuctionDetailsDoc').val('');
+                    }
+                });
+
+            }
+
+        }
+        else {
+            $("#errVehcileNo").removeAttr("hidden");
+            return false;
+
+        }
+    }
+
+</script>

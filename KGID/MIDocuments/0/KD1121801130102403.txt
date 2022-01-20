@@ -1,0 +1,18 @@
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>30/11/2021</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>23962O</ddoCode>
+<deptRefNum>KD1121801130102403</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>6951</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>VN000106</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>MANJUNATH S R</rmtrName>
+<totalAmount>6951</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>
