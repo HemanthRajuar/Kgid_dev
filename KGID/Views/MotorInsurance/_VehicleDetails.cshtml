@@ -1,7 +1,8 @@
 ﻿
 @model KGID_Models.KGIDMotorInsurance.VM_MotorInsuranceVehicleDetails
-
-
+@{
+    var Renewal = Model.mivd_pagetype;
+}
 <style>
 
     div#divMIVehicleDetails {
@@ -17,27 +18,21 @@
 <script src="~/Scripts/KGIDMotorInsurance/MotorInsurance.js"></script>
 
 <div id="divMIVehicleDetails" data-submit-url="@Url.Action("InsertMIVehicleDetails", "MotorInsurance", new { area = "" })">
-     
     <div class="row">
+        @if(Renewal == "Renewal" || Renewal == "EditRenewal")
+        {
+        <div class="form-group col-6">
+            <label for="lblVDPolicyNo" class=" control-label">Policy No. :</label>
+            <div class="row">
+                <div class="form-group col-9">
+                    @Html.TextBoxFor(m => m.p_mi_policy_number, new { @class = "form-control", @style = "text-transform:uppercase", @id = "txtVDPolicyNo", @maxlength = "25" })
+                    @Html.ValidationMessageFor(m => m.p_mi_policy_number, "Please enter valid policy no.", new { @class = "text-danger col-form-label-sm err", id = "errVDPolicyNoReq", hidden = "hidden", })
 
-        @if (Session["page"] == "New")
-        { }
-        else
-        {<div class="form-group col-6">
-                <label for="lblVDPolicyNo" class=" control-label">Policy No. :</label>
-                <div class="row">
-                    <div class="form-group col-9">
-
-
-                        @Html.TextBoxFor(m => m.p_mi_policy_number, new { @class = "form-control", @style = "text-transform:uppercase", @id = "txtVDPolicyNo", @maxlength = "25" })
-                        @Html.ValidationMessageFor(m => m.p_mi_policy_number, "Please enter valid policy no.", new { @class = "text-danger col-form-label-sm err", id = "errVDPolicyNoReq", hidden = "hidden", })
-
-
-                    </div>
                 </div>
             </div>
-        }
 
+        </div>
+        }
         <div class="form-group col-6">
             <label for="lblVDChasisNo" class=" control-label">Chassis No :</label>
             <div class="row">
@@ -320,20 +315,26 @@
             $('#lblPrivate').show();
             $('#lblCommerical').hide();
         }
-
+        
         if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
-
-            $("#divMIVehicleDetails").find("input, button, submit, textarea, select").attr('readonly', true);
-            $("#divMIVehicleDetails").find("input, button, submit, textarea, select").css("pointer-events", "none");
+            
+            $("#divMIVehicleDetails").find("button, submit").attr('readonly', true);
+            $("#divMIVehicleDetails").find("button, submit").css("pointer-events", "none");
             $("#divMIVehicleDetails").find("input, button, submit, textarea, select").attr("tabindex", "-1");
-            $('#btnFetchDetails').css("display", "none")
-
+            $('#btnFetchDetails').css("display", "none");            
+            $("#txtVDPolicyNo").attr('readonly', true);
+            $("#txtVDRegistrationNo").attr('readonly', false);
         }
         else {
             $("#divMIVehicleDetails").find("input, button, submit, textarea, select").attr('readonly', false);
             $("#divMIVehicleDetails").find("input, button, submit, textarea, select").attr("tabindex", "-1");
             $("#txtVDDateOfRegistration").attr('readonly', true);
             $("#txtVDRegistrationNo").attr('readonly', true);
+            $("#ddlVehType").attr('readonly', true);
+            $("#ddlVehSubType").attr('readonly', true);
+            $("#ddlVehCat").attr('readonly', true);
+            DisableFeilds();
+            
             //$("#txtVDRegistering").attr('readonly', true);
             //if ($("#txtVDDateOfRegistration").val() == "") {
             //   $("#txtVDDateOfRegistration").attr('readonly', false);
@@ -370,7 +371,7 @@
 
         }
 
-        DisableFeilds();
+       // DisableFeilds();
 
         DisableCoverBasedonage();
 

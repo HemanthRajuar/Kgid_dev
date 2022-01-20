@@ -79,7 +79,7 @@
                                                 var rowcount = 1;
                                                 foreach (var item in Model.listChallanDetails)
                                                 {
-                                                    if (item.cs_status != "Payment received at payment gateway" && item.cs_status!= "Payment failed at payment gateway")
+                                                    if (item.cs_status ==  null )
                                                     {
                                                     <tr>
                                                         <td>@rowcount</td>
@@ -90,7 +90,7 @@
                                                         <td>@item.miso_sanction_order_date</td>
                                                         <td>
                                                             @*@if (@item.Uploded == "No")
-                                                            {*@
+                                                            {*@ 
                                                                 <a href="/mi-viewchlotc-det/@item.cd_challan_ref_no">Proceed For Payment</a>
                                                             @*}
                                                             else
@@ -159,7 +159,7 @@
                                                 {
                                                 
                                                
-                                                        if (item.cs_status != "Payment pending at payment gateway" && item.cs_status != "Payment failed at payment gateway")
+                                                        if (item.cs_status == "Payment received at payment gateway" )
                                                         {
 
                                                     <tr>
@@ -224,7 +224,7 @@
                                                 var rowcount = 1;
                                                 foreach (var item in Model.listChallanDetails)
                                                 {
-                                                    if (item.cs_status != "Payment pending at payment gateway" && item.cs_status != "Payment received at payment gateway")
+                                                    if (item.cs_status == "Payment failed at payment gateway")
                                                     {
 
 

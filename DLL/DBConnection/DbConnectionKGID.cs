@@ -38,6 +38,7 @@ namespace DLL.DBConnection
         public DbSet<tbl_post> tbl_post { get; set; }
         public DbSet<tbl_dept_master> tbl_department_master { get; set; }
 
+        public DbSet<tbl_ExcelUpload> tbl_ExcelUpload { get; set; }
 
         public DbSet<tbl_insured_details> tbl_insured_details { get; set; }
         public DbSet<tbl_insured_details_new> tbl_insured_details_new { get; set; }
@@ -79,7 +80,7 @@ namespace DLL.DBConnection
         public DbSet<tbl_dept_verification_details> tbl_dept_verification_details { get; set; }
         public DbSet<tbl_payscales_master> tbl_payscales_master { get; set; }
 
-        public DbSet<tbl_ExcelUpload> tbl_ExcelUpload { get; set; }
+
 
         //public DbSet<tbl_employee_loan_details> tbl_employee_loan_details { get; set; }
         public DbSet<tbl_employee_loan_transaction> tbl_employee_loan_transaction { get; set; }

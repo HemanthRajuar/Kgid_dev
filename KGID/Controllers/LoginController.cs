@@ -35,12 +35,12 @@ namespace KGID.Controllers
     {
         private readonly ILoginBll _login;
         private readonly INewEmployeeDetailsBLL _newemp;
-        private readonly INBApplicationBll _INBApplicationbll;
+          private readonly INBApplicationBll _INBApplicationbll;
         private readonly IDDOMasterBLL _ddomaster;
         private readonly IDeptMasterBLL _deptmaster;
         private readonly IInsuredEmployeeBll _insuredEmployee;
         public static string captcha_val = null;
-        public static string CaptchaNew = string.Empty;
+        public static  string CaptchaNew = string.Empty;
         private CommonMethod objCM = new CommonMethod();
         public LoginController()
         {
@@ -51,9 +51,9 @@ namespace KGID.Controllers
             this._insuredEmployee = new InsuredEmployeeBll();
             this._INBApplicationbll = new NBApplicationBll();
         }
-        public LoginController(string cap)
+		public LoginController(string cap)
         {
-
+            
             tbl_logindetails obj = new tbl_logindetails();
             captcha_val = cap;
             obj.image_captcha = captcha_val;
@@ -75,7 +75,7 @@ namespace KGID.Controllers
                 userInfo.Expires.Add(new TimeSpan(1, 1, 0));
                 Response.Cookies.Add(userInfo);
             }
-
+            
             Session.Abandon();
             Session.Clear();
             Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", string.Empty));
@@ -84,9 +84,9 @@ namespace KGID.Controllers
                 Response.Cookies["ASP.NET_SessionId"].Value = string.Empty;
                 Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddMonths(-20);
             }
-            tbl_logindetails obj = new tbl_logindetails();
-
-            obj.image_captcha = captcha_val;
+			tbl_logindetails obj = new tbl_logindetails();
+            
+                obj.image_captcha = captcha_val;
             //ViewBag.Data = _ddomaster.DDOMasterbll();
             var builder = new StringBuilder();
             while (builder.Length < 16)
@@ -165,7 +165,7 @@ namespace KGID.Controllers
         }
 
 
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult UserLogin(tbl_logindetails _KGIDLogin, FormCollection form)
@@ -174,7 +174,7 @@ namespace KGID.Controllers
             string message = string.Empty;
             string pswkey = Request.Form["pswkey"];
             string _GenCaptcha = String.Empty;
-
+            
             //string EncryptPWD = Encryptdata(_KGIDLogin.um_user_password);
             var _userName = AESEncrytDecry.DecryptStringAES(_KGIDLogin.um_user_name, pswkey);
             var _userPassword = AESEncrytDecry.DecryptStringAES(_KGIDLogin.um_user_password, pswkey);
@@ -313,10 +313,10 @@ namespace KGID.Controllers
                         }
                     }
                     else
-                    {
+                    {                        
                         string[] loginkgidao = WebConfigurationManager.AppSettings["RePayment"].ToString().Split(',');
-                        string loginkgidaopass = WebConfigurationManager.AppSettings["RePaymentPass"].ToString();
-
+                        string   loginkgidaopass = WebConfigurationManager.AppSettings["RePaymentPass"].ToString();
+                        
                         if (loginkgidao.Contains(_KGIDLogin.um_user_name) && loginkgidaopass == _userPassword)
                         {
                             Session["UserName"] = _KGIDLogin.um_user_name;
@@ -376,7 +376,7 @@ namespace KGID.Controllers
                     Session["UserProfile"] = userData.um_user_name;
                     Session["UserName"] = userData.um_user_name;
                     Session["UID"] = userData.um_user_id;
-                    // TempData["UserData"] = userData;
+                   // TempData["UserData"] = userData;
                     //Session["LoginType"] = LoginTypes.KGID.ToString();
                     FormsAuthentication.SetAuthCookie(userData.um_user_name, true);
                     Session["LoggedInUserName"] = userData.um_user_name;
@@ -401,7 +401,7 @@ namespace KGID.Controllers
             {
                 if (Session["AuthToken"] == null)
                 {
-                    return Json(new { IsSuccess = false, IsRedirect = true, RedirectUrl = "/Login/Index" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { IsSuccess = false,IsRedirect = true, RedirectUrl = "/Login/Index" }, JsonRequestBehavior.AllowGet);
                 }
                 string isSuccess = string.Empty;
                 string message = string.Empty;
@@ -443,30 +443,30 @@ namespace KGID.Controllers
 
                         Session["EmailId"] = insuredEmployee.Email;
 
-                        string emailcontent = "Dear Proposer," +
-                        "You have been registered successfully on Karnataka Government Insurance Department(KGID) portal.Now you can start applying for KGID policy by logging in to https://kgidonline.karnataka.gov.in as a new employee using your registered mobile no/ e-mail."
-                        + "The One Time Password(OTP) generated for your KGID login is " + otp + " and do not share this One Time Password with anyone."
-                        + "Please note that this OTP is valid for 10 minutes or 1 successful attempt, whichever is earlier."
-                        + "In case of queries or assistance, Please call us on 080 - 22536189"
+                    string emailcontent = "Dear Proposer," +
+                    "You have been registered successfully on Karnataka Government Insurance Department(KGID) portal.Now you can start applying for KGID policy by logging in to https://kgidonline.karnataka.gov.in as a new employee using your registered mobile no/ e-mail."
+                    + "The One Time Password(OTP) generated for your KGID login is " + otp + " and do not share this One Time Password with anyone."
+                    + "Please note that this OTP is valid for 10 minutes or 1 successful attempt, whichever is earlier."
+                    + "In case of queries or assistance, Please call us on 080 - 22536189"
 
-                            + "Warm Regards,"
-                            + "KGID, Official Branch";
+                        + "Warm Regards,"
+                        + "KGID, Official Branch";
                         AllCommon objemail = new AllCommon();
                         objemail.SendEmail(insuredEmployee.Email, emailcontent, "One Time Password");
-
+                        
                     }
-                    catch (Exception ex)
+                    catch(Exception ex)
                     {
-                        Logger.LogMessage(TracingLevel.INFO, "VerifyKGIDAndMobileNo " + ex.Message.ToLower());
+                        Logger.LogMessage(TracingLevel.INFO, "VerifyKGIDAndMobileNo "+ex.Message.ToLower());
                     }
-
+                    
 
                     List<VM_EmpDashboardData> list = null;
                     if (Session["FirstKGIDNo"] != null)
                     {
                         list = _INBApplicationbll.GetDetailsBasedOnKGIDNo(Convert.ToInt64(Session["FirstKGIDNo"]));
                     }
-
+                    
                     if (list.Count > 0)
                     {
                         redirectUrl = Url.Action("GetDetailsBasedOnKGIDNo", "Home", new { area = "" });
@@ -475,7 +475,7 @@ namespace KGID.Controllers
                     {
                         redirectUrl = Url.Action("Dashboard", "Home", new { area = "" });
                     }
-
+                    
                     return Json(new { IsSuccess = true, IsRedirect = false, RedirectUrl = redirectUrl }, JsonRequestBehavior.AllowGet);
                 }
 
@@ -490,14 +490,14 @@ namespace KGID.Controllers
         [HttpPost]
         public JsonResult VerifyNewEmployeeLogin(VM_NewEmployeeLogin newEmployeeDetails)
         {
-            if (Session["AuthToken"] == null)
+            if(Session["AuthToken"] == null)
             {
                 return Json(new { IsSuccess = false, EmpId = 0, RedirectUrl = "/Login/Index", IsKGIDPresent = false }, JsonRequestBehavior.AllowGet);
             }
-
+            
             string success = string.Empty;
             string message = string.Empty;
-
+            
             try
             {
                 bool isSuccess = false;
@@ -531,21 +531,21 @@ namespace KGID.Controllers
                                 {
                                     ViewBag.IsMultipleCategories = false;
                                 }
-                                // Logger.LogMessage(TracingLevel.INFO, "employeeDetails.EmployeeId " + employeeDetails.EmployeeId);
+                               // Logger.LogMessage(TracingLevel.INFO, "employeeDetails.EmployeeId " + employeeDetails.EmployeeId);
                                 Random generator = new Random();
                                 String otp = generator.Next(0, 999999).ToString("D6");
-                                // Session["OTP"] = otp;
-                                // Logger.LogMessage(TracingLevel.INFO, "AddOTPDetails " + otp);
+                                                     // Session["OTP"] = otp;
+                                                     // Logger.LogMessage(TracingLevel.INFO, "AddOTPDetails " + otp);
                                 int result = _login.AddOTPDetails(Convert.ToInt32(otp), Convert.ToInt64(employeeDetails.EmployeeId));
-                                // Logger.LogMessage(TracingLevel.INFO, "AddOTPDetails " + result);
+                               // Logger.LogMessage(TracingLevel.INFO, "AddOTPDetails " + result);
                                 //string msg = otp + " is your One Time Password (OTP) for changing password in KGID";
-                                // Logger.LogMessage(TracingLevel.INFO, "sendOTPMSG start ");
+                               // Logger.LogMessage(TracingLevel.INFO, "sendOTPMSG start ");
                                 try
                                 {
                                     var msg = _INBApplicationbll.GetEmailSMSTemplate(1107161605342227349);
                                     msg = msg.Replace("{#var#}", otp);
                                     AllCommon.sendUnicodeSMS(newEmployeeDetails.LoginValue.ToString(), msg, "1107161605342227349");
-
+                                    
                                     string emailcontent = "Dear Proposer," +
                                     "You have been registered successfully on Karnataka Government Insurance Department(KGID) portal.Now you can start applying for KGID policy by logging in to https://kgidonline.karnataka.gov.in as a new employee using your registered mobile no/ e-mail."
                                     + "The One Time Password(OTP) generated for your KGID login is " + otp + " and do not share this One Time Password with anyone."
@@ -557,14 +557,14 @@ namespace KGID.Controllers
                                     AllCommon objemail = new AllCommon();
                                     Session["EmailId"] = employeeDetails.Email;
                                     objemail.SendEmail(employeeDetails.Email, emailcontent, "One Time Password");
-
+                                   
 
                                 }
-                                catch (Exception ex)
+                                catch(Exception ex)
                                 {
                                     Logger.LogMessage(TracingLevel.INFO, "VerifyNewEmployeeLogin " + ex.Message.ToString());
                                 }
-
+                                
                                 isSuccess = true;
                             }
                             else
@@ -607,7 +607,7 @@ namespace KGID.Controllers
                                 }
                                 Random generator = new Random();
                                 String otp = generator.Next(0, 999999).ToString("D6");
-                                //  Session["OTP"] = otp;
+                                                     //  Session["OTP"] = otp;
                                 int result = _login.AddOTPDetails(Convert.ToInt32(otp), Convert.ToInt64(employeeDetails.EmployeeId));
                                 try
                                 {
@@ -616,7 +616,7 @@ namespace KGID.Controllers
                                     Session["MobileNo"] = employeeDetails.MobileNumber.ToString();
 
                                     AllCommon.sendUnicodeSMS(employeeDetails.MobileNumber.ToString(), msg, "1107161605342227349");
-
+                                    
                                     string emailcontent = "Dear Proposer," +
                                     "You have been registered successfully on Karnataka Government Insurance Department(KGID) portal.Now you can start applying for KGID policy by logging in to https://kgidonline.karnataka.gov.in as a new employee using your registered mobile no/ e-mail."
                                     + "The One Time Password(OTP) generated for your KGID login is " + otp + " and do not share this One Time Password with anyone."
@@ -629,11 +629,11 @@ namespace KGID.Controllers
                                     AllCommon objemail = new AllCommon();
                                     objemail.SendEmail(employeeDetails.Email, emailcontent, "One Time Password");
                                 }
-                                catch (Exception ex)
+                                catch(Exception ex)
                                 {
-                                    Logger.LogMessage(TracingLevel.INFO, "VerifyNewEmployeeLogin " + ex.Message.ToString());
+                                    Logger.LogMessage(TracingLevel.INFO, "VerifyNewEmployeeLogin "+ex.Message.ToString());
                                 }
-
+                                
                                 isSuccess = true;
                             }
                             else
@@ -643,7 +643,7 @@ namespace KGID.Controllers
                             }
                         }
                         else
-                        {
+                        {   
                             isSuccess = false;
                             isKGIDPresent = true;
                         }
@@ -711,14 +711,14 @@ namespace KGID.Controllers
                 }
 
             }
-            else
+            else 
             {
                 redirectUrl = Url.Action("Dashboard", "Home", new { area = "" });
             }
 
-            return Json(new { IsSuccess = true, RedirectUrl = redirectUrl }, JsonRequestBehavior.AllowGet);
+            return Json(new { IsSuccess = true ,RedirectUrl= redirectUrl }, JsonRequestBehavior.AllowGet);
         }
-        public static String captcha_new
+public static String captcha_new
         {
             get { return CaptchaNew; }
             set { CaptchaNew = value; }
@@ -737,19 +737,19 @@ namespace KGID.Controllers
             //string captcha = GetCaptchaString(6);
 
             tbl_logindetails obj = new tbl_logindetails();
+            
 
-
-            CaptchaNew = GetCaptchaString(6);
-            LoginController obj_login = new LoginController(CaptchaNew);
-
-
-            obj.image_captcha = captcha_val;
-
+                CaptchaNew = GetCaptchaString(6);
+                LoginController obj_login=new LoginController(CaptchaNew);
+                
+               
+                obj.image_captcha = captcha_val;
+            
             string captcha = captcha_val;
             Session["GenCaptcha"] = null;
             Session["GenCaptcha"] = captcha;
-
-
+           
+           
             //image stream
             FileContentResult img = null;
 
@@ -822,8 +822,8 @@ namespace KGID.Controllers
         {
             int ValidOTP = 0;
             int result = _login.getOTPDetails(Convert.ToInt32(Session["EID"]));
-            //if (result == OTP)
-            if (2121 == 2121)
+          //if (result == OTP)
+         if (2121 == 2121)
             {
                 if (LType == 1)
                 {
@@ -833,7 +833,7 @@ namespace KGID.Controllers
                     Session["Categories"] = insuredEmployee.UserCategory;
                     Session["Department"] = insuredEmployee.Department;
                     Session["Designation"] = insuredEmployee.Designation;
-                    Session["InsuredUser"] = true;
+                    Session["InsuredUser"] = true; 
                     Session["FirstKGIDNo"] = insuredEmployee.FirstKGIDNo;
                     Session["Moduletype"] = insuredEmployee.Moduletype;
                     Session["LoginType"] = "Insured Employee";
@@ -880,17 +880,17 @@ namespace KGID.Controllers
                 AllCommon.sendUnicodeSMS(Session["MobileNo"].ToString(), msg, "1107161623523856523");
                 return 1;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Logger.LogMessage(TracingLevel.INFO, "SendSMSAfterLogin 1107161623523856523 " + ex.Message.ToString());
                 return 0;
-            }
+            }  
         }
         public ActionResult KGID()
         {
             return View();
         }
-        #region SessionTimeout
+#region SessionTimeout
 
         public ActionResult SessionTimeout()
         {

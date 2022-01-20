@@ -19,6 +19,11 @@
 
     });
 
+    $('#ddlVehSubType').on('change', function () {
+        $('#ddlVehCat').removeAttr('readonly');
+        $('#ddlVehCat').removeAttr('style');
+    });
+
     if ($('#vaahanidvamount').val() != "0" || $('#vaahanidvamount').val() != "") {
         $('#vaahanidvamount').attr("readonly", true);
         $('#vaahanidvamount').css("pointer-events", "none");
@@ -1116,6 +1121,7 @@ function ValidateVehicleDetails() {
     var weightId = $('#txtVDWeight').val();
     var ddlTypeofCover = $('#ddlTypeofCover').val();
     var errorCount = 0;
+    
     if (txtChasisNo.trim() === null || txtChasisNo.trim() === "") {
 
         $("#errVDChassisNoReq").removeAttr("hidden");
@@ -1123,22 +1129,43 @@ function ValidateVehicleDetails() {
         errorCount++;
     }
     else {
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
 
-        if (txtChasisNo.length < 8 || txtChasisNo.length > 25) {
-
-            $("#errVDChassisNoReq").removeAttr("hidden");
-            //return false;
-            errorCount++;
-        }
-        else {
-            var isNumber = /^\d+$/.test(txtChasisNo);
-            var isString = (!/[^a-zA-Z]/.test(txtChasisNo))
-
-            if (isString == true || isNumber == true) {
+            if (txtChasisNo.length > 25) {
 
                 $("#errVDChassisNoReq").removeAttr("hidden");
                 //return false;
                 errorCount++;
+            }
+            else {
+                //var isNumber = /^\d+$/.test(txtChasisNo);
+                var isString = (!/[^a-zA-Z]/.test(txtChasisNo))
+
+                //if (isString == true || isNumber == true) {
+
+                //    $("#errVDChassisNoReq").removeAttr("hidden");
+                //    //return false;
+                //    errorCount++;
+                //}
+            }
+        }
+        else {
+            if (txtChasisNo.length < 8 || txtChasisNo.length > 25) {
+
+                $("#errVDChassisNoReq").removeAttr("hidden");
+                //return false;
+                errorCount++;
+            }
+            else {
+                var isNumber = /^\d+$/.test(txtChasisNo);
+                var isString = (!/[^a-zA-Z]/.test(txtChasisNo))
+
+                if (isString == true || isNumber == true) {
+
+                    $("#errVDChassisNoReq").removeAttr("hidden");
+                    //return false;
+                    errorCount++;
+                }
             }
         }
     }
@@ -1175,7 +1202,7 @@ function ValidateVehicleDetails() {
         }
     }
     else {
-        $('#errVDManufactureReq').attr("hidden", true);
+       // $('#errVDManufactureReq').attr("hidden", true);
     }
     if (cubicId == "") {
         $('#errVDCubicCapacityReq').removeAttr('hidden');
@@ -1439,6 +1466,7 @@ function ValidateProposerDetails() {
 
     if ($("#txtPEmail").val() == "") {
         $("#errVDEmailReq").removeAttr("hidden");
+        //$("#txtPEmail").attr("readonly", false);
         errCount++;
     }
     else {
@@ -3836,6 +3864,7 @@ function monthDiff(d1, d2) {
 }
 function ReplaceNumberWithCommas(yourNumber) {
     //Seperates the components of the number
+   // alert(yourNumber);
     var components = yourNumber.toString().split(".");
     //Comma-fies the first part
     components[0] = components[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -4151,6 +4180,7 @@ function Renewalsum() {
     var ddlTypeofCover = $('#ddlTypeofCover').val();
     var ddlTypeofCoverName = $('select#ddlTypeofCover option:selected').text();
     //
+    //alert(ddlTypeofCover);
     var ODValue = $("#txtowndamage").val();
     var PLValue = $("#txtpremiumliability").val();
     var DepreciationValue = $("#txtVDDepreciation").val();
@@ -5365,9 +5395,8 @@ function GetVahanDetails() {
 
 
             }
-            else if (res[0] == "yes") {
-                alertify.error("This Chasis No. is already exists !");
-                /*if ($('.err:visible').length === 0) {
+            else if (res[0] == "yes") {                
+                if ($('.err:visible').length === 0) {
                     $.ajax({
                         url: "/Service/GetVehicleDetails",
                         data:
@@ -5513,7 +5542,7 @@ function GetVahanDetails() {
                             alertify.error("Sorry the requested chassis no could not be found.Do you want to enter the details manually?");
                         }
                     });
-                }*/
+                }
             }
         },
         error: function (response) {
@@ -5569,10 +5598,14 @@ function DisableFeilds() {
     $('#ddlVehicleCatType').attr('readonly', true);
     $('#txtVDTypeOfModel').attr('readonly', true);
     $('#ddlVDFuelType').attr('readonly', true);
-    $('#ddlVehType').attr('readonly', true);
-    $('#ddlVehSubType').attr('readonly', true);
-    $('#ddlVehCat').attr('readonly', true);
-    $('#ddlVehClassType').attr('readonly', true);
+    
+    if ($("#hdnPagetype").val() != "Renewal" && $("#hdnPagetype").val() != "EditRenewal") {
+        $('#ddlVehType').attr('readonly', true);
+        $('#ddlVehSubType').attr('readonly', true);
+        $('#ddlVehCat').attr('readonly', true);
+        $('#ddlVehClassType').attr('readonly', true);
+        $("#txtVDRegistrationNo").attr('readonly', true);
+    }
 
     $('#txtVDEngine').css("pointer-events", "none");
     $('#txtVDSeating').css("pointer-events", "none");
@@ -5587,19 +5620,23 @@ function DisableFeilds() {
 
     $('#ddlVehicleCatType').css("pointer-events", "none");
     $('#txtVDTypeOfModel').css("pointer-events", "none");
-    $('#ddlVDFuelType').css("pointer-events", "none");
-    $('#ddlVehType').css("pointer-events", "none");
-    $('#ddlVehSubType').css("pointer-events", "none");
-    $('#ddlVehCat').css("pointer-events", "none");
+    $('#ddlVDFuelType').css("pointer-events", "none");    
+    if ($("#hdnPagetype").val() != "Renewal" || $("#hdnPagetype").val() != "EditRenewal") {
+        $('#ddlVehType').css("pointer-events", "none");
+         $('#ddlVehSubType').css("pointer-events", "none");
+         $('#ddlVehCat').css("pointer-events", "none");
+    }
     $('#ddlVehClassType').css("pointer-events", "none");
     $('#txtVDDateOfRegistration').css("pointer-events", "none");
 
     $('#ddlVehicleCatType').attr("tabindex", "-1");
     $('#txtVDTypeOfModel').attr("tabindex", "-1");
     $('#ddlVDFuelType').attr("tabindex", "-1");
-    $('#ddlVehType').attr("tabindex", "-1");
-    $('#ddlVehSubType').attr("tabindex", "-1");
-    $('#ddlVehCat').attr("tabindex", "-1");
+    if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+        $('#ddlVehType').attr("tabindex", "-1");
+         $('#ddlVehSubType').attr("tabindex", "-1");
+        $('#ddlVehCat').attr("tabindex", "-1");
+    }
     $('#ddlVehClassType').attr("tabindex", "-1")
 
     $('#txtVDEngine').attr("tabindex", "-1");

@@ -55,12 +55,19 @@
 
                         @if (String.IsNullOrEmpty(item.MIRenewalStatus))
                         {
-                            <td>
-                                @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="Renewal", refNo = item.MIPrevApplicationNumber, category=item.MIUserCategoryId }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Renewal Application</a>*@
-                                <a href="mi-r-rn-apln/Renewal/@item.MIPrevApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Renewal Application</a>
-                            </td>
+                        <td>
+                            @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="Renewal", refNo = item.MIPrevApplicationNumber, category=item.MIUserCategoryId }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Renewal Application</a>*@
+                            <a href="mi-r-rn-apln/Renewal/@item.MIPrevApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Renewal Application</a>
+                        </td>
                         }
                         else if ((item.MIWorkflowStatus == 1 || item.MIWorkflowStatus == 2 || item.MIWorkflowStatus == 15) && item.MIRenewalStatus == "pending")
+                        {
+                        <td>
+                            @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Edit Application</a>*@
+                            <a href="mi-r-edt-apln/EditRenewal/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Edit Application</a>
+                        </td>
+                        }
+                        else if ( item.MIRenewalStatus == "pending")
                         {
                             <td>
                                 @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Edit Application</a>*@
@@ -70,10 +77,10 @@
                         else
                         {
                             @*<td><a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
-                            <td>
-                                @*<a href="@Url.Action("MIViewRenewalApplication", "VerifyDetails", new RouteValueDictionary(new { @empId = item.MIEmployeeId, applicationId = item.MIApplicationId , refNo=item.MIApplicationNumber,category=item.MIUserCategoryId,PrevRefNo=item.MIPrevApplicationNumber}))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a>*@
-                                <a href="mi-r-vw-apln/@item.MIEmployeeId/@item.MIApplicationId/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIPrevApplicationNumber">View Application </a>
-                            </td>
+                        <td>
+                            @*<a href="@Url.Action("MIViewRenewalApplication", "VerifyDetails", new RouteValueDictionary(new { @empId = item.MIEmployeeId, applicationId = item.MIApplicationId , refNo=item.MIApplicationNumber,category=item.MIUserCategoryId,PrevRefNo=item.MIPrevApplicationNumber}))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a>*@
+                            <a href="mi-r-vw-apln/@item.MIEmployeeId/@item.MIApplicationId/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIPrevApplicationNumber">View Application </a>
+                        </td>
                         }
 
                     </tr>

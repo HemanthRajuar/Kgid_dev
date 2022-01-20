@@ -14,10 +14,8 @@
         @Html.HiddenFor(m => m.first_kgid_policy_no, new { id = "hdnfirstpolno" })
         @Html.HiddenFor(m => m.dr_id, new { id = "hdnmarriedstatus" })
         @*@Html.HiddenFor(m => Model.employee_name, new { id = "hdnEMPMNAM" }*@
-        @Html.HiddenFor(m => m.first_kgid_policy_no, new { id = "kgidmno" })
-        
-
-
+          @Html.HiddenFor(m => m.first_kgid_policy_no, new { id = "kgidmno" })
+      
         <input id="errLoginid" name="errLoginid" class="text-danger" type="hidden" value='@ViewBag.mess' />
         <div class="row" id="divShowQRCode" style="display:none;">
             <div class="form-group col-6">

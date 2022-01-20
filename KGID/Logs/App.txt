@@ -1582,61 +1582,639 @@ insert16
 Zone B
 13 Jan 2022 17:48:11 - INFO  - GetMobileNumberOfInsured()
 13 Jan 2022 18:08:42 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 09:47:12 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 10:06:46 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 13:19:06 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 14:03:07 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 14:09:03 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 15:09:50 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 15:09:50 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->Could not find stored procedure 'sp_kgid_verifyKGIDEmployeeLoginDetail'.
-17 Jan 2022 15:09:50 - INFO  - Error=Cannot find table 0.
-17 Jan 2022 15:11:41 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 15:17:47 - INFO  - GetMobileNumberOfInsured()
-17 Jan 2022 15:28:01 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails_new-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails_new'.
-17 Jan 2022 15:28:03 - INFO  - ExecuteCmd-SP->sp_kgid_saveprevioushistorydetails_new-Errors->Could not find stored procedure 'sp_kgid_saveprevioushistorydetails_new'.
-18 Jan 2022 11:07:04 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 11:13:53 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 11:13:54 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->Could not find stored procedure 'sp_kgid_verifyKGIDEmployeeLoginDetail'.
-18 Jan 2022 11:13:54 - INFO  - Error=Cannot find table 0.
-18 Jan 2022 11:13:55 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 11:13:55 - INFO  - ExecuteCmd-SP->sp_kgid_verifyKGIDEmployeeLoginDetail-Errors->Could not find stored procedure 'sp_kgid_verifyKGIDEmployeeLoginDetail'.
-18 Jan 2022 11:13:56 - INFO  - Error=Cannot find table 0.
-18 Jan 2022 11:22:31 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 11:33:01 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 11:38:43 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 12:16:08 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 12:45:39 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 12:58:14 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 13:03:10 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 13:14:06 - INFO  - Inside PayMIOTCChallanDetails
-18 Jan 2022 13:14:06 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
-18 Jan 2022 13:14:06 - INFO  - Data File generated *********
-18 Jan 2022 13:14:06 - INFO  - D:\latest15-1-2022\kgid-development\KGID\MIDocuments\0\KD0122801118131232.txt
-18 Jan 2022 13:14:06 - INFO  - Before API Call
-18 Jan 2022 13:14:06 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
-18 Jan 2022 13:14:47 - INFO  - Inside PayMIOTCChallanDetails
-18 Jan 2022 13:14:47 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
-18 Jan 2022 13:14:47 - INFO  - Data File generated *********
-18 Jan 2022 13:14:47 - INFO  - D:\latest15-1-2022\kgid-development\KGID\MIDocuments\0\KD0122801118131232.txt
-18 Jan 2022 13:14:47 - INFO  - Before API Call
-18 Jan 2022 13:14:47 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
-18 Jan 2022 13:16:05 - INFO  - SignData File Creating in MIDocuments/0
-18 Jan 2022 13:16:05 - INFO  - MI BPSO25 SignData File Path: D:\latest15-1-2022\kgid-development\KGID\MIDocuments\0\KG1801220001.txt
-18 Jan 2022 13:18:36 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 13:20:43 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 13:24:35 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 13:28:22 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 13:46:38 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 14:05:29 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 14:07:58 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 14:52:25 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 14:56:42 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 15:15:19 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 17:03:50 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 17:09:19 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 17:42:05 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 18:04:13 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 18:25:44 - INFO  - GetMobileNumberOfInsured()
-18 Jan 2022 18:41:14 - INFO  - GetMobileNumberOfInsured()
-19 Jan 2022 10:05:28 - INFO  - GetMobileNumberOfInsured()
-19 Jan 2022 10:05:30 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 11:32:52 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 12:31:20 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 12:42:00 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 12:46:12 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 12:48:51 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 14:18:13 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 16:01:04 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 16:21:07 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 16:27:19 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 17:14:27 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 17:23:13 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 17:57:44 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 18:08:12 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 19:16:33 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 19:23:51 - INFO  - GetMobileNumberOfInsured()
+14 Jan 2022 19:24:53 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 09:39:23 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 09:53:56 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 10:03:46 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 11:20:32 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 14:17:59 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 14:35:19 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 14:54:30 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 14:59:02 - INFO  - GetMobileNumberOfInsured()
+15 Jan 2022 19:57:57 - INFO  - GetMobileNumberOfInsured()
+17 Jan 2022 12:55:52 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 10:18:17 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 10:24:09 - INFO  - GetMobileNumberOfInsured()
+18 Jan 2022 10:36:25 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 08:15:37 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 08:21:26 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 08:25:39 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 08:25:42 - INFO  - VerifyKGIDAndMobileNo the remote name could not be resolved: 'msdgweb.mgov.gov.in'
+19 Jan 2022 10:04:42 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 13:38:11 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 13:50:53 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 13:53:19 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 14:01:59 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 14:05:01 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 15:28:00 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 15:48:44 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 15:56:48 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:06:09 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:17:06 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:33:04 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:36:58 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:38:18 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+20==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>1216805
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+6==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+16==>@VehicleCategory
+0==>MinValueCubic_Capacity
+17==>@NCB_year
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+0==>@@Passengers
+215==>@Depreciation_year
+6==>@Depreciation_Id
+50==>@Depreciation_Value
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue1.268
+252==>@OwnDamageId
+ 
+20==>@@ODGovDiscoount
+50000==>@VehicleMinValue
+25==>@VehicleMinValueId
+6847
+@PLgovDiscount==>20
+@@PLValueID==>177
+@@PLDriverAmt==>25
+@@PLPassengerAmt==>210
+ 
+6847==>@PLTotal
+0
+16
+0
+1
+19 Jan 2022 16:38:38 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+20==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>1216805
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+6==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+16==>@VehicleCategory
+0==>MinValueCubic_Capacity
+17==>@NCB_year
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+0==>@@Passengers
+215==>@Depreciation_year
+6==>@Depreciation_Id
+50==>@Depreciation_Value
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue1.268
+252==>@OwnDamageId
+ 
+20==>@@ODGovDiscoount
+50000==>@VehicleMinValue
+25==>@VehicleMinValueId
+6847
+@PLgovDiscount==>20
+@@PLValueID==>177
+@@PLDriverAmt==>25
+@@PLPassengerAmt==>210
+ 
+6847==>@PLTotal
+0
+16
+0
+1
+19 Jan 2022 16:39:52 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+20==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>1216805
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+6==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+16==>@VehicleCategory
+0==>MinValueCubic_Capacity
+17==>@NCB_year
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+0==>@@Passengers
+215==>@Depreciation_year
+6==>@Depreciation_Id
+50==>@Depreciation_Value
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue1.268
+252==>@OwnDamageId
+ 
+20==>@@ODGovDiscoount
+50000==>@VehicleMinValue
+25==>@VehicleMinValueId
+6847
+@PLgovDiscount==>20
+@@PLValueID==>177
+@@PLDriverAmt==>25
+@@PLPassengerAmt==>210
+ 
+6847==>@PLTotal
+0
+16
+0
+1
+19 Jan 2022 16:40:11 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:42:23 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+19==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>49568
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+0==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+16==>@VehicleCategory
+0==>MinValueCubic_Capacity
+ 
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+0==>@@Passengers
+0==>@Depreciation_year
+0==>@Depreciation_Id
+ 
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue
+0==>@OwnDamageId
+0==>@ODAdditional
+0==>@@ODGovDiscoount
+50000==>@VehicleMinValue
+25==>@VehicleMinValueId
+6847
+@PLgovDiscount==>20
+@@PLValueID==>177
+@@PLDriverAmt==>25
+@@PLPassengerAmt==>210
+ 
+6847==>@PLTotal
+0
+16
+0
+1
+19 Jan 2022 16:45:02 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:52:07 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:53:14 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+19==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>49568
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+0==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+16==>@VehicleCategory
+0==>MinValueCubic_Capacity
+ 
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+0==>@@Passengers
+0==>@Depreciation_year
+0==>@Depreciation_Id
+ 
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue
+0==>@OwnDamageId
+0==>@ODAdditional
+0==>@@ODGovDiscoount
+50000==>@VehicleMinValue
+25==>@VehicleMinValueId
+6847
+@PLgovDiscount==>20
+@@PLValueID==>177
+@@PLDriverAmt==>25
+@@PLPassengerAmt==>210
+ 
+6847==>@PLTotal
+0
+16
+0
+1
+19 Jan 2022 16:53:40 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 16:55:07 - INFO  - ExecuteCmd-SP->sp_getMIRenewalVehicleDetails-Errors->Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+4==>@AppId
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+check
+ 
+check  print 
+0 ==>@Malus_value
+Policy_No6==>49568
+0==>gvwid
+0==>@Passengerid
+0==>@MinValuePassengerid
+1==>@Vehicle_type
+0==>@Vehicle_Subtype
+0==>@VehicleAge
+0==>@Cubic_Capacity
+0==>@TPCubic_Capacity
+16==>@VehicleCategory
+0==>MinValueCubic_Capacity
+ 
+1==>@NCB_Id
+20==>@NCB_value
+6==>@@GVWLid
+0==>@@Passengers
+0==>@Depreciation_year
+0==>@Depreciation_Id
+ 
+1==>@Zoneid
+Zone A==>@Zone
+@OwnDamageValue
+0==>@OwnDamageId
+0==>@ODAdditional
+0==>@@ODGovDiscoount
+50000==>@VehicleMinValue
+25==>@VehicleMinValueId
+6847
+@PLgovDiscount==>20
+@@PLValueID==>177
+@@PLDriverAmt==>25
+@@PLPassengerAmt==>210
+ 
+6847==>@PLTotal
+0
+16
+0
+1
+19 Jan 2022 16:58:41 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 17:16:32 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 18:26:21 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 19:00:42 - INFO  - GetMobileNumberOfInsured()
+19 Jan 2022 19:02:57 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function 'sp_kgid_SaveMIRenewalVehicleDetails' expects parameter '@registrationno', which was not supplied.
+19 Jan 2022 19:16:00 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 07:54:07 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 08:00:24 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 08:02:34 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 08:09:47 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 08:11:35 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2021-6-01
+29-11-2021 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+ 
+1==>@Passengerid
+ 
+2==>@Vehicle_Subtype
+1==>@VehicleAge
+5==>@Cubic_Capacity
+5==>@@TPCubic_Capacity
+12==>@VehicleCategoryid
+7==>MinValueCubic_Capacity
+7==>@Depreciation_year
+2==>@Depreciation_Id
+15==>@Depreciation_Value
+6==>@@GVWLid
+7==>@@Passengers
+11
+1==>@Zoneid
+Zone A==>@Zone
+12
+3.283  @OwnDamageValue
+155==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+15000==>@VehicleMinValue
+31==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+100==>@PLPassengerAmount
+ 
+PD
+3221
+POLICY DETAILS
+update
+17
+3.283,3221,15000,15,Zone A,0,20,20,25,100
+20 Jan 2022 08:19:53 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2018-1-01
+09-03-2018 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+ 
+1==>@Passengerid
+ 
+2==>@Vehicle_Subtype
+1==>@VehicleAge
+6==>@Cubic_Capacity
+6==>@@TPCubic_Capacity
+12==>@VehicleCategoryid
+6==>MinValueCubic_Capacity
+48==>@Depreciation_year
+5==>@Depreciation_Id
+40==>@Depreciation_Value
+6==>@@GVWLid
+7==>@@Passengers
+11
+1==>@Zoneid
+Zone A==>@Zone
+12
+3.440  @OwnDamageValue
+156==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+30000==>@VehicleMinValue
+32==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+100==>@PLPassengerAmount
+ 
+PD
+7890
+POLICY DETAILS
+update
+17
+3.440,7890,30000,40,Zone A,0,20,20,25,100
+20 Jan 2022 08:27:21 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2020-2-01
+05-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+2==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+23==>@Depreciation_year
+3==>@Depreciation_Id
+20==>@Depreciation_Value
+6==>@@GVWLid
+2==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+5000==>@VehicleMinValue
+13==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+15746
+POLICY DETAILS
+update
+17
+1.743,15746,5000,20,Zone B,0,20,20,25,75
+20 Jan 2022 08:35:03 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 08:44:16 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 09:06:46 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 10:07:34 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 10:11:34 - INFO  - result2
+20 Jan 2022 10:34:53 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 11:50:18 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 11:53:08 - INFO  - result1.743,26935,30000,20,Zone B,0,20,20,25,75
+20 Jan 2022 11:53:21 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2020-1-01
+02-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+4==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+24==>@Depreciation_year
+3==>@Depreciation_Id
+20==>@Depreciation_Value
+7==>@@GVWLid
+3==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+30000==>@VehicleMinValue
+15==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+26935
+POLICY DETAILS
+update
+17
+1.743,26935,30000,20,Zone B,0,20,20,25,75
+20 Jan 2022 11:53:21 - INFO  - result
+20 Jan 2022 12:02:39 - INFO  - result1.743,15746,20000,20,Zone B,0,20,20,25,75
+20 Jan 2022 12:02:44 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2020-2-01
+13-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+3==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+23==>@Depreciation_year
+3==>@Depreciation_Id
+20==>@Depreciation_Value
+6==>@@GVWLid
+2==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+20000==>@VehicleMinValue
+14==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+15746
+POLICY DETAILS
+update
+17
+1.743,15746,20000,20,Zone B,0,20,20,25,75
+20 Jan 2022 12:02:44 - INFO  - result
+20 Jan 2022 12:03:49 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 12:24:23 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 12:28:50 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 12:34:09 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 12:36:52 - INFO  - result2
+20 Jan 2022 12:37:01 - INFO  - result2
+20 Jan 2022 12:51:25 - INFO  - result2
+20 Jan 2022 12:59:53 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 13:50:52 - INFO  - result2
+20 Jan 2022 14:13:12 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 14:15:03 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 14:15:03 - INFO  - result
+20 Jan 2022 14:15:14 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 14:15:14 - INFO  - result
+20 Jan 2022 14:15:34 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Conversion failed when converting date and/or time from character string.
+20 Jan 2022 14:15:34 - INFO  - result
+20 Jan 2022 14:56:07 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 14:57:56 - INFO  - GetMobileNumberOfInsured()

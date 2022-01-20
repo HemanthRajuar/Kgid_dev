@@ -350,6 +350,11 @@ namespace DLL.KGIDMotorInsurance
                      new SqlParameter("@vehicleclass", vmVehicleDetails.mivd_vehicle_class_id),
                      new SqlParameter("@dateofregistration", Convert.ToDateTime(vmVehicleDetails.mivd_date_of_registration)),
                      new SqlParameter("@rto_id", vmVehicleDetails.mivd_vehicle_rto_id),
+                     new SqlParameter("@registrationno", vmVehicleDetails.mivd_registration_no),
+                     new SqlParameter("@Vehicalfueltype", vmVehicleDetails.mivd_vehicle_fuel_type),
+                     new SqlParameter("@dateofmanufacture",vmVehicleDetails.mivd_manufacturer_month),
+                      new SqlParameter("@year", vmVehicleDetails.mivd_year_of_manufacturer),
+
                 };
                     result = Convert.ToString(_Conn.ExecuteCmd(sqlparam, "sp_kgid_SaveMIRenewalVehicleDetails"));
                 }
@@ -4130,53 +4135,53 @@ namespace DLL.KGIDMotorInsurance
                     {
 
 
-                   ApplicationNumber = dsDDO.Tables[0].Rows[0]["mira_application_ref_no"].ToString(),
-                        PrevApplicationNumber = (dsDDO.Tables[0].Rows[0]["prevRefNo"] == DBNull.Value) ? "0" :  (dsDDO.Tables[0].Rows[0]["prevRefNo"]).ToString(),
-                    TypeofCover = Convert.ToString(dsDDO.Tables[0].Rows[0]["type_of_cover"]),
-                        VehicleYear =  (dsDDO.Tables[0].Rows[0]["year"]).ToString(),
-                        VehicleModelName = (dsDDO.Tables[0].Rows[0]["mivd_type_of_model"]).ToString(),
-                        Status = (dataRow.Field<string>("asm_status_desc") == "Send Back to Employee") ? (dataRow.Field<string>("asm_status_desc").ToString().Replace("Employee", description)) : (dataRow.Field<string>("asm_status_desc").ToString().Replace("Applicant", description)),
-                        registrationNo = (dsDDO.Tables[0].Rows[0]["mivd_registration_no"]).ToString(),
-                        ChasisNo = (dsDDO.Tables[0].Rows[0]["mivd_chasis_no"]).ToString() ,
-                        EngineNo = (dsDDO.Tables[0].Rows[0]["mivd_engine_no"]).ToString() ,
-                        AppStatusID = (int)dsDDO.Tables[0].Rows[0]["status"] ,
-                        LastUpdatedDate = dsDDO.Tables[0].Rows[0]["mirw_creation_datetime"].ToString() ,
-                        CategoryId = dsDDO.Tables[0].Rows[0]["mira_user_category"].ToString() ,
-                        ApplicationId =(dsDDO.Tables[0].Rows[0]["mira_motor_insurance_app_id"] == null) ? 0 :  (long) dsDDO.Tables[0].Rows[0]["mira_motor_insurance_app_id"],
-                        PolicyPremium = (dsDDO.Tables[0].Rows[0]["p_mi_premium"] == null) ? 0 :(double?) dsDDO.Tables[0].Rows[0]["p_mi_premium"],
-                        PolicyNumber = dsDDO.Tables[0].Rows[0]["rp_mi_policy_number"].ToString(),
-                        UnsignBondDocPath = dsDDO.Tables[0].Rows[0]["unsignbondpath"].ToString(),
-                        SignedBondDocPath = dsDDO.Tables[0].Rows[0]["signedbondpath"].ToString(),
-                        EmployeeCode = (long?)dsDDO.Tables[0].Rows[0]["employee_id"],
-                        Name = dsDDO.Tables[0].Rows[0]["employee_name"].ToString(),
+                        //ApplicationNumber = dsDDO.Tables[0].Rows[0]["mira_application_ref_no"].ToString(),
+                        //     PrevApplicationNumber = (dsDDO.Tables[0].Rows[0]["prevRefNo"] == DBNull.Value) ? "0" :  (dsDDO.Tables[0].Rows[0]["prevRefNo"]).ToString(),
+                        // TypeofCover = Convert.ToString(dsDDO.Tables[0].Rows[0]["type_of_cover"]),
+                        //     VehicleYear =  (dsDDO.Tables[0].Rows[0]["year"]).ToString(),
+                        //     VehicleModelName = (dsDDO.Tables[0].Rows[0]["mivd_type_of_model"]).ToString(),
+                        //     Status = (dataRow.Field<string>("asm_status_desc") == "Send Back to Employee") ? (dataRow.Field<string>("asm_status_desc").ToString().Replace("Employee", description)) : (dataRow.Field<string>("asm_status_desc").ToString().Replace("Applicant", description)),
+                        //     registrationNo = (dsDDO.Tables[0].Rows[0]["mivd_registration_no"]).ToString(),
+                        //     ChasisNo = (dsDDO.Tables[0].Rows[0]["mivd_chasis_no"]).ToString() ,
+                        //     EngineNo = (dsDDO.Tables[0].Rows[0]["mivd_engine_no"]).ToString() ,
+                        //     AppStatusID = (int)dsDDO.Tables[0].Rows[0]["status"] ,
+                        //     LastUpdatedDate = dsDDO.Tables[0].Rows[0]["mirw_creation_datetime"].ToString() ,
+                        //     CategoryId = dsDDO.Tables[0].Rows[0]["mira_user_category"].ToString() ,
+                        //     ApplicationId =(dsDDO.Tables[0].Rows[0]["mira_motor_insurance_app_id"] == null) ? 0 :  (long) dsDDO.Tables[0].Rows[0]["mira_motor_insurance_app_id"],
+                        //     PolicyPremium = (dsDDO.Tables[0].Rows[0]["p_mi_premium"] == null) ? 0 :(double?) dsDDO.Tables[0].Rows[0]["p_mi_premium"],
+                        //     PolicyNumber = dsDDO.Tables[0].Rows[0]["rp_mi_policy_number"].ToString(),
+                        //     UnsignBondDocPath = dsDDO.Tables[0].Rows[0]["unsignbondpath"].ToString(),
+                        //     SignedBondDocPath = dsDDO.Tables[0].Rows[0]["signedbondpath"].ToString(),
+                        //     EmployeeCode = (long?)dsDDO.Tables[0].Rows[0]["employee_id"],
+                        //     Name = dsDDO.Tables[0].Rows[0]["employee_name"].ToString(),
 
-                        //ApplicationNumber = dataRow.Field<long>("mira_application_ref_no").ToString(),
-                        //PrevApplicationNumber = Convert.ToString(dataRow.Field<long>("prevRefNo")),
+                        ApplicationNumber = dataRow.Field<long?>("mira_application_ref_no").ToString(),
+                        PrevApplicationNumber = Convert.ToString(dataRow.Field<long?>("prevRefNo")),
                         //PrevApplicationNumber = (dataRow.Field<string>("prevRefNo") == null) ? "0" : dataRow.Field<string>("prevRefNo").ToString(),
-                        //TypeofCover = dataRow.Field<string>("type_of_cover"),
-                        //VehicleYear = dataRow.Field<string>("year"),
-                        //VehicleModelName = dataRow.Field<string>("mivd_type_of_model"),
-                        //Status = (dataRow.Field<string>("asm_status_desc") == "Send Back to Employee") ? (dataRow.Field<string>("asm_status_desc").ToString().Replace("Employee", description)) : (dataRow.Field<string>("asm_status_desc").ToString().Replace("Applicant", description)),
+                        TypeofCover = dataRow.Field<string>("type_of_cover"),
+                        VehicleYear = dataRow.Field<string>("year"),
+                        VehicleModelName = dataRow.Field<string>("mivd_type_of_model"),
+                        Status = (dataRow.Field<string>("asm_status_desc") == "Send Back to Employee") ? (dataRow.Field<string>("asm_status_desc").ToString().Replace("Employee", description)) : (dataRow.Field<string>("asm_status_desc").ToString().Replace("Applicant", description)),
                         //Status = (dataRow.Field<string>("asm_status_desc").Replace("Applicant", description)),
-                        //registrationNo = dataRow.Field<string>("mivd_registration_no"),
-                        //ChasisNo = dataRow.Field<string>("mivd_chasis_no"),
-                        //EngineNo = dataRow.Field<string>("mivd_engine_no"),
-                        //AppStatusID = dataRow.Field<int>("status"),
-                        //LastUpdatedDate = dataRow.Field<string>("mirw_creation_datetime"),
-                        //CategoryId = dataRow.Field<string>("mira_user_category"),
-                        //ApplicationId = (dataRow.Field<long>("mira_motor_insurance_app_id") == null) ? 0 : dataRow.Field<long>("mira_motor_insurance_app_id"),
-                        //PolicyPremium = (dataRow.Field<double?>("p_mi_premium") == null) ? 0 : dataRow.Field<double?>("p_mi_premium"),
+                        registrationNo = dataRow.Field<string>("mivd_registration_no"),
+                        ChasisNo = dataRow.Field<string>("mivd_chasis_no"),
+                        EngineNo = dataRow.Field<string>("mivd_engine_no"),
+                        AppStatusID = dataRow.Field<int>("status"),
+                        LastUpdatedDate = dataRow.Field<string>("mirw_creation_datetime"),
+                        CategoryId = dataRow.Field<string>("mira_user_category"),
+                        ApplicationId = (dataRow.Field<long>("mira_motor_insurance_app_id") == null) ? 0 : dataRow.Field<long>("mira_motor_insurance_app_id"),
+                        PolicyPremium = (dataRow.Field<double?>("p_mi_premium") == null) ? 0 : dataRow.Field<double?>("p_mi_premium"),
                         //PolicyPremium = dataRow.Field<double?>("p_mi_premium"),
-                        //PolicyNumber = dataRow.Field<string>("rp_mi_policy_number"),
-                        //UnsignBondDocPath = dataRow.Field<string>("unsignbondpath"),
-                        //SignedBondDocPath = dataRow.Field<string>("signedbondpath"),
-                        //EmployeeCode = dataRow.Field<long?>("employee_id"),
-                        //Name = dataRow.Field<string>("employee_name"),
+                        PolicyNumber = dataRow.Field<string>("rp_mi_policy_number"),
+                        UnsignBondDocPath = dataRow.Field<string>("unsignbondpath"),
+                        SignedBondDocPath = dataRow.Field<string>("signedbondpath"),
+                        EmployeeCode = dataRow.Field<long?>("employee_id"),
+                        Name = dataRow.Field<string>("employee_name"),
                     }).ToList();
                     //verificationDetails.LastUpdatedStatusForEmployees = CurrentStatusList;
                     verificationDetails.ViewStatusForEmployees = CurrentStatusList.Where(a => a.AppStatusID != 2 && a.AppStatusID != 1).ToList();
 
-                    verificationDetails.LastUpdatedStatusForEmployees = CurrentStatusList.Where(a => a.AppStatusID == 2 || a.AppStatusID == 1).Select(a => a).ToList();
+                    verificationDetails.LastUpdatedStatusForEmployees = CurrentStatusList.Where(a => a.AppStatusID == 1).Select(a => a).ToList();
                 }
                 if (dsDDO.Tables[1].Rows.Count > 0)
                 {
@@ -4826,7 +4831,7 @@ namespace DLL.KGIDMotorInsurance
         {
             VM_DDOVerificationDetailsMI verificationDetails = new VM_DDOVerificationDetailsMI();
             DataSet dsCD = new DataSet();
-
+            int emp = (int)EmpID;
             SqlParameter[] sqlparam =
               {
                     new SqlParameter("@ChallanRefNo",ChallanNo) ,
@@ -4876,6 +4881,24 @@ namespace DLL.KGIDMotorInsurance
                     verificationDetails.SUBPRPSNAME = Convert.ToString(dsCD.Tables[0].Rows[0]["SUBPRPSNAME"]);
                     verificationDetails.TRSRYCODE = Convert.ToString(dsCD.Tables[0].Rows[0]["TRSRYCODE"]);
                     verificationDetails.RMTRNAME = Convert.ToString(dsCD.Tables[0].Rows[0]["rmtrname"]);
+
+
+                    var e = (from ed in _db.tbl_employee_basic_details
+                             join cd in _db.tbl_challan_details.AsNoTracking().Where(m => m.cd_active_status == 1 && m.cd_module_id == 4 && m.cd_payment_type == "OTC" && m.cd_created_by== emp) on ed.employee_id equals EmpID
+                             join cs in _db.tbl_challan_status.AsNoTracking().Where(p => p.cs_active_status == 1 && p.cs_service_response == "MB") on cd.cd_challan_id equals cs.cs_challan_id
+
+                             join csm in _db.tbl_challan_status_master.AsNoTracking().Where(a => a.csm_active_status == 1) on cs.cs_status equals csm.csm_status_id
+
+                             select new PolicyPremiumDetailMI
+                             {
+                                 cd_challan_ref_no = cd.cd_challan_ref_no,
+
+                                 cd_amount = (decimal)cd.cd_amount,
+                                 cs_status = csm.csm_status,
+                                cs_status_Code = csm.csm_status_code 
+
+                             }).ToList();
+                    verificationDetails.listofobject = e ;
                 }
             }
             return verificationDetails;
@@ -4987,21 +5010,22 @@ namespace DLL.KGIDMotorInsurance
             //        cd_file_name_xml = dataRow.Field<string>("cd_file_name_xml"),
             //    }).ToList();
 
-            //    obj.listChallanPendingAtDDO = list;
-            //}
-            var e = (from ed in _db.tbl_employee_basic_details
-                     join cd in _db.tbl_challan_details.AsNoTracking().Where(m => m.cd_active_status == 1 && m.cd_module_id == 4 && m.cd_payment_type == "OTC") on ed.employee_id equals emd
-                     join cs in _db.tbl_challan_status.AsNoTracking().Where(p => p.cs_active_status == 1 && p.cs_service_response == "MB") on cd.cd_challan_id equals cs.cs_challan_id
-                     join csm in _db.tbl_challan_status_master.AsNoTracking().Where(a => a.csm_active_status == 1) on cs.cs_status equals csm.csm_status_id
-
-                     select new VM_MotorInsurancePaymentStatus
+                //    obj.listChallanPendingAtDDO = list;
+                //}
+                var e = (from ed in _db.tbl_employee_basic_details
+                     join cd in _db.tbl_challan_details.AsNoTracking().Where(m => m.cd_active_status == 1 && m.cd_module_id == 4 && m.cd_payment_type == "OTC" && m.cd_created_by== emd) on ed.employee_id equals emd
+                     join cs in _db.tbl_challan_status.AsNoTracking().Where(p => p.cs_active_status == 1 && p.cs_service_response == "MB") on cd.cd_challan_id equals cs.cs_challan_id into challenstatusSet
+                         from challenstatus in challenstatusSet.DefaultIfEmpty()
+                     join csm in _db.tbl_challan_status_master.AsNoTracking().Where(a => a.csm_active_status == 1) on challenstatus.cs_status equals csm.csm_status_id into challenstatusmasterSet
+                         from challenstatusmaster in challenstatusmasterSet.DefaultIfEmpty()
+                         select new VM_MotorInsurancePaymentStatus
                      {
                          cd_challan_ref_no = cd.cd_challan_ref_no,
 
                          cd_amount = (decimal)cd.cd_amount,
-                         cs_status = csm.csm_status,
-                         miso_sanction_order_numner = cs.cs_transaction_ref_no,
-                         miso_sanction_order_date = cs.cs_date_of_transaction.ToString()
+                         cs_status = challenstatusmaster.csm_status,
+                         miso_sanction_order_numner = challenstatus.cs_transaction_ref_no,
+                         miso_sanction_order_date = challenstatus.cs_date_of_transaction.ToString()
                      }).ToList();
             obj.listChallanDetails = e.ToList();
             return obj;
@@ -5097,7 +5121,7 @@ namespace DLL.KGIDMotorInsurance
                     new SqlParameter("@TranRefNo",objPaymentDetails.cs_transaction_ref_no),
                     new SqlParameter("@Amount",objPaymentDetails.cs_amount),
                     new SqlParameter("@Status",objPaymentDetails.cs_status),
-                    new SqlParameter("@TransactionDate",  objPaymentDetails.cs_transsaction_date),
+                    new SqlParameter("@TransactionDate",  Convert.ToDateTime(objPaymentDetails.cs_transsaction_date)),
                     new SqlParameter("@EmpID",objPaymentDetails.EmpID)
                 };
                 result = Convert.ToInt64(_Conn.ExecuteCmd(sqlparam, "sp_kgid_update_ChallanstatusRCT033"));

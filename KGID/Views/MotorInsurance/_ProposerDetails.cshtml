@@ -127,13 +127,12 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
-        if ($("#txtPEmail").val() == "" || $("txtPEmail").val() == null) {
-            $("#txtPEmail").attr("readonly", false);
-        }
+        
+        
 
         if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
             $("#divMIProposerDetails").find("input, button, submit, textarea").attr('readonly', true);
-           
+            
         }
         else {
             
@@ -141,14 +140,17 @@
             $('#txtPFaxNo').prop('readonly', false);
             $('#txtPPinCode').prop('readonly', false);
         }
+       
         if ($("#txtOwnerofVehicle").val() == "") {
             $("#txtOwnerofVehicle").attr("readonly", false);  
             $("#txtOwnerofVehicle").removeAttr("style");
         }
         else {
+            //alert("1");
             $('#txtOwnerofVehicle').prop('readonly', true);
            
         }
+       
         
         //$('input[type="text"]').val() == "" ? $('input[type="text"]').removeAttr('readonly') : "";
         $.each($('input[type="text"]'), function () {
@@ -169,6 +171,12 @@
 
             $('#txtPPinCode').removeAttr("readonly");
             $('#txtPPinCode').removeAttr("style");
+        }
+        if ($("#txtPEmail").val() == "" || $("txtPEmail").val() == null) {
+            $('#txtPEmail').removeAttr("readonly");
+            $('#txtPEmail').removeAttr("style");
+            //alert($("#txtPEmail").val());
+            //$("#txtPEmail").attr("readonly", false);
         }
         //else {
         //    $('#txtPAddress').prop('readonly', false);

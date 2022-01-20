@@ -19,7 +19,7 @@ using _ExcelSheet = Microsoft.Office.Interop.Excel;
 
 namespace DLL
 {
-    public class TicketingToolDLL : ITicketingToolDLL
+   public class TicketingToolDLL:ITicketingToolDLL
     {
         private readonly Common_Connection _Conn = new Common_Connection();
         private readonly DbConnectionKGID _db = new DbConnectionKGID();
@@ -57,7 +57,7 @@ namespace DLL
         {
             long EmpID = 0;
             TTReportProblem ApplicationDetails = new TTReportProblem();
-            DataSet dsMBList = new DataSet();
+                DataSet dsMBList = new DataSet();
             try
             {
                 SqlParameter[] sqlparam =
@@ -72,7 +72,7 @@ namespace DLL
             }
             return dsMBList;
         }
-        public DataTable CreateDataTable(string className)
+            public DataTable CreateDataTable(string className)
         {
             DataTable dt = new System.Data.DataTable();
             Type classtype = GetType();
@@ -80,11 +80,11 @@ namespace DLL
             {
                 classtype = typeof(TicketingToolReportProblem);
             }
-
+            
             PropertyInfo[] properties = classtype.GetProperties();
-            // TTReportProblem tTReport1 = new TTReportProblem();
+           // TTReportProblem tTReport1 = new TTReportProblem();
 
-            // var properties1 = tTReport1.TicketingToolReportProblemlist.GetType();
+           // var properties1 = tTReport1.TicketingToolReportProblemlist.GetType();
 
 
             foreach (System.Reflection.PropertyInfo pi in properties)
@@ -92,13 +92,13 @@ namespace DLL
                 //if (className == "VM_FamilyDetail" && pi.Name != "EditDeleteStatus" && pi.Name != "AppliactionSentBack" && pi.Name != "ApplicationInsured")
                 //    dt.Columns.Add(pi.Name);
                 //else if (className != "VM_FamilyDetail")
-                dt.Columns.Add(pi.Name);
+                    dt.Columns.Add(pi.Name);
             }
             //DataRow dr=null ;
             //dt.Rows.Add(dr);
             //DetailView fieldsInst = new DetailView();
             //// Get the type of DetailView.
-
+            
             //Type fieldsType = typeof(tTReport1.TicketingToolReportProblemlist);
 
             //PropertyInfo[] props = fieldsType.GetProperties(BindingFlags.Public
@@ -110,7 +110,7 @@ namespace DLL
             //    Console.WriteLine("   {0}",
             //        props[i].Name);
             //}
-
+            
             return dt;
         }
         public TTReportProblem GetAllReportedProblemsDLL()
@@ -148,7 +148,7 @@ namespace DLL
                         //rp_updation_datetime = dataRow.Field<DateTime>("rp_updation_datetime"),
                         //rp_created_by = dataRow.Field<long>("rp_created_by"),
                         //rp_updated_by = dataRow.Field<long>("rp_updated_by")
-                        AssignedTo = dataRow.Field<string>("al_agency_user_id")
+                        AssignedTo =dataRow.Field<string>("al_agency_user_id")
                     }).ToList();
                     ApplicationDetails.TicketingToolReportProblemlist = MBList;
                     DataTable st = new DataTable();
@@ -164,7 +164,7 @@ namespace DLL
             return ApplicationDetails;
         }
 
-        public TTReportProblem GetDetailsByEmpIdDll(long EmpID, string emptype)
+        public TTReportProblem GetDetailsByEmpIdDll(long EmpID,string emptype)
         {
             TTReportProblem ApplicationDetails = new TTReportProblem();
             try
@@ -193,7 +193,7 @@ namespace DLL
                         //rp_date_of_resolve = dataRow["rp_date_of_resolve"].ToString() != "" ? DateTime.Parse(dataRow["rp_date_of_resolve"].ToString()).ToString("dd/MM/yyyy") : "",
                         rp_remarks = dataRow.Field<string>("rp_remarks"),
                         rp_status = dataRow.Field<bool>("rp_status"),
-                        UTYPE = dataRow.Field<int>("UTYPE"),
+                        UTYPE= dataRow.Field<int>("UTYPE"),
                         SubmissionDate = dataRow.Field<string>("SubmissionDate"),
                         ResolveDate = dataRow.Field<string>("ResolveDate"),
                         //rp_creation_datetime = dataRow.Field<DateTime>("rp_creation_datetime"),
@@ -228,7 +228,7 @@ namespace DLL
                     var MBList = dsMBList.Tables[0].AsEnumerable().Select(dataRow => new TicketingToolReportProblem
                     {
                         //RowNumber = dataRow.Field<long>("RowNumber"),
-
+                        
                         rp_id = dataRow.Field<long>("rp_id"),
                         rp_ticket_no = dataRow.Field<string>("rp_ticket_no"),
                         //rp_empid = dataRow.Field<long>("rp_empid"),
@@ -309,7 +309,7 @@ namespace DLL
             try
             {
 
-                string s = TTUploadDocument(rp.UploadedDoc, rp.rp_empid, rp.extensionofDoc);
+               string s= TTUploadDocument(rp.UploadedDoc, rp.rp_empid, rp.extensionofDoc);
                 rp.rp_upload_document = s;
                 SqlParameter[] sqlparam =
                   {
@@ -324,7 +324,7 @@ namespace DLL
                     //new SqlParameter("@rp_remarks",rp.rp_remarks),
                     //new SqlParameter("@rp_status",rp.rp_status),
                     new SqlParameter("@rp_created_by",rp.rp_created_by)
-
+                    
                 };
                 //result = Convert.ToString(_Conn.ExecuteCmd(sqlparam, "sp_kgid_TicketingTool_InsertReportProblem"));
                 res = Convert.ToInt32(_Conn.ExecuteCmd(sqlparam, "sp_kgid_TicketingTool_InsertReportProblem"));
@@ -394,7 +394,7 @@ namespace DLL
             {
                 string FROMDATE = string.Empty;
                 string TODATE = string.Empty;
-                if (fdate != null && fdate != string.Empty)
+                if (fdate != null && fdate!=string.Empty)
                 {
                     FROMDATE = _commnobj.DateConversion(Convert.ToDateTime(fdate).ToShortDateString());
                 }
@@ -402,16 +402,16 @@ namespace DLL
                 {
                     TODATE = _commnobj.DateConversion(Convert.ToDateTime(tdate).ToShortDateString());
                 }
-                if (fstatus == "--Select--")
+                if(fstatus== "--Select--")
                 { fstatus = string.Empty; }
                 //DateTime Fdat = Convert.ToDateTime(fdate);
                 //var FROMDATE = Fdat.ToString("yyyy-MM-dd");
                 //DateTime Tdat = Convert.ToDateTime(tdate);
                 //var TODATE = Tdat.ToString("yyyy-MM-dd");
                 DataSet dsMBList = new DataSet();
-                // if(fstatus=="")
-                // { fstatus = ""; }
-                // else { fstatus = ""; }
+               // if(fstatus=="")
+               // { fstatus = ""; }
+               // else { fstatus = ""; }
                 SqlParameter[] sqlparam =
                 {
                     new SqlParameter("@module",moduleid),
@@ -568,16 +568,17 @@ namespace DLL
 
                             for (int row = 2; row <= range.Rows.Count; row++)
                             {
-                                VM_MotorInsuranceProposerDetails objBD = new VM_MotorInsuranceProposerDetails();
-                                string RefNo = DateTime.Now.ToString("yyyy-MM-dd HH:ffff").Replace("-", "").Replace(" ", "").Replace(":", "").Replace(".", "");
-                                string ownername = ((_ExcelSheet.Range)range.Cells[row, 41]).Text;
-                                string owneraddress = ((_ExcelSheet.Range)range.Cells[row, 42]).Text;
                                 string registrationno = ((_ExcelSheet.Range)range.Cells[row, 9]).Text;
                                 var temp = (from n in _db.tbl_motor_insurance_vehicle_details
                                             where n.mivd_registration_no == registrationno
                                             select n.mivd_registration_no).FirstOrDefault();
                                 if (temp == null || temp == "")
                                 {
+                                    VM_MotorInsuranceProposerDetails objBD = new VM_MotorInsuranceProposerDetails();
+                                    string RefNo = DateTime.Now.ToString("yyyy-MM-dd HH:ffff").Replace("-", "").Replace(" ", "").Replace(":", "").Replace(".", "");
+                                    string ownername = ((_ExcelSheet.Range)range.Cells[row, 41]).Text;
+                                    string owneraddress = ((_ExcelSheet.Range)range.Cells[row, 42]).Text;
+
                                     DLL.KGIDMotorInsurance.MotorInsuranceProposerDetailsDll cls = new DLL.KGIDMotorInsurance.MotorInsuranceProposerDetailsDll();
                                     objBD.mipd_employee_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
                                     objBD.mipd_pagetype = "New";
@@ -663,11 +664,11 @@ namespace DLL
                                     }
                                     if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 15]).Text))
                                     {
-                                        vmVehicleDetails.mivd_make_of_vehicle1 = Convert.ToString(((_ExcelSheet.Range)range.Cells[row, 15]).Text);
+                                        vmVehicleDetails.mivd_make_of_vehicle1 = ((_ExcelSheet.Range)range.Cells[row, 15]).Text;
                                     }
                                     else
                                     {
-                                        vmVehicleDetails.mivd_make_of_vehicle = 0;
+                                        vmVehicleDetails.mivd_make_of_vehicle1 = "";
                                     }
                                     if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 16]).Text))
                                     {
@@ -966,7 +967,16 @@ namespace DLL
                                     DateTime todayDate = Convert.ToDateTime(DateTime.Today);
                                     int month = ((todayDate.Year - DateofManufacture.Year) * 12) + todayDate.Month - DateofManufacture.Month;
                                     int vd_dep_value = Convert.ToInt32(getdepreciationvalue(month));
-                                    int pvv = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 37]).Text);
+                                    //int pvv = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 37]).Text);
+                                    decimal pvv = default(decimal);
+                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 37]).Text))
+                                    {
+                                        pvv = Convert.ToDecimal(((_ExcelSheet.Range)range.Cells[row, 37]).Text);
+                                    }
+                                    else
+                                    {
+                                        pvv = default(decimal);
+                                    }
 
                                     decimal resultA = Convert.ToDecimal(pvv);
                                     decimal DepreB = ((Convert.ToDecimal(resultA)) / 100) * Convert.ToDecimal(vd_dep_value);
@@ -1003,6 +1013,15 @@ namespace DLL
                                     {
                                         objIDV.vid_premium_excess = "0";
                                     }
+                                    //if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 30]).Text))
+                                    //{
+                                    //    //var temp_amount = (_ExcelSheet.Range)range.Cells[row, 30]).Text;
+                                    //    objIDV.premium_amount = Convert.ToDecimal(((_ExcelSheet.Range)range.Cells[row, 30]).Text);
+                                    //}
+                                    //else
+                                    //{ 
+                                    //    objIDV.premium_amount = default(decimal);
+                                    //}
                                     objIDV.miidv_non_electrical_accessories_amount = "0";
                                     objIDV.miidv_electrical_accessories_amount = "0";
                                     objIDV.miidv_side_car_trailer_amount = "0";
@@ -1020,950 +1039,27 @@ namespace DLL
                                     //int vehicalAge = Convert.ToInt32(getvehicalAge(ddlCategory));
                                     //int zone_id= Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 28]).Text);
                                     //int ODValue = Convert.ToInt32(getODValue(ddlCategory, vehicalAge, zone_id,));
+
+
                                 }
                                 else
                                 {
                                     //KGID_Models.KGID_Verification.tbl_ExcelUpload awd = null;
                                     tbl_ExcelUpload awd = new tbl_ExcelUpload();
+                                    
+                                        //using (DbConnectionKGID context = new DbConnectionKGID())
+                                        //{
+                                        awd.Registrationno = registrationno;
+                                        awd.Remarks = "Registration No Alredy Exist";
+                                        awd.UpdatedOn = DateTime.UtcNow;
 
-                                    //using (DbConnectionKGID context = new DbConnectionKGID())
-                                    //{
-                                    awd.Registrationno = registrationno;
-                                    awd.Remarks = "Registration No Alredy Exist";
-                                    awd.UpdatedOn = DateTime.UtcNow;
-
-                                    _db.tbl_ExcelUpload.Add(awd);
-                                    _db.SaveChanges();
-                                    //context.SaveChangesAsync();
-                                    //}
-
+                                        _db.tbl_ExcelUpload.Add(awd);
+                                        _db.SaveChanges();
+                                        //context.SaveChangesAsync();
+                                        //}
+                                  
 
                                 }
-                                #region[function sum()]
-                                ////////////////////////////////////////////////////////////////////////////////
-                                //                                function sum()
-                                //                                {
-
-
-                                //                                    var PVVAmount;
-                                //                                    var ddlTypeofCover = ((_ExcelSheet.Range)range.Cells[row, 8]).Text;
-                                //                                    var ddlCategory = ((_ExcelSheet.Range)range.Cells[row, 8]).Text;
-                                //                                    //
-                                //                                    var ODValue = $("#txtowndamage").val();
-                                //                                    var PLValue = $("#txtpremiumliability").val();
-                                //                                    var DepreciationValue = $("#txtVDDepreciation").val();
-                                //                                    var IDVZone = $('#txtVDZone').val();
-                                //                                    var IDVDepreciation = $("#txtVDDepreciation").val();
-                                //                                    $('#txtIDVZone').val(IDVZone);
-                                //                                    $("#txtIDVDepreciation").val(IDVDepreciation);
-
-                                //                                    //
-                                //                                    var txtAdditionAmtValue = document.getElementById('txtAdditionalamt').value || 0;
-                                //                                    var txtODgovDiscntValue = document.getElementById('txtGovDiscount').value || 0;
-                                //                                    var txtPLgovDiscountValue = document.getElementById('txtPLGovDiscount').value || 0;
-                                //                                    var txtPLDriverAmtValue = document.getElementById('txtPLDriverAmt').value || 0;
-                                //                                    var txtPLPassengerAmtValue = document.getElementById('txtPLPassengerAmt').value || 0;
-
-                                //                                    var txtidvovamntValue = document.getElementById('txtidvovamnt').value || 0;
-                                //                                    var txtnoneleaccamntValue = document.getElementById('txtnoneleaccamnt').value || 0;
-                                //                                    var txteleaccamntValue = document.getElementById('txteleaccamnt').value || 0;
-                                //                                    var txtsidecaramntValue = document.getElementById('txtsidecaramnt').value || 0;
-                                //                                    var txtcngamntrValue = document.getElementById('txtcngamnt').value || 0;
-                                //                                    var resultA = parseFloat(txtidvovamntValue);
-
-                                //                                    var DepreB = ((parseFloat(resultA)) / 100) * parseFloat(DepreciationValue);
-                                //                                    var ValueC = parseFloat(resultA) - parseFloat(DepreB);
-                                //                                    var TotalPVV = Math.round(ValueC).toFixed(2);
-                                //                                    var TotalPVVNumeric = Math.round(ValueC);
-                                //                                    document.getElementById('txttotamnt').value = TotalPVVNumeric;
-                                //                                    PVVAmount = TotalPVV;
-
-
-                                //                                    var PHNCBValue = 0;
-                                //                                    var PHMalusValue = 0;
-                                //                                    if (document.getElementById('rbtnVPurchaseTypYes').checked) {
-                                //                                PHNCBValue = document.getElementById('txtPHncb').value || 0;
-                                //                                PHMalusValue = document.getElementById('txtPHmalus').value || 0;
-
-                                //                            }
-
-                                //                            debugger;
-                                //                            var grossamt = GrossVehicleWeight();
-
-                                //                            if (ddlTypeofCover == "2")
-                                //                            {
-                                //                                var txttotamntValue = PVVAmount;
-                                //                                var txtOdBpValue = parseFloat(txtAdditionAmtValue);
-
-                                //                                var txtbpidvValue = ((parseFloat(txttotamntValue)) / 100) * (parseFloat(ODValue));
-                                //                                console.log(txtbpidvValue)
-
-
-                                //                                var odsubtot = parseFloat(txtOdBpValue) + parseFloat(txtbpidvValue);
-                                //                                if (!isNaN(odsubtot))
-                                //                                {
-                                //                                    var res = Math.round(odsubtot).toFixed(2)
-                                //                                }
-
-                                //                                var txtodpremium = parseFloat(grossamt);
-                                //                                var txtlgrodValue = ((parseFloat(res)) / 100) * (parseFloat(txtODgovDiscntValue));
-                                //                                if (!isNaN(txtlgrodValue))
-                                //                                {
-                                //                                    var res1 = Math.round(txtlgrodValue).toFixed(2);
-                                //                                }
-                                //                                //txtrebatetotod
-                                //                                var txtrebatetotodvalue = parseFloat(res) + parseFloat(txtodpremium) - parseFloat(res1);
-                                //                                var res2 = Math.round(txtrebatetotodvalue).toFixed(2);
-
-                                //                                var electricalValue = ((parseFloat(txteleaccamntValue) / 100) * 4);
-                                //                                var odlpgValue = ((parseFloat(txtcngamntrValue) / 100) * 4);
-                                //                                var fiberglassValue = 0;
-                                //                                if (document.getElementById('rbtnFGlassYes').checked) {
-                                //                                        if (ddlCategory == 16)
-                                //                                        {
-                                //                                            fiberglassValue = 100;
-                                //                                        }
-                                //                                        else
-                                //                                        {
-                                //                                            fiberglassValue = 50;
-                                //                                        }
-                                //                                    }
-                                //                                    var odDrivingInstitutionValue = 0;
-                                //                                    if (document.getElementById('rbtnDriveTutYes').checked) {
-                                //                                            var odDIvalue = ((parseFloat(res2) / 100) * 60);
-                                //                                            odDrivingInstitutionValue = Math.round(odDIvalue).toFixed(2);
-                                //                                        }
-                                //                                        var nonelectricalValue = ((parseFloat(txtnoneleaccamntValue) / 100) * 4);
-                                //                                        var addvaluesubtotal = parseFloat(res2) + parseFloat(electricalValue) + parseFloat(odlpgValue) + parseFloat(fiberglassValue) + parseFloat(odDrivingInstitutionValue) + parseFloat(nonelectricalValue);
-
-                                //                                        var txtsubtotlpgodValue = Math.round(addvaluesubtotal).toFixed(2);
-
-                                //                                        var txthValue = ((parseFloat(txtsubtotlpgodValue)) / 100) * 1;
-                                //                                        var txtautomobileassociation = 0;
-                                //                                        if ($('#ddlVehType').val() == 1) {
-                                //                                            if (document.getElementById('rbtnAutoMobYes').checked) {
-                                //                                                    var automobileassociationvalue = ((parseFloat(txtsubtotlpgodValue)) / 100) * 5;
-                                //                                                    txtautomobileassociation = Math.round(automobileassociationvalue).toFixed(2);
-                                //                                                }
-                                //                                                }
-
-                                //                                            var lessvaluessubtotal = parseFloat(txtsubtotlpgodValue) - parseFloat(txtautomobileassociation);
-
-                                //                                            var txtsubtotextraVlaue = Math.round(lessvaluessubtotal).toFixed(2);
-
-                                //                                            //txtaddmalus
-                                //                                            var txtaddmalusValue = ((parseFloat(txtsubtotextraVlaue)) / 100) * PHMalusValue;
-                                //                                            if (!isNaN(txtaddmalusValue))
-                                //                                            {
-                                //                                                var resmalus = Math.round(txtaddmalusValue).toFixed(2)
-                                //                                            }
-                                //                                            var txtlessncbValue = ((parseFloat(txtsubtotextraVlaue)) / 100) * PHNCBValue;
-                                //                                            if (!isNaN(txtlessncbValue))
-                                //                                            {
-                                //                                                var res3 = Math.round(txtlessncbValue).toFixed(2)
-                                //                                            }
-
-                                //                                            //txtodtot
-                                //                                            var txtodtotValue = parseFloat(txtsubtotextraVlaue) + parseFloat(parseFloat(resmalus)) - parseFloat(res3);
-                                //                                            var odres4 = Math.round(txtodtotValue).toFixed(2);
-                                //                                            var sidecardiscount = 0;
-                                //                                            if (txtsidecaramntValue >= 1)
-                                //                                            {
-                                //                                                sidecardiscount = ((parseFloat(odres4) / 100) * 25);
-                                //                                            }
-                                //                                            var odrestot4 = parseFloat(odres4) - parseFloat(sidecardiscount);
-                                //                                            var res4 = Math.round(odrestot4).toFixed(2);
-                                //                                            var txtlprValue = parseFloat(PLValue);
-                                //                                            var res5 = Math.round(txtlprValue).toFixed(2)
-
-                                //        var txtlgrlprValue = ((parseFloat(res5)) / 100) * (parseFloat(txtPLgovDiscountValue));
-                                //                                            var res6 = Math.round(txtlgrlprValue).toFixed(2)
-                                //                                            var txtsubtotlprValue = parseFloat(res5) - parseFloat(res6)
-                                //                                        var res7 = Math.round(txtsubtotlprValue).toFixed(2)
-
-
-                                //                                            //txtlpgkitlpr
-                                //                                            var txtcngamntrValue = parseFloat(txtcngamntrValue);
-                                //                                            var txtlpgkitlprValue = 0;
-                                //                                            if (txtcngamntrValue != 0 || txtcngamntrValue != "")
-                                //                                            {
-                                //                                                txtlpgkitlprValue = 60;
-                                //                                            }
-                                //                                            var res8 = Math.round(txtlpgkitlprValue).toFixed(2);
-
-
-                                //                                            //txtsubtotlpglpr
-                                //                                            var txtsubtotlpglprValue = parseFloat(res7) + parseFloat(res8)
-                                //                                        var res9 = Math.round(txtsubtotlpglprValue).toFixed(2)
-                                //                                        //document.getElementById('txtsubtotlpglpr').value = ReplaceNumberWithCommas(res9);
-
-                                //                                            //txtdrlpr
-                                //                                            var res10 = (parseFloat(txtPLDriverAmtValue));
-                                //                                            //document.getElementById('txtdrlpr').value = ReplaceNumberWithCommas(res10);
-                                //                                            //txtprlpr
-                                //                                            var totpassengeramt = 0;
-                                //                                            if (ddlCategory == 1 || ddlCategory == 2 || ddlCategory == 3 || ddlCategory == 4)
-                                //                                            {
-                                //                                                var totpassengeramt = parseFloat(txtPLPassengerAmtValue);
-                                //                                            }
-                                //                                            else if (ddlCategory == 17)
-                                //                                            {
-                                //                                                var noofseats = $('#txtVDSeating').val();
-                                //                                                var totpassengeramt = (parseFloat(noofseats)) * parseFloat(txtPLPassengerAmtValue);
-                                //                                            }
-                                //                                            else
-                                //                                            {
-                                //                                                var noofseats = $('#txtVDSeating').val();
-                                //                                                var totpassengeramt = (parseFloat(noofseats) - 1) * parseFloat(txtPLPassengerAmtValue);
-                                //                                            }
-                                //                                            var res11 = parseFloat(totpassengeramt);
-                                //                                            //document.getElementById('txtprlpr').value = ReplaceNumberWithCommas(res11);
-
-                                //                                            //txtlprtot
-                                //                                            var txtlprtotValue = (parseFloat(res9) + parseFloat(res10) + parseFloat(res11))
-                                //                                        var res12 = Math.round(txtlprtotValue).toFixed(2)
-                                //                                        //document.getElementById('txtlprtot').value = ReplaceNumberWithCommas(res12);
-                                //                                        //document.getElementById('txtlprtotB').value = ReplaceNumberWithCommas(res12);
-
-                                //                                            //txttotAB
-                                //                                            var txttotABValue = parseFloat(res4) + parseFloat(res12)
-                                //                                        var res13 = Math.round(txttotABValue).toFixed(2)
-                                //                                        //document.getElementById('txttotAB').value = ReplaceNumberWithCommas(res13);
-                                //                                        //document.getElementById('txtpremium').value = ReplaceNumberWithCommas(res13);
-                                //                                        //----------GST-------------//
-                                //                                            var txtsgstamtValue = ((parseFloat(res13)) / 100) * 9;
-                                //                                            var res14 = Math.round(txtsgstamtValue).toFixed(2);
-                                //                                            var txtcgstamtValue = ((parseFloat(res13)) / 100) * 9;
-                                //                                            var res15 = Math.round(txtcgstamtValue).toFixed(2);
-                                //                                            //txtgstamt
-                                //                                            //var txtgstamtValue = ((parseFloat(res13)) / 100) * 18;
-                                //                                            //var res14 = Math.round(txtgstamtValue).toFixed(2)
-                                //                                            //document.getElementById('txtgstamt').value = ReplaceNumberWithCommas(res14);
-
-                                //                                            //txttotalcrpremium
-                                //                                            var txttotalcrpremiumValue = parseFloat(res13) + parseFloat(res14) + parseFloat(res15)
-                                //                                        var res16 = Math.round(txttotalcrpremiumValue).toFixed(2)
-                                //                                        //document.getElementById('txttotalcrpremium').value = ReplaceNumberWithCommas(res15);
-                                //                                        //txtTotalPremium
-                                //                                        //document.getElementById('txtTotalPremium').value = ReplaceNumberWithCommas(res15);
-                                //                                            if (txtidvovamntValue != 0)
-                                //                                            {
-                                //                                                document.getElementById('txtTotalPremium').value = ReplaceNumberWithCommas(res16);
-                                //                                            }
-                                //                                            PremiumPayableAmount = res16;
-
-                                //        // Premium Calculation End
-                                //        //if (!isNaN(result)) {
-                                //        //    var res = parseFloat(result).toFixed(2)
-                                //        //    document.getElementById('txttotamnt').value = res;
-                                //        //    alert(getmonthDiff)
-                                //        //}
-                                //        //Addition Popup For View Premium Details
-                                //        $('#txtbp').val(txtOdBpValue);
-                                //        $('#idvpercent').text(ODValue);
-                                //        $('#txtbpidv').val(Math.round(txtbpidvValue).toFixed(2));
-                                //        $('#txtidvsubtot').val(res);
-                                //        $('#txtodp').val(res);
-                                //        $('#txtextaraweight').val(Math.round(txtodpremium).toFixed(2));
-                                //        $('#txtlgrod').val(res1);
-                                //        //Add
-                                //        $('#txteleacc').val(electricalValue);
-                                //        $('#txtlpgkitod').val(odlpgValue);
-                                //        $('#txtfgft').val(fiberglassValue);
-                                //        $('#txtdiod').val(odDrivingInstitutionValue);
-                                //        $('#txtaddodothers').val(nonelectricalValue);
-                                //        //
-                                //        $('#txtrebatetotod').val(res2);
-                                //        $('#txtsubtotlpgod').val(txtsubtotlpgodValue);
-                                //        //less
-                                //        $('#txtlaam').val(txtautomobileassociation);
-                                //        //
-                                //        $('#txtsubtotextra').val(txtsubtotextraVlaue);
-                                //        $('#txtamod').val(resmalus);
-                                //        $('#idvmaluspercent').text(PHMalusValue);
-                                //        $('#txtlessncb').val(res3);
-                                //        $('#idvncbpercent').text(PHNCBValue);
-                                //        $('#txtothers').val(Math.round(sidecardiscount).toFixed(2));//sidecar discount
-                                //        $('#txtodtot').val(res4);
-
-
-                                //        $('#txtlpr').val(PLValue);
-                                //        $('#txtlgrlpr').val(res6);
-                                //        $('#txtsubtotlpr').val(res7);
-                                //        $('#txtlpgkitlpr').val(txtlpgkitlprValue);
-                                //        $('#txtsubtotlpglpr').val(res9);
-                                //        $('#txtdrlpr').val(txtPLDriverAmtValue);
-                                //                                            if (ddlCategory == 1 || ddlCategory == 2 || ddlCategory == 3 || ddlCategory == 4)
-                                //                                            {
-                                //            $('#txtprrlpr').val(res11);
-                                //            $('#txtprlpr').val('');
-                                //                                            }
-                                //                                            else
-                                //                                            {
-                                //            $('#txtprlpr').val(res11);
-                                //            $('#txtprrlpr').val('');
-                                //                                            }
-                                //        //$('#txtprlpr').val(txtPLPassengerAmtValue);
-                                //        $('#txtlprtot').val(res12);
-                                //        $('#txtodtotA').val(res4);
-                                //        $('#txtlprtotB').val(res12);
-                                //        $('#txttotAB').val(res13);
-
-                                //        $('#txtpyd').val('');
-                                //        $('#txtcyd').val('');
-                                //        $('#txtsgstamt').val(res14);
-                                //        $('#txtcgstamt').val(res15);
-                                //        $('#txttotalcrpremium').val(res16);
-                                //        $('#txtTotalPremiumAmt').val(res16);
-                                //        $('#txtTotalPvvTop').val(TotalPVV);
-                                //        //
-                                //        $('#txtChassisNumber').val($('#txtVDChasisNo').val());
-                                //        $('#txtEngineNumber').val($('#txtVDEngine').val());
-                                //        $('#txtAppRefNumber').val($('#spnMIReferanceNo').text());
-                                //        $('#txtPolicyType').val($("#ddlTypeofCover option:selected").text());
-                                //        $('#txtZone').val($('#txtVDZone').val());
-                                //        $('#txtCostPrice').val($('#txtenteredidvovamnt').val());
-
-                                //        $('#txtMOV').val($("#ddlVDVehicleManufacture option:selected").text());
-                                //        $('#txtYOM').val($("#ddlVDManufacturerYear option:selected").text());
-                                //        $('#txtVehicleType').val($("#ddlVehClassType option:selected").text());
-                                //        $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
-                                //        $('#txtGVW').val($('#txtVDWeight').val());
-                                //        $('#txtSC').val($('#txtVDSeating').val());
-                                //                                        }
-                                //    else if (ddlTypeofCover == "1")
-                                //                                        {
-                                //                                            //alertify.success("L")
-                                //                                            var txttotamntValue = PVVAmount;
-
-                                //                                            //txtodtot
-                                //                                            var res4 = 0;
-                                //                                            //document.getElementById('txtodtot').value = ReplaceNumberWithCommas(res4);
-                                //                                            //document.getElementById('txtodtotA').value = ReplaceNumberWithCommas(res4);
-
-                                //                                            //B. LIABILITY TO PUBLIC RISK
-                                //                                            //txtlgrlpr
-                                //                                            //var txtlprValue = document.getElementById('txtlpr').value || 0;
-                                //                                            var txtlprValue = parseFloat(PLValue);
-                                //                                            var res5 = Math.round(txtlprValue).toFixed(2)
-                                //        //txtbpidv
-                                //        var txtlgrlprValue = ((parseFloat(res5)) / 100) * (parseFloat(txtPLgovDiscountValue));
-                                //                                            var res6 = Math.round(txtlgrlprValue).toFixed(2)
-                                //        //document.getElementById('txtlgrlpr').value = ReplaceNumberWithCommas(res6);
-                                //        //txtsubtotlpr
-                                //                                            var txtsubtotlprValue = parseFloat(res5) - parseFloat(res6)
-                                //        var res7 = Math.round(txtsubtotlprValue).toFixed(2)
-                                //        //document.getElementById('txtsubtotlpr').value = ReplaceNumberWithCommas(res7);
-
-                                //                                            //LPR Driving Intitutions
-                                //                                            var lprDrivingInstitutionValue = 0;
-                                //                                            if (document.getElementById('rbtnDriveTutYes').checked) {
-                                //                                                    var lprDIvalue = ((parseFloat(res7) / 100) * 60);
-                                //                                                    lprDrivingInstitutionValue = Math.round(lprDIvalue).toFixed(2);
-                                //                                                }
-                                //                                                //txtlpgkitlpr
-                                //                                                var txtcngamntrValue = parseFloat(txtcngamntrValue);
-                                //                                                var txtlpgkitlprValue = 0;
-                                //                                                if (txtcngamntrValue != 0 || txtcngamntrValue != "")
-                                //                                                {
-                                //                                                    txtlpgkitlprValue = 60;
-                                //                                                }
-                                //                                                var res8 = Math.round(txtlpgkitlprValue).toFixed(2);
-                                //                                                //document.getElementById('txtlpgkitlpr').value = ReplaceNumberWithCommas(res8);
-
-                                //                                                //txtsubtotlpglpr
-                                //                                                var txtsubtotlpglprValue = parseFloat(res7) + parseFloat(lprDrivingInstitutionValue) + parseFloat(res8)
-                                //                                            var res9 = Math.round(txtsubtotlpglprValue).toFixed(2)
-                                //                                            //document.getElementById('txtsubtotlpglpr').value = ReplaceNumberWithCommas(res9);
-
-
-                                //        var txtaddmalusValue = ((parseFloat(res9)) / 100) * parseFloat(PHMalusValue);
-                                //                                                if (!isNaN(txtaddmalusValue))
-                                //                                                {
-                                //                                                    var resliamalus = Math.round(txtaddmalusValue).toFixed(2)
-                                //                                                    //alert(res1)
-                                //            document.getElementById('txtamlpr').value = resliamalus;
-                                //                                                    //document.getElementById('txtrebatetotod').value = res1;
-                                //                                                }
-
-                                //                                                //txtdrlpr
-                                //                                                var res10 = (parseFloat(txtPLDriverAmtValue));
-                                //                                                //document.getElementById('txtdrlpr').value = ReplaceNumberWithCommas(res10);
-                                //                                                //txtprlpr
-                                //                                                var totpassengeramt = 0;
-                                //                                                if (ddlCategory == 1 || ddlCategory == 2 || ddlCategory == 3 || ddlCategory == 4)
-                                //                                                {
-                                //                                                    var totpassengeramt = parseFloat(txtPLPassengerAmtValue);
-                                //                                                }
-                                //                                                else if (ddlCategory == 17)
-                                //                                                {
-                                //                                                    var noofseats = $('#txtVDSeating').val();
-                                //                                                    var totpassengeramt = (parseFloat(noofseats)) * parseFloat(txtPLPassengerAmtValue);
-                                //                                                }
-                                //                                                else
-                                //                                                {
-                                //                                                    var noofseats = $('#txtVDSeating').val();
-                                //                                                    var totpassengeramt = (parseFloat(noofseats) - 1) * parseFloat(txtPLPassengerAmtValue);
-                                //                                                }
-                                //                                                var res11 = parseFloat(totpassengeramt);
-                                //                                                //document.getElementById('txtprlpr').value = ReplaceNumberWithCommas(res11);
-
-                                //                                                //txtlprtot
-                                //                                                var txtlprtotValue = (parseFloat(res9) + parseFloat(res10) + parseFloat(res11) + parseFloat(resliamalus))
-                                //                                            var res12 = Math.round(txtlprtotValue).toFixed(2)
-                                //                                            //document.getElementById('txtlprtot').value = ReplaceNumberWithCommas(res12);
-                                //                                            //document.getElementById('txtlprtotB').value = ReplaceNumberWithCommas(res12);
-
-                                //                                                //txttotAB
-                                //                                                var txttotABValue = parseFloat(res4) + parseFloat(res12)
-                                //                                            var res13 = Math.round(txttotABValue).toFixed(2)
-                                //                                            //document.getElementById('txttotAB').value = ReplaceNumberWithCommas(res13);
-                                //                                            //document.getElementById('txtpremium').value = ReplaceNumberWithCommas(res13);
-                                //                                            //----------GST-------------//
-                                //                                                var txtsgstamtValue = ((parseFloat(res13)) / 100) * 9;
-                                //                                                var res14 = Math.round(txtsgstamtValue).toFixed(2);
-                                //                                                var txtcgstamtValue = ((parseFloat(res13)) / 100) * 9;
-                                //                                                var res15 = Math.round(txtcgstamtValue).toFixed(2);
-                                //                                                //txtgstamt
-                                //                                                //var txtgstamtValue = ((parseFloat(res13)) / 100) * 18;
-                                //                                                //var res14 = Math.round(txtgstamtValue).toFixed(2)
-                                //                                                //document.getElementById('txtgstamt').value = ReplaceNumberWithCommas(res14);
-
-                                //                                                //txttotalcrpremium
-                                //                                                var txttotalcrpremiumValue = parseFloat(res13) + parseFloat(res14) + parseFloat(res15)
-                                //                                            var res16 = Math.round(txttotalcrpremiumValue).toFixed(2)
-                                //                                            //document.getElementById('txttotalcrpremium').value = ReplaceNumberWithCommas(res15);
-                                //                                            //txtTotalPremium
-                                //                                            //document.getElementById('txtTotalPremium').value = ReplaceNumberWithCommas(res15);
-                                //                                                if (txtidvovamntValue != 0)
-                                //                                                {
-                                //                                                    document.getElementById('txtTotalPremium').value = ReplaceNumberWithCommas(res16);
-                                //                                                }
-                                //                                                PremiumPayableAmount = res16;
-
-                                //        // Premium Calculation End
-                                //        //if (!isNaN(result)) {
-                                //        //    var res = parseFloat(result).toFixed(2)
-                                //        //    document.getElementById('txttotamnt').value = res;
-                                //        //    alert(getmonthDiff)
-                                //        //}
-                                //        //Addition Popup For View Premium Details
-                                //        $('#idvpercent').text("");
-                                //        $('#txtbpidv').val("");
-                                //        $('#txtidvsubtot').val("");
-                                //        $('#txtlgrod').val("");
-                                //        $('#txtrebatetotod').val("");
-                                //        $('#txtsubtotlpgod').val("");
-                                //        $('#txtsubtotextra').val("");
-                                //        $('#txtodtot').val("");
-
-                                //        $('#txtlpr').val(PLValue);
-                                //        $('#txtlgrlpr').val(res6);
-                                //        $('#txtsubtotlpr').val(res7);
-                                //        $('#txtdilpr').val(lprDrivingInstitutionValue);
-                                //        $('#txtlpgkitlpr').val(txtlpgkitlprValue);
-                                //        $('#txtsubtotlpglpr').val(res9);
-                                //        $('#txtdrlpr').val(txtPLDriverAmtValue);
-                                //                                                if (ddlCategory == 1 || ddlCategory == 2 || ddlCategory == 3 || ddlCategory == 4)
-                                //                                                {
-                                //            $('#txtprrlpr').val(res11);
-                                //            $('#txtprlpr').val('');
-                                //                                                }
-                                //                                                else
-                                //                                                {
-                                //            $('#txtprlpr').val(res11);
-                                //            $('#txtprrlpr').val('');
-                                //                                                }
-                                //        $("#liamaluspercent").text(PHMalusValue);
-                                //        //$('#txtprlpr').val(txtPLPassengerAmtValue);
-                                //        $('#txtlprtot').val(res12);
-                                //        $('#txtodtotA').val(res4);
-                                //        $('#txtlprtotB').val(res12);
-                                //        $('#txttotAB').val(res13);
-
-                                //        $('#txtpyd').val('');
-                                //        $('#txtcyd').val('');
-                                //        $('#txtsgstamt').val(res14);
-                                //        $('#txtcgstamt').val(res15);
-                                //        $('#txttotalcrpremium').val(res16);
-                                //        $('#txtTotalPremiumAmt').val(res16);
-                                //        $('#txtTotalPvvTop').val(TotalPVV);
-                                //        //
-                                //        $('#txtChassisNumber').val($('#txtVDChasisNo').val());
-                                //        $('#txtEngineNumber').val($('#txtVDEngine').val());
-                                //        $('#txtAppRefNumber').val($('#spnMIReferanceNo').text());
-                                //        $('#txtPolicyType').val($("#ddlTypeofCover option:selected").text());
-                                //        $('#txtZone').val($('#txtVDZone').val());
-                                //        $('#txtCostPrice').val($('#txtenteredidvovamnt').val());
-
-                                //        $('#txtMOV').val($("#ddlVDVehicleManufacture option:selected").text());
-                                //        $('#txtYOM').val($("#ddlVDManufacturerYear option:selected").text());
-                                //        $('#txtVehicleType').val($("#ddlVehClassType option:selected").text());
-                                //        $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
-                                //        $('#txtGVW').val($('#txtVDWeight').val());
-                                //        $('#txtSC').val($('#txtVDSeating').val());
-                                //                                                }
-                                //                                            else if (ddlTypeofCover == "3")
-                                //                                            {
-                                //                                                //alertify.success("B")
-                                //                                                var txttotamntValue = PVVAmount;
-                                //                                                //txtbpidv
-                                //                                                var txtOdBpValue = parseFloat(txtAdditionAmtValue);
-
-                                //                                                var txtbpidvValue = ((parseFloat(txttotamntValue)) / 100) * (parseFloat(ODValue));
-                                //                                                console.log(txtbpidvValue)
-
-                                //        //var txtbpidvValue = ((parseFloat(txttotamntValue)) / 100) * (parseFloat(ODValue));
-                                //                                                var odsubtot = parseFloat(txtOdBpValue) + parseFloat(txtbpidvValue);
-                                //                                                if (!isNaN(odsubtot))
-                                //                                                {
-                                //                                                    var res = Math.round(odsubtot).toFixed(2)
-                                //                                                    //alert(res)
-                                //                                                    //document.getElementById('txtbpidv').value = ReplaceNumberWithCommas(res);
-                                //                                                    //document.getElementById('txtidvsubtot').value = ReplaceNumberWithCommas(res);
-                                //                                                    //document.getElementById('txtodp').value = ReplaceNumberWithCommas(res);
-                                //                                                }
-                                //                                                //txtodpremium
-                                //                                                var txtodpremium = parseFloat(grossamt);
-                                //                                                //txtlgrod
-                                //                                                var txtlgrodValue = ((parseFloat(res)) / 100) * (parseFloat(txtODgovDiscntValue));
-                                //                                                if (!isNaN(txtlgrodValue))
-                                //                                                {
-                                //                                                    var res1 = Math.round(txtlgrodValue).toFixed(2)
-                                //                                                    //alert(res1)
-                                //                                                    //document.getElementById('txtlgrod').value = ReplaceNumberWithCommas(res1);
-                                //                                                    //document.getElementById('txtrebatetotod').value = res1;
-                                //                                                }
-                                //                                                //txtrebatetotod
-                                //                                                var txtrebatetotodvalue = parseFloat(res) + parseFloat(txtodpremium) - parseFloat(res1)
-                                //                                                var res2 = Math.round(txtrebatetotodvalue).toFixed(2)
-                                //                                                //document.getElementById('txtrebatetotod').value = ReplaceNumberWithCommas(res2);
-                                //        var electricalValue = ((parseFloat(txteleaccamntValue) / 100) * 4);
-                                //                                                var odlpgValue = ((parseFloat(txtcngamntrValue) / 100) * 4);
-                                //                                                var fiberglassValue = 0;
-                                //                                                if (document.getElementById('rbtnFGlassYes').checked) {
-                                //                                                        if (ddlCategory == 16)
-                                //                                                        {
-                                //                                                            fiberglassValue = 100;
-                                //                                                        }
-                                //                                                        else
-                                //                                                        {
-                                //                                                            fiberglassValue = 50;
-                                //                                                        }
-                                //                                                    }
-                                //                                                    var odDrivingInstitutionValue = 0;
-                                //                                                    if (document.getElementById('rbtnDriveTutYes').checked) {
-                                //                                                            var odDIvalue = ((parseFloat(res2) / 100) * 60);
-                                //                                                            odDrivingInstitutionValue = Math.round(odDIvalue).toFixed(2);
-                                //                                                        }
-                                //                                                        var nonelectricalValue = ((parseFloat(txtnoneleaccamntValue) / 100) * 4);
-                                //                                                        var addvaluesubtotal = parseFloat(res2) + parseFloat(electricalValue) + parseFloat(odlpgValue) + parseFloat(fiberglassValue) + parseFloat(odDrivingInstitutionValue) + parseFloat(nonelectricalValue);
-                                //                                                        //txtsubtotlpgod
-                                //                                                        var txtsubtotlpgodValue = Math.round(addvaluesubtotal).toFixed(2);
-                                //                                                        //document.getElementById('txtsubtotlpgod').value = ReplaceNumberWithCommas(txtsubtotlpgodValue);
-
-                                //                                                        //Less Values
-                                //                                                        //txth
-                                //                                                        var txthValue = ((parseFloat(txtsubtotlpgodValue)) / 100) * 1;
-                                //                                                        var txtautomobileassociation = 0;
-                                //                                                        if ($('#ddlVehType').val() == 1) {
-                                //                                                            if (document.getElementById('rbtnAutoMobYes').checked) {
-                                //                                                                    var automobileassociationvalue = ((parseFloat(txtsubtotlpgodValue)) / 100) * 5;
-                                //                                                                    txtautomobileassociation = Math.round(automobileassociationvalue).toFixed(2);
-                                //                                                                }
-                                //                                                                }
-
-                                //                                                            var lessvaluessubtotal = parseFloat(txtsubtotlpgodValue) - parseFloat(txtautomobileassociation);
-                                //                                                            //txtsubtotextra
-                                //                                                            var txtsubtotextraVlaue = Math.round(lessvaluessubtotal).toFixed(2);
-
-                                //                                                            //txtaddmalus
-                                //                                                            var txtaddmalusValue = ((parseFloat(txtsubtotextraVlaue)) / 100) * PHMalusValue;
-                                //                                                            if (!isNaN(txtaddmalusValue))
-                                //                                                            {
-                                //                                                                var resmalus = Math.round(txtaddmalusValue).toFixed(2)
-                                //                                                                //alert(res1)
-                                //                                                                //document.getElementById('txtlessncb').value = ReplaceNumberWithCommas(res3);
-                                //                                                                //document.getElementById('txtrebatetotod').value = res1;
-                                //                                                            }
-                                //                                                            //var txttotaftetmalus = parseFloat(txtsubtotextraVlaue) + parseFloat(resmalus);
-                                //                                                            //txtlessncb
-                                //                                                            var txtlessncbValue = ((parseFloat(txtsubtotextraVlaue)) / 100) * PHNCBValue;
-                                //                                                            if (!isNaN(txtlessncbValue))
-                                //                                                            {
-                                //                                                                var res3 = Math.round(txtlessncbValue).toFixed(2)
-                                //                                                                //alert(res1)
-                                //                                                                //document.getElementById('txtlessncb').value = ReplaceNumberWithCommas(res3);
-                                //                                                                //document.getElementById('txtrebatetotod').value = res1;
-                                //                                                            }
-
-                                //                                                            //txtodtot
-                                //                                                            var txtodtotValue = parseFloat(txtsubtotextraVlaue) + parseFloat(parseFloat(resmalus)) - parseFloat(res3);
-                                //                                                            var odres4 = Math.round(txtodtotValue).toFixed(2);
-                                //                                                            var sidecardiscount = 0;
-                                //                                                            if (txtsidecaramntValue >= 1)
-                                //                                                            {
-                                //                                                                sidecardiscount = ((parseFloat(odres4) / 100) * 25);
-                                //                                                            }
-                                //                                                            var odrestot4 = parseFloat(odres4) - parseFloat(sidecardiscount);
-                                //                                                            var res4 = Math.round(odrestot4).toFixed(2);
-                                //                                                            //document.getElementById('txtodtot').value = ReplaceNumberWithCommas(res4);
-                                //                                                            //document.getElementById('txtodtotA').value = ReplaceNumberWithCommas(res4);
-
-                                //                                                            //B. LIABILITY TO PUBLIC RISK
-                                //                                                            //txtlgrlpr
-                                //                                                            //var txtlprValue = document.getElementById('txtlpr').value || 0;
-                                //                                                            var txtlprValue = parseFloat(PLValue);
-                                //                                                            var res5 = Math.round(txtlprValue).toFixed(2)
-                                //                                                        //txtbpidv
-                                //        var txtlgrlprValue = ((parseFloat(res5)) / 100) * (parseFloat(txtPLgovDiscountValue));
-                                //                                                            var res6 = Math.round(txtlgrlprValue).toFixed(2)
-                                //                                                        //document.getElementById('txtlgrlpr').value = ReplaceNumberWithCommas(res6);
-                                //                                                        //txtsubtotlpr
-                                //                                                            var txtsubtotlprValue = parseFloat(res5) - parseFloat(res6)
-                                //                                                        var res7 = Math.round(txtsubtotlprValue).toFixed(2)
-                                //                                                        //document.getElementById('txtsubtotlpr').value = ReplaceNumberWithCommas(res7);
-
-                                //                                                            //txtlpgkitlpr
-                                //                                                            var txtcngamntrValue = parseFloat(txtcngamntrValue);
-                                //                                                            var txtlpgkitlprValue = 0;
-                                //                                                            if (txtcngamntrValue != 0 || txtcngamntrValue != "")
-                                //                                                            {
-                                //                                                                txtlpgkitlprValue = 60;
-                                //                                                            }
-                                //                                                            var res8 = Math.round(txtlpgkitlprValue).toFixed(2);
-                                //                                                            //document.getElementById('txtlpgkitlpr').value = ReplaceNumberWithCommas(res8);
-
-                                //                                                            //txtsubtotlpglpr
-                                //                                                            var txtsubtotlpglprValue = parseFloat(res7) + parseFloat(res8)
-                                //                                                        var res9 = Math.round(txtsubtotlpglprValue).toFixed(2);
-                                //                                                            //document.getElementById('txtsubtotlpglpr').value = ReplaceNumberWithCommas(res9);
-
-                                //                                                            //txtdrlpr
-                                //                                                            var res10 = (parseFloat(txtPLDriverAmtValue));
-                                //                                                            //document.getElementById('txtdrlpr').value = ReplaceNumberWithCommas(res10);
-                                //                                                            //txtprlpr
-                                //                                                            var totpassengeramt = 0;
-                                //                                                            if (ddlCategory == 1 || ddlCategory == 2 || ddlCategory == 3 || ddlCategory == 4)
-                                //                                                            {
-                                //                                                                var totpassengeramt = parseFloat(txtPLPassengerAmtValue);
-                                //                                                            }
-                                //                                                            else if (ddlCategory == 17)
-                                //                                                            {
-                                //                                                                var noofseats = $('#txtVDSeating').val();
-                                //                                                                var totpassengeramt = (parseFloat(noofseats)) * parseFloat(txtPLPassengerAmtValue);
-                                //                                                            }
-                                //                                                            else
-                                //                                                            {
-                                //                                                                var noofseats = $('#txtVDSeating').val();
-                                //                                                                var totpassengeramt = (parseFloat(noofseats) - 1) * parseFloat(txtPLPassengerAmtValue);
-                                //                                                            }
-                                //                                                            var res11 = parseFloat(totpassengeramt);
-                                //                                                            //document.getElementById('txtprlpr').value = ReplaceNumberWithCommas(res11);
-
-                                //                                                            //txtlprtot
-                                //                                                            var txtlprtotValue = (parseFloat(res9) + parseFloat(res10) + parseFloat(res11))
-                                //                                                        var res12 = Math.round(txtlprtotValue).toFixed(2)
-                                //                                                        //document.getElementById('txtlprtot').value = ReplaceNumberWithCommas(res12);
-                                //                                                        //document.getElementById('txtlprtotB').value = ReplaceNumberWithCommas(res12);
-
-                                //                                                            //txttotAB
-                                //                                                            var txttotABValue = parseFloat(res4) + parseFloat(res12)
-                                //                                                        var res13 = Math.round(txttotABValue).toFixed(2)
-                                //                                                        //document.getElementById('txttotAB').value = ReplaceNumberWithCommas(res13);
-                                //                                                        //document.getElementById('txtpremium').value = ReplaceNumberWithCommas(res13);
-                                //                                                        //----------GST-------------//
-                                //                                                            var txtsgstamtValue = ((parseFloat(res13)) / 100) * 9;
-                                //                                                            var res14 = Math.round(txtsgstamtValue).toFixed(2);
-                                //                                                            var txtcgstamtValue = ((parseFloat(res13)) / 100) * 9;
-                                //                                                            var res15 = Math.round(txtcgstamtValue).toFixed(2);
-                                //                                                            //txtgstamt
-                                //                                                            //var txtgstamtValue = ((parseFloat(res13)) / 100) * 18;
-                                //                                                            //var res14 = Math.round(txtgstamtValue).toFixed(2)
-                                //                                                            //document.getElementById('txtgstamt').value = ReplaceNumberWithCommas(res14);
-
-                                //                                                            //txttotalcrpremium
-                                //                                                            var txttotalcrpremiumValue = parseFloat(res13) + parseFloat(res14) + parseFloat(res15)
-                                //                                                        var res16 = Math.round(txttotalcrpremiumValue).toFixed(2)
-                                //                                                        //document.getElementById('txttotalcrpremium').value = ReplaceNumberWithCommas(res15);
-                                //                                                        //txtTotalPremium
-                                //                                                        //document.getElementById('txtTotalPremium').value = ReplaceNumberWithCommas(res15);
-                                //                                                            if (txtidvovamntValue != 0)
-                                //                                                            {
-                                //                                                                document.getElementById('txtTotalPremium').value = ReplaceNumberWithCommas(res16);
-                                //                                                            }
-                                //                                                            PremiumPayableAmount = res16;
-
-                                //        // Premium Calculation End
-                                //        //if (!isNaN(result)) {
-                                //        //    var res = parseFloat(result).toFixed(2)
-                                //        //    document.getElementById('txttotamnt').value = res;
-                                //        //    alert(getmonthDiff)
-                                //        //}
-                                //        //Addition Popup For View Premium Details
-                                //        $('#txtbp').val(txtOdBpValue);
-                                //        $('#idvpercent').text(ODValue);
-                                //        $('#txtbpidv').val(Math.round(txtbpidvValue).toFixed(2));
-                                //        $('#txtidvsubtot').val(res);
-                                //        $('#txtodp').val(res);
-                                //        $('#txtextaraweight').val(Math.round(txtodpremium).toFixed(2));
-                                //        $('#txtlgrod').val(res1);
-                                //        //Add
-                                //        $('#txteleacc').val(electricalValue);
-                                //        $('#txtlpgkitod').val(odlpgValue);
-                                //        $('#txtfgft').val(fiberglassValue);
-                                //        $('#txtdiod').val(odDrivingInstitutionValue);
-                                //        $('#txtaddodothers').val(nonelectricalValue);
-                                //        //
-                                //        $('#txtrebatetotod').val(res2);
-                                //        $('#txtsubtotlpgod').val(txtsubtotlpgodValue);
-                                //        //less
-                                //        $('#txtlaam').val(txtautomobileassociation);
-                                //        //
-                                //        $('#txtsubtotextra').val(txtsubtotextraVlaue);
-                                //        $('#txtamod').val(resmalus);
-                                //        $('#idvmaluspercent').text(PHMalusValue);
-                                //        $('#txtlessncb').val(res3);
-                                //        $('#idvncbpercent').text(PHNCBValue);
-                                //        $('#txtothers').val(Math.round(sidecardiscount).toFixed(2));//sidecar discount
-                                //        $('#txtodtot').val(res4);
-
-
-                                //        $('#txtlpr').val(PLValue);
-                                //        $('#txtlgrlpr').val(res6);
-                                //        $('#txtsubtotlpr').val(res7);
-                                //        $('#txtlpgkitlpr').val(txtlpgkitlprValue);
-                                //        $('#txtsubtotlpglpr').val(res9);
-                                //        $('#txtdrlpr').val(txtPLDriverAmtValue);
-                                //        if (ddlCategory == 1 || ddlCategory == 2 || ddlCategory == 3 || ddlCategory == 4) {
-                                //            $('#txtprrlpr').val(res11);
-                                //            $('#txtprlpr').val('');
-                                //        }
-                                //        else {
-                                //            $('#txtprlpr').val(res11);
-                                //            $('#txtprrlpr').val('');
-                                //        }
-                                //        //$('#txtprlpr').val(txtPLPassengerAmtValue);
-                                //        $('#txtlprtot').val(res12);
-                                //        $('#txtodtotA').val(res4);
-                                //        $('#txtlprtotB').val(res12);
-                                //        $('#txttotAB').val(res13);
-
-                                //        $('#txtpyd').val('');
-                                //        $('#txtcyd').val('');
-                                //        $('#txtsgstamt').val(res14);
-                                //        $('#txtcgstamt').val(res15);
-                                //        $('#txttotalcrpremium').val(res16);
-                                //        $('#txtTotalPremiumAmt').val(res16);
-                                //        $('#txtTotalPvvTop').val(TotalPVV);
-                                //        //
-                                //        $('#txtChassisNumber').val($('#txtVDChasisNo').val());
-                                //        $('#txtEngineNumber').val($('#txtVDEngine').val());
-                                //        $('#txtAppRefNumber').val($('#spnMIReferanceNo').text());
-                                //        $('#txtPolicyType').val($("#ddlTypeofCover option:selected").text());
-                                //        $('#txtZone').val($('#txtVDZone').val());
-                                //        $('#txtCostPrice').val($('#txtenteredidvovamnt').val());
-
-                                //        $('#txtMOV').val($("#ddlVDVehicleManufacture option:selected").text());
-                                //        $('#txtYOM').val($("#ddlVDManufacturerYear option:selected").text());
-                                //        $('#txtVehicleType').val($("#ddlVehClassType option:selected").text());
-                                //        $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
-                                //        $('#txtGVW').val($('#txtVDWeight').val());
-                                //        $('#txtSC').val($('#txtVDSeating').val());
-                                //    }
-                                //    else if (ddlTypeofCover == "4") {
-                                //        //alertify.success("O")
-                                //        var txttotamntValue = PVVAmount;
-                                //        //txtbpidv
-                                //        var txtOdBpValue = parseFloat(txtAdditionAmtValue);
-
-                                //        var txtbpidvValue = ((parseFloat(txttotamntValue)) / 100) * (parseFloat(ODValue));
-                                //        console.log(txtbpidvValue)
-
-                                //        //var txtbpidvValue = ((parseFloat(txttotamntValue)) / 100) * (parseFloat(ODValue));
-                                //        var odsubtot = parseFloat(txtOdBpValue) + parseFloat(txtbpidvValue);
-                                //        if (!isNaN(odsubtot)) {
-                                //            var res = Math.round(odsubtot).toFixed(2)
-                                //            //alert(res)
-                                //            //document.getElementById('txtbpidv').value = ReplaceNumberWithCommas(res);
-                                //            //document.getElementById('txtidvsubtot').value = ReplaceNumberWithCommas(res);
-                                //            //document.getElementById('txtodp').value = ReplaceNumberWithCommas(res);
-                                //        }
-                                //        //txtodpremium
-                                //        var txtodpremium = parseFloat(grossamt);
-                                //        //txtlgrod
-                                //        var txtlgrodValue = ((parseFloat(res)) / 100) * (parseFloat(txtODgovDiscntValue));
-                                //        if (!isNaN(txtlgrodValue)) {
-                                //            var res1 = Math.round(txtlgrodValue).toFixed(2)
-                                //            //alert(res1)
-                                //            //document.getElementById('txtlgrod').value = ReplaceNumberWithCommas(res1);
-                                //            //document.getElementById('txtrebatetotod').value = res1;
-                                //        }
-                                //        //txtrebatetotod
-                                //        var txtrebatetotodvalue = parseFloat(res) + parseFloat(txtodpremium) - parseFloat(res1)
-                                //        var res2 = Math.round(txtrebatetotodvalue).toFixed(2)
-                                //        //document.getElementById('txtrebatetotod').value = ReplaceNumberWithCommas(res2);
-                                //        var electricalValue = ((parseFloat(txteleaccamntValue) / 100) * 4);
-                                //        var odlpgValue = ((parseFloat(txtcngamntrValue) / 100) * 4);
-                                //        var fiberglassValue = 0;
-                                //        if (document.getElementById('rbtnFGlassYes').checked) {
-                                //            if (ddlCategory == 16) {
-                                //                fiberglassValue = 100;
-                                //            }
-                                //            else {
-                                //                fiberglassValue = 50;
-                                //            }
-                                //        }
-                                //        var odDrivingInstitutionValue = 0;
-                                //        if (document.getElementById('rbtnDriveTutYes').checked) {
-                                //            var odDIvalue = ((parseFloat(res2) / 100) * 60);
-                                //            odDrivingInstitutionValue = Math.round(odDIvalue).toFixed(2);
-                                //        }
-                                //        var nonelectricalValue = ((parseFloat(txtnoneleaccamntValue) / 100) * 4);
-                                //        var addvaluesubtotal = parseFloat(res2) + parseFloat(electricalValue) + parseFloat(odlpgValue) + parseFloat(fiberglassValue) + parseFloat(odDrivingInstitutionValue) + parseFloat(nonelectricalValue);
-                                //        //txtsubtotlpgod
-                                //        var txtsubtotlpgodValue = Math.round(addvaluesubtotal).toFixed(2);
-                                //        //document.getElementById('txtsubtotlpgod').value = ReplaceNumberWithCommas(txtsubtotlpgodValue);
-
-                                //        //Less Values
-                                //        //txth
-                                //        var txthValue = ((parseFloat(txtsubtotlpgodValue)) / 100) * 1;
-                                //        var txtautomobileassociation = 0;
-                                //        if ($('#ddlVehType').val() == 1) {
-                                //            if (document.getElementById('rbtnAutoMobYes').checked) {
-                                //                var automobileassociationvalue = ((parseFloat(txtsubtotlpgodValue)) / 100) * 5;
-                                //                txtautomobileassociation = Math.round(automobileassociationvalue).toFixed(2);
-                                //            }
-                                //        }
-
-                                //        var lessvaluessubtotal = parseFloat(txtsubtotlpgodValue) - parseFloat(txtautomobileassociation);
-                                //        //txtsubtotextra
-                                //        var txtsubtotextraVlaue = Math.round(lessvaluessubtotal).toFixed(2);
-
-                                //        //txtlessncb
-                                //        var txtlessncbValue = ((parseFloat(txtsubtotextraVlaue)) / 100) * 0;
-                                //        if (!isNaN(txtlessncbValue)) {
-                                //            var res3 = Math.round(txtlessncbValue).toFixed(2)
-                                //            //alert(res1)
-                                //            //document.getElementById('txtlessncb').value = ReplaceNumberWithCommas(res3);
-                                //            //document.getElementById('txtrebatetotod').value = res1;
-                                //        }
-
-                                //        //txtodtot
-                                //        var txtodtotValue = parseFloat(txtsubtotextraVlaue) + parseFloat(parseFloat(resmalus)) - parseFloat(res3);
-                                //        var odres4 = Math.round(txtodtotValue).toFixed(2);
-                                //        var sidecardiscount = 0;
-                                //        if (txtsidecaramntValue >= 1) {
-                                //            sidecardiscount = ((parseFloat(odres4) / 100) * 25);
-                                //        }
-                                //        var odrestot4 = parseFloat(odres4) - parseFloat(sidecardiscount);
-                                //        var res4 = Math.round(odrestot4).toFixed(2);
-                                //        //document.getElementById('txtodtot').value = ReplaceNumberWithCommas(res4);
-                                //        //document.getElementById('txtodtotA').value = ReplaceNumberWithCommas(res4);
-
-                                //        //B. LIABILITY TO PUBLIC RISK
-
-                                //        //txtlprtot
-                                //        var res12 = 0;
-                                //        //document.getElementById('txtlprtot').value = ReplaceNumberWithCommas(res12);
-                                //        //document.getElementById('txtlprtotB').value = ReplaceNumberWithCommas(res12);
-
-                                //        //txttotAB
-                                //        var txttotABValue = parseFloat(res4) + parseFloat(res12)
-                                //        var res13 = Math.round(txttotABValue).toFixed(2)
-                                //        //document.getElementById('txttotAB').value = ReplaceNumberWithCommas(res13);
-                                //        //document.getElementById('txtpremium').value = ReplaceNumberWithCommas(res13);
-                                //        //----------GST-------------//
-                                //        var txtsgstamtValue = ((parseFloat(res13)) / 100) * 9;
-                                //        var res14 = Math.round(txtsgstamtValue).toFixed(2);
-                                //        var txtcgstamtValue = ((parseFloat(res13)) / 100) * 9;
-                                //        var res15 = Math.round(txtcgstamtValue).toFixed(2);
-                                //        //txtgstamt
-                                //        //var txtgstamtValue = ((parseFloat(res13)) / 100) * 18;
-                                //        //var res14 = Math.round(txtgstamtValue).toFixed(2)
-                                //        //document.getElementById('txtgstamt').value = ReplaceNumberWithCommas(res14);
-
-                                //        //txttotalcrpremium
-                                //        var txttotalcrpremiumValue = parseFloat(res13) + parseFloat(res14) + parseFloat(res15)
-                                //        var res16 = Math.round(txttotalcrpremiumValue).toFixed(2)
-                                //        //document.getElementById('txttotalcrpremium').value = ReplaceNumberWithCommas(res15);
-                                //        //txtTotalPremium
-                                //        //document.getElementById('txtTotalPremium').value = ReplaceNumberWithCommas(res15);
-                                //        if (txtidvovamntValue != 0) {
-                                //            document.getElementById('txtTotalPremium').value = ReplaceNumberWithCommas(res16);
-                                //        }
-                                //        PremiumPayableAmount = res16;
-
-                                //        // Premium Calculation End
-                                //        //if (!isNaN(result)) {
-                                //        //    var res = parseFloat(result).toFixed(2)
-                                //        //    document.getElementById('txttotamnt').value = res;
-                                //        //    alert(getmonthDiff)
-                                //        //}
-                                //        //Addition Popup For View Premium Details
-                                //        $('#txtbp').val(txtOdBpValue);
-                                //        $('#idvpercent').text(ODValue);
-                                //        $('#txtbpidv').val(Math.round(txtbpidvValue).toFixed(2));
-                                //        $('#txtidvsubtot').val(res);
-                                //        $('#txtodp').val(res);
-                                //        $('#txtextaraweight').val(Math.round(txtodpremium).toFixed(2));
-                                //        $('#txtlgrod').val(res1);
-                                //        //Add
-                                //        $('#txteleacc').val(electricalValue);
-                                //        $('#txtlpgkitod').val(odlpgValue);
-                                //        $('#txtfgft').val(fiberglassValue);
-                                //        $('#txtdiod').val(odDrivingInstitutionValue);
-                                //        $('#txtaddodothers').val(nonelectricalValue);
-                                //        //
-                                //        $('#txtrebatetotod').val(res2);
-                                //        $('#txtsubtotlpgod').val(txtsubtotlpgodValue);
-                                //        //less
-                                //        $('#txtlaam').val(txtautomobileassociation);
-                                //        //
-                                //        $('#txtsubtotextra').val(txtsubtotextraVlaue);
-                                //        $('#txtamod').val(resmalus);
-                                //        $('#idvmaluspercent').text(PHMalusValue);
-                                //        $('#txtlessncb').val(res3);
-                                //        $('#idvncbpercent').text(PHNCBValue);
-                                //        $('#txtothers').val(Math.round(sidecardiscount).toFixed(2));//sidecar discount
-                                //        $('#txtodtot').val(res4);
-
-                                //        $('#txtlpr').val("");
-                                //        $('#txtlgrlpr').val("");
-                                //        $('#txtsubtotlpr').val("");
-                                //        $('#txtsubtotlpglpr').val("");
-                                //        $('#txtdrlpr').val("");
-                                //        $('#txtprlpr').val("");
-                                //        $('#txtlprtot').val("");
-                                //        $('#txtodtotA').val(res4);
-                                //        $('#txtlprtotB').val(res12);
-                                //        $('#txttotAB').val(res13);
-
-                                //        $('#txtpyd').val('');
-                                //        $('#txtcyd').val('');
-                                //        $('#txtsgstamt').val(res14);
-                                //        $('#txtcgstamt').val(res15);
-                                //        $('#txttotalcrpremium').val(res16);
-                                //        $('#txtTotalPremiumAmt').val(res16);
-                                //        $('#txtTotalPvvTop').val(TotalPVV);
-                                //        //
-                                //        $('#txtChassisNumber').val($('#txtVDChasisNo').val());
-                                //        $('#txtEngineNumber').val($('#txtVDEngine').val());
-                                //        $('#txtAppRefNumber').val($('#spnMIReferanceNo').text());
-                                //        $('#txtPolicyType').val($("#ddlTypeofCover option:selected").text());
-                                //        $('#txtZone').val($('#txtVDZone').val());
-                                //        $('#txtCostPrice').val($('#txtenteredidvovamnt').val());
-
-                                //        $('#txtMOV').val($("#ddlVDVehicleManufacture option:selected").text());
-                                //        $('#txtYOM').val($("#ddlVDManufacturerYear option:selected").text());
-                                //        $('#txtVehicleType').val($("#ddlVehClassType option:selected").text());
-                                //        $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
-                                //        $('#txtGVW').val($('#txtVDWeight').val());
-                                //        $('#txtSC').val($('#txtVDSeating').val());
-                                //    }
-
-                                //}
-                                #endregion
 
                             }
 
@@ -2048,7 +1144,7 @@ namespace DLL
                 SqlParameter[] sqlparam =
                 {
                         new SqlParameter("@month",month),
-
+                        
                 };
                 result = _Conn.ExecuteCmd(sqlparam, "sp_kgid_getdepreciationvalue");
 
@@ -2057,7 +1153,7 @@ namespace DLL
             {
 
             }
-
+            
             return result;
         }
         #endregion
@@ -2079,9 +1175,9 @@ namespace DLL
                     VehicalMappingToDDO = dt.AsEnumerable().Select(t =>
                     {
                         var obj = new VehicalMappingToDDO();
-                        obj.mivd_vehicle_details_id = Convert.ToInt32(t["mivd_vehicle_details_id"]);
+                        obj.mivd_vehicle_details_id =Convert.ToInt32( t["mivd_vehicle_details_id"]);
                         obj.mivd_registration_no = Convert.ToString(t["mivd_registration_no"]);
-                        obj.rto_desc = Convert.ToString(t["rto_desc"]);
+                        obj.rto_desc = "";
                         obj.mivd_type_of_model = Convert.ToString(t["mivd_type_of_model"]);
                         obj.year_desc = Convert.ToString(t["ym_year_desc"]);
                         obj.mivd_chasis_no = Convert.ToString(t["mivd_chasis_no"]);
@@ -2089,7 +1185,7 @@ namespace DLL
                         return obj;
                     }).ToList();
                 }
-
+                 
                 return VehicalMappingToDDO;
             }
             catch (Exception ex)
@@ -2133,7 +1229,7 @@ namespace DLL
             }
             catch (Exception ex)
             {
-
+                
             }
             finally
             {

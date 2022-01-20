@@ -34,13 +34,13 @@ namespace KGID.Controllers
                 _newEmpModel.TT_rp_empid = Convert.ToInt32(Session["UID"]);
                 _newEmpModel.TT_rp_emptype = Session["Categories"].ToString();
             }
-            _newEmpModel = _TicketingToolbll.GetDetailsByEmpIdBLL(_newEmpModel.TT_rp_empid, _newEmpModel.TT_rp_emptype);
+            _newEmpModel = _TicketingToolbll.GetDetailsByEmpIdBLL(_newEmpModel.TT_rp_empid,_newEmpModel.TT_rp_emptype);
             ////return View("_ViewReportProblemsInGrid", _newEmpModel);
             //return this.PartialView("_ViewReportProblemsInGrid", _newEmpModel);
             return View(_newEmpModel);
         }
 
-
+        
         [AcceptVerbs(HttpVerbs.Get)]
         public JsonResult LoadModuleList()
         {
@@ -61,13 +61,13 @@ namespace KGID.Controllers
             //if (id <= 0) id = 31;
             tbl_report_problem _newEmpModel = new tbl_report_problem();
             ////int id = 0;
-
+            
             _newEmpModel = _TicketingToolbll.GetDetailsByIdBLL(id);
             if (Session["UID"] != null)
             {
                 _newEmpModel.STS = Session["Categories"].ToString();
             }
-            _newEmpModel.rp_id = Convert.ToInt64(id);           //retTTReportProblemurn View("_GetDetailsById", _newEmpModel);
+            _newEmpModel.rp_id = Convert.ToInt64( id);           //retTTReportProblemurn View("_GetDetailsById", _newEmpModel);
             //TTReportProblem _newEmpModel = new TTReportProblem();
             //_newEmpModel = _TicketingToolbll.GetDetailsByIdBLL(id);
             return this.PartialView("_GetDetailsById", _newEmpModel);
@@ -107,14 +107,14 @@ namespace KGID.Controllers
             //return View();
         }
         [HttpPost]
-        public ActionResult GetReportProblemsBasedonFilters(int mid, string fdate, string todate, string fstatus)
+        public ActionResult GetReportProblemsBasedonFilters(int mid,string fdate, string todate,string fstatus)
         {
             TTReportProblem _newEmpModel = new TTReportProblem();
             if (Session["UID"] != null)
             {
                 _newEmpModel.TT_rp_empid = Convert.ToInt32(Session["UID"]);
             }
-            _newEmpModel = _TicketingToolbll.GetAllReportedProblemsBasedonFiltersBLL(mid, fdate, todate, fstatus);
+            _newEmpModel = _TicketingToolbll.GetAllReportedProblemsBasedonFiltersBLL(mid,fdate,todate, fstatus);
 
             //TempData["newEmpModel"] = _newEmpModel;
             ViewBag.newEmpModel = _newEmpModel;
@@ -133,7 +133,7 @@ namespace KGID.Controllers
 
             if (Request.Files.Count > 0)
             {
-                postedFile = Request.Files[0];
+                 postedFile = Request.Files[0];
             }
 
             if (postedFile != null)
@@ -142,12 +142,12 @@ namespace KGID.Controllers
                 model.extensionofDoc = Path.GetExtension(postedFile.FileName);
             }
 
-            TicketingToolReportProblem _newEmpModel = new TicketingToolReportProblem();
+                TicketingToolReportProblem _newEmpModel = new TicketingToolReportProblem();  
             if (Session["UID"] != null)
             {
                 //_newEmpModel.rp_created_by = Convert.ToInt64(Session["UID"]);
                 //_newEmpModel.rp_empid = Convert.ToInt64(Session["UID"]);
-                model.rp_created_by = Convert.ToInt64(Session["UID"]);
+                model.rp_created_by=Convert.ToInt64(Session["UID"]);
                 model.rp_empid = Convert.ToInt64(Session["UID"]);
             }
             var _newempDetails = _TicketingToolbll.SaveReportProblemBll(model);
@@ -170,12 +170,12 @@ namespace KGID.Controllers
                 _newEmpModel.TT_rp_empid = Convert.ToInt32(Session["UID"]);
                 _newEmpModel.TT_rp_emptype = Session["Categories"].ToString();
             }
-            _newEmpModel = _TicketingToolbll.GetDetailsByEmpIdBLL(_newEmpModel.TT_rp_empid, _newEmpModel.TT_rp_emptype);
+            _newEmpModel = _TicketingToolbll.GetDetailsByEmpIdBLL(_newEmpModel.TT_rp_empid,_newEmpModel.TT_rp_emptype);
             //return View("_ViewReportProblemsInGrid", _newEmpModel);
             return this.PartialView("_ViewReportProblemsInGrid", _newEmpModel);
         }
         [Route("View-All-Tickets")]
-        public ActionResult AdminViewAllReportedProblems()
+        public ActionResult AdminViewAllReportedProblems() 
         {
             TTReportProblem _newEmpModel = new TTReportProblem();
             if (Session["UID"] != null)
@@ -240,7 +240,7 @@ namespace KGID.Controllers
                 //        return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "" + FileName + ".xlsx");
                 //    }
                 //}
-
+         
             }
             //else
             //{

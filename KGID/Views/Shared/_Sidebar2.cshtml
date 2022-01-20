@@ -78,7 +78,7 @@
                                                 <a class="collapse-item collapse-item-a" href="/kgid-ins/"><label class="knlan">ಕೆಜಿಐಡಿ ವಿಮಾ ಪ್ರಸ್ತಾವನೆಗೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ</label><label class="Enlan">Apply for KGID Policy</label></a>
                                             </li>
                                         }
-                                        @if (Session["FirstKGIDNo"] != null)
+                                        @*@if (Session["FirstKGIDNo"] != null)
                                         {
                                             <li>
                                                 <a class="collapse-item collapse-item-a" href="/kgid-ExistingInsapp/">
@@ -87,7 +87,7 @@
                                                     </label><label class="Enlan">Existing Employee Apply For KGID Policy</label>
                                                 </a>
                                             </li>
-                                        }
+                                        }*@
                                         <li>
                                             <a class="collapse-item collapse-item-a" href="/kgid-view-app/"><label class="knlan">ಕೆಜಿಐಡಿ ಪ್ರಸ್ತಾವನೆಯನ್ನು ವೀಕ್ಷಿಸಿ</label><label class="Enlan">View KGID Application</label></a>
                                         </li>
@@ -178,18 +178,18 @@
                         </ul>
                     </li>*@
                                 // GIS Gis  New Employee Login
-                                <li>
+                                <!--<li>
                                     <a><label class="knlan"><i class="fa fa-edit"></i>ಪರಿಶೀಲನೆಗಾಗಿ ವಿಮಾ ಪ್ರಸ್ತಾವನೆ</label><label class="Enlan"><i class="fa fa-edit"></i>Group Insurance</label><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>
-                                            <a href="@Url.Action("GISApplicationForEmployee","GroupInsurance")"> @*<i class="fa fa-desktop"></i>*@<label class="knlan">ವಿಮಾ ಪ್ರಸ್ತಾವನೆಗಳ ಪಟ್ಟಿ</label><label class="Enlan">Apply for Group Insurance</label>@*<span class="fa fa-circle"></span>*@</a>   @*GIS*@
+                                            <a href="@Url.Action("GISApplicationForEmployee","GroupInsurance")">--> @*<i class="fa fa-desktop"></i>*@<!--<label class="knlan">ವಿಮಾ ಪ್ರಸ್ತಾವನೆಗಳ ಪಟ್ಟಿ</label><label class="Enlan">Apply for Group Insurance</label>-->@*<span class="fa fa-circle"></span>*@<!--</a>-->   @*GIS*@
 
-                                        </li>
+                                        <!--</li>
                                         <li>
-                                            <a href="@Url.Action("GIS_Ncr_ApplicationForm","GISNomineeChangeReq")"> @*<i class="fa fa-desktop"></i>*@<label class="knlan">ಮನವಿದಾರರ  ವಿವರಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label><label class="Enlan">Nominee Change Request</label>@*<span class="fa fa-circle"></span>*@</a>
+                                            <a href="@Url.Action("GIS_Ncr_ApplicationForm","GISNomineeChangeReq")">--> @*<i class="fa fa-desktop"></i>*@<!--<label class="knlan">ಮನವಿದಾರರ  ವಿವರಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</label><label class="Enlan">Nominee Change Request</label>-->@*<span class="fa fa-circle"></span>*@<!--</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 // GIS Gis  New Employee Login
 
                             }

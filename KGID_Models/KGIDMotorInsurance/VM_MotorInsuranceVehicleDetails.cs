@@ -42,6 +42,7 @@ namespace KGID_Models.KGIDMotorInsurance
         public string mivd_chasis_no { get; set; }
         public int mivd_manufacture_of_vehicle { get; set; }
         public int mivd_make_of_vehicle { get; set; }
+
         public string mivd_make_of_vehicle1 { get; set; }
         public int? mivd_vehicle_category_type_id { get; set; }
         public int? mivd_vehicle_class_id { get; set; }
@@ -166,6 +167,18 @@ namespace KGID_Models.KGIDMotorInsurance
 
 
     }
+
+    public class ExcelUploadError
+    {
+
+        public int ExcelID { get; set; }
+        public DateTime UpdatedOn { get; set; }
+        public string Registrationno { get; set; }
+        public string Remarks { get; set; }
+
+
+    }
+
     public class VehicleMIHistoryDetails
     {
         public int vehicleHistoryID { get; set; }

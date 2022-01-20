@@ -17,6 +17,7 @@ namespace KGID_Models.KGIDMotorInsurance
             ApprovedEmployeeStatus = new List<EmployeeDDOVerificationDetailMI>();
             PolicyPremiumDetailMI = new List<PolicyPremiumDetailMI>();
             RenewalPolicyPremiumDetailMI = new List<RenewalPolicyPremiumDetailMI>();
+            listofobject = new List<PolicyPremiumDetailMI>();
         }
         public IList<EmployeeDDOVerificationDetailMI> EmployeeVerificationDetails { get; set; }
 
@@ -30,6 +31,7 @@ namespace KGID_Models.KGIDMotorInsurance
         public IList<RenewalPolicyPremiumDetailMI> RenewalPolicyPremiumDetailMI { get; set; }
         public IList<EmployeeDDOVerificationDetailMI> CancelEmployeeStatus { get; set; }
 
+        public IList<PolicyPremiumDetailMI> listofobject { get; set; }
         public int Category { get; set; }
         public long TotalReceived { get; set; }
 
@@ -162,8 +164,14 @@ namespace KGID_Models.KGIDMotorInsurance
         public string ToDate { get; set; }
         public string MBBondDocPath { get; set; }
         public string MBSignedBondDocPath { get; set; }
+        public string cd_challan_ref_no { get; set; }
+        public decimal cd_amount { get; set; }
+        public long? cs_status_Code { get; set; }
+        public string cs_status { get; set; }
+
         //public string LastUpdatedDate { get; set; }
         //public string Premium { get; set; }
+        //public int AppStatusID { get; set; }
         //public int AppStatusID { get; set; }
     }
     public class RenewalPolicyPremiumDetailMI

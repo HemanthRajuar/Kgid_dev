@@ -101,7 +101,7 @@ namespace KGID.Controllers
         public ActionResult MotorInsuranceApplication(string PageType = null, long refNo = 0, string category = "", int status = 0)
         {
             Session["RID"] = (refNo != 0) ? refNo : 0;
-            Session["page"]  = PageType;
+
             VM_MIApplicationDetails obj = new VM_MIApplicationDetails();
 
             obj.Type = Convert.ToString((PageType == "empty") ? "" : PageType);
@@ -313,88 +313,61 @@ namespace KGID.Controllers
             return this.PartialView("_MIDocumentDetails", _MIDocumentData);
         }
         #endregion
-        //=========================Insert Data related5 functions ================================
+        //=========================Insert Data related functions ================================
         #region Insert Data related functions
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         [Route("InsertMIVehicleDetails")]
         public JsonResult InsertMIVehicleDetails(VM_MotorInsuranceVehicleDetails objMVDetails)
         {
-            bool isSuccess = false;
-            string message = string.Empty;
-            decimal OwnDamageV = 0;
-            decimal PremiumLiabilityV = 0;
-            int MinValue = 0;
-            int Depreciation = 0;
-            string Zone = "";
-            string Pagetype = "";
-            decimal AdditionalAmt = 0;
-            decimal govDiscount = 0;
-            decimal PLgovDiscount = 0;
-            decimal PLDriverAmt = 0;
-            decimal PLPassengerAmt = 0;
-            string result = _IMotorInsuranceVehicleDetailsBll.SaveMIVehicleDetailsData(objMVDetails);
-            result = result.Trim().Replace("\r\n", string.Empty);
-
-            string[] res = result.Split(',');
-
-
-            if (objMVDetails.mivd_pagetype == "Renewal" || objMVDetails.mivd_pagetype == "EditRenewal")
-            {
-                if (!string.IsNullOrEmpty(result))
-                {
-                    isSuccess = true;
-                    message = "Vehicle details saved successfully";
-
-                    OwnDamageV = Convert.ToDecimal(objMVDetails.mivd_own_damage_value);
-                    PremiumLiabilityV = Convert.ToDecimal(objMVDetails.mivd_premium_liability_value);
-                    MinValue = Convert.ToInt32(objMVDetails.mivd_vehicle_min_value);
-                    Depreciation = Convert.ToInt32(objMVDetails.mivd_Depreciation_value);
-                    Zone = objMVDetails.mivd_Zone;
-                    AdditionalAmt = objMVDetails.mivd_Additionalamt;
-                    govDiscount = objMVDetails.mivd_govDiscount;
-                    PLgovDiscount = objMVDetails.mivd_PLgovDiscount;
-                    PLDriverAmt = objMVDetails.mivd_PLDriverAmt;
-                    PLPassengerAmt = objMVDetails.mivd_PLPassengerAmt;
-                    Pagetype = objMVDetails.mivd_pagetype;
-
-
+           
+                bool isSuccess = false;
+                string message = string.Empty;
+                decimal OwnDamageV = 0;
+                decimal PremiumLiabilityV = 0;
+                int MinValue = 0;
+                int Depreciation = 0;
+                string Zone = "";
+                string Pagetype = "";
+                decimal AdditionalAmt = 0;
+                decimal govDiscount = 0;
+                decimal PLgovDiscount = 0;
+                decimal PLDriverAmt = 0;
+                decimal PLPassengerAmt = 0;
+                string result = "";
+                try
+                { 
+                 result = _IMotorInsuranceVehicleDetailsBll.SaveMIVehicleDetailsData(objMVDetails);
                 }
-                return Json(new
+                catch(Exception ex)
                 {
-                    IsSuccess = isSuccess,
-                    Message = message,
-                    OwnDamageValue = OwnDamageV,
-                    PremiumLiabilityValue = PremiumLiabilityV,
-                    VehMinValue = MinValue,
-                    DepreciationValue = Depreciation,
-                    Zonetype = res.Length,
-                    AdditionAmt = AdditionalAmt,
-                    govDiscnt = govDiscount,
-                    PLgovDiscountValue = PLgovDiscount,
-                    PLDriverAmtValue = PLDriverAmt,
-                    PLPassengerAmtValue = PLPassengerAmt,
-                    Pagetype = objMVDetails.mivd_pagetype,
+                    Logger.LogMessage(TracingLevel.INFO, "Exception" + ex.Message.ToString());
+                }               
+                result = result.Trim().Replace("\r\n", string.Empty);
+                Logger.LogMessage(TracingLevel.INFO, "result" + result);
+                string[] res = result.Split(',');
 
-                }, JsonRequestBehavior.AllowGet);
-            }
-            else
-            {
 
-                if (res.Length > 9)
+                if (objMVDetails.mivd_pagetype == "Renewal" || objMVDetails.mivd_pagetype == "EditRenewal")
                 {
-                    isSuccess = true;
-                    message = "Vehicle details saved successfully";
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        isSuccess = true;
+                        message = "Vehicle details saved successfully";
 
-                    OwnDamageV = Convert.ToDecimal(res[0]);
-                    PremiumLiabilityV = Convert.ToDecimal(res[1]);
-                    MinValue = Convert.ToInt32(res[2]);
-                    Depreciation = Convert.ToInt32(res[3]);
-                    Zone = res[4];
-                    AdditionalAmt = Convert.ToDecimal(res[5]);
-                    govDiscount = Convert.ToDecimal(res[6]);
-                    PLgovDiscount = Convert.ToDecimal(res[7]);
-                    PLDriverAmt = Convert.ToDecimal(res[8]);
-                    PLPassengerAmt = Convert.ToDecimal(res[9]);
+                        OwnDamageV = Convert.ToDecimal(objMVDetails.mivd_own_damage_value);
+                        PremiumLiabilityV = Convert.ToDecimal(objMVDetails.mivd_premium_liability_value);
+                        MinValue = Convert.ToInt32(objMVDetails.mivd_vehicle_min_value);
+                        Depreciation = Convert.ToInt32(objMVDetails.mivd_Depreciation_value);
+                        Zone = objMVDetails.mivd_Zone;
+                        AdditionalAmt = objMVDetails.mivd_Additionalamt;
+                        govDiscount = objMVDetails.mivd_govDiscount;
+                        PLgovDiscount = objMVDetails.mivd_PLgovDiscount;
+                        PLDriverAmt = objMVDetails.mivd_PLDriverAmt;
+                        PLPassengerAmt = objMVDetails.mivd_PLPassengerAmt;
+                        Pagetype = objMVDetails.mivd_pagetype;
+
+
+                    }
                     return Json(new
                     {
                         IsSuccess = isSuccess,
@@ -403,34 +376,71 @@ namespace KGID.Controllers
                         PremiumLiabilityValue = PremiumLiabilityV,
                         VehMinValue = MinValue,
                         DepreciationValue = Depreciation,
-                        Zonetype = Zone,
+                        Zonetype = res.Length,
                         AdditionAmt = AdditionalAmt,
                         govDiscnt = govDiscount,
                         PLgovDiscountValue = PLgovDiscount,
                         PLDriverAmtValue = PLDriverAmt,
                         PLPassengerAmtValue = PLPassengerAmt,
-                        Pagetype = objMVDetails.mivd_pagetype
-                    }, JsonRequestBehavior.AllowGet);
+                        Pagetype = objMVDetails.mivd_pagetype,
 
+                    }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
-                    if (!string.IsNullOrEmpty(result))
-                    {
-                        Zone = result;
-                        isSuccess = false;
-                        message = "Cannot proceed,User belong to " + result + " .Please select other category";
-                    }
-                    if (string.IsNullOrEmpty(result))
-                    {
-                        Zone = result;
-                        isSuccess = false;
-                        message = "Cannot proceed further,please try again later.";
-                    }
-                    return Json(new { IsSuccess = isSuccess, Message = message, Zonetype = res.Length }, JsonRequestBehavior.AllowGet);
 
+                    if (res.Length > 9)
+                    {
+                        isSuccess = true;
+                        message = "Vehicle details saved successfully";
+
+                        OwnDamageV = Convert.ToDecimal(res[0]);
+                        PremiumLiabilityV = Convert.ToDecimal(res[1]);
+                        MinValue = Convert.ToInt32(res[2]);
+                        Depreciation = Convert.ToInt32(res[3]);
+                        Zone = res[4];
+                        AdditionalAmt = Convert.ToDecimal(res[5]);
+                        govDiscount = Convert.ToDecimal(res[6]);
+                        PLgovDiscount = Convert.ToDecimal(res[7]);
+                        PLDriverAmt = Convert.ToDecimal(res[8]);
+                        PLPassengerAmt = Convert.ToDecimal(res[9]);
+                        return Json(new
+                        {
+                            IsSuccess = isSuccess,
+                            Message = message,
+                            OwnDamageValue = OwnDamageV,
+                            PremiumLiabilityValue = PremiumLiabilityV,
+                            VehMinValue = MinValue,
+                            DepreciationValue = Depreciation,
+                            Zonetype = Zone,
+                            AdditionAmt = AdditionalAmt,
+                            govDiscnt = govDiscount,
+                            PLgovDiscountValue = PLgovDiscount,
+                            PLDriverAmtValue = PLDriverAmt,
+                            PLPassengerAmtValue = PLPassengerAmt,
+                            Pagetype = objMVDetails.mivd_pagetype
+                        }, JsonRequestBehavior.AllowGet);
+
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(result))
+                        {
+                            Zone = result;
+                            isSuccess = false;
+                            message = "Cannot proceed,User belong to " + result + " .Please select other category";
+                        }
+                        if (string.IsNullOrEmpty(result))
+                        {
+                            Zone = result;
+                            isSuccess = false;
+                            message = "Cannot proceed further,please try again later.";
+                        }
+                        return Json(new { IsSuccess = isSuccess, Message = message, Zonetype = res.Length }, JsonRequestBehavior.AllowGet);
+
+                    }
                 }
-            }
+            
         }
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         [Route("InsertMIAppnReferenceno")]
@@ -1543,11 +1553,12 @@ namespace KGID.Controllers
         [Route("ScheduleOfPremium")]
         public ActionResult ScheduleOfPremium()
         {
-            VM_MotorInsuranceIDVDetails _IDVData = _IMotorInsuranceVehicleDetailsBll.IDVDetailsBll(17, 15102020114932);
+            VM_MotorInsuranceIDVDetails _IDVData = _IMotorInsuranceVehicleDetailsBll.IDVDetailsBll(Convert.ToInt64(Session["UID"]), Convert.ToInt64(Session["RID"]));
             if (_IDVData == null)
             {
                 _IDVData = new VM_MotorInsuranceIDVDetails();
             }
+
             //return this.PartialView("_IDVDetails", _IDVData);
             return View(_IDVData);
         }
