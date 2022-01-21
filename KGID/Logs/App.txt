@@ -2270,3 +2270,11 @@ update
 20 Jan 2022 18:06:11 - INFO  - Total Issues DDO 14
 20 Jan 2022 18:08:00 - INFO  - Pending Issues DDO 2
 20 Jan 2022 18:08:00 - INFO  - Total Issues DDO 14
+20 Jan 2022 18:24:53 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 18:26:40 - INFO  - result2
+20 Jan 2022 18:26:45 - INFO  - result2
+20 Jan 2022 18:28:19 - INFO  - result2
+20 Jan 2022 18:30:53 - INFO  - result2
+20 Jan 2022 18:42:46 - INFO  - GetMobileNumberOfInsured()
+20 Jan 2022 18:44:22 - INFO  - result2
+20 Jan 2022 18:46:13 - INFO  - result2
