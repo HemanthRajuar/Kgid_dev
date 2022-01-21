@@ -345,7 +345,7 @@ namespace DLL.KGIDMotorInsurance
                     new SqlParameter("@vehiclesubtype", vmVehicleDetails.mivd_vehicle_subtype_id),
                     new SqlParameter("@vehiclecategory", vmVehicleDetails.mivd_vehicle_category_id),
                     new SqlParameter("@vehiclemodel", vmVehicleDetails.mivd_type_of_model),
-
+                    new SqlParameter("@vehiclecategorytype", vmVehicleDetails.mivd_vehicle_category_type_id),
                     new SqlParameter("@makeofvehicle", vmVehicleDetails.mivd_make_of_vehicle),
                      new SqlParameter("@vehicleclass", vmVehicleDetails.mivd_vehicle_class_id),
                      new SqlParameter("@dateofregistration", Convert.ToDateTime(vmVehicleDetails.mivd_date_of_registration)),
@@ -356,7 +356,7 @@ namespace DLL.KGIDMotorInsurance
                       new SqlParameter("@year", vmVehicleDetails.mivd_year_of_manufacturer),
                       new SqlParameter("@chassisno", vmVehicleDetails.mivd_chasis_no),
                       new SqlParameter("@SettingCapacity", vmVehicleDetails.mivd_seating_capacity_including_driver),
-
+                          new SqlParameter("@cubiccapacity", vmVehicleDetails.mivd_cubic_capacity),
 
                 };
                     result = Convert.ToString(_Conn.ExecuteCmd(sqlparam, "sp_kgid_SaveMIRenewalVehicleDetails"));

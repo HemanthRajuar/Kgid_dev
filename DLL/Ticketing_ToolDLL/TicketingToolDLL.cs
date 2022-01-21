@@ -545,14 +545,14 @@ namespace DLL
                 string[] filenameList = filename.Split('.');
                 nameofTable = filenameList[0];
 
-
+                string registrationno = "";
 
                 //string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 //string tableQuery = @"select 1 from INFORMATION_SCHEMA.TABLES where TABLE_NAME='{0}'";
                 try
                 {
 
-
+                    
                     result = "Table Exist!!!";
                     filePath = UploadExcelSheetFiles("TableName", fileBase);
                     if (!string.IsNullOrEmpty(filePath))
@@ -568,485 +568,487 @@ namespace DLL
 
                             for (int row = 2; row <= range.Rows.Count; row++)
                             {
-                                string registrationno = ((_ExcelSheet.Range)range.Cells[row, 9]).Text;
+                                registrationno = ((_ExcelSheet.Range)range.Cells[row, 9]).Text;
                                 var temp = (from n in _db.tbl_motor_insurance_vehicle_details
                                             where n.mivd_registration_no == registrationno
                                             select n.mivd_registration_no).FirstOrDefault();
-                                if (temp == null || temp == "")
+                                try
                                 {
-                                    VM_MotorInsuranceProposerDetails objBD = new VM_MotorInsuranceProposerDetails();
-                                    string RefNo = DateTime.Now.ToString("yyyy-MM-dd HH:ffff").Replace("-", "").Replace(" ", "").Replace(":", "").Replace(".", "");
-                                    string ownername = ((_ExcelSheet.Range)range.Cells[row, 41]).Text;
-                                    string owneraddress = ((_ExcelSheet.Range)range.Cells[row, 42]).Text;
-
-                                    DLL.KGIDMotorInsurance.MotorInsuranceProposerDetailsDll cls = new DLL.KGIDMotorInsurance.MotorInsuranceProposerDetailsDll();
-                                    objBD.mipd_employee_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
-                                    objBD.mipd_pagetype = "New";
-                                    objBD.mipd_category = Convert.ToString(HttpContext.Current.Session["SelectedCategory"]); //Convert.ToString(HttpContext.Current.Session["Categories"]);
-                                    objBD.mipd_email = ((_ExcelSheet.Range)range.Cells[row, 6]).Text;
-                                    if (!string.IsNullOrEmpty(ownername) || !string.IsNullOrEmpty(owneraddress))
+                                    if (temp == null || temp == "")
                                     {
-                                        objBD.OwnerofTheVehicle = (ownername + " " + owneraddress);
+                                        VM_MotorInsuranceProposerDetails objBD = new VM_MotorInsuranceProposerDetails();
+                                        string RefNo = DateTime.Now.ToString("yyyy-MM-dd HH:ffff").Replace("-", "").Replace(" ", "").Replace(":", "").Replace(".", "");
+                                        string ownername = ((_ExcelSheet.Range)range.Cells[row, 41]).Text;
+                                        string owneraddress = ((_ExcelSheet.Range)range.Cells[row, 42]).Text;
+
+                                        DLL.KGIDMotorInsurance.MotorInsuranceProposerDetailsDll cls = new DLL.KGIDMotorInsurance.MotorInsuranceProposerDetailsDll();
+                                        objBD.mipd_employee_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
+                                        objBD.mipd_pagetype = "New";
+                                        objBD.mipd_category = Convert.ToString(HttpContext.Current.Session["SelectedCategory"]); //Convert.ToString(HttpContext.Current.Session["Categories"]);
+                                        objBD.mipd_email = ((_ExcelSheet.Range)range.Cells[row, 6]).Text;
+                                        if (!string.IsNullOrEmpty(ownername) || !string.IsNullOrEmpty(owneraddress))
+                                        {
+                                            objBD.OwnerofTheVehicle = (ownername + " " + owneraddress);
+                                        }
+                                        else
+                                        {
+                                            objBD.OwnerofTheVehicle = null;
+                                        }
+                                        //objBD.OwnerofTheVehicle = (!string.IsNullOrEmpty(ownername) && !string.IsNullOrEmpty(owneraddress) ? null : (ownername + " " + owneraddress));
+                                        objBD.mipd_address = ((_ExcelSheet.Range)range.Cells[row, 42]).Text;
+                                        objBD.mipd_fax_no = null;
+                                        //objBD.mipd_pincode = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 4]).Text);
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 4]).Text))
+                                        {
+                                            objBD.mipd_pincode = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 4]).Text);
+                                        }
+                                        else
+                                        {
+                                            objBD.mipd_pincode = null;
+                                        }
+
+
+                                        cls.SaveMIProposalAppnRefNo1(objBD, RefNo);
+
+                                        #region[VM_MotorInsuranceVehicleDetails]
+                                        VM_MotorInsuranceVehicleDetails vmVehicleDetails = new VM_MotorInsuranceVehicleDetails();
+
+                                        vmVehicleDetails.mivd_pagetype = "New";
+                                        vmVehicleDetails.mi_referenceno = Convert.ToInt64(RefNo);
+                                        vmVehicleDetails.mivd_employee_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
+                                        vmVehicleDetails.mivd_registration_no = ((_ExcelSheet.Range)range.Cells[row, 9]).Text;
+                                        vmVehicleDetails.mivd_registration_authority_and_location = string.Empty;
+                                        vmVehicleDetails.mivd_date_of_registration = ((_ExcelSheet.Range)range.Cells[row, 10]).Text;
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 11]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_rto_id = Convert.ToInt64(((_ExcelSheet.Range)range.Cells[row, 11]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_rto_id = null;
+                                        }
+                                        vmVehicleDetails.mivd_chasis_no = ((_ExcelSheet.Range)range.Cells[row, 14]).Text;
+                                        vmVehicleDetails.mivd_engine_no = ((_ExcelSheet.Range)range.Cells[row, 13]).Text;
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 17]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_cubic_capacity = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 17]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_cubic_capacity = null;
+                                        }
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 18]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_seating_capacity_including_driver = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 18]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_seating_capacity_including_driver = null;
+                                        }
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 21]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_weight = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 21]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_weight = 0;
+                                        }
+                                        //
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 24]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_category_type_id = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 24]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_category_type_id = null;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 15]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_make_of_vehicle1 = ((_ExcelSheet.Range)range.Cells[row, 15]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_make_of_vehicle1 = "";
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 16]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_type_of_model = ((_ExcelSheet.Range)range.Cells[row, 16]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_type_of_model = string.Empty;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 12]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_year_of_manufacturer = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 12]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_year_of_manufacturer = null;
+                                        }
+
+                                        vmVehicleDetails.mivd_manufacturer_month = "02";
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 19]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_fuel_type = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 19]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_fuel_type = null;
+                                        }
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 22]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_type_id = ((_ExcelSheet.Range)range.Cells[row, 22]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_type_id = string.Empty;
+                                        }
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 23]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_subtype_id = ((_ExcelSheet.Range)range.Cells[row, 23]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_subtype_id = string.Empty;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 25]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_category_id = ((_ExcelSheet.Range)range.Cells[row, 25]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_category_id = string.Empty;
+                                        }
+                                        vmVehicleDetails.mivd_vehicle_class_id = null;
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 37]).Text))
+                                        {
+                                            vmVehicleDetails.VehicleIDVAmount = ((_ExcelSheet.Range)range.Cells[row, 37]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.VehicleIDVAmount = string.Empty;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 8]).Text))
+                                        {
+                                            vmVehicleDetails.mipd_type_of_cover_id = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 8]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mipd_type_of_cover_id = null;
+                                        }
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 29]).Text))
+                                        {
+                                            vmVehicleDetails.p_mi_policy_number = ((_ExcelSheet.Range)range.Cells[row, 29]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.p_mi_policy_number = string.Empty;
+                                        }
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 31]).Text))
+                                        {
+                                            vmVehicleDetails.p_mi_from_date = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 31]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.p_mi_from_date = null;
+                                        }
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 32]).Text))
+                                        {
+                                            vmVehicleDetails.p_mi_to_date = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 32]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.p_mi_to_date = null;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 33]).Text))
+                                        {
+                                            vmVehicleDetails.p_mi_tpfrom_date = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 33]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.p_mi_tpfrom_date = null;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 34]).Text))
+                                        {
+                                            vmVehicleDetails.p_mi_tpto_date = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 34]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.p_mi_tpto_date = null;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 46]).Text))
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_fit_upto = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 46]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmVehicleDetails.mivd_vehicle_fit_upto = null;
+                                        }
+
+                                        DLL.KGIDMotorInsurance.MotorInsuranceVehicleDetailsDll cls1 = new DLL.KGIDMotorInsurance.MotorInsuranceVehicleDetailsDll();
+                                        //cls1.SaveMIVehicleDetailsData(vmVehicleDetails);
+                                        cls1.SaveMIVehicleDetailsDataExcel(vmVehicleDetails);
+                                        #endregion
+
+                                        #region[VM_MotorInsuranceOtherDetails]
+                                        VM_MotorInsuranceOtherDetails objPersonal = new VM_MotorInsuranceOtherDetails();
+
+
+                                        objPersonal.miod_emp_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
+                                        objPersonal.miod_application_id = Convert.ToInt64(RefNo);
+                                        //1
+                                        objPersonal.miod_is_non_conventioanal_source = false;
+                                        objPersonal.miod_is_non_conventioanal_source_details = null;
+                                        //2
+                                        objPersonal.miod_is_driving_tuitions = false;
+                                        //3
+                                        objPersonal.miod_is_geographical = false;
+                                        objPersonal.miod_geographical_ext1 = null;
+                                        //4
+                                        objPersonal.miod_is_own_premises = true;
+                                        //5
+                                        objPersonal.miod_is_commercial_purpose = false;
+                                        //6
+                                        objPersonal.miod_is_foreign_embasy = false;
+                                        //7
+                                        objPersonal.miod_is_vintage_car = false;
+                                        //8
+                                        objPersonal.miod_is_for_blind_or_ph = false;
+                                        //9
+                                        objPersonal.miod_is_fibre_glass_tank = false;
+                                        //10
+                                        objPersonal.miod_is_bi_fuel_system = false;
+                                        objPersonal.miod_bi_fuel_amount = null;
+                                        //11
+                                        objPersonal.miod_is_higher_deductible = false;
+                                        objPersonal.miod_higher_deductible_amount = null;
+                                        //12
+                                        objPersonal.miod_is_automobile_association_of_india = false;
+                                        objPersonal.miod_name_of_association = null;
+                                        objPersonal.miod_membership_no = null;
+                                        objPersonal.miod_date_of_expiry = null;
+                                        //13
+                                        objPersonal.miod_is_cover_legal_liability = false;
+                                        objPersonal.miod_cll_driver_conductor_count = null;
+                                        objPersonal.miod_cll_other_emp_count = null;
+                                        objPersonal.miod_cll_non_fare_passengers_count = null;
+                                        //14
+                                        objPersonal.miod_is_no_claim_bonus = false;
+                                        objPersonal.miod_is_no_claim_bonus_doc = null;
+                                        objPersonal.Miod_is_no_claim_bonus_doc_filename = null;
+                                        //15
+                                        objPersonal.miod_is_liability_third_parties = false;
+                                        //16
+                                        objPersonal.miod_is_higher_towing_charges = false;
+                                        objPersonal.miod_is_higher_towing_charges_amount = null;
+                                        //17
+                                        objPersonal.miod_is_include_personal_accident = false;
+                                        objPersonal.miod_pa_driver_conductor_count = null;
+                                        objPersonal.miod_pa_other_emp_count = null;
+                                        objPersonal.miod_pa_unnamed_passengers_count = null;
+                                        //18
+                                        objPersonal.miod_is_include_personal_accident_for_persons = false;
+                                        objPersonal.miod_ipap_name1 = null;
+                                        objPersonal.miod_ipap_name1_amount = null;
+                                        objPersonal.miod_ipap_name2 = null;
+                                        objPersonal.miod_ipap_name2_amount = null;
+                                        objPersonal.miod_ipap_name3 = null;
+                                        objPersonal.miod_ipap_name3_amount = null;
+                                        //19
+                                        objPersonal.miod_is_include_pa_cover_for_unnamed_persons = false;
+                                        objPersonal.miod_ipaun_name1 = null;
+                                        objPersonal.miod_ipaun_name1_amount = null;
+                                        objPersonal.miod_ipaun_name2 = null;
+                                        objPersonal.miod_ipaun_name2_amount = null;
+                                        objPersonal.miod_ipaun_name3 = null;
+                                        objPersonal.miod_ipaun_name3_amount = null;
+                                        //20
+                                        objPersonal.miod_is_anti_theft = false;
+                                        objPersonal.miod_is_anti_theft_doc = null;
+                                        objPersonal.Miod_is_anti_theft_doc_filename = null;
+
+                                        cls1.SaveMIOtherDetailsDll(objPersonal);
+                                        #endregion
+
+                                        #region[VM_MotorInsurancePreviousHistoryDetails]
+                                        VM_MotorInsurancePreviousHistoryDetails vmPreviousHistoryDetails = new VM_MotorInsurancePreviousHistoryDetails();
+
+                                        vmPreviousHistoryDetails.ph_DateOfPurchaseOfVehicle = null;
+                                        vmPreviousHistoryDetails.ph_DateOfPurchaseOfVehicle = null;
+                                        vmPreviousHistoryDetails.ph_PurchaseType = false;
+                                        vmPreviousHistoryDetails.ph_VehicleUsedPurposeA = false;
+                                        vmPreviousHistoryDetails.ph_VehicleUsedPurposeB = false;
+                                        vmPreviousHistoryDetails.ph_vehicleCondition = false;
+                                        vmPreviousHistoryDetails.ph_VehicleConditionReason = null;
+                                        vmPreviousHistoryDetails.ph_previousinsurerDetails = null;
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 29]).Text))
+                                        {
+                                            vmPreviousHistoryDetails.ph_previousinsurerNo = ((_ExcelSheet.Range)range.Cells[row, 29]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmPreviousHistoryDetails.ph_previousinsurerNo = string.Empty;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 31]).Text))
+                                        {
+                                            vmPreviousHistoryDetails.ph_insuranceFromDt = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 31]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmPreviousHistoryDetails.ph_insuranceFromDt = null;
+                                        }
+
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 32]).Text))
+                                        {
+                                            vmPreviousHistoryDetails.ph_insuranceToDt = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 32]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmPreviousHistoryDetails.ph_insuranceToDt = null;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 8]).Text))
+                                        {
+                                            vmPreviousHistoryDetails.ph_TypeOfCover = ((_ExcelSheet.Range)range.Cells[row, 8]).Text;
+                                        }
+                                        else
+                                        {
+                                            vmPreviousHistoryDetails.ph_TypeOfCover = string.Empty;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 35]).Text))
+                                        {
+                                            vmPreviousHistoryDetails.previous_vehicle_malus = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 35]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmPreviousHistoryDetails.previous_vehicle_malus = null;
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 36]).Text))
+                                        {
+                                            vmPreviousHistoryDetails.previous_vehicle_ncb = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 36]).Text);
+                                        }
+                                        else
+                                        {
+                                            vmPreviousHistoryDetails.previous_vehicle_ncb = null;
+                                        }
+                                        vmPreviousHistoryDetails.ph_InsuranceDeclined = false;
+                                        vmPreviousHistoryDetails.ph_InsuranceCancelled = false;
+                                        vmPreviousHistoryDetails.ph_CancelledReason = null;
+                                        vmPreviousHistoryDetails.ph_InsuranceImposed = false;
+                                        vmPreviousHistoryDetails.ph_Hire = false;
+                                        vmPreviousHistoryDetails.ph_Lease = false;
+                                        vmPreviousHistoryDetails.ph_Hypothecation = false;
+                                        vmPreviousHistoryDetails.ph_HReason = null;
+                                        vmPreviousHistoryDetails.ph_OtherInfo = null;
+                                        vmPreviousHistoryDetails.ph_EmployeeCode = Convert.ToInt64(HttpContext.Current.Session["UID"]);
+                                        vmPreviousHistoryDetails.ph_reference = Convert.ToInt64(RefNo);
+                                        vmPreviousHistoryDetails.mivd_pagetype = null;
+
+                                        cls1.SaveMIPreviousHistoryDetails(vmPreviousHistoryDetails);
+                                        #endregion
+
+                                        #region[Calculation]
+                                        // depreciationvalue
+                                        //int year_id = (string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 12]).Text) ? 0 : Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 12]).Text));
+                                        //string excelmonth = ((_ExcelSheet.Range)range.Cells[row, 43]).Text;
+                                        //string year = null;
+
+                                        //if (year_id > 0) { year = Get_Year(year_id); }
+
+                                        //DateTime DateofManufacture = Convert.ToDateTime(year + "-" + excelmonth + "-01");
+
+                                        DateTime DateofManufacture = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 20]).Text);
+                                        DateTime todayDate = Convert.ToDateTime(DateTime.Today);
+                                        int month = ((todayDate.Year - DateofManufacture.Year) * 12) + todayDate.Month - DateofManufacture.Month;
+                                        int vd_dep_value = Convert.ToInt32(getdepreciationvalue(month));
+                                        //int pvv = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 37]).Text);
+                                        decimal pvv = default(decimal);
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 37]).Text))
+                                        {
+                                            pvv = Convert.ToDecimal(((_ExcelSheet.Range)range.Cells[row, 37]).Text);
+                                        }
+                                        else
+                                        {
+                                            pvv = default(decimal);
+                                        }
+
+                                        decimal resultA = Convert.ToDecimal(pvv);
+                                        decimal DepreB = ((Convert.ToDecimal(resultA)) / 100) * Convert.ToDecimal(vd_dep_value);
+                                        decimal ValueC = Convert.ToDecimal(resultA) - Convert.ToDecimal(DepreB);
+                                        decimal TotalPVVNumeric = Math.Round(ValueC);
+                                        #endregion
+
+                                        #region[VM_MotorInsuranceIDVDetails]
+                                        VM_MotorInsuranceIDVDetails objIDV = new VM_MotorInsuranceIDVDetails();
+                                        objIDV.miidv_emp_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
+                                        objIDV.miidv_application_id = Convert.ToInt64(RefNo);
+                                        objIDV.miidv_vaahanidvamount = "0";
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 37]).Text))
+                                        {
+                                            objIDV.miidv_insured_declared_value_amount = ((_ExcelSheet.Range)range.Cells[row, 37]).Text;
+                                        }
+                                        else
+                                        {
+                                            objIDV.miidv_insured_declared_value_amount = "0";
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 47]).Text))
+                                        {
+                                            objIDV.vid_premium_short = ((_ExcelSheet.Range)range.Cells[row, 47]).Text;
+                                        }
+                                        else
+                                        {
+                                            objIDV.vid_premium_short = "0";
+                                        }
+                                        if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 48]).Text))
+                                        {
+                                            objIDV.vid_premium_excess = ((_ExcelSheet.Range)range.Cells[row, 48]).Text;
+                                        }
+                                        else
+                                        {
+                                            objIDV.vid_premium_excess = "0";
+                                        }
+                                        //if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 30]).Text))
+                                        //{
+                                        //    //var temp_amount = (_ExcelSheet.Range)range.Cells[row, 30]).Text;
+                                        //    objIDV.premium_amount = Convert.ToDecimal(((_ExcelSheet.Range)range.Cells[row, 30]).Text);
+                                        //}
+                                        //else
+                                        //{ 
+                                        //    objIDV.premium_amount = default(decimal);
+                                        //}
+                                        objIDV.miidv_non_electrical_accessories_amount = "0";
+                                        objIDV.miidv_electrical_accessories_amount = "0";
+                                        objIDV.miidv_side_car_trailer_amount = "0";
+                                        objIDV.miidv_value_of_cng_lpg_amount = "0";
+                                        objIDV.miidv_total_amount = Convert.ToString(TotalPVVNumeric);// tbl_vehicle_depreciation_master/mFD
+                                        objIDV.premium_amount = 0;// Calculation
+                                        objIDV.miidv_pagetype = null;
+                                        cls1.SaveMIIDVDetailsDll(objIDV);
+
+                                        #endregion
+                                        // Total Amount Payable Rs
+                                        //int ddlTypeofCover = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 8]).Text);
+                                        //int ddlCategory = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 24]).Text);
+
+                                        //int vehicalAge = Convert.ToInt32(getvehicalAge(ddlCategory));
+                                        //int zone_id= Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 28]).Text);
+                                        //int ODValue = Convert.ToInt32(getODValue(ddlCategory, vehicalAge, zone_id,));
+
+
                                     }
                                     else
                                     {
-                                        objBD.OwnerofTheVehicle = null;
-                                    }
-                                    //objBD.OwnerofTheVehicle = (!string.IsNullOrEmpty(ownername) && !string.IsNullOrEmpty(owneraddress) ? null : (ownername + " " + owneraddress));
-                                    objBD.mipd_address = ((_ExcelSheet.Range)range.Cells[row, 42]).Text;
-                                    objBD.mipd_fax_no = null;
-                                    //objBD.mipd_pincode = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 4]).Text);
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 4]).Text))
-                                    {
-                                        objBD.mipd_pincode = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 4]).Text);
-                                    }
-                                    else
-                                    {
-                                        objBD.mipd_pincode = null;
-                                    }
+                                        //KGID_Models.KGID_Verification.tbl_ExcelUpload awd = null;
+                                        tbl_ExcelUpload awd = new tbl_ExcelUpload();
 
-
-                                    cls.SaveMIProposalAppnRefNo1(objBD, RefNo);
-
-                                    #region[VM_MotorInsuranceVehicleDetails]
-                                    VM_MotorInsuranceVehicleDetails vmVehicleDetails = new VM_MotorInsuranceVehicleDetails();
-
-                                    vmVehicleDetails.mivd_pagetype = "New";
-                                    vmVehicleDetails.mi_referenceno = Convert.ToInt64(RefNo);
-                                    vmVehicleDetails.mivd_employee_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
-                                    vmVehicleDetails.mivd_registration_no = ((_ExcelSheet.Range)range.Cells[row, 9]).Text;
-                                    vmVehicleDetails.mivd_registration_authority_and_location = string.Empty;
-                                    vmVehicleDetails.mivd_date_of_registration = ((_ExcelSheet.Range)range.Cells[row, 10]).Text;
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 11]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_rto_id = Convert.ToInt64(((_ExcelSheet.Range)range.Cells[row, 11]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_rto_id = null;
-                                    }
-                                    vmVehicleDetails.mivd_chasis_no = ((_ExcelSheet.Range)range.Cells[row, 14]).Text;
-                                    vmVehicleDetails.mivd_engine_no = ((_ExcelSheet.Range)range.Cells[row, 13]).Text;
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 17]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_cubic_capacity = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 17]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_cubic_capacity = null;
-                                    }
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 18]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_seating_capacity_including_driver = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 18]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_seating_capacity_including_driver = null;
-                                    }
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 21]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_weight = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 21]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_weight = 0;
-                                    }
-                                    //
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 24]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_category_type_id = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 24]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_category_type_id = null;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 15]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_make_of_vehicle1 = ((_ExcelSheet.Range)range.Cells[row, 15]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_make_of_vehicle1 = "";
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 16]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_type_of_model = ((_ExcelSheet.Range)range.Cells[row, 16]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_type_of_model = string.Empty;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 12]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_year_of_manufacturer = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 12]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_year_of_manufacturer = null;
-                                    }
-
-                                    vmVehicleDetails.mivd_manufacturer_month = "02";
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 19]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_fuel_type = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 19]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_fuel_type = null;
-                                    }
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 22]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_type_id = ((_ExcelSheet.Range)range.Cells[row, 22]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_type_id = string.Empty;
-                                    }
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 23]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_subtype_id = ((_ExcelSheet.Range)range.Cells[row, 23]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_subtype_id = string.Empty;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 25]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_category_id = ((_ExcelSheet.Range)range.Cells[row, 25]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_category_id = string.Empty;
-                                    }
-                                    vmVehicleDetails.mivd_vehicle_class_id = null;
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 37]).Text))
-                                    {
-                                        vmVehicleDetails.VehicleIDVAmount = ((_ExcelSheet.Range)range.Cells[row, 37]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.VehicleIDVAmount = string.Empty;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 8]).Text))
-                                    {
-                                        vmVehicleDetails.mipd_type_of_cover_id = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 8]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mipd_type_of_cover_id = null;
-                                    }
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 29]).Text))
-                                    {
-                                        vmVehicleDetails.p_mi_policy_number = ((_ExcelSheet.Range)range.Cells[row, 29]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.p_mi_policy_number = string.Empty;
-                                    }
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 31]).Text))
-                                    {
-                                        vmVehicleDetails.p_mi_from_date = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 31]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.p_mi_from_date = null;
-                                    }
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 32]).Text))
-                                    {
-                                        vmVehicleDetails.p_mi_to_date = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 32]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.p_mi_to_date = null;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 33]).Text))
-                                    {
-                                        vmVehicleDetails.p_mi_tpfrom_date = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 33]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.p_mi_tpfrom_date = null;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 34]).Text))
-                                    {
-                                        vmVehicleDetails.p_mi_tpto_date = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 34]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.p_mi_tpto_date = null;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 46]).Text))
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_fit_upto = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 46]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmVehicleDetails.mivd_vehicle_fit_upto = null;
-                                    }
-
-                                    DLL.KGIDMotorInsurance.MotorInsuranceVehicleDetailsDll cls1 = new DLL.KGIDMotorInsurance.MotorInsuranceVehicleDetailsDll();
-                                    //cls1.SaveMIVehicleDetailsData(vmVehicleDetails);
-                                    cls1.SaveMIVehicleDetailsDataExcel(vmVehicleDetails);
-                                    #endregion
-
-                                    #region[VM_MotorInsuranceOtherDetails]
-                                    VM_MotorInsuranceOtherDetails objPersonal = new VM_MotorInsuranceOtherDetails();
-
-
-                                    objPersonal.miod_emp_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
-                                    objPersonal.miod_application_id = Convert.ToInt64(RefNo);
-                                    //1
-                                    objPersonal.miod_is_non_conventioanal_source = false;
-                                    objPersonal.miod_is_non_conventioanal_source_details = null;
-                                    //2
-                                    objPersonal.miod_is_driving_tuitions = false;
-                                    //3
-                                    objPersonal.miod_is_geographical = false;
-                                    objPersonal.miod_geographical_ext1 = null;
-                                    //4
-                                    objPersonal.miod_is_own_premises = true;
-                                    //5
-                                    objPersonal.miod_is_commercial_purpose = false;
-                                    //6
-                                    objPersonal.miod_is_foreign_embasy = false;
-                                    //7
-                                    objPersonal.miod_is_vintage_car = false;
-                                    //8
-                                    objPersonal.miod_is_for_blind_or_ph = false;
-                                    //9
-                                    objPersonal.miod_is_fibre_glass_tank = false;
-                                    //10
-                                    objPersonal.miod_is_bi_fuel_system = false;
-                                    objPersonal.miod_bi_fuel_amount = null;
-                                    //11
-                                    objPersonal.miod_is_higher_deductible = false;
-                                    objPersonal.miod_higher_deductible_amount = null;
-                                    //12
-                                    objPersonal.miod_is_automobile_association_of_india = false;
-                                    objPersonal.miod_name_of_association = null;
-                                    objPersonal.miod_membership_no = null;
-                                    objPersonal.miod_date_of_expiry = null;
-                                    //13
-                                    objPersonal.miod_is_cover_legal_liability = false;
-                                    objPersonal.miod_cll_driver_conductor_count = null;
-                                    objPersonal.miod_cll_other_emp_count = null;
-                                    objPersonal.miod_cll_non_fare_passengers_count = null;
-                                    //14
-                                    objPersonal.miod_is_no_claim_bonus = false;
-                                    objPersonal.miod_is_no_claim_bonus_doc = null;
-                                    objPersonal.Miod_is_no_claim_bonus_doc_filename = null;
-                                    //15
-                                    objPersonal.miod_is_liability_third_parties = false;
-                                    //16
-                                    objPersonal.miod_is_higher_towing_charges = false;
-                                    objPersonal.miod_is_higher_towing_charges_amount = null;
-                                    //17
-                                    objPersonal.miod_is_include_personal_accident = false;
-                                    objPersonal.miod_pa_driver_conductor_count = null;
-                                    objPersonal.miod_pa_other_emp_count = null;
-                                    objPersonal.miod_pa_unnamed_passengers_count = null;
-                                    //18
-                                    objPersonal.miod_is_include_personal_accident_for_persons = false;
-                                    objPersonal.miod_ipap_name1 = null;
-                                    objPersonal.miod_ipap_name1_amount = null;
-                                    objPersonal.miod_ipap_name2 = null;
-                                    objPersonal.miod_ipap_name2_amount = null;
-                                    objPersonal.miod_ipap_name3 = null;
-                                    objPersonal.miod_ipap_name3_amount = null;
-                                    //19
-                                    objPersonal.miod_is_include_pa_cover_for_unnamed_persons = false;
-                                    objPersonal.miod_ipaun_name1 = null;
-                                    objPersonal.miod_ipaun_name1_amount = null;
-                                    objPersonal.miod_ipaun_name2 = null;
-                                    objPersonal.miod_ipaun_name2_amount = null;
-                                    objPersonal.miod_ipaun_name3 = null;
-                                    objPersonal.miod_ipaun_name3_amount = null;
-                                    //20
-                                    objPersonal.miod_is_anti_theft = false;
-                                    objPersonal.miod_is_anti_theft_doc = null;
-                                    objPersonal.Miod_is_anti_theft_doc_filename = null;
-
-                                    cls1.SaveMIOtherDetailsDll(objPersonal);
-                                    #endregion
-
-                                    #region[VM_MotorInsurancePreviousHistoryDetails]
-                                    VM_MotorInsurancePreviousHistoryDetails vmPreviousHistoryDetails = new VM_MotorInsurancePreviousHistoryDetails();
-
-                                    vmPreviousHistoryDetails.ph_DateOfPurchaseOfVehicle = null;
-                                    vmPreviousHistoryDetails.ph_DateOfPurchaseOfVehicle = null;
-                                    vmPreviousHistoryDetails.ph_PurchaseType = false;
-                                    vmPreviousHistoryDetails.ph_VehicleUsedPurposeA = false;
-                                    vmPreviousHistoryDetails.ph_VehicleUsedPurposeB = false;
-                                    vmPreviousHistoryDetails.ph_vehicleCondition = false;
-                                    vmPreviousHistoryDetails.ph_VehicleConditionReason = null;
-                                    vmPreviousHistoryDetails.ph_previousinsurerDetails = null;
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 29]).Text))
-                                    {
-                                        vmPreviousHistoryDetails.ph_previousinsurerNo = ((_ExcelSheet.Range)range.Cells[row, 29]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmPreviousHistoryDetails.ph_previousinsurerNo = string.Empty;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 31]).Text))
-                                    {
-                                        vmPreviousHistoryDetails.ph_insuranceFromDt = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 31]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmPreviousHistoryDetails.ph_insuranceFromDt = null;
-                                    }
-
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 32]).Text))
-                                    {
-                                        vmPreviousHistoryDetails.ph_insuranceToDt = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 32]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmPreviousHistoryDetails.ph_insuranceToDt = null;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 8]).Text))
-                                    {
-                                        vmPreviousHistoryDetails.ph_TypeOfCover = ((_ExcelSheet.Range)range.Cells[row, 8]).Text;
-                                    }
-                                    else
-                                    {
-                                        vmPreviousHistoryDetails.ph_TypeOfCover = string.Empty;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 35]).Text))
-                                    {
-                                        vmPreviousHistoryDetails.previous_vehicle_malus = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 35]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmPreviousHistoryDetails.previous_vehicle_malus = null;
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 36]).Text))
-                                    {
-                                        vmPreviousHistoryDetails.previous_vehicle_ncb = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 36]).Text);
-                                    }
-                                    else
-                                    {
-                                        vmPreviousHistoryDetails.previous_vehicle_ncb = null;
-                                    }
-                                    vmPreviousHistoryDetails.ph_InsuranceDeclined = false;
-                                    vmPreviousHistoryDetails.ph_InsuranceCancelled = false;
-                                    vmPreviousHistoryDetails.ph_CancelledReason = null;
-                                    vmPreviousHistoryDetails.ph_InsuranceImposed = false;
-                                    vmPreviousHistoryDetails.ph_Hire = false;
-                                    vmPreviousHistoryDetails.ph_Lease = false;
-                                    vmPreviousHistoryDetails.ph_Hypothecation = false;
-                                    vmPreviousHistoryDetails.ph_HReason = null;
-                                    vmPreviousHistoryDetails.ph_OtherInfo = null;
-                                    vmPreviousHistoryDetails.ph_EmployeeCode = Convert.ToInt64(HttpContext.Current.Session["UID"]);
-                                    vmPreviousHistoryDetails.ph_reference = Convert.ToInt64(RefNo);
-                                    vmPreviousHistoryDetails.mivd_pagetype = null;
-
-                                    cls1.SaveMIPreviousHistoryDetails(vmPreviousHistoryDetails);
-                                    #endregion
-
-                                    #region[Calculation]
-                                    // depreciationvalue
-                                    //int year_id = (string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 12]).Text) ? 0 : Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 12]).Text));
-                                    //string excelmonth = ((_ExcelSheet.Range)range.Cells[row, 43]).Text;
-                                    //string year = null;
-
-                                    //if (year_id > 0) { year = Get_Year(year_id); }
-
-                                    //DateTime DateofManufacture = Convert.ToDateTime(year + "-" + excelmonth + "-01");
-
-                                    DateTime DateofManufacture = Convert.ToDateTime(((_ExcelSheet.Range)range.Cells[row, 20]).Text);
-                                    DateTime todayDate = Convert.ToDateTime(DateTime.Today);
-                                    int month = ((todayDate.Year - DateofManufacture.Year) * 12) + todayDate.Month - DateofManufacture.Month;
-                                    int vd_dep_value = Convert.ToInt32(getdepreciationvalue(month));
-                                    //int pvv = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 37]).Text);
-                                    decimal pvv = default(decimal);
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 37]).Text))
-                                    {
-                                        pvv = Convert.ToDecimal(((_ExcelSheet.Range)range.Cells[row, 37]).Text);
-                                    }
-                                    else
-                                    {
-                                        pvv = default(decimal);
-                                    }
-
-                                    decimal resultA = Convert.ToDecimal(pvv);
-                                    decimal DepreB = ((Convert.ToDecimal(resultA)) / 100) * Convert.ToDecimal(vd_dep_value);
-                                    decimal ValueC = Convert.ToDecimal(resultA) - Convert.ToDecimal(DepreB);
-                                    decimal TotalPVVNumeric = Math.Round(ValueC);
-                                    #endregion
-
-                                    #region[VM_MotorInsuranceIDVDetails]
-                                    VM_MotorInsuranceIDVDetails objIDV = new VM_MotorInsuranceIDVDetails();
-                                    objIDV.miidv_emp_id = Convert.ToInt64(HttpContext.Current.Session["UID"]);
-                                    objIDV.miidv_application_id = Convert.ToInt64(RefNo);
-                                    objIDV.miidv_vaahanidvamount = "0";
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 37]).Text))
-                                    {
-                                        objIDV.miidv_insured_declared_value_amount = ((_ExcelSheet.Range)range.Cells[row, 37]).Text;
-                                    }
-                                    else
-                                    {
-                                        objIDV.miidv_insured_declared_value_amount = "0";
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 47]).Text))
-                                    {
-                                        objIDV.vid_premium_short = ((_ExcelSheet.Range)range.Cells[row, 47]).Text;
-                                    }
-                                    else
-                                    {
-                                        objIDV.vid_premium_short = "0";
-                                    }
-                                    if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 48]).Text))
-                                    {
-                                        objIDV.vid_premium_excess = ((_ExcelSheet.Range)range.Cells[row, 48]).Text;
-                                    }
-                                    else
-                                    {
-                                        objIDV.vid_premium_excess = "0";
-                                    }
-                                    //if (!string.IsNullOrEmpty(((_ExcelSheet.Range)range.Cells[row, 30]).Text))
-                                    //{
-                                    //    //var temp_amount = (_ExcelSheet.Range)range.Cells[row, 30]).Text;
-                                    //    objIDV.premium_amount = Convert.ToDecimal(((_ExcelSheet.Range)range.Cells[row, 30]).Text);
-                                    //}
-                                    //else
-                                    //{ 
-                                    //    objIDV.premium_amount = default(decimal);
-                                    //}
-                                    objIDV.miidv_non_electrical_accessories_amount = "0";
-                                    objIDV.miidv_electrical_accessories_amount = "0";
-                                    objIDV.miidv_side_car_trailer_amount = "0";
-                                    objIDV.miidv_value_of_cng_lpg_amount = "0";
-                                    objIDV.miidv_total_amount = Convert.ToString(TotalPVVNumeric);// tbl_vehicle_depreciation_master/mFD
-                                    objIDV.premium_amount = 0;// Calculation
-                                    objIDV.miidv_pagetype = null;
-                                    cls1.SaveMIIDVDetailsDll(objIDV);
-
-                                    #endregion
-                                    // Total Amount Payable Rs
-                                    //int ddlTypeofCover = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 8]).Text);
-                                    //int ddlCategory = Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 24]).Text);
-
-                                    //int vehicalAge = Convert.ToInt32(getvehicalAge(ddlCategory));
-                                    //int zone_id= Convert.ToInt32(((_ExcelSheet.Range)range.Cells[row, 28]).Text);
-                                    //int ODValue = Convert.ToInt32(getODValue(ddlCategory, vehicalAge, zone_id,));
-
-
-                                }
-                                else
-                                {
-                                    //KGID_Models.KGID_Verification.tbl_ExcelUpload awd = null;
-                                    tbl_ExcelUpload awd = new tbl_ExcelUpload();
-                                    
                                         //using (DbConnectionKGID context = new DbConnectionKGID())
                                         //{
                                         awd.Registrationno = registrationno;
@@ -1057,9 +1059,25 @@ namespace DLL
                                         _db.SaveChanges();
                                         //context.SaveChangesAsync();
                                         //}
-                                  
 
+
+                                    }
                                 }
+                                catch(Exception ex)
+                                {
+                                    tbl_ExcelUpload awd = new tbl_ExcelUpload();
+
+                                    //using (DbConnectionKGID context = new DbConnectionKGID())
+                                    //{
+                                    awd.Registrationno = registrationno;
+                                    awd.Remarks = ex.Message.ToString();
+                                    awd.UpdatedOn = DateTime.UtcNow;
+
+                                    _db.tbl_ExcelUpload.Add(awd);
+                                    _db.SaveChanges();
+                                    continue;
+                                }
+                                
 
                             }
 
@@ -1077,8 +1095,18 @@ namespace DLL
                     //filePath
                     result = "Error!!!";
                     Console.WriteLine(ex);
-                    workbook.Close(0);
-                    application.Quit();
+                    tbl_ExcelUpload awd = new tbl_ExcelUpload();
+
+                    //using (DbConnectionKGID context = new DbConnectionKGID())
+                    //{
+                    awd.Registrationno = registrationno;
+                    awd.Remarks = "Error!!!";
+                    awd.UpdatedOn = DateTime.UtcNow;
+
+                    _db.tbl_ExcelUpload.Add(awd);
+                    _db.SaveChanges();                    
+                    //workbook.Close(0);
+                    //application.Quit();
                 }
 
             LoopEnd:

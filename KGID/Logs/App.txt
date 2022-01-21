@@ -2278,3 +2278,159 @@ update
 20 Jan 2022 18:42:46 - INFO  - GetMobileNumberOfInsured()
 20 Jan 2022 18:44:22 - INFO  - result2
 20 Jan 2022 18:46:13 - INFO  - result2
+21 Jan 2022 11:12:53 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 11:13:48 - INFO  - Pending Issues CWD 1
+21 Jan 2022 11:13:48 - INFO  - Total Issues CWD 24
+21 Jan 2022 11:36:21 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 11:39:29 - INFO  - Pending Issues CWD 1
+21 Jan 2022 11:39:29 - INFO  - Total Issues CWD 24
+21 Jan 2022 11:48:07 - INFO  - Pending Issues CWD 0
+21 Jan 2022 11:48:07 - INFO  - Total Issues CWD 24
+21 Jan 2022 11:48:23 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 11:49:11 - INFO  - Pending Issues DIO 2
+21 Jan 2022 11:49:11 - INFO  - Total Issues DIO 126
+21 Jan 2022 12:54:45 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 13:20:07 - INFO  - result1.726,26935,30000,30,Zone C,0,20,20,25,75
+21 Jan 2022 13:20:11 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2019-11-01
+10-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Kodagu
+ 
+Place= Rest of India
+9
+10
+4==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+26==>@Depreciation_year
+4==>@Depreciation_Id
+30==>@Depreciation_Value
+7==>@@GVWLid
+2==>@@Passengers
+11
+5==>@Zoneid
+Zone C==>@Zone
+12
+1.726  @OwnDamageValue
+73==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+30000==>@VehicleMinValue
+15==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+26935
+POLICY DETAILS
+update
+17
+1.726,26935,30000,30,Zone C,0,20,20,25,75
+21 Jan 2022 13:20:11 - INFO  - result
+21 Jan 2022 15:37:31 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 15:37:36 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 15:38:35 - INFO  - result2
+21 Jan 2022 15:38:37 - INFO  - result1
+21 Jan 2022 15:55:18 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 15:57:29 - INFO  - result2
+21 Jan 2022 15:59:34 - INFO  - result1
+21 Jan 2022 16:00:59 - INFO  - result2
+21 Jan 2022 16:01:41 - INFO  - result1
+21 Jan 2022 16:02:14 - INFO  - result2
+21 Jan 2022 16:03:03 - INFO  - result1
+21 Jan 2022 16:03:29 - INFO  - result2
+21 Jan 2022 16:04:28 - INFO  - result1
+21 Jan 2022 16:04:55 - INFO  - result2
+21 Jan 2022 16:05:15 - INFO  - result1
+21 Jan 2022 16:08:38 - INFO  - result2
+21 Jan 2022 16:11:45 - INFO  - result1
+21 Jan 2022 16:12:08 - INFO  - result2
+21 Jan 2022 16:13:36 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 16:17:55 - INFO  - result2
+21 Jan 2022 16:20:32 - INFO  - result1
+21 Jan 2022 16:22:04 - INFO  - result2
+21 Jan 2022 16:24:48 - INFO  - result1
+21 Jan 2022 16:33:35 - INFO  - result2
+21 Jan 2022 16:35:31 - INFO  - result1
+21 Jan 2022 16:36:39 - INFO  - result2
+21 Jan 2022 16:37:30 - INFO  - result1
+21 Jan 2022 16:38:40 - INFO  - result2
+21 Jan 2022 16:42:13 - INFO  - result1
+21 Jan 2022 16:44:44 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 16:53:01 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 16:55:02 - INFO  - result2
+21 Jan 2022 16:57:19 - INFO  - result1.743,26935,30000,20,Zone B,0,20,20,25,75
+21 Jan 2022 16:57:26 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2020-1-01
+02-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+4==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+24==>@Depreciation_year
+3==>@Depreciation_Id
+20==>@Depreciation_Value
+7==>@@GVWLid
+3==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+30000==>@VehicleMinValue
+15==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+26935
+POLICY DETAILS
+update
+17
+1.743,26935,30000,20,Zone B,0,20,20,25,75
+21 Jan 2022 16:57:26 - INFO  - result
+21 Jan 2022 17:22:00 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 17:32:03 - INFO  - result2

@@ -51,7 +51,7 @@ namespace DLL.KGIDMotorInsurance
                         MIPolicyToDate = dataRow.Field<DateTime?>("p_mi_to_date"),
                         MIRenewalStatus = dataRow.Field<string>("p_mi_RenewalStatus"),
                         MIChassisNo = dataRow.Field<string>("mivd_chasis_no"),
-
+                        MIOwnerOfVehicle = dataRow.Field<string>("mia_owner_of_the_vehicle"),
                         MIVehicleMakeName = dataRow.Field<string>("vm_vehicle_make_desc"),
                         //MIVehicleManufactureName = dataRow.Field<string>("vm_vehicle_manufacture_desc"),
                         MIVehicleModelName = dataRow.Field<string>("mivd_type_of_model"),
@@ -85,7 +85,7 @@ namespace DLL.KGIDMotorInsurance
                         MIPolicyToDate = dataRow.Field<DateTime?>("p_mi_tpto_date"),
                         MIRenewalStatus = dataRow.Field<string>("p_mi_RenewalStatus"),
                         MIChassisNo = dataRow.Field<string>("mivd_chasis_no"),
-
+                        MIOwnerOfVehicle = dataRow.Field<string>("mia_owner_of_the_vehicle"),
                         MIVehicleMakeName = dataRow.Field<string>("vm_vehicle_make_desc"),
                         //MIVehicleManufactureName = dataRow.Field<string>("vm_vehicle_manufacture_desc"),
                         MIVehicleModelName = dataRow.Field<string>("mivd_type_of_model"),

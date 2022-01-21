@@ -46,7 +46,7 @@ namespace KGID_Models.KGIDMotorInsurance
             public int? MIWorkflowStatus { get; set; }
             public string MIRenewalStatus { get; set; }
             public string MIChassisNo { get; set; }
-
+            public string MIOwnerOfVehicle { get; set; }
             public int MITypeofCover { get; set; }
 
             public string MItypeofcoverDesc { get; set; }

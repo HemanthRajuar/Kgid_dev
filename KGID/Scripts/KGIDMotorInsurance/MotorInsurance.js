@@ -3015,27 +3015,42 @@ function sum() {
         var res13 = Math.round(txttotABValue).toFixed(2)
         //document.getElementById('txttotAB').value = ReplaceNumberWithCommas(res13);
         //document.getElementById('txtpremium').value = ReplaceNumberWithCommas(res13);
+        var txtsgstamtValue = 0;
+        var res14 = 0;
+        var txtcgstamtValue = 0;
+        var res15 = 0;
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+            $('#txttotAB').val(res13);
 
-        $('#txttotAB').val(res13);
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
 
-        $('#txtpyd').val($('#txtPremiumShort').val());
-        $('#txtcyd').val($('#txtPremiumExcess').val());
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
 
-        //totalAmount after premium short and excess
-        var txttotAB = parseFloat($('#txttotAB').val());
-        var txtpyd = parseFloat($('#txtpyd').val());
-        var txtcyd = parseFloat($('#txtcyd').val());
-        var _totalamt = txttotAB + txtpyd - txtcyd;
-        var totalamt = Math.round(_totalamt).toFixed(2);
-        $('#txttotalamt').val(totalamt);
+            //----------GST-------------//
+            var txttotalamt = parseFloat($('#txttotalamt').val());
 
-        //----------GST-------------//
-        var txttotalamt = parseFloat($('#txttotalamt').val());
+             txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+             res14 = Math.round(txtsgstamtValue).toFixed(2);
+             txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+             res15 = Math.round(txtcgstamtValue).toFixed(2);
+        }
+        else {
+            $('#txttotAB').val(res13);
 
-        var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
-        var res14 = Math.round(txtsgstamtValue).toFixed(2);
-        var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
-        var res15 = Math.round(txtcgstamtValue).toFixed(2);
+            $('#txtpyd').val('');
+            $('#txtcyd').val('');
+             txtsgstamtValue = ((parseFloat(res13)) / 100) * 9;
+             res14 = Math.round(txtsgstamtValue).toFixed(2);
+             txtcgstamtValue = ((parseFloat(res13)) / 100) * 9;
+             res15 = Math.round(txtcgstamtValue).toFixed(2);
+        }
         //txtgstamt
         //var txtgstamtValue = ((parseFloat(res13)) / 100) * 18;
         //var res14 = Math.round(txtgstamtValue).toFixed(2)
@@ -3214,28 +3229,42 @@ function sum() {
         var res13 = Math.round(txttotABValue).toFixed(2)
         //document.getElementById('txttotAB').value = ReplaceNumberWithCommas(res13);
         //document.getElementById('txtpremium').value = ReplaceNumberWithCommas(res13);
+        var txtsgstamtValue = 0;
+        var res14 = 0;
+        var txtcgstamtValue = 0;
+        var res15 = 0;
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+            $('#txttotAB').val(res13);
 
-        $('#txttotAB').val(res13);
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
 
-        $('#txtpyd').val($('#txtPremiumShort').val());
-        $('#txtcyd').val($('#txtPremiumExcess').val());
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
 
-        //totalAmount after premium short and excess
-        var txttotAB = parseFloat($('#txttotAB').val());
-        var txtpyd = parseFloat($('#txtpyd').val());
-        var txtcyd = parseFloat($('#txtcyd').val());
-        var _totalamt = txttotAB + txtpyd - txtcyd;
-        var totalamt = Math.round(_totalamt).toFixed(2);
-        $('#txttotalamt').val(totalamt);
-        
+            //----------GST-------------//
+            var txttotalamt = parseFloat($('#txttotalamt').val());
 
-        //----------GST-------------//
-        var txttotalamt = parseFloat($('#txttotalamt').val());
+            txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            res14 = Math.round(txtsgstamtValue).toFixed(2);
+            txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            res15 = Math.round(txtcgstamtValue).toFixed(2);
+        }
+        else {
+            $('#txttotAB').val(res13);
 
-        var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
-        var res14 = Math.round(txtsgstamtValue).toFixed(2);
-        var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
-        var res15 = Math.round(txtcgstamtValue).toFixed(2);
+            $('#txtpyd').val('');
+            $('#txtcyd').val('');
+            txtsgstamtValue = ((parseFloat(res13)) / 100) * 9;
+            res14 = Math.round(txtsgstamtValue).toFixed(2);
+            txtcgstamtValue = ((parseFloat(res13)) / 100) * 9;
+            res15 = Math.round(txtcgstamtValue).toFixed(2);
+        }
         //txtgstamt
         //var txtgstamtValue = ((parseFloat(res13)) / 100) * 18;
         //var res14 = Math.round(txtgstamtValue).toFixed(2)
@@ -3469,28 +3498,42 @@ function sum() {
         var res13 = Math.round(txttotABValue).toFixed(2)
         //document.getElementById('txttotAB').value = ReplaceNumberWithCommas(res13);
         //document.getElementById('txtpremium').value = ReplaceNumberWithCommas(res13);
+        var txtsgstamtValue = 0;
+        var res14 = 0;
+        var txtcgstamtValue = 0;
+        var res15 = 0;
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+            $('#txttotAB').val(res13);
 
-        $('#txttotAB').val(res13);
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
 
-        $('#txtpyd').val($('#txtPremiumShort').val());
-        $('#txtcyd').val($('#txtPremiumExcess').val());
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
 
-        //totalAmount after premium short and excess
-        var txttotAB = parseFloat($('#txttotAB').val());
-        var txtpyd = parseFloat($('#txtpyd').val());
-        var txtcyd = parseFloat($('#txtcyd').val());
-        var _totalamt = txttotAB + txtpyd - txtcyd;
-        var totalamt = Math.round(_totalamt).toFixed(2);
-        $('#txttotalamt').val(totalamt);
-        
+            //----------GST-------------//
+            var txttotalamt = parseFloat($('#txttotalamt').val());
 
-        //----------GST-------------//
-        var txttotalamt = parseFloat($('#txttotalamt').val());
+             txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+             res14 = Math.round(txtsgstamtValue).toFixed(2);
+             txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+             res15 = Math.round(txtcgstamtValue).toFixed(2);
+        }
+        else {
+            $('#txttotAB').val(res13);
 
-        var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
-        var res14 = Math.round(txtsgstamtValue).toFixed(2);
-        var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
-        var res15 = Math.round(txtcgstamtValue).toFixed(2);
+            $('#txtpyd').val('');
+            $('#txtcyd').val('');
+             txtsgstamtValue = ((parseFloat(res13)) / 100) * 9;
+             res14 = Math.round(txtsgstamtValue).toFixed(2);
+             txtcgstamtValue = ((parseFloat(res13)) / 100) * 9;
+             res15 = Math.round(txtcgstamtValue).toFixed(2);
+        }
         //txtgstamt
         //var txtgstamtValue = ((parseFloat(res13)) / 100) * 18;
         //var res14 = Math.round(txtgstamtValue).toFixed(2)
@@ -3686,27 +3729,43 @@ function sum() {
         var res13 = Math.round(txttotABValue).toFixed(2)
         //document.getElementById('txttotAB').value = ReplaceNumberWithCommas(res13);
         //document.getElementById('txtpremium').value = ReplaceNumberWithCommas(res13);
+        var txtsgstamtValue = 0;
+        var res14 = 0;
+        var txtcgstamtValue = 0;
+        var res15 = 0;
 
-        $('#txttotAB').val(res13);
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+            $('#txttotAB').val(res13);
 
-        $('#txtpyd').val($('#txtPremiumShort').val());
-        $('#txtcyd').val($('#txtPremiumExcess').val());
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
 
-        //totalAmount after premium short and excess
-        var txttotAB = parseFloat($('#txttotAB').val());
-        var txtpyd = parseFloat($('#txtpyd').val());
-        var txtcyd = parseFloat($('#txtcyd').val());
-        var _totalamt = txttotAB + txtpyd - txtcyd;
-        var totalamt = Math.round(_totalamt).toFixed(2);
-        $('#txttotalamt').val(totalamt);
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
 
-        //----------GST-------------//
-        var txttotalamt = parseFloat($('#txttotalamt').val());
+            //----------GST-------------//
+            var txttotalamt = parseFloat($('#txttotalamt').val());
 
-        var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
-        var res14 = Math.round(txtsgstamtValue).toFixed(2);
-        var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
-        var res15 = Math.round(txtcgstamtValue).toFixed(2);
+             txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+             res14 = Math.round(txtsgstamtValue).toFixed(2);
+             txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+             res15 = Math.round(txtcgstamtValue).toFixed(2);
+        }
+        else {
+            $('#txttotAB').val(res13);
+
+            $('#txtpyd').val('');
+            $('#txtcyd').val('');
+             txtsgstamtValue = ((parseFloat(res13)) / 100) * 9;
+             res14 = Math.round(txtsgstamtValue).toFixed(2);
+             txtcgstamtValue = ((parseFloat(res13)) / 100) * 9;
+             res15 = Math.round(txtcgstamtValue).toFixed(2);
+        }
         //txtgstamt
         //var txtgstamtValue = ((parseFloat(res13)) / 100) * 18;
         //var res14 = Math.round(txtgstamtValue).toFixed(2)
