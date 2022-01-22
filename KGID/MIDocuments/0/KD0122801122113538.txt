@@ -1,0 +1,18 @@
+<data>
+<RctReceiveValidateChlnRq>
+<chlnDate>22/01/2022</chlnDate>
+<deptCode>12C</deptCode>
+<ddoCode>12026D</ddoCode>
+<deptRefNum>KD0122801122113538</deptRefNum>
+<rctReceiveValidateChlnDtls>
+<amount>1</amount>
+<deptPrpsId>2</deptPrpsId>
+<prpsName>8011~00~105~2~00~000</prpsName>
+<subPrpsName>013</subPrpsName>
+<subDeptRefNum>KD012280112211353801</subDeptRefNum>
+</rctReceiveValidateChlnDtls>
+<rmtrName>MOHAN G</rmtrName>
+<totalAmount>1</totalAmount>
+<trsryCode>572H</trsryCode>
+</RctReceiveValidateChlnRq>
+</data>

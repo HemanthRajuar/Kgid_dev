@@ -556,6 +556,7 @@ namespace KGID.Controllers
             bool isSuccess = false;
             string message = string.Empty;
             string pagetype = objPersonalDetails.miidv_pagetype;
+            objPersonalDetails.miidv_pagetype = objPersonalDetails.pagetype;
             objPersonalDetails.miidv_application_id = Convert.ToInt64(Session["RID"]);
             if (objPersonalDetails.miidv_application_id != 0)
             {

@@ -314,15 +314,26 @@
                 <div class="modal-body">
 
                     <div id="Premiumdetails111" style="display:block">
-                        <div class="row">
-                            <div class="col-12">
-                                <h6 style="text-align:center;font-weight:bold;">KARNATAKA GOVERNMENT INSURANCE DEPARTMENT</h6>
-                                <h6 style="text-align:center;font-weight:bold;">MOTOR INSURANCE</h6>
-                                <h6 style="text-align:center;font-weight:bold;">RENEWAL NOTICE</h6>
+                        @if (Model.miidv_pagetype == "Renewal" || Model.miidv_pagetype == "EditRenewal")
+                        {
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6 style="text-align:center;font-weight:bold;">KARNATAKA GOVERNMENT INSURANCE DEPARTMENT</h6>
+                                    <h6 style="text-align:center;font-weight:bold;">MOTOR INSURANCE</h6>
+                                    <h6 style="text-align:center;font-weight:bold;">RENEWAL NOTICE</h6>
+                                </div>
                             </div>
-                        </div>
+                        }
+                        else
+                        { <div class="row">
+                                <div class="col-12">
+                                    <h6 style="text-align:center;font-weight:bold;">KARNATAKA GOVERNMENT INSURANCE DEPARTMENT</h6>
+                                    <h6 style="text-align:center;font-weight:bold;">MOTOR INSURANCE</h6>
+                                    <h6 style="text-align:center;font-weight:bold;">PREMIUM NOTICE</h6>
+                                </div>
+                            </div>}
                         @*<div class="row">
-                            <div class="col-6">*@
+        <div class="col-6">*@
                         <div class="row">
                             <div class="col-4">
                                 Application Ref No.:<input type="text" id="txtAppRefNumber" style="font-size: 12px;" class="form-control" readonly />
@@ -335,10 +346,10 @@
                             </div>
                         </div>
                         @*</div>
-                            </div>*@
+        </div>*@
 
                         @*<div class="row">
-                            <div class="col-6">*@
+        <div class="col-6">*@
                         <div class="row">
                             <div class="col-4">
                                 Make of vehicle: <input type="text" id="txtMOV" style="font-size: 12px;" class="form-control" readonly />
@@ -351,7 +362,7 @@
                             </div>
                         </div>
                         @*</div>
-                            <div class="col-6">*@
+        <div class="col-6">*@
                         <div class="row">
                             <div class="col-4">
                                 Cubic Capacity:<input type="text" id="txtCubicCapacity" style="font-size: 12px;" class="form-control" readonly />
@@ -364,10 +375,10 @@
                             </div>
                         </div>
                         @*</div>
-                            </div>*@
+        </div>*@
                         @*<br />*@
                         @*<div class="row">
-                            <div class="col-12">*@
+        <div class="col-12">*@
                         <div class="row">
                             <div class="col-3">
                                 Policy Type:<input type="text" id="txtPolicyType" style="font-size: 12px;" class="form-control" readonly />
@@ -395,10 +406,10 @@
 
                         </div>
                         @*</div>
-                            </div>*@
+        </div>*@
                         <hr />
                         @*<h6 style="text-align:center;font-weight:bold;">SCHEDULE OF PREMIUM</h6>
-                            <hr />*@
+        <hr />*@
                         <div class="row"></div>
                         <section>
                             <div class="row">

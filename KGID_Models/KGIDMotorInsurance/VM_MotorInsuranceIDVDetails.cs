@@ -13,6 +13,8 @@ namespace KGID_Models.KGIDMotorInsurance
         public Nullable<long> miidv_emp_id { get; set; }
         public Nullable<decimal> premium_amount { get; set; }//PremiumAmountValue
         //public bool miidv_is_insured_declared_value { get; set; }
+
+        public string pagetype { get; set; }
         public string miidv_vaahanidvamount { get; set; }
         public string miidv_insured_declared_value_amount { get; set; }
         public string miidv_insured_redeclared_value_amount { get; set; }

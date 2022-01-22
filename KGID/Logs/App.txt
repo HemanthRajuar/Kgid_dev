@@ -2434,3 +2434,393 @@ update
 21 Jan 2022 16:57:26 - INFO  - result
 21 Jan 2022 17:22:00 - INFO  - GetMobileNumberOfInsured()
 21 Jan 2022 17:32:03 - INFO  - result2
+21 Jan 2022 18:19:38 - INFO  - GetMobileNumberOfInsured()
+21 Jan 2022 18:32:55 - INFO  - result1
+21 Jan 2022 18:33:25 - INFO  - result2
+22 Jan 2022 09:58:42 - INFO  - GetMobileNumberOfInsured()
+22 Jan 2022 10:00:33 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function sp_kgid_SaveMIRenewalVehicleDetails has too many arguments specified.
+22 Jan 2022 10:00:33 - INFO  - result
+22 Jan 2022 10:00:37 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function sp_kgid_SaveMIRenewalVehicleDetails has too many arguments specified.
+22 Jan 2022 10:00:37 - INFO  - result
+22 Jan 2022 10:00:53 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function sp_kgid_SaveMIRenewalVehicleDetails has too many arguments specified.
+22 Jan 2022 10:00:53 - INFO  - result
+22 Jan 2022 10:01:20 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->Procedure or function sp_kgid_SaveMIRenewalVehicleDetails has too many arguments specified.
+22 Jan 2022 10:01:20 - INFO  - result
+22 Jan 2022 10:02:57 - INFO  - result2
+22 Jan 2022 10:03:02 - INFO  - result2
+22 Jan 2022 10:11:55 - INFO  - result2
+22 Jan 2022 10:14:57 - INFO  - result2
+22 Jan 2022 10:14:59 - INFO  - result2
+22 Jan 2022 10:24:48 - INFO  - GetMobileNumberOfInsured()
+22 Jan 2022 10:29:16 - INFO  - result2
+22 Jan 2022 10:30:56 - INFO  - result2
+22 Jan 2022 10:46:06 - INFO  - result2
+22 Jan 2022 10:46:07 - INFO  - result2
+22 Jan 2022 10:48:55 - INFO  - result2
+22 Jan 2022 10:48:57 - INFO  - result2
+22 Jan 2022 10:52:29 - INFO  - result2
+22 Jan 2022 10:52:31 - INFO  - result2
+22 Jan 2022 10:55:10 - INFO  - GetMobileNumberOfInsured()
+22 Jan 2022 11:00:24 - INFO  - result2
+22 Jan 2022 11:00:51 - INFO  - result2
+22 Jan 2022 11:01:20 - INFO  - result2
+22 Jan 2022 11:02:35 - INFO  - result2
+22 Jan 2022 11:02:38 - INFO  - result2
+22 Jan 2022 11:06:27 - INFO  - result2
+22 Jan 2022 11:16:16 - INFO  - GetMobileNumberOfInsured()
+22 Jan 2022 11:17:51 - INFO  - result2
+22 Jan 2022 11:20:56 - INFO  - GetMobileNumberOfInsured()
+22 Jan 2022 11:22:28 - INFO  - result2
+22 Jan 2022 11:30:58 - INFO  - result1.272,2595,2500,20,Zone B,0,20,20,25,1241
+22 Jan 2022 11:31:03 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2020-1-01
+30-04-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+ 
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+8==>@Cubic_Capacity
+8==>@@TPCubic_Capacity
+9==>@VehicleCategoryid
+8==>MinValueCubic_Capacity
+24==>@Depreciation_year
+3==>@Depreciation_Id
+20==>@Depreciation_Value
+6==>@@GVWLid
+4==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.272  @OwnDamageValue
+110==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+2500==>@VehicleMinValue
+34==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+1241==>@PLPassengerAmount
+ 
+PD
+2595
+POLICY DETAILS
+update
+17
+1.272,2595,2500,20,Zone B,0,20,20,25,1241
+22 Jan 2022 11:31:03 - INFO  - result
+22 Jan 2022 11:40:31 - INFO  - Inside PayMIOTCChallanDetails
+22 Jan 2022 11:40:31 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+22 Jan 2022 11:40:31 - INFO  - Data File generated *********
+22 Jan 2022 11:40:31 - INFO  - D:\Kgid_Git\Kgid_git_Latest\Kgid_dev\KGID\MIDocuments\0\KD0122801122113538.txt
+22 Jan 2022 11:40:31 - INFO  - Before API Call
+22 Jan 2022 11:40:31 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+22 Jan 2022 11:42:55 - INFO  - Inside PayMIOTCChallanDetails
+22 Jan 2022 11:42:55 - INFO  - Before TFCNewPolicyPremiumOTC Data File Generation *********
+22 Jan 2022 11:42:55 - INFO  - Data File generated *********
+22 Jan 2022 11:42:55 - INFO  - D:\Kgid_Git\Kgid_git_Latest\Kgid_dev\KGID\MIDocuments\0\KD0122801122113538.txt
+22 Jan 2022 11:42:55 - INFO  - Before API Call
+22 Jan 2022 11:42:55 - INFO  - http://10.96.158.108:5050/kgid/v1/getSignature
+22 Jan 2022 12:47:51 - INFO  - GetMobileNumberOfInsured()
+22 Jan 2022 12:51:35 - INFO  - result2
+22 Jan 2022 12:53:12 - INFO  - result1.743,15746,20000,20,Zone B,0,20,20,25,75
+22 Jan 2022 12:53:14 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2020-1-01
+05-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+3==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+24==>@Depreciation_year
+3==>@Depreciation_Id
+20==>@Depreciation_Value
+6==>@@GVWLid
+2==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+20000==>@VehicleMinValue
+14==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+15746
+POLICY DETAILS
+update
+17
+1.743,15746,20000,20,Zone B,0,20,20,25,75
+22 Jan 2022 12:53:14 - INFO  - result
+22 Jan 2022 13:01:45 - INFO  - GetMobileNumberOfInsured()
+22 Jan 2022 13:03:22 - INFO  - result1.743,15746,20000,30,Zone B,0,20,20,25,75
+22 Jan 2022 13:03:31 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2019-8-01
+20-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+3==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+29==>@Depreciation_year
+4==>@Depreciation_Id
+30==>@Depreciation_Value
+6==>@@GVWLid
+2==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+20000==>@VehicleMinValue
+14==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+15746
+POLICY DETAILS
+update
+17
+1.743,15746,20000,30,Zone B,0,20,20,25,75
+22 Jan 2022 13:03:31 - INFO  - result
+22 Jan 2022 13:06:37 - INFO  - result1.743,15746,20000,20,Zone B,0,20,20,25,75
+22 Jan 2022 13:06:39 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2020-2-01
+29-02-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+3==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+23==>@Depreciation_year
+3==>@Depreciation_Id
+20==>@Depreciation_Value
+6==>@@GVWLid
+2==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+20000==>@VehicleMinValue
+14==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+15746
+POLICY DETAILS
+update
+17
+1.743,15746,20000,20,Zone B,0,20,20,25,75
+22 Jan 2022 13:06:39 - INFO  - result
+22 Jan 2022 13:09:31 - INFO  - result1.743,33418,40000,50,Zone B,0,20,20,25,75
+22 Jan 2022 13:09:33 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2017-10-01
+24-11-2017 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+5==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+51==>@Depreciation_year
+6==>@Depreciation_Id
+50==>@Depreciation_Value
+8==>@@GVWLid
+3==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+40000==>@VehicleMinValue
+16==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+33418
+POLICY DETAILS
+update
+17
+1.743,33418,40000,50,Zone B,0,20,20,25,75
+22 Jan 2022 13:09:33 - INFO  - result
+22 Jan 2022 13:14:03 - INFO  - result1.743,33418,40000,30,Zone B,0,20,20,25,75
+22 Jan 2022 13:14:06 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIVehicleDetails-Errors->The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+1
+2019-6-01
+02-03-2020 12.00.00 AM==>@dateofregistration
+2
+0==>@@IsElectrical
+5
+The statement has been terminated.
+6
+7
+8
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+Place= Bengaluru (Urban)
+9
+10
+5==>gvwid
+ 
+ 
+2==>@Vehicle_Subtype
+4==>@VehicleAge
+ 
+ 
+5==>@VehicleCategoryid
+ 
+31==>@Depreciation_year
+4==>@Depreciation_Id
+30==>@Depreciation_Value
+8==>@@GVWLid
+2==>@@Passengers
+11
+4==>@Zoneid
+Zone B==>@Zone
+12
+1.743  @OwnDamageValue
+74==>@OwnDamageId
+0==>@ODAdditional
+20==>@@ODGovDiscoount
+40000==>@VehicleMinValue
+16==>@VehicleMinValueId
+ 
+14
+20==>@PLGovtDiscoount
+25==>@PLDriverAmount
+75==>@PLPassengerAmount
+ 
+PD
+33418
+POLICY DETAILS
+update
+17
+1.743,33418,40000,30,Zone B,0,20,20,25,75
+22 Jan 2022 13:14:06 - INFO  - result
+22 Jan 2022 13:27:40 - INFO  - result2
+22 Jan 2022 13:28:25 - INFO  - result2
+22 Jan 2022 13:32:50 - INFO  - result1.672,14494,30000,20,Zone B,450,20,20,25,886
+22 Jan 2022 13:32:55 - INFO  - result1.672,14494,30000,20,Zone B,450,20,20,25,886
+22 Jan 2022 13:35:31 - INFO  - result1.672,14494,30000,20,Zone B,450,20,20,25,886
+22 Jan 2022 13:39:39 - INFO  - result1.672,14494,30000,20,Zone B,450,20,20,25,886
+22 Jan 2022 13:43:00 - INFO  - result1.672,14494,50000,20,Zone B,550,20,20,25,886
+22 Jan 2022 13:46:17 - INFO  - result1.672,14494,50000,20,Zone B,550,20,20,25,886

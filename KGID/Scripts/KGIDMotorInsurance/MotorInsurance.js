@@ -1,6 +1,45 @@
 ﻿$(document).ready(function () {
     
     $('#ViewPremiumModal').on('shown.bs.modal', function (e) {
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+
+            $('#idvmaluspercent').text($('#txtMalus').val());
+            $('#idvncbpercent').text($('#txtNcb').val());
+
+            var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+            var _maluspercent = $('#idvmaluspercent').text() || 0;
+            var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+            var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+            var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+            $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+            $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+            var _aftermalus = $('#txtamod').val() || 0;
+            var _afterncb = $('#txtlessncb').val() || 0;
+            var _righttotal = $('#txtlprtot').val() || 0;
+
+            $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+            var _txtodtotA = $('#txtodtotA').val() || 0;
+
+            $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
+
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
+
+        }
+
+
         $('#txtZone').val($('#txtVDZone').val());
         $('#txtDateofRisk').val($('#txtTPToDate').val());
 
@@ -15,8 +54,7 @@
         $('#txtcgstamt').val(cgst);
         $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
         $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
-
-
+        $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
     });
 
     $('#ddlVehSubType').on('change', function () {
@@ -2195,8 +2233,10 @@ function SaveIDVDetails() {
         var eid = $("#divApplicationMI").data("eid");
         var formData = new FormData($("#FormIDVDetails").get(0));
         var refid = $("#hdnMIReferanceNo").val();
+        var pagetype = $("#hdnPagetype").val();
         formData.append("miidv_app_ref_id", refid);
-        formData.append('premium_amount', PremiumPayableAmount);
+        formData.append('premium_amount', PremiumPayableAmount);        
+        formData.append('pagetype', pagetype);
         if ($('.err:visible').length === 0) {
             $.ajax({
                 url: '/MotorInsurance/InsertIDVDetails',
@@ -3146,6 +3186,59 @@ function sum() {
         $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
         $('#txtGVW').val($('#txtVDWeight').val());
         $('#txtSC').val($('#txtVDSeating').val());
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+            //start add by deepak on 21-01-2022
+            $('#idvmaluspercent').text($('#txtMalus').val());
+            $('#idvncbpercent').text($('#txtNcb').val());
+
+            var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+            var _maluspercent = $('#idvmaluspercent').text() || 0;
+            var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+            var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+            var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+            $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+            $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+            var _aftermalus = $('#txtamod').val() || 0;
+            var _afterncb = $('#txtlessncb').val() || 0;
+            var _righttotal = $('#txtlprtot').val() || 0;
+
+            $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+            var _txtodtotA = $('#txtodtotA').val() || 0;
+
+            $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
+
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
+
+            $('#txtZone').val($('#txtVDZone').val());
+            $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+            var txttotalamt = parseFloat($('#txttotalamt').val());
+
+            var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            var sgst = Math.round(txtsgstamtValue).toFixed(2);
+            var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+            $('#txtsgstamt').val(sgst);
+            $('#txtcgstamt').val(cgst);
+            $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+            $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+            $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+            //end add by deepak on 21-01-2022
+        }
     }
     else if (ddlTypeofCover == "1") {
         //alertify.success("L")
@@ -3340,6 +3433,59 @@ function sum() {
         $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
         $('#txtGVW').val($('#txtVDWeight').val());
         $('#txtSC').val($('#txtVDSeating').val());
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+            //start add by deepak on 21-01-2022
+            $('#idvmaluspercent').text($('#txtMalus').val());
+            $('#idvncbpercent').text($('#txtNcb').val());
+
+            var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+            var _maluspercent = $('#idvmaluspercent').text() || 0;
+            var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+            var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+            var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+            $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+            $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+            var _aftermalus = $('#txtamod').val() || 0;
+            var _afterncb = $('#txtlessncb').val() || 0;
+            var _righttotal = $('#txtlprtot').val() || 0;
+
+            $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+            var _txtodtotA = $('#txtodtotA').val() || 0;
+
+            $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
+
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
+
+            $('#txtZone').val($('#txtVDZone').val());
+            $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+            var txttotalamt = parseFloat($('#txttotalamt').val());
+
+            var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            var sgst = Math.round(txtsgstamtValue).toFixed(2);
+            var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+            $('#txtsgstamt').val(sgst);
+            $('#txtcgstamt').val(cgst);
+            $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+            $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+            $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+            //end add by deepak on 21-01-2022
+        }
     }
     else if (ddlTypeofCover == "3") {
         //alertify.success("B")
@@ -3626,6 +3772,60 @@ function sum() {
         $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
         $('#txtGVW').val($('#txtVDWeight').val());
         $('#txtSC').val($('#txtVDSeating').val());
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+            //start add by deepak on 21-01-2022
+            $('#idvmaluspercent').text($('#txtMalus').val());
+            $('#idvncbpercent').text($('#txtNcb').val());
+
+            var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+            var _maluspercent = $('#idvmaluspercent').text() || 0;
+            var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+            var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+            var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+            $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+            $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+            var _aftermalus = $('#txtamod').val() || 0;
+            var _afterncb = $('#txtlessncb').val() || 0;
+            var _righttotal = $('#txtlprtot').val() || 0;
+
+            $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+            var _txtodtotA = $('#txtodtotA').val() || 0;
+
+            $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
+
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
+
+            $('#txtZone').val($('#txtVDZone').val());
+            $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+            var txttotalamt = parseFloat($('#txttotalamt').val());
+
+            var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            var sgst = Math.round(txtsgstamtValue).toFixed(2);
+            var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+            $('#txtsgstamt').val(sgst);
+            $('#txtcgstamt').val(cgst);
+            $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+            $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+            $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+            //end add by deepak on 21-01-2022
+        }
+
     }
     else if (ddlTypeofCover == "4") {
         //alertify.success("O")
@@ -3848,6 +4048,60 @@ function sum() {
         $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
         $('#txtGVW').val($('#txtVDWeight').val());
         $('#txtSC').val($('#txtVDSeating').val());
+        if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+            //start add by deepak on 21-01-2022
+            $('#idvmaluspercent').text($('#txtMalus').val());
+            $('#idvncbpercent').text($('#txtNcb').val());
+
+            var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+            var _maluspercent = $('#idvmaluspercent').text() || 0;
+            var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+            var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+            var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+            $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+            $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+            var _aftermalus = $('#txtamod').val() || 0;
+            var _afterncb = $('#txtlessncb').val() || 0;
+            var _righttotal = $('#txtlprtot').val() || 0;
+
+            $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+            var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+            var _txtodtotA = $('#txtodtotA').val() || 0;
+
+            $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+            $('#txtpyd').val($('#txtPremiumShort').val());
+            $('#txtcyd').val($('#txtPremiumExcess').val());
+
+            //totalAmount after premium short and excess
+            var txttotAB = parseFloat($('#txttotAB').val());
+            var txtpyd = parseFloat($('#txtpyd').val());
+            var txtcyd = parseFloat($('#txtcyd').val());
+            var _totalamt = txttotAB + txtpyd - txtcyd;
+            var totalamt = Math.round(_totalamt).toFixed(2);
+            $('#txttotalamt').val(totalamt);
+
+            $('#txtZone').val($('#txtVDZone').val());
+            $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+            var txttotalamt = parseFloat($('#txttotalamt').val());
+
+            var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            var sgst = Math.round(txtsgstamtValue).toFixed(2);
+            var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+            var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+            $('#txtsgstamt').val(sgst);
+            $('#txtcgstamt').val(cgst);
+            $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+            $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+            $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+            //end add by deepak on 21-01-2022
+        }
+
     }
 
 }
@@ -4504,6 +4758,64 @@ function Renewalsum() {
             $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
             $('#txtGVW').val($('#txtVDWeight').val());
             $('#txtSC').val($('#txtVDSeating').val());
+
+            if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+                //start add by deepak on 21-01-2022
+                $('#idvmaluspercent').text($('#txtMalus').val());
+                $('#idvncbpercent').text($('#txtNcb').val());
+
+                var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+                var _maluspercent = $('#idvmaluspercent').text() || 0;
+                var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+                var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+                var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+                $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+                $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+                var _aftermalus = $('#txtamod').val() || 0;
+                var _afterncb = $('#txtlessncb').val() || 0;
+                var _righttotal = $('#txtlprtot').val() || 0;
+
+                $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+                var _txtodtotA = $('#txtodtotA').val() || 0;
+
+                $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+                $('#txtpyd').val($('#txtPremiumShort').val());
+                $('#txtcyd').val($('#txtPremiumExcess').val());
+
+                //totalAmount after premium short and excess
+                var txttotAB = parseFloat($('#txttotAB').val());
+                var txtpyd = parseFloat($('#txtpyd').val());
+                var txtcyd = parseFloat($('#txtcyd').val());
+                var _totalamt = txttotAB + txtpyd - txtcyd;
+                var totalamt = Math.round(_totalamt).toFixed(2);
+                $('#txttotalamt').val(totalamt);
+
+
+
+
+                $('#txtZone').val($('#txtVDZone').val());
+                $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+                var txttotalamt = parseFloat($('#txttotalamt').val());
+
+                var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var sgst = Math.round(txtsgstamtValue).toFixed(2);
+                var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+                $('#txtsgstamt').val(sgst);
+                $('#txtcgstamt').val(cgst);
+                $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+                //end add by deepak on 21-01-2022
+            }
+
         }
         else if (ddlTypeofCover == "1") {
             //alertify.success("L");
@@ -4643,6 +4955,63 @@ function Renewalsum() {
             $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
             $('#txtGVW').val($('#txtVDWeight').val());
             $('#txtSC').val($('#txtVDSeating').val());
+            if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+                //start add by deepak on 21-01-2022
+                $('#idvmaluspercent').text($('#txtMalus').val());
+                $('#idvncbpercent').text($('#txtNcb').val());
+
+                var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+                var _maluspercent = $('#idvmaluspercent').text() || 0;
+                var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+                var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+                var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+                $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+                $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+                var _aftermalus = $('#txtamod').val() || 0;
+                var _afterncb = $('#txtlessncb').val() || 0;
+                var _righttotal = $('#txtlprtot').val() || 0;
+
+                $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+                var _txtodtotA = $('#txtodtotA').val() || 0;
+
+                $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+                $('#txtpyd').val($('#txtPremiumShort').val());
+                $('#txtcyd').val($('#txtPremiumExcess').val());
+
+                //totalAmount after premium short and excess
+                var txttotAB = parseFloat($('#txttotAB').val());
+                var txtpyd = parseFloat($('#txtpyd').val());
+                var txtcyd = parseFloat($('#txtcyd').val());
+                var _totalamt = txttotAB + txtpyd - txtcyd;
+                var totalamt = Math.round(_totalamt).toFixed(2);
+                $('#txttotalamt').val(totalamt);
+
+
+
+
+                $('#txtZone').val($('#txtVDZone').val());
+                $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+                var txttotalamt = parseFloat($('#txttotalamt').val());
+
+                var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var sgst = Math.round(txtsgstamtValue).toFixed(2);
+                var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+                $('#txtsgstamt').val(sgst);
+                $('#txtcgstamt').val(cgst);
+                $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+                //end add by deepak on 21-01-2022
+            }
+
         }
         else if (ddlTypeofCover == "3") {
             //alertify.success("O");
@@ -4814,6 +5183,62 @@ function Renewalsum() {
             $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
             $('#txtGVW').val($('#txtVDWeight').val());
             $('#txtSC').val($('#txtVDSeating').val());
+            if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+                //start add by deepak on 21-01-2022
+                $('#idvmaluspercent').text($('#txtMalus').val());
+                $('#idvncbpercent').text($('#txtNcb').val());
+
+                var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+                var _maluspercent = $('#idvmaluspercent').text() || 0;
+                var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+                var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+                var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+                $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+                $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+                var _aftermalus = $('#txtamod').val() || 0;
+                var _afterncb = $('#txtlessncb').val() || 0;
+                var _righttotal = $('#txtlprtot').val() || 0;
+
+                $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+                var _txtodtotA = $('#txtodtotA').val() || 0;
+
+                $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+                $('#txtpyd').val($('#txtPremiumShort').val());
+                $('#txtcyd').val($('#txtPremiumExcess').val());
+
+                //totalAmount after premium short and excess
+                var txttotAB = parseFloat($('#txttotAB').val());
+                var txtpyd = parseFloat($('#txtpyd').val());
+                var txtcyd = parseFloat($('#txtcyd').val());
+                var _totalamt = txttotAB + txtpyd - txtcyd;
+                var totalamt = Math.round(_totalamt).toFixed(2);
+                $('#txttotalamt').val(totalamt);
+
+
+
+
+                $('#txtZone').val($('#txtVDZone').val());
+                $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+                var txttotalamt = parseFloat($('#txttotalamt').val());
+
+                var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var sgst = Math.round(txtsgstamtValue).toFixed(2);
+                var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+                $('#txtsgstamt').val(sgst);
+                $('#txtcgstamt').val(cgst);
+                $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+                //end add by deepak on 21-01-2022
+            }
         }
     }
     else {
@@ -4986,6 +5411,63 @@ function Renewalsum() {
             $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
             $('#txtGVW').val($('#txtVDWeight').val());
             $('#txtSC').val($('#txtVDSeating').val());
+            if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+                //start add by deepak on 21-01-2022
+                $('#idvmaluspercent').text($('#txtMalus').val());
+                $('#idvncbpercent').text($('#txtNcb').val());
+
+                var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+                var _maluspercent = $('#idvmaluspercent').text() || 0;
+                var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+                var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+                var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+                $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+                $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+                var _aftermalus = $('#txtamod').val() || 0;
+                var _afterncb = $('#txtlessncb').val() || 0;
+                var _righttotal = $('#txtlprtot').val() || 0;
+
+                $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+                var _txtodtotA = $('#txtodtotA').val() || 0;
+
+                $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+                $('#txtpyd').val($('#txtPremiumShort').val());
+                $('#txtcyd').val($('#txtPremiumExcess').val());
+
+                //totalAmount after premium short and excess
+                var txttotAB = parseFloat($('#txttotAB').val());
+                var txtpyd = parseFloat($('#txtpyd').val());
+                var txtcyd = parseFloat($('#txtcyd').val());
+                var _totalamt = txttotAB + txtpyd - txtcyd;
+                var totalamt = Math.round(_totalamt).toFixed(2);
+                $('#txttotalamt').val(totalamt);
+
+
+
+
+                $('#txtZone').val($('#txtVDZone').val());
+                $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+                var txttotalamt = parseFloat($('#txttotalamt').val());
+
+                var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var sgst = Math.round(txtsgstamtValue).toFixed(2);
+                var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+                $('#txtsgstamt').val(sgst);
+                $('#txtcgstamt').val(cgst);
+                $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+                //end add by deepak on 21-01-2022
+            }
+
         }
         else if (ddlTypeofCover == "1") {
             //alertify.success("L");
@@ -5136,6 +5618,62 @@ function Renewalsum() {
             $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
             $('#txtGVW').val($('#txtVDWeight').val());
             $('#txtSC').val($('#txtVDSeating').val());
+            if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+                //start add by deepak on 21-01-2022
+                $('#idvmaluspercent').text($('#txtMalus').val());
+                $('#idvncbpercent').text($('#txtNcb').val());
+
+                var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+                var _maluspercent = $('#idvmaluspercent').text() || 0;
+                var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+                var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+                var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+                $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+                $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+                var _aftermalus = $('#txtamod').val() || 0;
+                var _afterncb = $('#txtlessncb').val() || 0;
+                var _righttotal = $('#txtlprtot').val() || 0;
+
+                $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+                var _txtodtotA = $('#txtodtotA').val() || 0;
+
+                $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+                $('#txtpyd').val($('#txtPremiumShort').val());
+                $('#txtcyd').val($('#txtPremiumExcess').val());
+
+                //totalAmount after premium short and excess
+                var txttotAB = parseFloat($('#txttotAB').val());
+                var txtpyd = parseFloat($('#txtpyd').val());
+                var txtcyd = parseFloat($('#txtcyd').val());
+                var _totalamt = txttotAB + txtpyd - txtcyd;
+                var totalamt = Math.round(_totalamt).toFixed(2);
+                $('#txttotalamt').val(totalamt);
+
+
+
+
+                $('#txtZone').val($('#txtVDZone').val());
+                $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+                var txttotalamt = parseFloat($('#txttotalamt').val());
+
+                var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var sgst = Math.round(txtsgstamtValue).toFixed(2);
+                var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+                $('#txtsgstamt').val(sgst);
+                $('#txtcgstamt').val(cgst);
+                $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+                //end add by deepak on 21-01-2022
+            }
         }
         else if (ddlTypeofCover == "3") {
             //alertify.success("O");
@@ -5306,6 +5844,59 @@ function Renewalsum() {
             $('#txtCubicCapacity').val($('#txtVDCubicCapacity').val());
             $('#txtGVW').val($('#txtVDWeight').val());
             $('#txtSC').val($('#txtVDSeating').val());
+            if ($("#hdnPagetype").val() == "Renewal" || $("#hdnPagetype").val() == "EditRenewal") {
+                //start add by deepak on 21-01-2022
+                $('#idvmaluspercent').text($('#txtMalus').val());
+                $('#idvncbpercent').text($('#txtNcb').val());
+
+                var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
+                var _maluspercent = $('#idvmaluspercent').text() || 0;
+                var _ncbpercent = $('#idvncbpercent').val() || 0;
+
+                var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
+                var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
+                $('#txtamod').val(Math.round(_maluscalc).toFixed(2));
+                $('#txtlessncb').val(Math.round(_ncbcalc).toFixed(2));
+
+                var _aftermalus = $('#txtamod').val() || 0;
+                var _afterncb = $('#txtlessncb').val() || 0;
+                var _righttotal = $('#txtlprtot').val() || 0;
+
+                $('#txtodtot').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                $('#txtodtotA').val(parseFloat(_beforemalussubtotal) + parseFloat(_aftermalus) - parseFloat(_afterncb));
+                var _malusncbtotalcalc = $('#txtodtot').val() || 0;
+                var _txtodtotA = $('#txtodtotA').val() || 0;
+
+                $('#txttotAB').val(parseFloat(_txtodtotA) + parseFloat(_righttotal));
+
+                $('#txtpyd').val($('#txtPremiumShort').val());
+                $('#txtcyd').val($('#txtPremiumExcess').val());
+
+                //totalAmount after premium short and excess
+                var txttotAB = parseFloat($('#txttotAB').val());
+                var txtpyd = parseFloat($('#txtpyd').val());
+                var txtcyd = parseFloat($('#txtcyd').val());
+                var _totalamt = txttotAB + txtpyd - txtcyd;
+                var totalamt = Math.round(_totalamt).toFixed(2);
+                $('#txttotalamt').val(totalamt);
+
+                $('#txtZone').val($('#txtVDZone').val());
+                $('#txtDateofRisk').val($('#txtTPToDate').val());
+
+                var txttotalamt = parseFloat($('#txttotalamt').val());
+
+                var txtsgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var sgst = Math.round(txtsgstamtValue).toFixed(2);
+                var txtcgstamtValue = ((parseFloat(txttotalamt)) / 100) * 9;
+                var cgst = Math.round(txtcgstamtValue).toFixed(2);
+
+                $('#txtsgstamt').val(sgst);
+                $('#txtcgstamt').val(cgst);
+                $('#txttotalcrpremium').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremiumAmt').val(parseFloat(txttotalamt) + parseFloat(sgst) + parseFloat(cgst));
+                $('#txtTotalPremium').val($('#txtTotalPremiumAmt').val());
+                //end add by deepak on 21-01-2022
+            }
         }
     }
 

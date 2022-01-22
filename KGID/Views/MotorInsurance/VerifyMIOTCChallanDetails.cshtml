@@ -153,14 +153,14 @@
                     <section>
                         <div class="row">
                             <div class="col-12 text-center">
-                                @if(Model.listofobject != null && Model.listofobject.Count > 0)
-                                        {
-                                foreach (var item in Model.listofobject)
-                                            {   <button class="btn btn-info btn-lg" onclick="PrOTCPayDoubleMic()">DoubleVerification OTC</button> 
-}}
-                                else{<button class="btn btn-info btn-lg" onclick="PrOTCPayMic()">Pay Through OTC</button> }
+                                @*@if(Model.listofobject != null && Model.listofobject.Count > 0)
+                {
+        foreach (var item in Model.listofobject)
+                    {*@   @*<button class="btn btn-info btn-lg" onclick="PrOTCPayDoubleMic()">DoubleVerification OTC</button>}}*@
 
-                                <a class="btn btn-info btn-lg" href="/mi-printchl-det/@Model.RefNos">Print Challan</a>
+                            <button class="btn btn-info btn-lg" onclick="PrOTCPayMic()">Pay Through OTC</button>
+
+                            <a class="btn btn-info btn-lg" href="/mi-printchl-det/@Model.RefNos">Print Challan</a>
                             </div>
                         </div>
                      </section>

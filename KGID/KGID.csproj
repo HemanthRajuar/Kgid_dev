@@ -3144,6 +3144,7 @@
     <Content Include="Views\Employee\Track_Proposal_NumberDetails.cshtml" />
     <Content Include="Views\VerifyDetails\TrackProposalForAdmin.cshtml" />
     <Content Include="Views\MotorInsurance\MotorInsuranceOTCPaymentStatusOfApplication.cshtml" />
+    <Content Include="Views\MotorInsurance\VerifyMIOTCChallanDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Custom\MI\" />
