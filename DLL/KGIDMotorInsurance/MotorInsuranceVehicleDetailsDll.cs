@@ -4821,7 +4821,8 @@ namespace DLL.KGIDMotorInsurance
                     //new SqlParameter("@sandate",sandate),
                     //new SqlParameter("@voucherno",voucherno),
                     new SqlParameter("@hoa_code",hoa),
-                    new SqlParameter("@ddo_code",ddocode)
+                    new SqlParameter("@ddo_code",ddocode),
+                     new SqlParameter("@pagetype","Fresh")
                 };
                 result = Convert.ToString(_Conn.ExecuteCmd(sqlparam, "sp_kgid_insert_mi_otc_Challandetails"));
             }
@@ -5126,7 +5127,8 @@ namespace DLL.KGIDMotorInsurance
                     new SqlParameter("@Amount",objPaymentDetails.cs_amount),
                     new SqlParameter("@Status",objPaymentDetails.cs_status),
                     new SqlParameter("@TransactionDate",  Convert.ToDateTime(objPaymentDetails.cs_transsaction_date)),
-                    new SqlParameter("@EmpID",objPaymentDetails.EmpID)
+                    new SqlParameter("@EmpID",objPaymentDetails.EmpID),
+                    new SqlParameter("@PageType",objPaymentDetails.PageType)
                 };
                 result = Convert.ToInt64(_Conn.ExecuteCmd(sqlparam, "sp_kgid_update_ChallanstatusRCT033"));
             }
@@ -5235,7 +5237,8 @@ namespace DLL.KGIDMotorInsurance
                     //new SqlParameter("@sandate",sandate),
                     //new SqlParameter("@voucherno",voucherno),
                     new SqlParameter("@hoa_code",hoa),
-                    new SqlParameter("@ddo_code",ddocode)
+                    new SqlParameter("@ddo_code",ddocode),
+                    new SqlParameter("@pagetype","Renewal")
                 };
                 result = Convert.ToString(_Conn.ExecuteCmd(sqlparam, "sp_kgid_insert_mi_otc_Challandetails"));
             }

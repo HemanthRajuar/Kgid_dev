@@ -219,6 +219,12 @@ namespace KGID.Controllers
                     Logger.LogMessage(TracingLevel.INFO, "cs_amount" + objPaymentDetails.cs_amount);
                     Logger.LogMessage(TracingLevel.INFO, "cs_status" + objPaymentDetails.cs_status);
                     Logger.LogMessage(TracingLevel.INFO, "EmpID" + objPaymentDetails.EmpID);
+
+                    if(Session["PageType"] != null)
+                        objPaymentDetails.PageType = Session["PageType"].ToString();
+                    else
+                        objPaymentDetails.PageType = "";
+                    Logger.LogMessage(TracingLevel.INFO, "PageType: " + objPaymentDetails.PageType);
                     result = _IMotorInsuranceVehicleDetailsBll.SaveMBChallanStatusDll(objPaymentDetails);
                 }
                 catch(Exception ex)

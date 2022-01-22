@@ -1770,6 +1770,7 @@ namespace KGID.Controllers
         //[Route("RenewalProposerDetailsToView")]
         public ActionResult RenewalProposerDetailsToView(string PageType, string refNo)
         {
+            Session["PageType"] = PageType;
             VM_MotorInsuranceProposerDetails _ProposerDetail = new VM_MotorInsuranceProposerDetails();
             if (Session["SelectedCategory"] != null && Session["SelectedCategory"].ToString().Contains(Convert.ToString((int)UserCategories.DDO)))
             {
@@ -1903,6 +1904,7 @@ namespace KGID.Controllers
         [Route("mi-agy-r-mp")]
         public ActionResult MotorInsuranceListOfRenewalApplications()
         {
+            Session["PageType"] = "Renewal";
             VM_DDOVerificationDetailsMI ApplicationDetails;
             if (Session["SelectedCategory"] != null && Session["SelectedCategory"].ToString().Contains(Convert.ToString((int)UserCategories.DDO)))
             {

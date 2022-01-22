@@ -34,6 +34,8 @@ namespace KGID_Models.NBApplication
         public string PayStatus { get; set; }
         public string EmpName { get; set; }
 
+        public string PageType { get; set; }
+
         public List<SelectListItem> PurposeTypes { get; set; }
         public List<SelectListItem> SubPurposeTypes { get; set; }
         public List<SelectListItem> ReceiptTypes { get; set; }

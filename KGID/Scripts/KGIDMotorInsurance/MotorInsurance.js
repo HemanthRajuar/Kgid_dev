@@ -1737,7 +1737,8 @@ function SaveVehicleDetails() {
                             $('#txtPLDriverAmt').val(response.PLDriverAmtValue);
                             $('#txtPLPassengerAmt').val(response.PLPassengerAmtValue);
                             GetIDVDetails();
-                            Renewalsum();
+                            Renewalsum();                                     
+                            
                         }
                         else {
                             $('#txtowndamage').val(response.OwnDamageValue);
