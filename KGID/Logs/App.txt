@@ -3283,3 +3283,15 @@ update
 22 Jan 2022 18:18:39 - INFO  - ExecuteCmd-SP->sp_kgid_insert_mi_otc_Challandetails-Errors->Procedure or function 'sp_kgid_insert_mi_otc_Challandetails' expects parameter '@pagetype', which was not supplied.
 22 Jan 2022 18:18:39 - INFO  - ExecuteCmd-SP->sp_kgid_insert_mi_otc_Challandetails-Errors->Procedure or function 'sp_kgid_insert_mi_otc_Challandetails' expects parameter '@pagetype', which was not supplied.
 22 Jan 2022 18:18:52 - INFO  - ExecuteCmd-SP->sp_kgid_insert_mi_otc_Challandetails-Errors->Procedure or function 'sp_kgid_insert_mi_otc_Challandetails' expects parameter '@pagetype', which was not supplied.
+24 Jan 2022 10:24:21 - INFO  - GetMobileNumberOfInsured()
+24 Jan 2022 10:54:52 - INFO  - GetMobileNumberOfInsured()
+24 Jan 2022 11:28:19 - INFO  - result1
+24 Jan 2022 11:39:37 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+24 Jan 2022 11:39:37 - INFO  - result
+24 Jan 2022 11:39:48 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+24 Jan 2022 11:39:48 - INFO  - result
+24 Jan 2022 11:40:28 - INFO  - ExecuteCmd-SP->sp_kgid_SaveMIRenewalVehicleDetails-Errors->SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+24 Jan 2022 11:40:28 - INFO  - result
+24 Jan 2022 11:43:44 - INFO  - GetMobileNumberOfInsured()
+24 Jan 2022 11:53:48 - INFO  - result1
+24 Jan 2022 11:56:04 - INFO  - result2

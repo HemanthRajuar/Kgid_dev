@@ -47,8 +47,11 @@ namespace DLL.KGIDMotorInsurance
                         MIPolicyActiveStatus = dataRow.Field<bool>("p_mi_active_status"),
                         MIApplicationActiveStatus = dataRow.Field<bool>("mia_active"),
                         MIUserCategoryId = Convert.ToInt32(dataRow.Field<string>("mia_user_category")),
-                        MIPolicyFromDate = dataRow.Field<DateTime?>("p_mi_tpfrom_date"),
-                        MIPolicyToDate = dataRow.Field<DateTime?>("p_mi_tpto_date"),
+                        //MIPolicyFromDate = dataRow.Field<DateTime?>("p_mi_tpfrom_date"),
+                        MIPolicyFromDate = ((dataRow.Field<DateTime?>("p_mi_from_date")) == null) ? (DateTime?)null : dataRow.Field<DateTime?>("p_mi_from_date"),
+                       // MIPolicyToDate = dataRow.Field<DateTime?>("p_mi_tpto_date"),
+                        MIPolicyToDate = ((dataRow.Field<DateTime?>("p_mi_to_date")) == null) ? (DateTime?)null : dataRow.Field<DateTime?>("p_mi_to_date"),
+
                         MIRenewalStatus = dataRow.Field<string>("p_mi_RenewalStatus"),
                         MIChassisNo = dataRow.Field<string>("mivd_chasis_no"),
                         MIOwnerOfVehicle = dataRow.Field<string>("mia_owner_of_the_vehicle"),
@@ -62,8 +65,12 @@ namespace DLL.KGIDMotorInsurance
                         MIWorkflowStatus = dataRow.Field<int?>("mirw_application_status"),
                         MIRenewalApplicationId = ((dataRow.Field<long?>("mia_motor_insurance_app_id")).ToString() == "") ? (long?)0 : dataRow.Field<long?>("mia_motor_insurance_app_id"),
                         MIRenewalApplicationNumber = ((dataRow.Field<long?>("mia_application_ref_no")).ToString() == "") ? (long?)0 : dataRow.Field<long?>("mia_application_ref_no"),
-                        p_mi_tpfrom_date = dataRow.Field<DateTime?>("p_mi_tpfrom_date"),
-                        p_mi_tpto_date = dataRow.Field<DateTime?>("p_mi_tpto_date"),
+                      //  p_mi_tpfrom_date = dataRow.Field<DateTime?>("p_mi_tpfrom_date"),
+                        p_mi_tpfrom_date = ((dataRow.Field<DateTime?>("p_mi_tpfrom_date")) == null) ? (DateTime?)null : dataRow.Field<DateTime?>("p_mi_tpfrom_date"),
+
+                        //  p_mi_tpto_date = dataRow.Field<DateTime?>("p_mi_tpto_date"),
+                        p_mi_tpto_date =  ((dataRow.Field<DateTime?>("p_mi_tpto_date")) == null)  ? (DateTime?)null : dataRow.Field<DateTime?>("p_mi_tpto_date"),
+
                     }).ToList();
                     MIRD.MotorInsuranceRenewalDetails = MIApplicationRenewalList;
                 }
