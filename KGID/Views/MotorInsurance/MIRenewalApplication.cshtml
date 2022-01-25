@@ -4,20 +4,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style type="text/css">
-    td a{
-        color:blue;
-        text-decoration:underline;
+    td a {
+        color: blue;
+        text-decoration: underline;
     }
-    table{
-        text-align:center;
+
+    table {
+        text-align: center;
     }
-    </style>
-<h3 style="text-align:center">Motor Insurance RenewalApplication</h3><br />
+</style>
+<style type="text/css">
+    #tblUploadedEmployeeDetails_wrapper {
+        width: 100% !important;
+    }
+</style>
+<script src="~/Scripts/moment.js"></script>
+<h3 style="text-align:center">Motor Insurance RenewalApplication</h3>
+<br />
 <!--//Renewal Details// -->
 <section>
     <div class="row">
         <div class="col-12">
-            <table class="table table-striped table-bordered" id="tblApplicationList" cellspacing="0">
+            <table class="table table-striped table-bordered" id="tblUploadedEmployeeDetails" cellspacing="0"  data-url="@Url.Action("MIRenewalApplication", "MotorInsurance", new { area = "" })">
                 <thead style="background: #308385;color: #fff;">
                     <tr>
                         <th>Vehicle No.</th>
@@ -37,57 +45,57 @@
                     {
                         foreach (var item in Model.MotorInsuranceRenewalDetails)
                         {
-                    <tr>
-                        <td>@item.MIVehicleRegistrationNumber</td>
-                        <td>@item.MIPolicyNumber</td>
-                        <td>@item.MIPremium</td>
-                        <td style="display:none">@item.MIPrevApplicationNumber</td>
-                        @if (item.MIPolicyFromDate != null)
-                        {
-                            <td>@item.MIPolicyFromDate.Value.ToString("dd MMM yyyy")</td>
-                            <td>@item.MIPolicyToDate.Value.ToString("dd MMM yyyy")</td>
-                        }
-                        else
-                        {
-                            <td>@item.p_mi_tpfrom_date.Value.ToString("dd MMM yyyy")</td>
-                            <td>@item.p_mi_tpto_date.Value.ToString("dd MMM yyyy")</td>
-}
+                            <tr>
+                                <td id="miregno">@item.MIVehicleRegistrationNumber</td>
+                                <td id="mipolicyno">@item.MIPolicyNumber</td>
+                                <td id="miprmium">@item.MIPremium</td>
+                                <td style="display:none">@item.MIPrevApplicationNumber</td>
+                                @if (item.MIPolicyFromDate != null)
+                                {
+                                    <td>@item.MIPolicyFromDate.Value.ToString("dd MMM yyyy")</td>
+                                    <td>@item.MIPolicyToDate.Value.ToString("dd MMM yyyy")</td>
+                                }
+                                else
+                                {
+                                    <td id="mifromdate">@item.p_mi_tpfrom_date.Value.ToString("dd MMM yyyy")</td>
+                                    <td id="mitodate">@item.p_mi_tpto_date.Value.ToString("dd MMM yyyy")</td>
+                                }
 
-                        <td>@item.MIApplicationNumber</td>
-                        <td>@item.MIChassisNo</td>
-                        <td>@item.MIOwnerOfVehicle</td>
+                                <td id="miappno">@item.MIApplicationNumber</td>
+                                <td>@item.MIChassisNo</td>
+                                <td>@item.MIOwnerOfVehicle</td>
 
-                        @if (String.IsNullOrEmpty(item.MIRenewalStatus))
-                        {
-                        <td>
-                            @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="Renewal", refNo = item.MIPrevApplicationNumber, category=item.MIUserCategoryId }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Renewal Application</a>*@
-                            <a href="mi-r-rn-apln/Renewal/@item.MIPrevApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Renewal Application</a>
-                        </td>
-                        }
-                        else if ((item.MIWorkflowStatus == 1 || item.MIWorkflowStatus == 2 || item.MIWorkflowStatus == 15) && item.MIRenewalStatus == "pending")
-                        {
-                        <td>
-                            @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Edit Application</a>*@
-                            <a href="mi-r-edt-apln/EditRenewal/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Edit Application</a>
-                        </td>
-                        }
-                        else if ( item.MIRenewalStatus == "pending")
-                        {
-                            <td>
-                                @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Edit Application</a>*@
-                                <a href="mi-r-edt-apln/EditRenewal/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Edit Application</a>
-                            </td>
-                        }
-                        else
-                        {
-                            @*<td><a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
-                        <td>
-                            @*<a href="@Url.Action("MIViewRenewalApplication", "VerifyDetails", new RouteValueDictionary(new { @empId = item.MIEmployeeId, applicationId = item.MIApplicationId , refNo=item.MIApplicationNumber,category=item.MIUserCategoryId,PrevRefNo=item.MIPrevApplicationNumber}))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a>*@
-                            <a href="mi-r-vw-apln/@item.MIEmployeeId/@item.MIApplicationId/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIPrevApplicationNumber">View Application </a>
-                        </td>
-                        }
+                                @if (String.IsNullOrEmpty(item.MIRenewalStatus))
+                                {
+                                    <td>
+                                        @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="Renewal", refNo = item.MIPrevApplicationNumber, category=item.MIUserCategoryId }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Renewal Application</a>*@
+                                        <a href="mi-r-rn-apln/Renewal/@item.MIPrevApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Renewal Application</a>
+                                    </td>
+                                }
+                                else if ((item.MIWorkflowStatus == 1 || item.MIWorkflowStatus == 2 || item.MIWorkflowStatus == 15) && item.MIRenewalStatus == "pending")
+                                {
+                                    <td>
+                                        @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Edit Application</a>*@
+                                        <a href="mi-r-edt-apln/EditRenewal/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Edit Application</a>
+                                    </td>
+                                }
+                                else if (item.MIRenewalStatus == "pending")
+                                {
+                                    <td>
+                                        @*<a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">Edit Application</a>*@
+                                        <a href="mi-r-edt-apln/EditRenewal/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIApplicationNumber">Edit Application</a>
+                                    </td>
+                                }
+                                else
+                                {
+                                    @*<td><a href="@Url.Action("MotorInsuranceRenewalApplication", "MotorInsurance", new RouteValueDictionary(new { @PageType ="EditRenewal", @refNo = item.MIPrevApplicationNumber, @category=item.MIUserCategoryId,@renewalRefNo=item.MIApplicationNumber }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
+                                    <td>
+                                        @*<a href="@Url.Action("MIViewRenewalApplication", "VerifyDetails", new RouteValueDictionary(new { @empId = item.MIEmployeeId, applicationId = item.MIApplicationId , refNo=item.MIApplicationNumber,category=item.MIUserCategoryId,PrevRefNo=item.MIPrevApplicationNumber}))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a>*@
+                                        <a href="mi-r-vw-apln/@item.MIEmployeeId/@item.MIApplicationId/@item.MIApplicationNumber/@item.MIUserCategoryId/@item.MIPrevApplicationNumber">View Application </a>
+                                    </td>
+                                }
 
-                    </tr>
+                            </tr>
                         }
                     }
                 </tbody>
@@ -96,3 +104,21 @@
     </div>
 </section>
 <!--//Renewal Details END//-->
+<script src="~/Content/bootbox.min.js"></script>
+<script type="text/javascript">
+    var table;
+    $(document).ready(function () {
+        $('#tblUploadedEmployeeDetails').dataTable({
+            "bPaginate": true,
+            "destroy": true,
+            "bLengthChange": false,
+            "bFilter": true,
+            "bSort": false,
+            "bInfo": true,
+            "bAutoWidth": true,
+            "sEmptyTable": false
+            //"oSearch": { "bSmart": false }
+        });
+  
+    });
+</script>

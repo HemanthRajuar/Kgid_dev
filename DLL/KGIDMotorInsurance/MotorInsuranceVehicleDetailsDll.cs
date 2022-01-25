@@ -359,6 +359,7 @@ namespace DLL.KGIDMotorInsurance
                           new SqlParameter("@cubiccapacity", vmVehicleDetails.mivd_cubic_capacity),
                        new SqlParameter("@engineno", vmVehicleDetails.mivd_engine_no),
                               new SqlParameter("@vehicletype", vmVehicleDetails.mivd_vehicle_type_id),
+                                new SqlParameter("@vehicleweight", vmVehicleDetails.mivd_vehicle_weight),
                 };
                     result = Convert.ToString(_Conn.ExecuteCmd(sqlparam, "sp_kgid_SaveMIRenewalVehicleDetails"));
                 }
