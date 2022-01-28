@@ -114,6 +114,7 @@
     <Compile Include="KGIDLoan\VM_LoanDetailsModel.cs" />
     <Compile Include="KGIDMotorInsurance\Class1.cs" />
     <Compile Include="KGIDMotorInsurance\tbl_geographical_extension.cs" />
+    <Compile Include="KGIDMotorInsurance\tbl_mi_renewal_policy_details.cs" />
     <Compile Include="KGIDMotorInsurance\tbl_motor_insurance_application.cs" />
     <Compile Include="KGIDMotorInsurance\tbl_motor_insurance_proposer_details.cs" />
     <Compile Include="KGIDMotorInsurance\tbl_motor_insurance_type_of_cover.cs" />

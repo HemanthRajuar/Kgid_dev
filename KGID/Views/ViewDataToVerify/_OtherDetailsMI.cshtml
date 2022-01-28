@@ -21,7 +21,7 @@
         <span class='slnoid1 slnoid2' style="display:none;">1</span>
         <div class="row">
             <div class="form-group col-10">
-                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>slno</span>. Whether the vehicle is driven by non-conventional source of power(if Yes, Please give details)<br />Permitted by the concerned RTA </b> : </label>
+                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>1</span>. Whether the vehicle is driven by non-conventional source of power(if Yes, Please give details)<br />Permitted by the concerned RTA </b> : </label>
             </div>
             <div class="form-group col-2">
                 @if (Model.miod_is_non_conventioanal_source == true)
@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="form-group col-10">
-                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>slno</span>. Whether the vehicle is used for driving tutions </b> :</label>
+                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>2</span>. Whether the vehicle is used for driving tutions </b> :</label>
             </div>
 
             <div class="form-group col-2">
@@ -56,7 +56,7 @@
 
         <div class="row">
             <div class="form-group col-10">
-                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>slno</span>. Whether extension of geographical area to the following countries required ? </b> : </label>
+                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>3</span>. Whether extension of geographical area to the following countries required ? </b> : </label>
             </div>
             <div class="form-group col-2">
                 @if (Model.miod_is_geographical == true)
@@ -166,7 +166,7 @@
 
         <div class="row">
             <div class="form-group col-10">
-                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>slno</span>. Whether the use of vehicle is limited to your own premises? </b> :</label>
+                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>4</span>. Whether the use of vehicle is limited to your own premises? </b> :</label>
             </div>
             <div class="form-group col-2">
                 @if (Model.miod_is_own_premises == false)
@@ -188,11 +188,11 @@
 
                 @if (Model.miod_vehicle_type_id == 1)
                 {
-                    <label class="control-label text-justify"><b><span class='slnoid1'>slno</span>. Whether the vehicle is used for commercial purpose? </b> :</label>
+                    <label class="control-label text-justify"><b><span class='slnoid1'> </span>. Whether the vehicle is used for commercial purpose? </b> :</label>
                 }
                 else
                 {
-                    <label class="control-label text-justify"><b><span class='slnoid2'>slno</span>. Whether the commerical vehicle is also used for Private Purpose (excluding use for hire or reward)? </b> :</label>
+                    <label class="control-label text-justify"><b><span class='slnoid2'>5</span>. Whether the commerical vehicle is also used for Private Purpose (excluding use for hire or reward)? </b> :</label>
                 }
 
             </div>
@@ -213,7 +213,7 @@
 
         <div class="row">
             <div class="form-group col-10">
-                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>slno</span>. Whether the vehicle belongs to foreign embassy/consulate?</b> : </label>
+                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>6</span>. Whether the vehicle belongs to foreign embassy/consulate?</b> : </label>
             </div>
             <div class="form-group col-2">
                 @if (Model.miod_is_foreign_embasy == true)
@@ -233,7 +233,7 @@
         {
             <div class="row">
                 <div class="form-group col-10">
-                    <label class="control-label text-justify"><b><span class='slnoid1'>slno</span>. Whether the car is certified as Vintage car or Classic car by Vintage car and Classic car club of India?</b> : </label>
+                    <label class="control-label text-justify"><b><span class='slnoid1'> </span>. Whether the car is certified as Vintage car or Classic car by Vintage car and Classic car club of India?</b> : </label>
                 </div>
                 <div class="form-group col-2">
                     @if (Model.miod_is_vintage_car == true)
@@ -251,7 +251,7 @@
         }
         <div class="row">
             <div class="form-group col-10">
-                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>slno</span>. Whether the vehicle is designed for use of Blind/Handicaped/Mentally Challenged persons and duly endorsed as such by RTA.</b> : </label>
+                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>7</span>. Whether the vehicle is designed for use of Blind/Handicaped/Mentally Challenged persons and duly endorsed as such by RTA.</b> : </label>
             </div>
             <div class="form-group col-2">
                 @if (Model.miod_is_for_blind_or_ph == true)
@@ -268,7 +268,7 @@
         </div>
         <div class="row">
             <div class="form-group col-10">
-                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>slno</span>. Whether the vehicle is fitted with fibre glass tank?</b> : </label>
+                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>8</span>. Whether the vehicle is fitted with fibre glass tank?</b> : </label>
             </div>
             <div class="form-group col-2">
                 @if (Model.miod_is_fibre_glass_tank == true)
@@ -287,7 +287,7 @@
         {
             <div class="row">
                 <div class="form-group col-10">
-                    <label class="control-label text-justify"><b><span class='slnoid1'>slno</span>. Whether the vehicle is fitted with bi-fuel system such as petrol/diesl and CNG/LPG permitted by concerned RTA? </b> : </label>
+                    <label class="control-label text-justify"><b><span class='slnoid1'></span>. Whether the vehicle is fitted with bi-fuel system such as petrol/diesl and CNG/LPG permitted by concerned RTA? </b> : </label>
                 </div>
                 <div class="form-group col-2">
                     @if (Model.miod_is_bi_fuel_system == true)
@@ -319,7 +319,7 @@
                 <div class="form-group col-10">
                     <label class="control-label text-justify">
                         <b>
-                            <span class='slnoid1'>slno</span>. Do you wish to opt for higher deductible over and above the Compulsory deductible (Rs. 50 for two wheelers and Rs. 500/- Rs. 1000/- for private cars)
+                            <span class='slnoid1'> </span>. Do you wish to opt for higher deductible over and above the Compulsory deductible (Rs. 50 for two wheelers and Rs. 500/- Rs. 1000/- for private cars)
                         </b> :
                     </label>
                 </div>
@@ -420,7 +420,7 @@
             <div class="form-group col-10">
                 <label class="control-label text-justify">
                     <b>
-                        <span class='slnoid1 slnoid2'>slno</span>. Do you wish to cover Legal Liability to ?
+                        <span class='slnoid1 slnoid2'>9</span>. Do you wish to cover Legal Liability to ?
                     </b> :
                 </label>
             </div>
@@ -481,7 +481,7 @@
 
         <div class="row">
             <div class="form-group col-10">
-                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>slno</span>. Are you entitled to No Claim Bonus? If yes, Please submit Proof thereof</b> : </label>
+                <label class="control-label text-justify"><b><span class='slnoid1 slnoid2'>10</span>. Are you entitled to No Claim Bonus? If yes, Please submit Proof thereof</b> : </label>
             </div>
             <div class="form-group col-2">
                 @if (Model.miod_is_no_claim_bonus == true)
@@ -516,13 +516,13 @@
                     @if (Model.miod_vehicle_type_id == 2)
                     {
                         <b>
-                            <span class='slnoid2'>slno</span>.Liability to Third Parties ?<br />
+                            <span class='slnoid2'>11</span>.Liability to Third Parties ?<br />
                             The policy provides Third Party property Damage(TPPD) of Rs.1Lakh(Two Wheelers) and Rs. 7.5Lakhs(Other class veh).Do you wish to restrict the above the limits to statutory TPPD Liability, Limit of Rs. 6000 / -only ?
                         </b> }
                     else
                     {
                         <b>
-                            <span class='slnoid1'>slno</span>.Liability to Third Parties ?<br />
+                            <span class='slnoid1'>11</span>.Liability to Third Parties ?<br />
                             The policy provides Third Party property Damage(TPPD) of Rs.1Lakh(Two Wheelers) and Rs. 7.5Lakhs(Private Cars).Do you wish to restrict the above the limits to statutory TPPD Liability, Limit of Rs. 6000 / -only ?
                         </b>
                     }
@@ -581,7 +581,7 @@
                 <div class="form-group col-10">
                     <label class="control-label text-justify">
                         <b>
-                            <span class='slnoid1'>slno</span>. Do you wish to include Personal Accident (P.A.)Cover for name and persons?
+                            <span class='slnoid1'>12</span>. Do you wish to include Personal Accident (P.A.)Cover for name and persons?
                         </b> :
                     </label>
                 </div>
@@ -642,7 +642,7 @@
             <div class="form-group col-10">
                 <label class="control-label text-justify">
                     <b>
-                        <span class='slnoid1 slnoid2'>slno</span>. Do you wish to include Personal Accident P.A. Cover for Name and Persons?
+                        <span class='slnoid1 slnoid2'>12</span>. Do you wish to include Personal Accident P.A. Cover for Name and Persons?
                     </b> :
                 </label>
             </div>
@@ -717,7 +717,7 @@
             <div class="form-group col-10">
                 <label class="control-label text-justify">
                     <b>
-                        <span class='slnoid1 slnoid2'>slno</span>. Do you wish to include P.A. Cover for unnamed persons / hire / pillion passenger (two wheelers)?
+                        <span class='slnoid1 slnoid2'>13</span>. Do you wish to include P.A. Cover for unnamed persons / hire / pillion passenger (two wheelers)?
                     </b> :
                 </label>
             </div>

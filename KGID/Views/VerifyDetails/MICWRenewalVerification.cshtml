@@ -122,17 +122,22 @@
                                         {
                                             foreach (var item in Model.WorkFlowDetails)
                                             {
-                                        <tr>
-                                            @*<td>@item.ApplicationRefNo</td>*@
-                                            <td>@item.CreationDateTime</td>
-                                            @if (item.From == "")
-                                            {<td>Agency</td>}
-                                            else{<td>@item.From</td>}
-                                            <td>@item.To</td>
-                                            <td>@item.Remarks</td>
-                                            <td>@item.Comments</td>
-                                            <td>@item.ApplicationStatus</td>
-                                        </tr>
+                                                <tr>
+                                                    @*<td>@item.ApplicationRefNo</td>*@
+                                                    <td>@item.CreationDateTime</td>
+                                                    @if (item.From == "")
+                                                    {
+                                                        <td>Agency</td>
+}
+                                                    else
+                                                    {
+                                                        <td>@item.From</td>
+}
+                                                    <td>@item.To</td>
+                                                    <td>@item.Remarks</td>
+                                                    <td>@item.Comments</td>
+                                                    <td>@item.ApplicationStatus</td>
+                                                </tr>
                                             }
                                         }
                                     </tbody>
@@ -309,7 +314,7 @@
                         <div id="scrutinyTab" class="application-tab">
                             <section>
                                 @*@using (Html.BeginForm("InsertVerifyRenewalDetailsCW", "VerifyDetails", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmCWVerDetails" }))
-        {*@
+                                    {*@
                                 <form id="frmCWVerDetails" enctype="multipart/form-data">
                                     @Html.AntiForgeryToken();
                                     @Html.Hidden("EmpCode", QueryString[2])
@@ -477,7 +482,7 @@
                                     <div class="row col-12">
                                         <div class="row col-12">
                                             <div class="col-8">
-                                                <label class="col-6">@Html.RadioButtonFor(model => model.ApplicationStatus, 2, new { @id = "rbtnBackToEmployee", @class = "float-left" }) <span class="float-left ml-1">Send Back to Employee</span></label>
+                                                <label class="col-6" id="rbtnBackToEmployeess">@Html.RadioButtonFor(model => model.ApplicationStatus, 2, new { @id = "rbtnBackToEmployee", @class = "float-left" }) <span class="float-left ml-1">Send Back to Employee</span></label>
                                                 <label class="col-6">@Html.RadioButtonFor(model => model.ApplicationStatus, 7, new { @id = "rbtnForwardToSup", @class = "float-left" }) <span class="float-left ml-1">Forward to Superintendent/Section Incharge</span></label>
                                                 <label class="err text-danger col-12 pt-2" style="display:none;">Please select action to be taken</label>
                                             </div>
@@ -487,7 +492,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                   </form>
+                                </form>
                             </section>
                         </div>
                         <div class="card-footer">
@@ -512,6 +517,7 @@
     var ColFiveLoaded = false;
     var ColSIXLoaded = false;
     $(document).ready(function () {
+        $("#rbtnBackToEmployeess").attr("hidden", true);
         // Add minus icon for collapse element which is open by default
         $(".collapse.show").each(function () {
             $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
@@ -548,6 +554,7 @@
             $('#txtComments').val(remarkstext);
         }
     }
+
 
     function ShowApplicationDetails(id) {
         $("#divBDetails").hide();

@@ -84,7 +84,7 @@ namespace KGID_Models.KGIDMotorInsurance
     {
         public string Name { get; set; }
         public string District { get; set; }
-
+        public string DdoName { get; set; }
         public long? EmployeeCode { get; set; }
 
         public string ApplicationNumber { get; set; }

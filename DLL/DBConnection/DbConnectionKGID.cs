@@ -134,7 +134,8 @@ namespace DLL.DBConnection
         public DbSet<tbl_motor_insurance_proposer_details> tbl_motor_insurance_proposer_details { get; set; }
         public DbSet<tbl_motor_insurance_type_of_cover> tbl_motor_insurance_type_of_cover { get; set; }
         public DbSet<tbl_motor_insurance_vehicle_details> tbl_motor_insurance_vehicle_details { get; set; }
-
+        public DbSet<tbl_mi_renewal_policy_details> tbl_mi_policy_details { get; set; }
+        
         public DbSet<tbl_motor_insurance_application> tbl_motor_insurance_application { get; set; }
         public DbSet<tbl_geographical_extension> tbl_geographical_extension { get; set; }
 

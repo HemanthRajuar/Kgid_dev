@@ -138,10 +138,12 @@
                                                     <td>@item.CreationDateTime</td>
                                                     @if (item.From == "")
                                                     {
-                                                        <td>Agency</td>}
+                                                        <td>Agency</td>
+}
                                                     else
                                                     {
-                                                        <td>@item.From</td>}
+                                                        <td>@item.From</td>
+}
                                                     <td>@item.To</td>
                                                     <td>@item.Remarks</td>
                                                     <td>@item.Comments</td>
@@ -323,15 +325,15 @@
                         <div id="scrutinyTab" class="application-tab">
                             <section>
                                 @*@using (Html.BeginForm("InsertVerifyRenewalDetailsSuperintendent", "VerifyDetails", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmSupVerDetails" }))
-        {*@
+                                    {*@
                                 <form id="frmSupVerDetails" enctype="multipart/form-data">
                                     @Html.AntiForgeryToken();
                                     @*@Html.Hidden("EmpCode", Request.QueryString["empId"])
-            @Html.Hidden("ApplicationRefNo", Request.QueryString["applicationId"])
-            @Html.Hidden("AppRefNo", Request.QueryString["refNo"])
-            @Html.Hidden("Category", Request.QueryString["category"])
-            @Html.Hidden("RefNo", Request.QueryString["refNo"])
-            @Html.Hidden("PrevRefNo", Request.QueryString["PrevRefNo"])*@
+                                        @Html.Hidden("ApplicationRefNo", Request.QueryString["applicationId"])
+                                        @Html.Hidden("AppRefNo", Request.QueryString["refNo"])
+                                        @Html.Hidden("Category", Request.QueryString["category"])
+                                        @Html.Hidden("RefNo", Request.QueryString["refNo"])
+                                        @Html.Hidden("PrevRefNo", Request.QueryString["PrevRefNo"])*@
 
                                     @Html.Hidden("EmpCode", QueryString[2])
                                     @Html.Hidden("ApplicationRefNo", QueryString[3])
@@ -499,7 +501,7 @@
                                     <div class="row col-12">
                                         <div class="row col-12">
                                             <div class="col-8">
-                                                <label class="col-6">@Html.RadioButtonFor(model => model.ApplicationStatus, 2, new { @id = "rbtnBackToEmployee", @class = "float-left" }) <span class="float-left ml-1">Send Back to Employee</span></label>
+                                                <label class="col-6" id="LblsendbackEmployee">@Html.RadioButtonFor(model => model.ApplicationStatus, 2, new { @id = "rbtnBackToEmployee", @class = "float-left" }) <span class="float-left ml-1">Send Back to Employee</span></label>
                                                 <label class="col-6">@Html.RadioButtonFor(model => model.ApplicationStatus, 32, new { @id = "rbtnForwardToSup", @class = "float-left" }) <span class="float-left ml-1">Forward to Assitant Director</span></label>
                                                 <label class="err text-danger col-12 pt-2" style="display:none;">Please select action to be taken</label>
                                             </div>
@@ -509,7 +511,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                  </form>
+                                </form>
                             </section>
                         </div>
                         <div class="card-footer">
@@ -535,6 +537,8 @@
     var ColSIXLoaded = false;
     $(document).ready(function () {
         // Add minus icon for collapse element which is open by default
+
+        $("#LblsendbackEmployee").attr("hidden", true);
         $(".collapse.show").each(function () {
             $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
         });

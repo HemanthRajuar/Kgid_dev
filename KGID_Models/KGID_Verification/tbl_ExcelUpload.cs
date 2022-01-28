@@ -13,5 +13,8 @@ namespace KGID_Models.KGID_Verification
         public DateTime UpdatedOn { get; set; }
         public string Registrationno { get; set; }
         public string Remarks { get; set; }
+        public string engineno { get; set; }
+        public string Chassisno { get; set; }
+         
     }
 }

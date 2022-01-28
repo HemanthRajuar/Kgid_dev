@@ -7,12 +7,12 @@
         if ($(this).is(':checked')) {
             $('.chk').prop('checked', true);
         }
-		else {
+        else {
             $('.chk').prop('checked', false);
-		}
+        }
     });
-    
-    
+
+
 });
 
 function GetModuleList() {
@@ -170,12 +170,45 @@ function search() {
         success: function (data) {
             //console.log(data);
             var JsonResult;
+            var counter = 1;
+
+            var t = $('#tblVehicalMapping').DataTable();
             $.each(data, function (index, item) {
                 JsonResult = data[index];
-                var tr = '<tr><td>' + JsonResult.mia_owner_of_the_vehicle + '</td><td>' + JsonResult.mivd_chasis_no + '</td><td>' + JsonResult.mivd_registration_no + '</td><td>' + JsonResult.rto_desc + '</td><td>' + JsonResult.mivd_type_of_model + '</td><td>' + JsonResult.year_desc + '</td><td style="display:none;">' + JsonResult.mivd_vehicle_details_id + '</td><td><input type="checkbox" id="gpMainCheckbox" class="chk" /></th></td></tr >'
-                $("#tblVehicalMappingBody").append(tr);
+                //  var t = $('#example').DataTable();
+                //  var tr = '<tr><td>' + JsonResult.mia_owner_of_the_vehicle + '</td><td>' + JsonResult.mivd_chasis_no + '</td><td>' + JsonResult.p_mi_policy_number + '</td><td>'+ JsonResult.mivd_registration_no + '</td><td>' + JsonResult.rto_desc + '</td><td>' + JsonResult.mivd_type_of_model + '</td><td>' + JsonResult.year_desc + '</td><td style="display:none;">' + JsonResult.mivd_vehicle_details_id + '</td><td><input type="checkbox" id="gpMainCheckbox" class="chk" /></th></td></tr >'
+
+
+                //t.row.add([
+                //    counter + tr,
+
+                //]).draw(false);
+
+                t.row.add([
+                    JsonResult.mia_owner_of_the_vehicle,
+                    JsonResult.mivd_chasis_no,
+                    JsonResult.p_mi_policy_number,
+                    JsonResult.mivd_registration_no,
+                    JsonResult.rto_desc,
+                    JsonResult.mivd_type_of_model,
+                    JsonResult.year_desc,
+                    '<td  style="display:none;" >' + JsonResult.mivd_vehicle_details_id + '</td>',
+                    '<input type="checkbox" id="gpMainCheckbox" class="chk" />'
+
+                ]).draw(false);
+
+                counter++;
+
+
+                //$("#tblVehicalMappingBody").append(tr);
             });
-           // $("#tblVehicalMapping").DataTable();
+            //$('#tblVehicalMapping').DataTable({
+            //    'columnDefs': [
+            //        //hide the second & fourth column
+            //        { 'visible': false, 'targets': [8] }
+            //    ]
+            //});
+            // $("#tblVehicalMapping").DataTable();
         },
         error: function (data) {
         },
@@ -188,14 +221,14 @@ function Submit() {
     var valtosubmit = 0;
     var DraftData = new Array();
     if ($("#hdnemployee_id").val() == '') {
-        bootbox.alert("Choose DDO Code");
+        alertify.alert("Choose DDO Code");
     }
     else {
         $("#tblVehicalMappingBody tr").each(function () {
             var row = $(this);
 
-            if (row.find('td:eq(7)').find('input').prop("checked") == true) {
-                var mivd_vehicle_details_id = row.find('td:eq(6)').text();
+            if (row.find('td:eq(8)').find('input').prop("checked") == true) {
+                var mivd_vehicle_details_id = row.find('td:eq(7)').text();
                 var employee_id = $("#hdnemployee_id").val();
                 var Vehical = {};
                 Vehical.mivd_vehicle_details_id = mivd_vehicle_details_id;
@@ -217,35 +250,41 @@ function Submit() {
                 success: function (data) {
                     console.log(data);
                     if (data == 1) {
-                        window.location.href = "/vehicle-mapping-to-ddo/";
-                        var dialog = bootbox.dialog({
+                        // window.location.href = "/vehicle-mapping-to-ddo/";
+                        /*var dialog = bootbox.dialog({*/
 
-                            message: 'Vehical Mapping Successfully To DDO!',
-                            size: 'medium',
-                            buttons: {
-                                ok: {
-                                    label: "OK",
-                                    className: 'btn-info',
-                                    callback: function () {
-                                        window.location.href = "/vehicle-mapping-to-ddo/";
-                                    }
-                                }
-                            }
-                        });
+                        //var vdialog =alertify.alert({
+
+                        //    message: 'Vehical Mapping Successfully To DDO!',
+                        //    size: 'medium',
+                        //    buttons: {
+                        //        ok: {
+                        //            label: "OK",
+                        //            className: 'btn-info',
+                        //            callback: function () {
+                        //                window.location.href = "/vehicle-mapping-to-ddo/";
+                        //            }
+                        //        }
+                        //    }
+                        //});
+
+                        alertify.confirm("Vehical Mapped Successfully To DDO!", function () {
+                            window.location.href = "/vehicle-mapping-to-ddo/";
+                        }).setHeader("Success");
                     }
-                   
+
                     else {
-                        bootbox.alert("Something went wrong!");
+                        alertify.alert("Something went wrong!");
                     }
                 },
                 error: function () {
                     loader_hide();
-                    bootbox.alert("Something went wrong!")
+                    alertify.alert("Something went wrong!")
                 }
             });
         }
         else {
-            bootbox.alert("Atleast Select 1 Vehical");
+            alertify.alert("Atleast Select 1 Vehical");
         }
     }
     $.ajax({
@@ -259,11 +298,45 @@ function Submit() {
         success: function (data) {
             console.log(data);
             var JsonResult;
+            //$.each(data, function (index, item) {
+            //    JsonResult = data[index];
+            //    var tr = '<tr><td>' + JsonResult.mia_owner_of_the_vehicle + '</td><td>' + JsonResult.mivd_chasis_no + '</td><td>' + JsonResult.mivd_registration_no + '</td><td>' + JsonResult.rto_desc + '</td><td>' + JsonResult.mivd_type_of_model + '</td><td>' + JsonResult.year_desc + '</td><td style="display:none;">' + JsonResult.mivd_vehicle_details_id + '</td><td><input type="checkbox" id="gpMainCheckbox" class="chk" /></th></td></tr >'
+            //    $("#tblVehicalMappingBody").append(tr);
+            //});
+
+            var counter = 1;
+
+            var t = $('#tblVehicalMapping').DataTable();
             $.each(data, function (index, item) {
                 JsonResult = data[index];
-                var tr = '<tr><td>' + JsonResult.mia_owner_of_the_vehicle + '</td><td>' + JsonResult.mivd_chasis_no + '</td><td>' + JsonResult.mivd_registration_no + '</td><td>' + JsonResult.rto_desc + '</td><td>' + JsonResult.mivd_type_of_model + '</td><td>' + JsonResult.year_desc + '</td><td style="display:none;">' + JsonResult.mivd_vehicle_details_id + '</td><td><input type="checkbox" id="gpMainCheckbox" class="chk" /></th></td></tr >'
-                $("#tblVehicalMappingBody").append(tr);
+                //  var t = $('#example').DataTable();
+                //  var tr = '<tr><td>' + JsonResult.mia_owner_of_the_vehicle + '</td><td>' + JsonResult.mivd_chasis_no + '</td><td>' + JsonResult.p_mi_policy_number + '</td><td>'+ JsonResult.mivd_registration_no + '</td><td>' + JsonResult.rto_desc + '</td><td>' + JsonResult.mivd_type_of_model + '</td><td>' + JsonResult.year_desc + '</td><td style="display:none;">' + JsonResult.mivd_vehicle_details_id + '</td><td><input type="checkbox" id="gpMainCheckbox" class="chk" /></th></td></tr >'
+
+
+                //t.row.add([
+                //    counter + tr,
+
+                //]).draw(false);
+
+                t.row.add([
+                    JsonResult.mia_owner_of_the_vehicle,
+                    JsonResult.mivd_chasis_no,
+                    JsonResult.p_mi_policy_number,
+                    JsonResult.mivd_registration_no,
+                    JsonResult.rto_desc,
+                    JsonResult.mivd_type_of_model,
+                    JsonResult.year_desc,
+                    '<td  style="display:none;" >' + JsonResult.mivd_vehicle_details_id + '</td>',
+                    '<input type="checkbox" id="gpMainCheckbox" class="chk" />'
+
+                ]).draw(false);
+
+                counter++;
+
+
+                //$("#tblVehicalMappingBody").append(tr);
             });
+
             // $("#tblVehicalMapping").DataTable();
         },
         error: function (data) {
@@ -275,7 +348,7 @@ function Submit() {
 
 function ddoautocomplete() {
     $("#txtChooseDDOCode").autocomplete({
-        source: function (request, response) {           
+        source: function (request, response) {
             var ddocode = $.trim($('#txtChooseDDOCode').val());
             var A = "{ddocode: '" + ddocode + "'}";
             $.ajax({
@@ -286,7 +359,7 @@ function ddoautocomplete() {
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                   
+
                     var xml = $.parseXML(data);
                     var xmlTable = $(xml).find('Table');
                     var CollectionArray = [];
@@ -307,9 +380,9 @@ function ddoautocomplete() {
         select: function (e, i) {
             $("#hdnDDOId").val(i.item.DDOId);
             $("#hdnemployee_id").val(i.item.employeeid);
-           // $("#txtChooseDDOCode").val(i.item.ddooffice);
+            // $("#txtChooseDDOCode").val(i.item.ddooffice);
             $("#txtOfficeName").val(i.item.ddooffice);
-           
+
         },
         minLength: 0
     }).click(function () {
@@ -381,7 +454,7 @@ $(function () {
             }
         });
     });
-/* Super Admin Assign Tickets To Helpdesk */
+    /* Super Admin Assign Tickets To Helpdesk */
     $(".csAssignTicket").click(function () {
         debugger;
 
@@ -528,3 +601,4 @@ function AssignTicket() {
         });
     }
 }
+

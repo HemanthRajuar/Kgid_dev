@@ -19,7 +19,7 @@ using _ExcelSheet = Microsoft.Office.Interop.Excel;
 
 namespace DLL
 {
-   public class TicketingToolDLL:ITicketingToolDLL
+    public class TicketingToolDLL : ITicketingToolDLL
     {
         private readonly Common_Connection _Conn = new Common_Connection();
         private readonly DbConnectionKGID _db = new DbConnectionKGID();
@@ -57,7 +57,7 @@ namespace DLL
         {
             long EmpID = 0;
             TTReportProblem ApplicationDetails = new TTReportProblem();
-                DataSet dsMBList = new DataSet();
+            DataSet dsMBList = new DataSet();
             try
             {
                 SqlParameter[] sqlparam =
@@ -72,7 +72,7 @@ namespace DLL
             }
             return dsMBList;
         }
-            public DataTable CreateDataTable(string className)
+        public DataTable CreateDataTable(string className)
         {
             DataTable dt = new System.Data.DataTable();
             Type classtype = GetType();
@@ -80,11 +80,11 @@ namespace DLL
             {
                 classtype = typeof(TicketingToolReportProblem);
             }
-            
-            PropertyInfo[] properties = classtype.GetProperties();
-           // TTReportProblem tTReport1 = new TTReportProblem();
 
-           // var properties1 = tTReport1.TicketingToolReportProblemlist.GetType();
+            PropertyInfo[] properties = classtype.GetProperties();
+            // TTReportProblem tTReport1 = new TTReportProblem();
+
+            // var properties1 = tTReport1.TicketingToolReportProblemlist.GetType();
 
 
             foreach (System.Reflection.PropertyInfo pi in properties)
@@ -92,13 +92,13 @@ namespace DLL
                 //if (className == "VM_FamilyDetail" && pi.Name != "EditDeleteStatus" && pi.Name != "AppliactionSentBack" && pi.Name != "ApplicationInsured")
                 //    dt.Columns.Add(pi.Name);
                 //else if (className != "VM_FamilyDetail")
-                    dt.Columns.Add(pi.Name);
+                dt.Columns.Add(pi.Name);
             }
             //DataRow dr=null ;
             //dt.Rows.Add(dr);
             //DetailView fieldsInst = new DetailView();
             //// Get the type of DetailView.
-            
+
             //Type fieldsType = typeof(tTReport1.TicketingToolReportProblemlist);
 
             //PropertyInfo[] props = fieldsType.GetProperties(BindingFlags.Public
@@ -110,7 +110,7 @@ namespace DLL
             //    Console.WriteLine("   {0}",
             //        props[i].Name);
             //}
-            
+
             return dt;
         }
         public TTReportProblem GetAllReportedProblemsDLL()
@@ -148,7 +148,7 @@ namespace DLL
                         //rp_updation_datetime = dataRow.Field<DateTime>("rp_updation_datetime"),
                         //rp_created_by = dataRow.Field<long>("rp_created_by"),
                         //rp_updated_by = dataRow.Field<long>("rp_updated_by")
-                        AssignedTo =dataRow.Field<string>("al_agency_user_id")
+                        AssignedTo = dataRow.Field<string>("al_agency_user_id")
                     }).ToList();
                     ApplicationDetails.TicketingToolReportProblemlist = MBList;
                     DataTable st = new DataTable();
@@ -164,7 +164,7 @@ namespace DLL
             return ApplicationDetails;
         }
 
-        public TTReportProblem GetDetailsByEmpIdDll(long EmpID,string emptype)
+        public TTReportProblem GetDetailsByEmpIdDll(long EmpID, string emptype)
         {
             TTReportProblem ApplicationDetails = new TTReportProblem();
             try
@@ -193,7 +193,7 @@ namespace DLL
                         //rp_date_of_resolve = dataRow["rp_date_of_resolve"].ToString() != "" ? DateTime.Parse(dataRow["rp_date_of_resolve"].ToString()).ToString("dd/MM/yyyy") : "",
                         rp_remarks = dataRow.Field<string>("rp_remarks"),
                         rp_status = dataRow.Field<bool>("rp_status"),
-                        UTYPE= dataRow.Field<int>("UTYPE"),
+                        UTYPE = dataRow.Field<int>("UTYPE"),
                         SubmissionDate = dataRow.Field<string>("SubmissionDate"),
                         ResolveDate = dataRow.Field<string>("ResolveDate"),
                         //rp_creation_datetime = dataRow.Field<DateTime>("rp_creation_datetime"),
@@ -228,7 +228,7 @@ namespace DLL
                     var MBList = dsMBList.Tables[0].AsEnumerable().Select(dataRow => new TicketingToolReportProblem
                     {
                         //RowNumber = dataRow.Field<long>("RowNumber"),
-                        
+
                         rp_id = dataRow.Field<long>("rp_id"),
                         rp_ticket_no = dataRow.Field<string>("rp_ticket_no"),
                         //rp_empid = dataRow.Field<long>("rp_empid"),
@@ -309,7 +309,7 @@ namespace DLL
             try
             {
 
-               string s= TTUploadDocument(rp.UploadedDoc, rp.rp_empid, rp.extensionofDoc);
+                string s = TTUploadDocument(rp.UploadedDoc, rp.rp_empid, rp.extensionofDoc);
                 rp.rp_upload_document = s;
                 SqlParameter[] sqlparam =
                   {
@@ -324,7 +324,7 @@ namespace DLL
                     //new SqlParameter("@rp_remarks",rp.rp_remarks),
                     //new SqlParameter("@rp_status",rp.rp_status),
                     new SqlParameter("@rp_created_by",rp.rp_created_by)
-                    
+
                 };
                 //result = Convert.ToString(_Conn.ExecuteCmd(sqlparam, "sp_kgid_TicketingTool_InsertReportProblem"));
                 res = Convert.ToInt32(_Conn.ExecuteCmd(sqlparam, "sp_kgid_TicketingTool_InsertReportProblem"));
@@ -394,7 +394,7 @@ namespace DLL
             {
                 string FROMDATE = string.Empty;
                 string TODATE = string.Empty;
-                if (fdate != null && fdate!=string.Empty)
+                if (fdate != null && fdate != string.Empty)
                 {
                     FROMDATE = _commnobj.DateConversion(Convert.ToDateTime(fdate).ToShortDateString());
                 }
@@ -402,16 +402,16 @@ namespace DLL
                 {
                     TODATE = _commnobj.DateConversion(Convert.ToDateTime(tdate).ToShortDateString());
                 }
-                if(fstatus== "--Select--")
+                if (fstatus == "--Select--")
                 { fstatus = string.Empty; }
                 //DateTime Fdat = Convert.ToDateTime(fdate);
                 //var FROMDATE = Fdat.ToString("yyyy-MM-dd");
                 //DateTime Tdat = Convert.ToDateTime(tdate);
                 //var TODATE = Tdat.ToString("yyyy-MM-dd");
                 DataSet dsMBList = new DataSet();
-               // if(fstatus=="")
-               // { fstatus = ""; }
-               // else { fstatus = ""; }
+                // if(fstatus=="")
+                // { fstatus = ""; }
+                // else { fstatus = ""; }
                 SqlParameter[] sqlparam =
                 {
                     new SqlParameter("@module",moduleid),
@@ -546,13 +546,15 @@ namespace DLL
                 nameofTable = filenameList[0];
 
                 string registrationno = "";
+                string Chassisno = "";
+                string engineno = "";
 
                 //string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 //string tableQuery = @"select 1 from INFORMATION_SCHEMA.TABLES where TABLE_NAME='{0}'";
                 try
                 {
 
-                    
+
                     result = "Table Exist!!!";
                     filePath = UploadExcelSheetFiles("TableName", fileBase);
                     if (!string.IsNullOrEmpty(filePath))
@@ -569,9 +571,21 @@ namespace DLL
                             for (int row = 2; row <= range.Rows.Count; row++)
                             {
                                 registrationno = ((_ExcelSheet.Range)range.Cells[row, 9]).Text;
-                                var temp = (from n in _db.tbl_motor_insurance_vehicle_details
-                                            where n.mivd_registration_no == registrationno
+                                Chassisno = ((_ExcelSheet.Range)range.Cells[row, 14]).Text;
+                                engineno = ((_ExcelSheet.Range)range.Cells[row, 13]).Text;
+                                var temp = "";
+                                if (registrationno != null | registrationno != "")
+                                {
+                                    temp = (from n in _db.tbl_motor_insurance_vehicle_details
+                                            where n.mivd_registration_no == registrationno || n.mivd_chasis_no == Chassisno || n.mivd_engine_no == engineno
                                             select n.mivd_registration_no).FirstOrDefault();
+                                }
+                                else
+                                {
+                                    temp = (from n in _db.tbl_motor_insurance_vehicle_details
+                                            where n.mivd_chasis_no == Chassisno || n.mivd_engine_no == engineno
+                                            select n.mivd_registration_no).FirstOrDefault();
+                                }
                                 try
                                 {
                                     if (temp == null || temp == "")
@@ -1054,7 +1068,8 @@ namespace DLL
                                         awd.Registrationno = registrationno;
                                         awd.Remarks = "Registration No Alredy Exist";
                                         awd.UpdatedOn = DateTime.UtcNow;
-
+                                        awd.Chassisno = Chassisno;
+                                        awd.engineno = engineno;
                                         _db.tbl_ExcelUpload.Add(awd);
                                         _db.SaveChanges();
                                         //context.SaveChangesAsync();
@@ -1063,7 +1078,7 @@ namespace DLL
 
                                     }
                                 }
-                                catch(Exception ex)
+                                catch (Exception ex)
                                 {
                                     tbl_ExcelUpload awd = new tbl_ExcelUpload();
 
@@ -1072,12 +1087,13 @@ namespace DLL
                                     awd.Registrationno = registrationno;
                                     awd.Remarks = ex.Message.ToString();
                                     awd.UpdatedOn = DateTime.UtcNow;
-
+                                    awd.Chassisno = Chassisno;
+                                    awd.engineno = engineno;
                                     _db.tbl_ExcelUpload.Add(awd);
                                     _db.SaveChanges();
                                     continue;
                                 }
-                                
+
 
                             }
 
@@ -1102,9 +1118,10 @@ namespace DLL
                     awd.Registrationno = registrationno;
                     awd.Remarks = "Error!!!";
                     awd.UpdatedOn = DateTime.UtcNow;
-
+                    awd.Chassisno = Chassisno;
+                    awd.engineno = engineno;
                     _db.tbl_ExcelUpload.Add(awd);
-                    _db.SaveChanges();                    
+                    _db.SaveChanges();
                     //workbook.Close(0);
                     //application.Quit();
                 }
@@ -1172,7 +1189,7 @@ namespace DLL
                 SqlParameter[] sqlparam =
                 {
                         new SqlParameter("@month",month),
-                        
+
                 };
                 result = _Conn.ExecuteCmd(sqlparam, "sp_kgid_getdepreciationvalue");
 
@@ -1181,7 +1198,7 @@ namespace DLL
             {
 
             }
-            
+
             return result;
         }
         #endregion
@@ -1203,17 +1220,18 @@ namespace DLL
                     VehicalMappingToDDO = dt.AsEnumerable().Select(t =>
                     {
                         var obj = new VehicalMappingToDDO();
-                        obj.mivd_vehicle_details_id =Convert.ToInt32( t["mivd_vehicle_details_id"]);
+                        obj.mivd_vehicle_details_id = Convert.ToInt32(t["mivd_vehicle_details_id"]);
                         obj.mivd_registration_no = Convert.ToString(t["mivd_registration_no"]);
                         obj.rto_desc = "";
                         obj.mivd_type_of_model = Convert.ToString(t["mivd_type_of_model"]);
                         obj.year_desc = Convert.ToString(t["ym_year_desc"]);
                         obj.mivd_chasis_no = Convert.ToString(t["mivd_chasis_no"]);
                         obj.mia_owner_of_the_vehicle = Convert.ToString(t["mia_owner_of_the_vehicle"]);
+                        obj.p_mi_policy_number = Convert.ToString(t["p_mi_policy_number"]);
                         return obj;
                     }).ToList();
                 }
-                 
+
                 return VehicalMappingToDDO;
             }
             catch (Exception ex)
@@ -1257,7 +1275,7 @@ namespace DLL
             }
             catch (Exception ex)
             {
-                
+
             }
             finally
             {

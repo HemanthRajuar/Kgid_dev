@@ -8,9 +8,22 @@
         margin: 10px;
         border: 1px solid #d8d8d8;
         border-radius: 10px;
-        box-shadow: 0px 2px 6px 0px #8cbad2;
+        box-shadow: 0px 2px 6px 0px #8cbad2;s
         height: 100%;
     }*/
+
+   /* table#tblMIDDOData {
+        display: inline-table;
+    }*/
+   /* @@media(min-width:1000px) and (max-width:1990px) {
+        table#tblMIDDOData {
+            display: inline-table;
+        }*/
+    }
+
+
+
+
     .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
         color: #ffffff !important;
         background-color: #2184bed1 !important;
@@ -19,16 +32,19 @@
         font-weight: 400;
         cursor: pointer !important;
     }
-    td a{
-        color:blue;
-        text-decoration:underline;
+
+    td a {
+        color: blue;
+        text-decoration: underline;
     }
+
     #navmenu .nav-link {
         border: 1px solid #d8d8d885 !important;
         margin: .5px;
     }
-    table{
-        text-align:center;
+
+    table {
+        text-align: center;
     }
 </style>
 <script src="~/Content/amcharts/amcharts.js"></script>
@@ -109,21 +125,26 @@
                         <div id="divPendingApp" class="application-tab">
                             <section>
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-18" style="width: 100%">
                                         @*<div class="form-group">
                                                 <h6 class="font-weight-bold">Pending for approval</h6>
                                             </div>*@
-                                        <table class="table table-striped table-bordered" id="tblMIDDOData" cellspacing="0">
+                                        <table class="table table-striped table-bordered  table-responsive" id="tblMIDDOData" cellspacing="0" >
                                             <thead style="background: #308385;color: #fff;">
                                                 <tr>
                                                     <th>Proposer's Name</th>
+                                                    <th>DDO Code</th>
+                                                    <th>Policy Number</th>
+                                                   
                                                     <th>Type of Cover</th>
                                                     <th>Chassis No.</th>
                                                     <th>Engine No.</th>
-                                                    <th> Vehicle Model</th>
+                                                    <th>Vehicle Model</th>
+                                                    <th>Vehical Number </th>
                                                     <th>Manufacture Year </th>
                                                     <th>District</th>
                                                     <th>Application Reference Number</th>
+
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -133,49 +154,52 @@
                                                 {
                                                     foreach (var item in Model.EmployeeVerificationDetails)
                                                     {
-                                                <tr>
-                                                    <td>@item.Name</td>
-                                                    <td>@item.TypeofCover</td>
-                                                    <td>@item.ChasisNo</td>
-                                                    <td>@item.EngineNo</td>
-                                                    <td>@item.VehicleModelName</td>
-                                                    <td>@item.VehicleYear</td>
-                                                    <td>@item.District</td>
-                                                    <td>@item.ApplicationNumber</td>
-                                                    <td>@item.Status</td>
-                                                    @if (ViewBag.Verifier == Verifiers.DDO)
-                                                    {
-                                                        <td><a href="@Url.Action("MIDDOVerification", "VerifyDetails", new RouteValueDictionary(new { @empId = item.EmployeeCode, applicationId = item.ApplicationId ,refNo=item.ApplicationNumber,category=item.CategoryId}))" class="btn btn-info btn-sm" style="font-size: inherit;padding: 0px 1px 1px 1px;">View Application</a></td>
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.CW)
-                                                    {
-                                                        <td><a href="/mi_rcw_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber">View Application</a></td>
-                                                        @*<td><a href="@Url.Action("MICWRenewalVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber})" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.SUPERINTENDENT)
-                                                    {
-                                                        <td><a href="/mi_rsi_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber">View Application</a></td>
-                                                        @*<td><a href="@Url.Action("MISuperintendentRenewalVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber })" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.DIO)
-                                                    {
-                                                        <td><a href="@Url.Action("MIDIOVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber })" class="btn btn-info btn-sm" style="font-size: inherit;padding: 0px 1px 1px 1px;">View Application</a></td>
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.ASSITANTDIRECTOR)
-                                                    {
-                                                        <td><a href="/mi_rad_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber">View Application</a></td>
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.DEPUTYDIRECTOR)
-                                                    {
-                                                        <td><a href="/mi_rdd_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber">View Application</a></td>
-                                                        @*<td><a href="@Url.Action("MIDDRenewalVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber })" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.DIRECTOR)
-                                                    {
-                                                        <td><a href="@Url.Action("MIDRenewalVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber })" class="btn btn-info btn-sm" style="font-size: inherit;padding: 0px 1px 1px 1px;">View Application</a></td>
-                                                    }
-                                                    @*<td><a href="@Url.Action("MIDDOVerification", "VerifyDetails", new RouteValueDictionary(new { @empId = item.EmployeeCode, applicationId = item.ApplicationId }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
-                                                </tr>
+                                                        <tr>
+                                                            <td>@item.Name</td>
+                                                            <th>@item.DdoName</th>
+                                                            <th>@item.PolicyNumber</th>
+                                                            <td>@item.TypeofCover</td>
+                                                            <td>@item.ChasisNo</td>
+                                                            <td>@item.EngineNo</td>
+                                                            <td>@item.VehicleModelName</td>
+                                                            <th>@item.registrationNo </th>
+                                                            <td>@item.VehicleYear</td>
+                                                            <td>@item.District</td>
+                                                            <td>@item.ApplicationNumber</td>
+                                                            <td>@item.Status</td>
+                                                            @if (ViewBag.Verifier == Verifiers.DDO)
+                                                            {
+                                                                <td><a href="@Url.Action("MIDDOVerification", "VerifyDetails", new RouteValueDictionary(new { @empId = item.EmployeeCode, applicationId = item.ApplicationId ,refNo=item.ApplicationNumber,category=item.CategoryId}))" class="btn btn-info btn-sm" style="font-size: inherit;padding: 0px 1px 1px 1px;">View Application</a></td>
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.CW)
+                                                            {
+                                                                <td><a href="/mi_rcw_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber">View Application</a></td>
+                                                                @*<td><a href="@Url.Action("MICWRenewalVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber})" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.SUPERINTENDENT)
+                                                            {
+                                                                <td><a href="/mi_rsi_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber">View Application</a></td>
+                                                                @*<td><a href="@Url.Action("MISuperintendentRenewalVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber })" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.DIO)
+                                                            {
+                                                                <td><a href="@Url.Action("MIDIOVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber })" class="btn btn-info btn-sm" style="font-size: inherit;padding: 0px 1px 1px 1px;">View Application</a></td>
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.ASSITANTDIRECTOR)
+                                                            {
+                                                                <td><a href="/mi_rad_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber">View Application</a></td>
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.DEPUTYDIRECTOR)
+                                                            {
+                                                                <td><a href="/mi_rdd_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber">View Application</a></td>
+                                                                @*<td><a href="@Url.Action("MIDDRenewalVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber })" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.DIRECTOR)
+                                                            {
+                                                                <td><a href="@Url.Action("MIDRenewalVerification", "VerifyDetails", new { area = "", empId = item.EmployeeCode, applicationId = item.ApplicationId, refNo=item.ApplicationNumber,category=item.CategoryId,PrevRefNo=item.PrevApplicationNumber })" class="btn btn-info btn-sm" style="font-size: inherit;padding: 0px 1px 1px 1px;">View Application</a></td>
+                                                            }
+                                                            @*<td><a href="@Url.Action("MIDDOVerification", "VerifyDetails", new RouteValueDictionary(new { @empId = item.EmployeeCode, applicationId = item.ApplicationId }))" class="btn btn-info btn-sm" style="font-size: inherit;color: #FFF;padding: 0px 1px 1px 1px;">View Application</a></td>*@
+                                                        </tr>
                                                     }
                                                 }
                                             </tbody>
@@ -247,11 +271,11 @@
                                                 {
                                                     foreach (var item in Model.LastUpdatedStatusForEmployees)
                                                     {
-                                                <tr>
-                                                    <td>@item.ApplicationNumber</td>
-                                                    <td>@item.Name</td>
-                                                    <td>@item.Status</td>
-                                                </tr>
+                                                        <tr>
+                                                            <td>@item.ApplicationNumber</td>
+                                                            <td>@item.Name</td>
+                                                            <td>@item.Status</td>
+                                                        </tr>
                                                     }
                                                 }
                                             </tbody>
@@ -283,29 +307,29 @@
                                                 {
                                                     foreach (var item in Model.CancelEmployeeStatus)
                                                     {
-                                                <tr>
-                                                    <td>@item.ApplicationNumber</td>
-                                                    <td>@item.ChasisNo</td>
-                                                    <td>@item.Name</td>
-                                                    <td>@item.Status</td>
-                                                    @if (ViewBag.Verifier == Verifiers.CW)
-                                                    {
-                                                        <td><a href="/mi_rcw_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber/@item.Status">View Application</a></td>
+                                                        <tr>
+                                                            <td>@item.ApplicationNumber</td>
+                                                            <td>@item.ChasisNo</td>
+                                                            <td>@item.Name</td>
+                                                            <td>@item.Status</td>
+                                                            @if (ViewBag.Verifier == Verifiers.CW)
+                                                            {
+                                                                <td><a href="/mi_rcw_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber/@item.Status">View Application</a></td>
 
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.SUPERINTENDENT)
-                                                    {
-                                                        <td><a href="/mi_rsi_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber/@item.Status">View Application</a></td>
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.ASSITANTDIRECTOR)
-                                                    {
-                                                        <td><a href="/mi_rad_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber/@item.Status">View Application</a></td>
-                                                    }
-                                                    else if (ViewBag.Verifier == Verifiers.DEPUTYDIRECTOR)
-                                                    {
-                                                        <td><a href="/mi_rdd_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber/@item.Status">View Application</a></td>
-                                                    }
-                                                </tr>
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.SUPERINTENDENT)
+                                                            {
+                                                                <td><a href="/mi_rsi_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber/@item.Status">View Application</a></td>
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.ASSITANTDIRECTOR)
+                                                            {
+                                                                <td><a href="/mi_rad_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber/@item.Status">View Application</a></td>
+                                                            }
+                                                            else if (ViewBag.Verifier == Verifiers.DEPUTYDIRECTOR)
+                                                            {
+                                                                <td><a href="/mi_rdd_va/@item.EmployeeCode/@item.ApplicationId/@item.ApplicationNumber/@item.CategoryId/@item.PrevApplicationNumber/@item.Status">View Application</a></td>
+                                                            }
+                                                        </tr>
                                                     }
                                                 }
                                             </tbody>

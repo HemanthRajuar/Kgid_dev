@@ -3613,7 +3613,8 @@ namespace DLL.KGIDMotorInsurance
             VM_DDOVerificationDetailsMI verificationDetails = new VM_DDOVerificationDetailsMI();
             try
             {
-
+                
+   
                 //string description = GetCategoryDescription(Convert.ToInt32(Category));
                 DataSet dsDDO = new DataSet();
                 SqlParameter[] sqlparam =
@@ -3622,6 +3623,17 @@ namespace DLL.KGIDMotorInsurance
                     new SqlParameter("@EmpId",empId)
                 };
                 dsDDO = _Conn.ExeccuteDataset(sqlparam, "sp_kgid_mi_select_ddo_details_renewal");
+                var ed = dsDDO.Tables[0].AsEnumerable().Select(a => a.Field<long?>("employee_id")).FirstOrDefault();
+                var empwork = _db.tbl_employee_work_details.Where(a => a.ewd_emp_id ==  ed).FirstOrDefault();
+                var  ApplicationId = dsDDO.Tables[0].AsEnumerable().Select(a => a.Field<long?>("mira_motor_insurance_app_id")).FirstOrDefault();// dataRow.Field<long>("mira_motor_insurance_app_id")
+                var Dddoname = (from verDetail in _db.tbl_ddo_master
+                         join ddo in _db.tbl_employee_work_details on verDetail.dm_ddo_id equals ddo.ewd_ddo_id
+                         join emp in _db.tbl_employee_basic_details on ddo.ewd_emp_id equals emp.employee_id
+                         where verDetail.dm_ddo_id == empwork.ewd_ddo_id
+                         select verDetail).FirstOrDefault();
+
+              //  var vehicalno = _db.tbl_motor_insurance_vehicle_details.Where(a => a.mivd_application_id == ApplicationId).FirstOrDefault();
+                var policyno = _db.tbl_mi_policy_details.Where(p => p.rp_mi_renewal_application_id == ApplicationId).FirstOrDefault();
 
                 var EmployeeVerification = dsDDO.Tables[0].AsEnumerable().Select(dataRow => new EmployeeDDOVerificationDetailMI
                 {
@@ -3632,10 +3644,10 @@ namespace DLL.KGIDMotorInsurance
                     VehicleModelName = dataRow.Field<string>("mivd_type_of_model"),
                     VehicleYear =dataRow.Field<string>("year"),
                     TypeofCover = dataRow.Field<string>("type_of_cover"),
-                   
+                   registrationNo= dataRow.Field<string>("mivd_registration_no"),
                     Status = (dataRow.Field<string>("AppStatus") == "Send Back to Employee") ? (dataRow.Field<string>("AppStatus").ToString().Replace("Employee", GetCategoryDescription(Convert.ToInt32(dataRow.Field<string>("mira_user_category"))))) : (dataRow.Field<string>("AppStatus").ToString().Replace("Applicant", GetCategoryDescription(Convert.ToInt32(dataRow.Field<string>("mira_user_category"))))),
-
-
+                    PolicyNumber= policyno.rp_mi_policy_number,
+                    DdoName= Dddoname.dm_ddo_code,
 
                     EmployeeCode = dataRow.Field<long?>("employee_id"),
                     Name = dataRow.Field<string>("employee_name"),
@@ -3647,6 +3659,9 @@ namespace DLL.KGIDMotorInsurance
                     //Status = dataRow.Field<string>("AppStatus")
 
                 }).ToList();
+               
+
+
                 var LastUpdatedStatus = dsDDO.Tables[1].AsEnumerable().Select(dataRow => new EmployeeDDOVerificationDetailMI
                 {
                     EmployeeCode = dataRow.Field<long>("employee_id"),
@@ -3707,6 +3722,18 @@ namespace DLL.KGIDMotorInsurance
                     new SqlParameter("@EmpId",empId)
                 };
                 dsDDO = _Conn.ExeccuteDataset(sqlparam, "sp_kgid_mi_select_ddo_details_renewal");
+                var ed = dsDDO.Tables[0].AsEnumerable().Select(a => a.Field<long?>("employee_id")).FirstOrDefault();
+                var empwork = _db.tbl_employee_work_details.Where(a => a.ewd_emp_id == ed).FirstOrDefault();
+                var ApplicationId = dsDDO.Tables[0].AsEnumerable().Select(a => a.Field<long?>("mira_motor_insurance_app_id")).FirstOrDefault();// dataRow.Field<long>("mira_motor_insurance_app_id")
+                var Dddoname = (from verDetail in _db.tbl_ddo_master
+                                join ddo in _db.tbl_employee_work_details on verDetail.dm_ddo_id equals ddo.ewd_ddo_id
+                                join emp in _db.tbl_employee_basic_details on ddo.ewd_emp_id equals emp.employee_id
+                                where verDetail.dm_ddo_id == empwork.ewd_ddo_id
+                                select verDetail).FirstOrDefault();
+
+                //  var vehicalno = _db.tbl_motor_insurance_vehicle_details.Where(a => a.mivd_application_id == ApplicationId).FirstOrDefault();
+                var policyno = _db.tbl_mi_policy_details.Where(p => p.rp_mi_renewal_application_id == ApplicationId).FirstOrDefault();
+
 
                 var EmployeeVerification = dsDDO.Tables[0].AsEnumerable().Select(dataRow => new EmployeeDDOVerificationDetailMI
                 {
@@ -3718,7 +3745,9 @@ namespace DLL.KGIDMotorInsurance
                     TypeofCover = dataRow.Field<string>("type_of_cover"),
 
                     Status = (dataRow.Field<string>("AppStatus") == "Send Back to Employee") ? (dataRow.Field<string>("AppStatus").ToString().Replace("Employee", GetCategoryDescription(Convert.ToInt32(dataRow.Field<string>("mira_user_category"))))) : (dataRow.Field<string>("AppStatus").ToString().Replace("Applicant", GetCategoryDescription(Convert.ToInt32(dataRow.Field<string>("mira_user_category"))))),
-
+                    registrationNo = dataRow.Field<string>("mivd_registration_no"),
+                     PolicyNumber = policyno.rp_mi_policy_number,
+                    DdoName = Dddoname.dm_ddo_code,
                     EmployeeCode = dataRow.Field<long?>("employee_id"),
                     Name = dataRow.Field<string>("employee_name"),
                     District = dataRow.Field<string>("district"),
@@ -3789,6 +3818,17 @@ namespace DLL.KGIDMotorInsurance
                     new SqlParameter("@EmpId",empId)
                 };
                 dsDDO = _Conn.ExeccuteDataset(sqlparam, "sp_kgid_mi_select_ddo_details_renewal");
+                var ed = dsDDO.Tables[0].AsEnumerable().Select(a => a.Field<long?>("employee_id")).FirstOrDefault();
+                var empwork = _db.tbl_employee_work_details.Where(a => a.ewd_emp_id == ed).FirstOrDefault();
+                var ApplicationId = dsDDO.Tables[0].AsEnumerable().Select(a => a.Field<long?>("mira_motor_insurance_app_id")).FirstOrDefault();// dataRow.Field<long>("mira_motor_insurance_app_id")
+                var Dddoname = (from verDetail in _db.tbl_ddo_master
+                                join ddo in _db.tbl_employee_work_details on verDetail.dm_ddo_id equals ddo.ewd_ddo_id
+                                join emp in _db.tbl_employee_basic_details on ddo.ewd_emp_id equals emp.employee_id
+                                where verDetail.dm_ddo_id == empwork.ewd_ddo_id
+                                select verDetail).FirstOrDefault();
+
+                //  var vehicalno = _db.tbl_motor_insurance_vehicle_details.Where(a => a.mivd_application_id == ApplicationId).FirstOrDefault();
+                var policyno = _db.tbl_mi_policy_details.Where(p => p.rp_mi_renewal_application_id == ApplicationId).FirstOrDefault();
 
                 var EmployeeVerification = dsDDO.Tables[0].AsEnumerable().Select(dataRow => new EmployeeDDOVerificationDetailMI
                 {
@@ -3797,7 +3837,9 @@ namespace DLL.KGIDMotorInsurance
                     VehicleModelName = dataRow.Field<string>("mivd_type_of_model"),
                     VehicleYear = dataRow.Field<string>("year"),
                     TypeofCover = dataRow.Field<string>("type_of_cover"),
-
+                    registrationNo = dataRow.Field<string>("mivd_registration_no"),
+                    PolicyNumber = policyno.rp_mi_policy_number,
+                    DdoName = Dddoname.dm_ddo_code,
                     Status = (dataRow.Field<string>("AppStatus") == "Send Back to Employee") ? (dataRow.Field<string>("AppStatus").ToString().Replace("Employee", GetCategoryDescription(Convert.ToInt32(dataRow.Field<string>("mira_user_category"))))) : (dataRow.Field<string>("AppStatus").ToString().Replace("Applicant", GetCategoryDescription(Convert.ToInt32(dataRow.Field<string>("mira_user_category"))))),
 
                     EmployeeCode = dataRow.Field<long?>("employee_id"),
@@ -5129,7 +5171,7 @@ namespace DLL.KGIDMotorInsurance
                     new SqlParameter("@Status",objPaymentDetails.cs_status),
                     new SqlParameter("@TransactionDate",  Convert.ToDateTime(objPaymentDetails.cs_transsaction_date)),
                     new SqlParameter("@EmpID",objPaymentDetails.EmpID),
-                    new SqlParameter("@PageType",objPaymentDetails.PageType)
+                    //new SqlParameter("@PageType",objPaymentDetails.PageType)
                 };
                 result = Convert.ToInt64(_Conn.ExecuteCmd(sqlparam, "sp_kgid_update_ChallanstatusRCT033"));
             }

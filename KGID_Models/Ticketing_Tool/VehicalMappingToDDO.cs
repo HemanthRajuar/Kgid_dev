@@ -16,5 +16,6 @@ namespace KGID_Models.Ticketing_Tool
         public int employee_id { get; set; }
         public string mivd_chasis_no { get; set; }
         public string mia_owner_of_the_vehicle { get; set; }
+        public string p_mi_policy_number { get; set; }
     }
 }

@@ -33,3 +33,12 @@ D:\Kgid_git_hub\24-1-22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 D:\Kgid_git_hub\24-1-22\Common\obj\Debug\Common.csproj.CopyComplete
 D:\Kgid_git_hub\24-1-22\Common\obj\Debug\Common.dll
 D:\Kgid_git_hub\24-1-22\Common\obj\Debug\Common.pdb
+D:\Kgid_git_hub1\Common\bin\Debug\Common.dll
+D:\Kgid_git_hub1\Common\bin\Debug\Common.pdb
+D:\Kgid_git_hub1\Common\bin\Debug\log4net.dll
+D:\Kgid_git_hub1\Common\bin\Debug\log4net.xml
+D:\Kgid_git_hub1\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+D:\Kgid_git_hub1\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Kgid_git_hub1\Common\obj\Debug\Common.csproj.CopyComplete
+D:\Kgid_git_hub1\Common\obj\Debug\Common.dll
+D:\Kgid_git_hub1\Common\obj\Debug\Common.pdb

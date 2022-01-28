@@ -8,7 +8,7 @@
 
             var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
             var _maluspercent = $('#idvmaluspercent').text() || 0;
-            var _ncbpercent = $('#idvncbpercent').val() || 0;
+             var _ncbpercent = $('#idvncbpercent').text() || 0;
 
             var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
             var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -35,7 +35,7 @@
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
         }
 
@@ -268,7 +268,7 @@
         var txtcyd = parseFloat($('#txtcyd').val());
         var _totalamt = txttotAB + txtpyd - txtcyd;
         var totalamt = Math.round(_totalamt).toFixed(2);
-        $('#txttotalamt').val(totalamt);
+        $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
         //txtgstamt
         var txtgstamtValue = ((parseFloat(totalamt)) / 100) * 18;
@@ -445,7 +445,7 @@
         var txtcyd = parseFloat($('#txtcyd').val());
         var _totalamt = txttotAB + txtpyd - txtcyd;
         var totalamt = Math.round(_totalamt).toFixed(2);
-        $('#txttotalamt').val(totalamt);
+        $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
         //txtgstamt
         var txtgstamtValue = ((parseFloat(totalamt)) / 100) * 18;
@@ -679,7 +679,7 @@
         var txtcyd = parseFloat($('#txtcyd').val());
         var _totalamt = txttotAB + txtpyd - txtcyd;
         var totalamt = Math.round(_totalamt).toFixed(2);
-        $('#txttotalamt').val(totalamt);
+        $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
         //txtgstamt
         var txtgstamtValue = ((parseFloat(totalamt)) / 100) * 18;
@@ -867,7 +867,7 @@
         var txtcyd = parseFloat($('#txtcyd').val());
         var _totalamt = txttotAB + txtpyd - txtcyd;
         var totalamt = Math.round(_totalamt).toFixed(2);
-        $('#txttotalamt').val(totalamt);
+        $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
         //txtgstamt
         var txtgstamtValue = ((parseFloat(totalamt)) / 100) * 18;
@@ -2256,7 +2256,7 @@ function SaveIDVDetails() {
                         if (result.pagetype == "Renewal" || $('#hdnIdvPageType').val() == "EditRenewal") {
                             
                             //if ($('#hdnIdvPageType').val() == "Renewal" || $('#hdnIdvPageType').val() == "EditRenewal") {
-                            GetIDVRenewalDetails();
+                            GetIDVDetails();
                             Renewalsum();
                         }
                         else {
@@ -3072,7 +3072,7 @@ function sum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -3194,7 +3194,7 @@ function sum() {
 
             var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
             var _maluspercent = $('#idvmaluspercent').text() || 0;
-            var _ncbpercent = $('#idvncbpercent').val() || 0;
+             var _ncbpercent = $('#idvncbpercent').text() || 0;
 
             var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
             var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -3221,7 +3221,7 @@ function sum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             $('#txtZone').val($('#txtVDZone').val());
             $('#txtDateofRisk').val($('#txtTPToDate').val());
@@ -3339,7 +3339,7 @@ function sum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -3441,7 +3441,7 @@ function sum() {
 
             var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
             var _maluspercent = $('#idvmaluspercent').text() || 0;
-            var _ncbpercent = $('#idvncbpercent').val() || 0;
+             var _ncbpercent = $('#idvncbpercent').text() || 0;
 
             var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
             var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -3468,7 +3468,7 @@ function sum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             $('#txtZone').val($('#txtVDZone').val());
             $('#txtDateofRisk').val($('#txtTPToDate').val());
@@ -3661,7 +3661,7 @@ function sum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -3780,7 +3780,7 @@ function sum() {
 
             var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
             var _maluspercent = $('#idvmaluspercent').text() || 0;
-            var _ncbpercent = $('#idvncbpercent').val() || 0;
+             var _ncbpercent = $('#idvncbpercent').text() || 0;
 
             var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
             var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -3807,7 +3807,7 @@ function sum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             $('#txtZone').val($('#txtVDZone').val());
             $('#txtDateofRisk').val($('#txtTPToDate').val());
@@ -3947,7 +3947,7 @@ function sum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -4056,7 +4056,7 @@ function sum() {
 
             var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
             var _maluspercent = $('#idvmaluspercent').text() || 0;
-            var _ncbpercent = $('#idvncbpercent').val() || 0;
+             var _ncbpercent = $('#idvncbpercent').text() || 0;
 
             var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
             var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -4083,7 +4083,7 @@ function sum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             $('#txtZone').val($('#txtVDZone').val());
             $('#txtDateofRisk').val($('#txtTPToDate').val());
@@ -4679,7 +4679,7 @@ function Renewalsum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -4767,7 +4767,7 @@ function Renewalsum() {
 
                 var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
                 var _maluspercent = $('#idvmaluspercent').text() || 0;
-                var _ncbpercent = $('#idvncbpercent').val() || 0;
+                 var _ncbpercent = $('#idvncbpercent').text() || 0;
 
                 var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
                 var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -4794,7 +4794,7 @@ function Renewalsum() {
                 var txtcyd = parseFloat($('#txtcyd').val());
                 var _totalamt = txttotAB + txtpyd - txtcyd;
                 var totalamt = Math.round(_totalamt).toFixed(2);
-                $('#txttotalamt').val(totalamt);
+                $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
 
 
@@ -4882,7 +4882,7 @@ function Renewalsum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -4963,7 +4963,7 @@ function Renewalsum() {
 
                 var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
                 var _maluspercent = $('#idvmaluspercent').text() || 0;
-                var _ncbpercent = $('#idvncbpercent').val() || 0;
+                 var _ncbpercent = $('#idvncbpercent').text() || 0;
 
                 var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
                 var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -4990,7 +4990,7 @@ function Renewalsum() {
                 var txtcyd = parseFloat($('#txtcyd').val());
                 var _totalamt = txttotAB + txtpyd - txtcyd;
                 var totalamt = Math.round(_totalamt).toFixed(2);
-                $('#txttotalamt').val(totalamt);
+                $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
 
 
@@ -5110,7 +5110,7 @@ function Renewalsum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -5191,7 +5191,7 @@ function Renewalsum() {
 
                 var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
                 var _maluspercent = $('#idvmaluspercent').text() || 0;
-                var _ncbpercent = $('#idvncbpercent').val() || 0;
+                 var _ncbpercent = $('#idvncbpercent').text() || 0;
 
                 var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
                 var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -5218,7 +5218,7 @@ function Renewalsum() {
                 var txtcyd = parseFloat($('#txtcyd').val());
                 var _totalamt = txttotAB + txtpyd - txtcyd;
                 var totalamt = Math.round(_totalamt).toFixed(2);
-                $('#txttotalamt').val(totalamt);
+                $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
 
 
@@ -5339,7 +5339,7 @@ function Renewalsum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
             console.log(txttotAB + "#" + totalamt);
 
             //----------GST-------------//
@@ -5419,7 +5419,7 @@ function Renewalsum() {
 
                 var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
                 var _maluspercent = $('#idvmaluspercent').text() || 0;
-                var _ncbpercent = $('#idvncbpercent').val() || 0;
+                 var _ncbpercent = $('#idvncbpercent').text() || 0;
 
                 var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
                 var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -5446,7 +5446,7 @@ function Renewalsum() {
                 var txtcyd = parseFloat($('#txtcyd').val());
                 var _totalamt = txttotAB + txtpyd - txtcyd;
                 var totalamt = Math.round(_totalamt).toFixed(2);
-                $('#txttotalamt').val(totalamt);
+                $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
 
 
@@ -5545,7 +5545,7 @@ function Renewalsum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -5626,7 +5626,7 @@ function Renewalsum() {
 
                 var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
                 var _maluspercent = $('#idvmaluspercent').text() || 0;
-                var _ncbpercent = $('#idvncbpercent').val() || 0;
+                 var _ncbpercent = $('#idvncbpercent').text() || 0;
 
                 var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
                 var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -5653,7 +5653,7 @@ function Renewalsum() {
                 var txtcyd = parseFloat($('#txtcyd').val());
                 var _totalamt = txttotAB + txtpyd - txtcyd;
                 var totalamt = Math.round(_totalamt).toFixed(2);
-                $('#txttotalamt').val(totalamt);
+                $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
 
 
@@ -5772,7 +5772,7 @@ function Renewalsum() {
             var txtcyd = parseFloat($('#txtcyd').val());
             var _totalamt = txttotAB + txtpyd - txtcyd;
             var totalamt = Math.round(_totalamt).toFixed(2);
-            $('#txttotalamt').val(totalamt);
+            $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
             //----------GST-------------//
             var txttotalamt = parseFloat($('#txttotalamt').val());
@@ -5852,7 +5852,7 @@ function Renewalsum() {
 
                 var _beforemalussubtotal = $('#txtsubtotextra').val() || 0;
                 var _maluspercent = $('#idvmaluspercent').text() || 0;
-                var _ncbpercent = $('#idvncbpercent').val() || 0;
+                 var _ncbpercent = $('#idvncbpercent').text() || 0;
 
                 var _maluscalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_maluspercent);
                 var _ncbcalc = (parseFloat(_beforemalussubtotal) / 100) * parseFloat(_ncbpercent);
@@ -5879,7 +5879,7 @@ function Renewalsum() {
                 var txtcyd = parseFloat($('#txtcyd').val());
                 var _totalamt = txttotAB + txtpyd - txtcyd;
                 var totalamt = Math.round(_totalamt).toFixed(2);
-                $('#txttotalamt').val(totalamt);
+                $('#txttotalamt').val(totalamt > 0 ? totalamt : 0);
 
                 $('#txtZone').val($('#txtVDZone').val());
                 $('#txtDateofRisk').val($('#txtTPToDate').val());
